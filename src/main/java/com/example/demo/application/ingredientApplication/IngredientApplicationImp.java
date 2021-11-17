@@ -21,7 +21,6 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient, UUID> 
     @Autowired
     public IngredientApplicationImp(final IngredientWriteRepository writeRep, final ModelMapper modelMapper) {
         super((id) -> writeRep.findById(id));
-
         this.writeRep = writeRep;
         this.modelMapper = modelMapper;
     }
