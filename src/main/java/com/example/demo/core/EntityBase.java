@@ -1,5 +1,7 @@
 package com.example.demo.core;
 
+import java.util.UUID;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.domain.Persistable;
@@ -9,12 +11,10 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public abstract class EntityBase implements Persistable<Integer> {
+public abstract class EntityBase implements Persistable<UUID> {
 
     @Id
-    // @Column(columnDefinition = "binary(16)")
-    private Integer id;
-
+    private UUID id;
     @Transient
     private boolean isThisNew = false;
 

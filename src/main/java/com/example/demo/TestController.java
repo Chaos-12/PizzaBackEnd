@@ -1,11 +1,8 @@
 package com.example.demo;
 
-import java.io.UnsupportedEncodingException;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,11 +34,7 @@ public class TestController {
     public Mono<User> createUser() {
         User user = new User("pedro", "pedro@gmail.com");
         user.setThisNew(true);
-        user.setId(getRandomId());
+        user.setId(UUID.randomUUID());
         return this.userHandler.createUser(user);
-    }
-
-    public int getRandomId() {
-        return (int) (Math.random() * 100);
     }
 }
