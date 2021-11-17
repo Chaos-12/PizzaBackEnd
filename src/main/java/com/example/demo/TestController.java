@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import java.io.UnsupportedEncodingException;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,17 +30,18 @@ public class TestController {
 
     @GetMapping(path = "/mono")
     public Mono<User> testMono() {
-        return Mono.just(new User(33, "pedro", "pedro@mail.com"));
+        return Mono.just(new User("pedro", "pedro@mail.com"));
     }
 
     @GetMapping(path = "/repository")
-    public Mono<User> get() {
-        User user = new User(33, "pedro", "pedro@gmail.com");
-        return userHandler.add(user).flatMap(this.userHandler::add);
+    public Mono<User> createUser() {
+        User user = new User("pedro", "pedro@gmail.com");
+        user.setThisNew(true);
+        user.setId(getRandomId());
+        return this.userHandler.createUser(user);
     }
-    /*
-     * @ExceptionHandler({ UnsupportedEncodingException.class }) public
-     * ResponseEntity<String> exceptionHandler(Exception ex) { return
-     * ResponseEntity.badRequest().body(ex.getMessage()); }
-     */
+
+    public int getRandomId() {
+        return (int) (Math.random() * 100);
+    }
 }

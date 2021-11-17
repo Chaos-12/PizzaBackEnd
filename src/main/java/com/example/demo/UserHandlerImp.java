@@ -8,14 +8,14 @@ import reactor.core.publisher.Mono;
 @Service
 public class UserHandlerImp implements UserHandler {
 
-    private final UserRepository userRepository;
+    private final UserRepository respository;
 
     @Autowired
-    public UserHandlerImp(final UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public UserHandlerImp(final UserRepository respository) {
+        this.respository = respository;
     }
 
-    public Mono<User> add(final User user) {
-        return userRepository.save(user);
+    public Mono<User> createUser(final User user) {
+        return respository.save(user);
     }
 }

@@ -1,26 +1,32 @@
 package com.example.demo;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import java.util.UUID;
+
+import com.example.demo.core.EntityBase;
+
+import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity // This tells Hibernate to make a table out of this class
+@Data
 @Table("user")
-public @NoArgsConstructor @AllArgsConstructor @Getter @Setter class User {
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+public class User extends EntityBase {
 
-    @Id
-    private Integer id;
-
-    @Column
     private String name;
-
-    @Column
     private String email;
+
+    @Override
+    public boolean isNew() {
+        return this.isThisNew();
+    }
 
 }
