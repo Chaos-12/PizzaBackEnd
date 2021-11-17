@@ -7,9 +7,11 @@ import com.example.demo.infraestructure.ingredientInfraestructure.IngredientWrit
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import reactor.core.publisher.Mono;
 
+@Service
 public class IngredientApplicationImp implements IngredientApplication {
 
     private final IngredientWriteRepository writeRep;
@@ -26,7 +28,6 @@ public class IngredientApplicationImp implements IngredientApplication {
         Ingredient ingredient = modelMapper.map(dto, Ingredient.class);
         ingredient.setId(UUID.randomUUID());
         ingredient.setThisNew(true);
-
         return this.writeRep.add(ingredient)
                 .flatMap(monoIngr -> Mono.just(this.modelMapper.map(monoIngr, IngredientDTO.class)));
     }

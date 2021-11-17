@@ -1,6 +1,6 @@
 package com.example.demo.infraestructure.ingredientInfraestructure;
 
-import com.example.demo.domain.ingredientDomain.Ingredient;
+import com.example.demo.domain.Ingredient;
 
 import reactor.core.publisher.Mono;
 

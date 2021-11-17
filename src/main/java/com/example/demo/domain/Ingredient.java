@@ -2,8 +2,6 @@ package com.example.demo.domain;
 
 import java.math.BigDecimal;
 
-import com.example.demo.core.EntityBase;
-
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 

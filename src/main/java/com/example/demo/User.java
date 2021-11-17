@@ -2,7 +2,7 @@ package com.example.demo;
 
 import java.util.UUID;
 
-import com.example.demo.core.EntityBase;
+import com.example.demo.domain.EntityBase;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
