@@ -1,4 +1,4 @@
-package com.example.demo.domain.ingredientDomain;
+package com.example.demo.domain;
 
 import java.math.BigDecimal;
 
@@ -18,7 +18,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class Ingredient extends EntityBase {
-
     @Column
     private String name;
     @Column

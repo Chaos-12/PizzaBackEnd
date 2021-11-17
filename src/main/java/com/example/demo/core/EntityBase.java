@@ -12,7 +12,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public abstract class EntityBase implements Persistable<UUID> {
-
     @Id
     private UUID id;
     @Transient
