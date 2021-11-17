@@ -1,5 +1,7 @@
 package com.example.demo.infraestructure.ingredientInfraestructure;
 
+import java.util.UUID;
+
 import com.example.demo.domain.Ingredient;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,16 @@ public class IngredientRepositoryImp implements IngredientWriteRepository {
 
     public Mono<Ingredient> add(Ingredient ingredient) {
         return this.ingredientRep.save(ingredient);
+    }
+
+    @Override
+    public Mono<Ingredient> findById(UUID id) {
+        return this.ingredientRep.findById(id);
+    }
+
+    @Override
+    public Mono<Boolean> exists(String name) {
+        return this.ingredientRep.existsByName(name);
     }
 
 }

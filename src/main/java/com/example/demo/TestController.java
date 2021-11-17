@@ -27,14 +27,17 @@ public class TestController {
 
     @GetMapping(path = "/mono")
     public Mono<User> testMono() {
-        return Mono.just(new User("pedro", "pedro@mail.com"));
+        User user = new User("pedro", "pedro@gmail.com");
+        user.setId(UUID.randomUUID());
+        user.setThisNew(true);
+        return Mono.just(user);
     }
 
     @GetMapping(path = "/repository")
     public Mono<User> createUser() {
         User user = new User("pedro", "pedro@gmail.com");
-        user.setThisNew(true);
         user.setId(UUID.randomUUID());
+        user.setThisNew(true);
         return this.userHandler.createUser(user);
     }
 }

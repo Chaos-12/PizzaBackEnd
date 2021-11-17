@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Data
-@Table("ingredient")
+@Table("ingredients")
 @Getter
 @Setter
 @NoArgsConstructor
