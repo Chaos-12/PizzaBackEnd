@@ -1,12 +1,12 @@
 package com.example.demo.Infrastructure.ImageRepository;
 
-import com.example.demo.domain.ImageDomain.Image;
-import com.example.demo.domain.ImageDomain.ImageRepositoryWrite;
+import com.example.demo.domain.Image;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class ImageRepositoryImp implements ImageRepositoryWrite{
+public class ImageRepositoryImp implements ImageWriteRepository{
 
     private final ImageRepository imageRepository;
 

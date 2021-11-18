@@ -9,4 +9,5 @@ import lombok.Setter;
 @Setter
 public class ImageDTO {
     public Integer id;
+    public Byte[] content;
 }

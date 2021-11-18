@@ -1,7 +1,5 @@
-package com.example.demo.domain.ImageDomain;
-import java.util.UUID;
+package com.example.demo.domain;
 
-import com.example.demo.core.EntityBase;
 import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
@@ -12,23 +10,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Data
-@Table("image")
+@Table("Images")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-@RedisHash()
+@RedisHash("Images")
 public class Image extends EntityBase {
 
     @Column
     private byte[] content;
 
-
-    // Quitar
-    @Override
-    public boolean isNew() {
-        // TODO Auto-generated method stub
-        return false;
-    }
-    
 }
