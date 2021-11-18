@@ -12,25 +12,25 @@ import reactor.core.publisher.Mono;
 @Repository
 public class IngredientRepositoryImp implements IngredientWriteRepository {
 
-    private final IngredientRepository ingredientRep;
+    private final IngredientRepository ingredientRepository;
 
     @Autowired
-    public IngredientRepositoryImp(final IngredientRepository ingredientRep) {
-        this.ingredientRep = ingredientRep;
+    public IngredientRepositoryImp(final IngredientRepository ingredientRepository) {
+        this.ingredientRepository = ingredientRepository;
     }
 
     public Mono<Ingredient> add(Ingredient ingredient) {
-        return this.ingredientRep.save(ingredient);
+        return this.ingredientRepository.save(ingredient);
     }
 
     @Override
     public Mono<Ingredient> findById(UUID id) {
-        return this.ingredientRep.findById(id);
+        return this.ingredientRepository.findById(id);
     }
 
     @Override
     public Mono<Boolean> exists(String name) {
-        return this.ingredientRep.existsByName(name);
+        return this.ingredientRepository.existsByName(name);
     }
 
 }
