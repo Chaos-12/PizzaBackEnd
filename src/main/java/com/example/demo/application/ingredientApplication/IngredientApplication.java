@@ -8,4 +8,6 @@ public interface IngredientApplication {
     public Mono<IngredientDTO> add(CreateOrUpdateIngredientDTO dto);
 
     public Mono<IngredientDTO> get(UUID id);
+
+    public Mono<IngredientDTO> update(UUID id, CreateOrUpdateIngredientDTO dto);
 }

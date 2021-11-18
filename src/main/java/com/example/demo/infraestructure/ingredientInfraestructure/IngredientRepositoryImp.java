@@ -33,4 +33,9 @@ public class IngredientRepositoryImp implements IngredientWriteRepository, Ingre
         return this.ingredientRepository.existsByName(name);
     }
 
+    @Override
+    public Mono<Ingredient> update(Ingredient ingredient) {
+        return this.ingredientRepository.save(ingredient);
+    }
+
 }

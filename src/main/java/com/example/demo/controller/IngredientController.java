@@ -13,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -39,8 +40,16 @@ public class IngredientController {
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")
-    public Mono<ResponseEntity<IngredientDTO>> existsName(@PathVariable UUID id) {
+    public Mono<ResponseEntity<IngredientDTO>> get(@PathVariable UUID id) {
         Mono<IngredientDTO> ingredientDTO = this.ingredientApplication.get(id);
+        return ingredientDTO.map(ingredient -> ResponseEntity.ok(ingredient))
+                .defaultIfEmpty(ResponseEntity.notFound().build());
+    }
+
+    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")
+    public Mono<ResponseEntity<IngredientDTO>> update(@PathVariable UUID id,
+            @RequestBody CreateOrUpdateIngredientDTO dto) {
+        Mono<IngredientDTO> ingredientDTO = this.ingredientApplication.update(id, dto);
         return ingredientDTO.map(ingredient -> ResponseEntity.ok(ingredient))
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
