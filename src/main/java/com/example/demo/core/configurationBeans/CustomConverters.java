@@ -1,6 +1,7 @@
 package com.example.demo.core.configurationBeans;
 
 import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -27,7 +28,7 @@ public class CustomConverters {
     private class UUIDToByteArrayConverter implements Converter<UUID, byte[]> {
         @Override
         public byte[] convert(UUID source) {
-            ByteBuffer bb = ByteBuffer.wrap(new byte[16]);
+            ByteBuffer bb = ByteBuffer.wrap(new byte[16]).order(ByteOrder.BIG_ENDIAN);
             bb.putLong(source.getMostSignificantBits());
             bb.putLong(source.getLeastSignificantBits());
             return bb.array();
@@ -38,7 +39,10 @@ public class CustomConverters {
     public class ByteArrayToUUIDConverter implements Converter<byte[], UUID> {
         @Override
         public UUID convert(byte[] source) {
-            return UUID.nameUUIDFromBytes(source);
+            ByteBuffer bytebuffer = ByteBuffer.wrap(source);
+            Long high = bytebuffer.getLong();
+            Long low = bytebuffer.getLong();
+            return new UUID(high, low);
         }
     }
 }

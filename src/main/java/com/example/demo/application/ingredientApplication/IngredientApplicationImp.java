@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import com.example.demo.application.ApplicationBase;
 import com.example.demo.domain.Ingredient;
+import com.example.demo.infraestructure.ingredientInfraestructure.IngredientReadRepository;
 import com.example.demo.infraestructure.ingredientInfraestructure.IngredientWriteRepository;
 
 import org.modelmapper.ModelMapper;
@@ -32,6 +33,12 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient, UUID> 
         ingredient.setId(UUID.randomUUID());
         ingredient.setThisNew(true);
         return this.ingredientWriteRepository.add(ingredient)
+                .flatMap(monoIngr -> Mono.just(this.modelMapper.map(monoIngr, IngredientDTO.class)));
+    }
+
+    @Override
+    public Mono<IngredientDTO> get(UUID id) {
+        return ingredientWriteRepository.findById(id)
                 .flatMap(monoIngr -> Mono.just(this.modelMapper.map(monoIngr, IngredientDTO.class)));
     }
 }

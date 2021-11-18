@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Mono;
 
 @Repository
-public class IngredientRepositoryImp implements IngredientWriteRepository {
+public class IngredientRepositoryImp implements IngredientWriteRepository, IngredientReadRepository {
 
     private final IngredientRepository ingredientRepository;
 
