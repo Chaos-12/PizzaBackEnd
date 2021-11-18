@@ -6,5 +6,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CreateOrUpdateImageDTO {
-    public byte[] data;
+    public byte[] content;
 }

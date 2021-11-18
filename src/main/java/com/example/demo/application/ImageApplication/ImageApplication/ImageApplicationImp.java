@@ -1,22 +1,28 @@
 package com.example.demo.application.ImageApplication.ImageApplication;
 
-import java.io.IOException;
-
-import com.example.demo.Infrastructure.ImageRepository.ImageRepository;
-import com.example.demo.Infrastructure.ImageRepository.ImageRepositoryImp;
+import java.util.UUID;
 import com.example.demo.domain.Image;
+import com.example.demo.infraestructure.ImageRepository.ImageRepository;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ImageApplicationImp implements ImageApplication {
     private final ImageRepository imageRepository;
+    private final ModelMapper modelMapper;
 
-    public ImageApplicationImp(final ImageRepository imageRepository){
-        this.imageRepository = imageRepository;
+    @Autowired
+    public ImageApplicationImp(final ImageRepository imageRepository, final ModelMapper modelMapper){
+      this.imageRepository = imageRepository;
+      this.modelMapper = modelMapper;
     }
-
-    @Override
     public ImageDTO save(CreateOrUpdateImageDTO dto){
-    //   Image image = modelMapper.map(dto, Image.class)
+      Image image = modelMapper.map(dto, Image.class);
+      image.setId(UUID.randomUUID());
+      image.setContent(dto.getContent());
+      imageRepository.add(image);
 
-        return null;
+      return modelMapper.map(image, ImageDTO.class);
     }
 }

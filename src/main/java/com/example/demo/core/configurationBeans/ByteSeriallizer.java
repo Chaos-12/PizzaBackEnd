@@ -1,4 +1,4 @@
-package com.example.demo.core.Configuration;
+package com.example.demo.core.configurationBeans;
 
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.SerializationException;
@@ -6,7 +6,7 @@ import org.springframework.data.redis.serializer.SerializationException;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class ByteSerializer implements RedisSerializer<byte[]>{
+public class ByteSeriallizer implements RedisSerializer<byte[]>{
     @Override
     public byte[] deserialize(byte[] bytes) throws SerializationException {
         return bytes;
