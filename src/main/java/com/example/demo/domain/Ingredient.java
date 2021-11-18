@@ -27,9 +27,4 @@ public class Ingredient extends EntityBase {
     public String toString() {
         return String.format("Ingredient {id: %s, name: %s, price %s}", this.getId(), this.getName(), this.getPrice());
     }
-
-    @Override
-    public boolean isNew() {
-        return this.isThisNew();
-    }
 }

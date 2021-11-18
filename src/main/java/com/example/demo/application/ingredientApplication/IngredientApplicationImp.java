@@ -15,13 +15,14 @@ import reactor.core.publisher.Mono;
 @Service
 public class IngredientApplicationImp extends ApplicationBase<Ingredient, UUID> implements IngredientApplication {
 
-    private final IngredientWriteRepository writeRep;
+    private final IngredientWriteRepository ingredientWriteRepository;
     private final ModelMapper modelMapper;
 
     @Autowired
-    public IngredientApplicationImp(final IngredientWriteRepository writeRep, final ModelMapper modelMapper) {
-        super((id) -> writeRep.findById(id));
-        this.writeRep = writeRep;
+    public IngredientApplicationImp(final IngredientWriteRepository ingredientWriteRepository,
+            final ModelMapper modelMapper) {
+        super((id) -> ingredientWriteRepository.findById(id));
+        this.ingredientWriteRepository = ingredientWriteRepository;
         this.modelMapper = modelMapper;
     }
 
@@ -30,7 +31,7 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient, UUID> 
         Ingredient ingredient = modelMapper.map(dto, Ingredient.class);
         ingredient.setId(UUID.randomUUID());
         ingredient.setThisNew(true);
-        return this.writeRep.add(ingredient)
+        return this.ingredientWriteRepository.add(ingredient)
                 .flatMap(monoIngr -> Mono.just(this.modelMapper.map(monoIngr, IngredientDTO.class)));
     }
 }
