@@ -2,10 +2,12 @@ package com.example.demo.infraestructure.ingredientInfraestructure;
 
 import java.util.UUID;
 
-import com.example.demo.domain.Ingredient;
+import com.example.demo.domain.ingredientDomain.Ingredient;
+import com.example.demo.domain.ingredientDomain.IngredientProjection;
+import com.example.demo.domain.ingredientDomain.IngredientReadRepository;
+import com.example.demo.domain.ingredientDomain.IngredientWriteRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Repository;
 
 import reactor.core.publisher.Flux;
@@ -47,7 +49,7 @@ public class IngredientRepositoryImp implements IngredientWriteRepository, Ingre
     }
 
     @Override
-    public Flux<Ingredient> getAll(String text, int page, int size) {
-        return this.ingredientRepository.findByName(text, PageRequest.of(page, size));
+    public Flux<IngredientProjection> getAll(String name, int page, int size) {
+        return this.ingredientRepository.findByCriteria(name);
     }
 }

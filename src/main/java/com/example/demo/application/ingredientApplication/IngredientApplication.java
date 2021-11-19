@@ -2,6 +2,8 @@ package com.example.demo.application.ingredientApplication;
 
 import java.util.UUID;
 
+import com.example.demo.domain.ingredientDomain.IngredientProjection;
+
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -14,5 +16,5 @@ public interface IngredientApplication {
 
     public Mono<Void> delete(UUID id);
 
-    public Flux<IngredientDTO> getAll(String text, int page, int size);
+    public Flux<IngredientProjection> getAll(String name, int page, int size);
 }
