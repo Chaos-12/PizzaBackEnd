@@ -11,19 +11,22 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
 public class IngredientApplicationImp extends ApplicationBase<Ingredient, UUID> implements IngredientApplication {
 
     private final IngredientWriteRepository ingredientWriteRepository;
+    private final IngredientReadRepository ingredientReadRepository;
     private final ModelMapper modelMapper;
 
     @Autowired
     public IngredientApplicationImp(final IngredientWriteRepository ingredientWriteRepository,
-            final ModelMapper modelMapper) {
+            final IngredientReadRepository ingredientReadRepository, final ModelMapper modelMapper) {
         super((id) -> ingredientWriteRepository.findById(id));
         this.ingredientWriteRepository = ingredientWriteRepository;
+        this.ingredientReadRepository = ingredientReadRepository;
         this.modelMapper = modelMapper;
     }
 
@@ -62,4 +65,19 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient, UUID> 
         });
     }
 
+    @Override
+    public Mono<Void> delete(UUID id) {
+        return this.findById(id).flatMap(ingredient -> {
+            // logger.info(this.serializeObject(ingredient, "deleted"));
+            return this.ingredientWriteRepository.delete(ingredient);
+        });
+    }
+
+    @Override
+    public Flux<IngredientDTO> getAll(String text, int page, int size) {
+        return this.ingredientReadRepository.getAll(text, page, size).flatMap(ingredient -> {
+            // logger.info(this.serializeObject(dbIngredient, "updated"));
+            return Mono.just(this.modelMapper.map(ingredient, IngredientDTO.class));
+        });
+    }
 }

@@ -10,15 +10,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -52,5 +55,16 @@ public class IngredientController {
         Mono<IngredientDTO> ingredientDTO = this.ingredientApplication.update(id, dto);
         return ingredientDTO.map(ingredient -> ResponseEntity.ok(ingredient))
                 .defaultIfEmpty(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public Mono<ResponseEntity<Void>> delete(@PathVariable UUID id) {
+        return this.ingredientApplication.delete(id).map(r -> ResponseEntity.ok().<Void>build());
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public Flux<ResponseEntity<IngredientDTO>> getAll(@RequestParam(required = false) String text,
+            @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "5") int size) {
+        return this.ingredientApplication.getAll(text, page, size).map(ingredient -> ResponseEntity.ok(ingredient));
     }
 }

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/v1/test")
+@RequestMapping("/test")
 public class TestController {
 
     private final IngredientRepository ingredientRep;
@@ -31,14 +31,18 @@ public class TestController {
 
     @GetMapping(path = "/mono")
     public Mono<Ingredient> testMono() {
-        Ingredient ingr = new Ingredient("testIngr", new BigDecimal(Math.random()));
+        Ingredient ingr = new Ingredient();
+        ingr.setName("testIngr");
+        ingr.setPrice(new BigDecimal(Math.random()));
         ingr.setId(UUID.randomUUID());
         return Mono.just(ingr);
     }
 
     @GetMapping(path = "/repository")
     public Mono<Ingredient> createUser() {
-        Ingredient ingr = new Ingredient("testIngr", new BigDecimal(Math.random()));
+        Ingredient ingr = new Ingredient();
+        ingr.setName("testIngr");
+        ingr.setPrice(new BigDecimal(Math.random()));
         ingr.setId(UUID.randomUUID());
         ingr.setThisNew(true);
         return this.ingredientRep.save(ingr);

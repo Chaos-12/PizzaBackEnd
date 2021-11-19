@@ -12,4 +12,6 @@ public interface IngredientWriteRepository extends FindById<Ingredient, UUID>, E
     public Mono<Ingredient> add(Ingredient ingredient);
 
     public Mono<Ingredient> update(Ingredient ingredient);
+
+    public Mono<Void> delete(Ingredient ingredient);
 }
