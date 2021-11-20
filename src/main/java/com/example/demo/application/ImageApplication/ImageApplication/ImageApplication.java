@@ -1,5 +1,9 @@
 package com.example.demo.application.ImageApplication.ImageApplication;
 
+import com.example.demo.domain.Image;
+
+import reactor.core.publisher.Mono;
+
 public interface ImageApplication {
-    public ImageDTO save(CreateOrUpdateImageDTO dto);
+    public Mono<Image> save(ImageDTO dto);
 }

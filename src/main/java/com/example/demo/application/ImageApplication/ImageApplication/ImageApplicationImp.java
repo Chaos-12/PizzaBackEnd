@@ -5,7 +5,12 @@ import com.example.demo.domain.Image;
 import com.example.demo.infraestructure.ImageRepository.ImageRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.connection.ReactiveRedisConnectionFactory;
+import org.springframework.data.redis.core.ReactiveRedisOperations;
 import org.springframework.stereotype.Service;
+
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @Service
 public class ImageApplicationImp implements ImageApplication {
@@ -14,15 +19,18 @@ public class ImageApplicationImp implements ImageApplication {
 
     @Autowired
     public ImageApplicationImp(final ImageRepository imageRepository, final ModelMapper modelMapper){
+      //super((id) -> imageRepository.findById(id));
       this.imageRepository = imageRepository;
       this.modelMapper = modelMapper;
     }
-    public ImageDTO save(CreateOrUpdateImageDTO dto){
+    public Mono<Image> save(ImageDTO dto){
       Image image = modelMapper.map(dto, Image.class);
       image.setId(UUID.randomUUID());
       image.setContent(dto.getContent());
-      imageRepository.add(image);
+      image.setThisNew(true);
 
-      return modelMapper.map(image, ImageDTO.class);
+      return imageRepository.add(image);
     }
+    
+  
 }

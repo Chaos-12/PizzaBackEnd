@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import com.example.demo.application.ApplicationBase;
 import com.example.demo.domain.Ingredient;
-import com.example.demo.infraestructure.ingredientInfraestructure.IngredientWriteRepository;
+import com.example.demo.domain.IngredientWriteRepository;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

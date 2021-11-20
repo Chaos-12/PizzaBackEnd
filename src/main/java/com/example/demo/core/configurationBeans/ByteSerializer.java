@@ -6,7 +6,7 @@ import org.springframework.data.redis.serializer.SerializationException;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class ByteSeriallizer implements RedisSerializer<byte[]>{
+public class ByteSerializer implements RedisSerializer<byte[]>{
     @Override
     public byte[] deserialize(byte[] bytes) throws SerializationException {
         return bytes;

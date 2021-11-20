@@ -1,5 +1,7 @@
 package com.example.demo.domain;
 
+import com.example.demo.core.EntityBase;
+
 import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
