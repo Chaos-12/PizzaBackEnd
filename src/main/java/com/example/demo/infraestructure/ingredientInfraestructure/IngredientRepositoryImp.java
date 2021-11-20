@@ -30,16 +30,12 @@ public class IngredientRepositoryImp implements IngredientWriteRepository, Ingre
 
     @Override
     public Mono<Boolean> exists(String name) {
-        return this.ingredientRepository.existsByName(name);
+        return Mono.sequenceEqual(this.ingredientRepository.existsByName(name), Mono.just(1));
     }
 
     @Override
-    public Mono<Ingredient> add(Ingredient ingredient) {
-        return this.ingredientRepository.save(ingredient);
-    }
-
-    @Override
-    public Mono<Ingredient> update(Ingredient ingredient) {
+    public Mono<Ingredient> save(Ingredient ingredient, Boolean isNew) {
+        ingredient.setThisNew(isNew);
         return this.ingredientRepository.save(ingredient);
     }
 

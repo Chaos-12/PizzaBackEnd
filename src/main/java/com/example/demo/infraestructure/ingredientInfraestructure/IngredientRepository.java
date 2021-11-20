@@ -15,9 +15,9 @@ import reactor.core.publisher.Mono;
 @Repository
 public interface IngredientRepository extends ReactiveCrudRepository<Ingredient, UUID> {
 
-    @Query("SELECT id, name, price FROM ingredients WHERE (name LIKE CONCAT('%', :name, '%'))")
+    @Query("SELECT id, name, price FROM ingredients WHERE (name LIKE CONCAT('%', :name, '%')) ORDER BY name;")
     Flux<IngredientProjection> findByCriteria(String name);
 
-    @Query("SELECT COUNT(1) FROM ingredients WHERE name LIKE '%:name%'")
-    Mono<Boolean> existsByName(String name);
+    @Query("SELECT CASE WHEN COUNT(id)>0 THEN 1 ELSE 0 END FROM ingredients WHERE name = :name;")
+    Mono<Integer> existsByName(String name);
 }
