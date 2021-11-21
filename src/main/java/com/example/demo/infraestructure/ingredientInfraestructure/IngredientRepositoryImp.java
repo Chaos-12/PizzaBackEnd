@@ -2,6 +2,7 @@ package com.example.demo.infraestructure.ingredientInfraestructure;
 
 import java.util.UUID;
 
+import com.example.demo.core.EntityBase;
 import com.example.demo.domain.ingredientDomain.Ingredient;
 import com.example.demo.domain.ingredientDomain.IngredientProjection;
 import com.example.demo.domain.ingredientDomain.IngredientReadRepository;
@@ -29,8 +30,10 @@ public class IngredientRepositoryImp implements IngredientWriteRepository, Ingre
     }
 
     @Override
-    public Mono<Boolean> exists(String name) {
-        return Mono.sequenceEqual(this.ingredientRepository.existsByName(name), Mono.just(1));
+    public Mono<EntityBase> exists(String name) {
+        return this.ingredientRepository.existsByName(name);
+        // return Mono.sequenceEqual(this.ingredientRepository.existsByName(name),
+        // Mono.just(1));
     }
 
     @Override

@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 import java.util.UUID;
 
+import javax.validation.Valid;
+
 import com.example.demo.application.ingredientApplication.CreateOrUpdateIngredientDTO;
 import com.example.demo.application.ingredientApplication.IngredientApplication;
 import com.example.demo.application.ingredientApplication.IngredientDTO;
@@ -38,33 +40,33 @@ public class IngredientController {
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public Mono<IngredientDTO> create(@RequestBody final CreateOrUpdateIngredientDTO dto) {
+    public Mono<IngredientDTO> create(@Valid @RequestBody final CreateOrUpdateIngredientDTO dto) {
         Mono<IngredientDTO> ingredientDTO = this.ingredientApplication.add(dto);
         return ingredientDTO;
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")
-    public Mono<ResponseEntity<IngredientDTO>> get(@PathVariable final UUID id) {
+    public Mono<ResponseEntity<IngredientDTO>> get(@Valid @PathVariable final UUID id) {
         Mono<IngredientDTO> ingredientDTO = this.ingredientApplication.get(id);
         return ingredientDTO.map(ingredient -> ResponseEntity.ok(ingredient))
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")
-    public Mono<ResponseEntity<IngredientDTO>> update(@PathVariable final UUID id,
-            @RequestBody CreateOrUpdateIngredientDTO dto) {
+    public Mono<ResponseEntity<IngredientDTO>> update(@Valid @PathVariable final UUID id,
+            @Valid @RequestBody CreateOrUpdateIngredientDTO dto) {
         Mono<IngredientDTO> ingredientDTO = this.ingredientApplication.update(id, dto);
         return ingredientDTO.map(ingredient -> ResponseEntity.ok(ingredient))
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 
     @DeleteMapping(path = "/{id}")
-    public Mono<ResponseEntity<Void>> delete(@PathVariable final UUID id) {
+    public Mono<ResponseEntity<Void>> delete(@Valid @PathVariable final UUID id) {
         return this.ingredientApplication.delete(id).map(r -> ResponseEntity.ok().<Void>build());
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public Flux<IngredientProjection> getAll(@RequestParam(required = false) String name,
+    public Flux<IngredientProjection> getAll(@Valid @RequestParam(required = false) String name,
             @RequestParam(defaultValue = "0") final int page, @RequestParam(defaultValue = "5") final int size) {
         return this.ingredientApplication.getAll(name, page, size);
     }

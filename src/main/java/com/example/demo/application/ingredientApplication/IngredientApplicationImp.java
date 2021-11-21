@@ -34,16 +34,16 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient, UUID> 
     @Override
     public Mono<IngredientDTO> add(CreateOrUpdateIngredientDTO dto) {
         Ingredient ingredient = modelMapper.map(dto, Ingredient.class);
-        ingredient.validate("name", ingredient.getName(), name -> this.ingredientWriteRepository.exists(name));
         ingredient.setId(UUID.randomUUID());
-        return this.ingredientWriteRepository.save(ingredient, true)
-                .flatMap(monoIngr -> Mono.just(this.modelMapper.map(monoIngr, IngredientDTO.class)));
+        return ingredient.validate("name", ingredient.getName(), name -> this.ingredientWriteRepository.exists(name))
+                .then(this.ingredientWriteRepository.save(ingredient, true))
+                .flatMap(dbIngredient -> Mono.just(this.modelMapper.map(dbIngredient, IngredientDTO.class)));
     }
 
     @Override
     public Mono<IngredientDTO> get(UUID id) {
         return ingredientWriteRepository.findById(id)
-                .flatMap(monoIngr -> Mono.just(this.modelMapper.map(monoIngr, IngredientDTO.class)));
+                .flatMap(dbIngredient -> Mono.just(this.modelMapper.map(dbIngredient, IngredientDTO.class)));
     }
 
     @Override
@@ -52,19 +52,21 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient, UUID> 
             if (dto.getName().equalsIgnoreCase(dbIngredient.getName())) {
                 this.modelMapper.map(dto, dbIngredient);
                 dbIngredient.validate();
+                return this.ingredientWriteRepository.save(dbIngredient, false)
+                        .flatMap(monoIngr -> Mono.just(this.modelMapper.map(monoIngr, IngredientDTO.class)));
             } else {
                 this.modelMapper.map(dto, dbIngredient);
-                dbIngredient.validate("name", dbIngredient.getName(),
-                        name -> this.ingredientWriteRepository.exists(name));
+                return dbIngredient
+                        .validate("name", dbIngredient.getName(), name -> this.ingredientWriteRepository.exists(name))
+                        .then(this.ingredientWriteRepository.save(dbIngredient, false))
+                        .flatMap(ingredient -> Mono.just(this.modelMapper.map(ingredient, IngredientDTO.class)));
             }
-            return this.ingredientWriteRepository.save(dbIngredient, false)
-                    .flatMap(monoIngr -> Mono.just(this.modelMapper.map(monoIngr, IngredientDTO.class)));
         });
     }
 
     @Override
     public Mono<Void> delete(UUID id) {
-        return this.findById(id).flatMap(ingredient -> this.ingredientWriteRepository.delete(ingredient));
+        return this.findById(id).flatMap(dbIngredient -> this.ingredientWriteRepository.delete(dbIngredient));
     }
 
     @Override

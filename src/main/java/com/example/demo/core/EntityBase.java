@@ -11,6 +11,8 @@ import javax.validation.ValidatorFactory;
 
 import com.example.demo.core.exceptions.BadRequestException;
 import com.example.demo.core.functionalInterfaces.ExistsByField;
+import com.example.demo.domain.ingredientDomain.Ingredient;
+import com.example.demo.domain.ingredientDomain.IngredientProjection;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
@@ -23,7 +25,7 @@ import reactor.core.publisher.Mono;
 @MappedSuperclass
 @Getter
 @Setter
-public abstract class EntityBase implements Persistable<UUID> {
+public class EntityBase implements Persistable<UUID> {
     @Id
     private UUID id;
     @Transient
@@ -48,17 +50,16 @@ public abstract class EntityBase implements Persistable<UUID> {
         }
     }
 
-    public void validate(String key, String value, ExistsByField existsByField) {
+    public Mono<EntityBase> validate(String key, String value, ExistsByField existsByField) {
         this.validate();
-        existsByField.exists(value).flatMap(exists -> {
-            if (exists) {
-                BadRequestException badRequestException = new BadRequestException();
-                badRequestException.addException(key, String.format("Value %s for key %s is duplicated.", value, key));
-                throw badRequestException;
+        return existsByField.exists(value).flatMap(entity -> {
+            if (entity.getId() == null) {
+                return Mono.just(this);
+            } else {
+                return Mono.error(new BadRequestException(
+                        String.format("Bad Request: value %s for key %s is duplicated.", value, key)));
             }
-            return Mono.just(exists);
-        }).block();
-        // TODO errors on update (too many blocks())
+        });
     }
 
     @Override
