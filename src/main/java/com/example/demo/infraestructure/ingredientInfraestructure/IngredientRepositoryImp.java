@@ -32,8 +32,6 @@ public class IngredientRepositoryImp implements IngredientWriteRepository, Ingre
     @Override
     public Mono<EntityBase> exists(String name) {
         return this.ingredientRepository.existsByName(name);
-        // return Mono.sequenceEqual(this.ingredientRepository.existsByName(name),
-        // Mono.just(1));
     }
 
     @Override
