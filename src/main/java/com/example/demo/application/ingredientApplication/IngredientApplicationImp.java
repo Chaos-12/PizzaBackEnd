@@ -2,7 +2,7 @@ package com.example.demo.application.ingredientApplication;
 
 import java.util.UUID;
 
-import com.example.demo.application.ApplicationBase;
+import com.example.demo.core.ApplicationBase;
 import com.example.demo.domain.Ingredient;
 import com.example.demo.domain.IngredientWriteRepository;
 
