@@ -18,7 +18,6 @@ import org.springframework.data.domain.Persistable;
 
 import lombok.Getter;
 import lombok.Setter;
-
 import reactor.core.publisher.Mono;
 
 @MappedSuperclass
@@ -51,11 +50,15 @@ public abstract class EntityBase implements Persistable<UUID> {
 
     public void validate(String key, String value, ExistsByField existsByField) {
         this.validate();
-        if (existsByField.exists(value).block()) {
-            BadRequestException badRequestException = new BadRequestException();
-            badRequestException.addException(key, String.format("Value %s for key %s is duplicated.", value, key));
-            throw badRequestException;
-        }
+        existsByField.exists(value).flatMap(exists -> {
+            if (exists) {
+                BadRequestException badRequestException = new BadRequestException();
+                badRequestException.addException(key, String.format("Value %s for key %s is duplicated.", value, key));
+                throw badRequestException;
+            }
+            return Mono.just(exists);
+        }).block();
+        // TODO errors on update (too many blocks())
     }
 
     @Override

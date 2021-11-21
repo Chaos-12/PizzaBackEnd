@@ -12,6 +12,6 @@ public class BadRequestExceptionHandler {
 
     @ExceptionHandler(value = { BadRequestException.class })
     protected ResponseEntity<Object> handleConflict(BadRequestException ex, WebRequest request) {
-        return ResponseEntity.status(ex.getCode()).body(ex.getExceptions());
+        return ResponseEntity.status(ex.getCode()).body(ex.getMessage());
     }
 }

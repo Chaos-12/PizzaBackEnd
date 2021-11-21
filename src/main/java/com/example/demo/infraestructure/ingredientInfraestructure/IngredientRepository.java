@@ -18,6 +18,7 @@ public interface IngredientRepository extends ReactiveCrudRepository<Ingredient,
     @Query("SELECT id, name, price FROM ingredients WHERE (name LIKE CONCAT('%', :name, '%')) ORDER BY name;")
     Flux<IngredientProjection> findByCriteria(String name);
 
+    // MySQL returns true/false as 1/0
     @Query("SELECT CASE WHEN COUNT(id)>0 THEN 1 ELSE 0 END FROM ingredients WHERE name = :name;")
     Mono<Integer> existsByName(String name);
 }
