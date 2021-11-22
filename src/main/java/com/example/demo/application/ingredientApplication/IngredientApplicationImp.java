@@ -33,11 +33,12 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient, UUID> 
 
     @Override
     public Mono<IngredientDTO> add(CreateOrUpdateIngredientDTO dto) {
-        Ingredient ingredient = modelMapper.map(dto, Ingredient.class);
-        ingredient.setId(UUID.randomUUID());
-        return ingredient.validate("name", ingredient.getName(), name -> this.ingredientWriteRepository.getEntity(name))
-                .then(this.ingredientWriteRepository.save(ingredient, true))
-                .flatMap(dbIngredient -> Mono.just(this.modelMapper.map(dbIngredient, IngredientDTO.class)));
+        Ingredient newIngredient = modelMapper.map(dto, Ingredient.class);
+        newIngredient.setId(UUID.randomUUID());
+        return newIngredient
+                .validate("name", newIngredient.getName(), name -> this.ingredientWriteRepository.getEntity(name))
+                .then(this.ingredientWriteRepository.save(newIngredient, true))
+                .flatMap(ingredient -> Mono.just(this.modelMapper.map(ingredient, IngredientDTO.class)));
     }
 
     @Override
@@ -53,7 +54,7 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient, UUID> 
                 this.modelMapper.map(dto, dbIngredient);
                 dbIngredient.validate();
                 return this.ingredientWriteRepository.save(dbIngredient, false)
-                        .flatMap(monoIngr -> Mono.just(this.modelMapper.map(monoIngr, IngredientDTO.class)));
+                        .flatMap(ingredient -> Mono.just(this.modelMapper.map(ingredient, IngredientDTO.class)));
             } else {
                 this.modelMapper.map(dto, dbIngredient);
                 return dbIngredient
