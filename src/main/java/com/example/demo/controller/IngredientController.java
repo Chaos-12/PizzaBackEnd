@@ -32,4 +32,5 @@ public class IngredientController {
         Mono<IngredientDTO> ingredientDTO = this.ingredientApplication.add(dto);
         return ingredientDTO;
     }
+
 }
