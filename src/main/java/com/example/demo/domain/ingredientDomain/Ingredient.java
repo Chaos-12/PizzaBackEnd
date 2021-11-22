@@ -2,8 +2,12 @@ package com.example.demo.domain.ingredientDomain;
 
 import java.math.BigDecimal;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import com.example.demo.core.EntityBase;
-import com.example.demo.core.exceptions.BadRequestException;
 
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -14,28 +18,13 @@ import lombok.Setter;
 @Table("ingredients")
 @Setter
 public class Ingredient extends EntityBase {
+    @NotBlank
     private String name;
-    private BigDecimal price;
 
-    @Override
-    public void validate() {
-        super.validate();
-        if (name == null) {
-            throw new BadRequestException("Bad Request: name is null");
-        }
-        if (name.isBlank()) {
-            throw new BadRequestException("Bad Request: name is blank");
-        }
-        if (price == null) {
-            throw new BadRequestException("Bad Request: price is null");
-        }
-        if (price.doubleValue() < 0) {
-            throw new BadRequestException("Bad Request: price is negative");
-        }
-        if (price.scale() > 2) {
-            throw new BadRequestException("Bad Request: price has more than 2 decimal digits");
-        }
-    }
+    @NotNull
+    @Digits(integer = 4, fraction = 2)
+    @DecimalMin(value = "0", inclusive = false)
+    private BigDecimal price;
 
     @Override
     public String toString() {

@@ -20,5 +20,5 @@ public interface IngredientRepository extends ReactiveCrudRepository<Ingredient,
     Flux<IngredientProjection> findByCriteria(String name);
 
     @Query("SELECT id FROM ingredients WHERE name = :name LIMIT 1;")
-    Mono<EntityBase> existsByName(String name);
+    Mono<EntityBase> getEntity(String name);
 }

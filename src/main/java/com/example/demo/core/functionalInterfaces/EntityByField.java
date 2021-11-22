@@ -4,6 +4,6 @@ import com.example.demo.core.EntityBase;
 
 import reactor.core.publisher.Mono;
 
-public interface ExistsByField {
-    Mono<EntityBase> exists(String field);
+public interface EntityByField {
+    Mono<EntityBase> getEntity(String field);
 }

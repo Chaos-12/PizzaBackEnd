@@ -22,5 +22,4 @@ public class BadRequestException extends HttpException {
     public Map<String, String> getExceptions() {
         return this.exceptionMap;
     }
-
 }
