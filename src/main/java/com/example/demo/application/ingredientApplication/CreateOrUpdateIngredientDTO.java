@@ -20,7 +20,7 @@ public class CreateOrUpdateIngredientDTO {
     private String name;
 
     @NotNull
-    @Digits(integer = 3, fraction = 2)
+    @Digits(integer = 5, fraction = 2)
     @DecimalMin(value = "0", inclusive = false)
     private BigDecimal price;
 }

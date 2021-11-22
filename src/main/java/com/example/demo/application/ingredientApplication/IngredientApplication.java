@@ -16,5 +16,5 @@ public interface IngredientApplication {
 
     public Mono<Void> delete(UUID id);
 
-    public Flux<IngredientProjection> getAll(String name, int page, int size);
+    public Flux<IngredientProjection> getAll(String name);
 }

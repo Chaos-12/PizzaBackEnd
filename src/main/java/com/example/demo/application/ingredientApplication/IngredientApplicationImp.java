@@ -71,7 +71,7 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient, UUID> 
     }
 
     @Override
-    public Flux<IngredientProjection> getAll(String name, int page, int size) {
-        return this.ingredientReadRepository.getAll(name, page, size);
+    public Flux<IngredientProjection> getAll(String name) {
+        return this.ingredientReadRepository.getAll(name);
     }
 }

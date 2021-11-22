@@ -66,8 +66,7 @@ public class IngredientController {
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public Flux<IngredientProjection> getAll(@Valid @RequestParam(required = false) String name,
-            @RequestParam(defaultValue = "0") final int page, @RequestParam(defaultValue = "5") final int size) {
-        return this.ingredientApplication.getAll(name, page, size);
+    public Flux<IngredientProjection> getAll(@Valid @RequestParam(required = false) String name) {
+        return this.ingredientApplication.getAll(name);
     }
 }
