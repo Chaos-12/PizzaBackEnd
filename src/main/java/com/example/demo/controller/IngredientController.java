@@ -64,4 +64,9 @@ public class IngredientController {
     public Mono<ResponseEntity<Void>> delete(@Valid @PathVariable final UUID id) {
         return this.ingredientApplication.delete(id).map(r -> ResponseEntity.ok().<Void>build());
     }
+    
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public Flux<IngredientProjection> getAll(@Valid @RequestParam(required = false) String name) {
+        return this.ingredientApplication.getAll(name);
+    }
 }
