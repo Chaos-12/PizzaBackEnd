@@ -14,12 +14,10 @@ public class RedisConfiguration {
   @Bean
   ReactiveRedisOperations<String, byte[]> redisOperations(ReactiveRedisConnectionFactory factory) {
     ByteSerializer byteSerializer = new ByteSerializer();
-
     RedisSerializationContext.RedisSerializationContextBuilder<String, byte[]> builder = RedisSerializationContext
                                                                                         .newSerializationContext(new StringRedisSerializer());
 
     RedisSerializationContext<String, byte[]> context = builder.value(byteSerializer).build();
-
     return new ReactiveRedisTemplate<>(factory, context);
   }
 }

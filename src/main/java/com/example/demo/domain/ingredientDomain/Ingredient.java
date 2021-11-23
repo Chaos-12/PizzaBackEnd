@@ -15,7 +15,7 @@ import lombok.Data;
 import lombok.Setter;
 
 @Data
-@Table("ingredients")
+@Table("ingredient")
 @Setter
 public class Ingredient extends EntityBase {
     @NotBlank
