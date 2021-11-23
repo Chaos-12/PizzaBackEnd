@@ -1,28 +1,29 @@
-package com.example.demo.domain;
+package com.example.demo.domain.ingredientDomain;
 
 import java.math.BigDecimal;
 
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import com.example.demo.core.EntityBase;
 
-import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Data
 @Table("ingredients")
-@Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Ingredient extends EntityBase {
-    @Column
+    @NotBlank
     private String name;
-    @Column
+
+    @NotNull
+    @Digits(integer = 5, fraction = 2)
+    @DecimalMin(value = "0", inclusive = false)
     private BigDecimal price;
 
     @Override

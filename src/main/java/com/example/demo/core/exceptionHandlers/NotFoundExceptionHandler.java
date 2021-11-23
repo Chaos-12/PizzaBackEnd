@@ -12,6 +12,6 @@ public class NotFoundExceptionHandler {
 
     @ExceptionHandler(value = { NotFoundException.class })
     protected ResponseEntity<Object> handleConflict(NotFoundException ex, WebRequest request) {
-        return ResponseEntity.status(ex.getCode()).body("Error 404");
+        return ResponseEntity.status(ex.getCode()).body(ex.getMessage());
     }
 }
