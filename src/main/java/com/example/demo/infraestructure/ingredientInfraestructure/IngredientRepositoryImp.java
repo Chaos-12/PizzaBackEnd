@@ -3,6 +3,7 @@ package com.example.demo.infraestructure.ingredientInfraestructure;
 import java.util.UUID;
 
 import com.example.demo.domain.Ingredient;
+import com.example.demo.domain.IngredientWriteRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

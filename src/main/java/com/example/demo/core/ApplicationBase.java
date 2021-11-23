@@ -1,4 +1,4 @@
-package com.example.demo.application;
+package com.example.demo.core;
 
 import com.example.demo.core.exceptions.NotFoundException;
 import com.example.demo.core.functionalInterfaces.FindById;
