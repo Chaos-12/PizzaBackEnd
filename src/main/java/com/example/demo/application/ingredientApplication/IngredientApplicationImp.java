@@ -9,6 +9,7 @@ import com.example.demo.domain.ingredientDomain.IngredientWriteRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import org.slf4j.Logger;
@@ -38,11 +39,10 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient, UUID> 
         newIngredient.setId(UUID.randomUUID());
         return newIngredient
                 .validate("name", newIngredient.getName(), name -> this.ingredientWriteRepository.exists(name))
-                .then(this.ingredientWriteRepository.save(newIngredient, true))
-                .flatMap(ingredient -> { 
-                            logger.info(this.serializeObject(ingredient, "added"));
-                            return Mono.just(this.modelMapper.map(ingredient, IngredientDTO.class));
-                        });
+                .then(this.ingredientWriteRepository.save(newIngredient, true)).flatMap(ingredient -> {
+                    logger.info(this.serializeObject(ingredient, "added"));
+                    return Mono.just(this.modelMapper.map(ingredient, IngredientDTO.class));
+                });
     }
 
     @Override
@@ -57,17 +57,15 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient, UUID> 
             if (dto.getName().equalsIgnoreCase(dbIngredient.getName())) {
                 this.modelMapper.map(dto, dbIngredient);
                 dbIngredient.validate();
-                return this.ingredientWriteRepository.save(dbIngredient, false)
-                        .flatMap(ingredient -> {
-                            logger.info(this.serializeObject(ingredient, "updated"));
-                            return Mono.just(this.modelMapper.map(ingredient, IngredientDTO.class));
-                        });
+                return this.ingredientWriteRepository.save(dbIngredient, false).flatMap(ingredient -> {
+                    logger.info(this.serializeObject(ingredient, "updated"));
+                    return Mono.just(this.modelMapper.map(ingredient, IngredientDTO.class));
+                });
             } else {
                 this.modelMapper.map(dto, dbIngredient);
                 return dbIngredient
                         .validate("name", dbIngredient.getName(), name -> this.ingredientWriteRepository.exists(name))
-                        .then(this.ingredientWriteRepository.save(dbIngredient, false))
-                        .flatMap(ingredient -> {
+                        .then(this.ingredientWriteRepository.save(dbIngredient, false)).flatMap(ingredient -> {
                             logger.info(this.serializeObject(ingredient, "updated"));
                             return Mono.just(this.modelMapper.map(ingredient, IngredientDTO.class));
                         });

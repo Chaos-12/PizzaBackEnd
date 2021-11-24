@@ -31,7 +31,8 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/api/v1/ingredients")
 public class IngredientController {
 
-    private final IngredientApplication ingredientApplication;
+    @Autowired
+    private IngredientApplication ingredientApplication;
 
     @Autowired
     public IngredientController(final IngredientApplication ingredientApplication) {
@@ -64,7 +65,7 @@ public class IngredientController {
     public Mono<ResponseEntity<Void>> delete(@Valid @PathVariable final UUID id) {
         return this.ingredientApplication.delete(id).map(r -> ResponseEntity.ok().<Void>build());
     }
-    
+
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public Flux<IngredientProjection> getAll(@Valid @RequestParam(required = false) String name) {
         return this.ingredientApplication.getAll(name);
