@@ -37,7 +37,7 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient, UUID> 
         Ingredient newIngredient = modelMapper.map(dto, Ingredient.class);
         newIngredient.setId(UUID.randomUUID());
         return newIngredient
-                .validate("name", newIngredient.getName(), name -> this.ingredientWriteRepository.getEntity(name))
+                .validate("name", newIngredient.getName(), name -> this.ingredientWriteRepository.exists(name))
                 .then(this.ingredientWriteRepository.save(newIngredient, true))
                 .flatMap(ingredient -> { 
                             logger.info(this.serializeObject(ingredient, "added"));
@@ -65,8 +65,7 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient, UUID> 
             } else {
                 this.modelMapper.map(dto, dbIngredient);
                 return dbIngredient
-                        .validate("name", dbIngredient.getName(),
-                                name -> this.ingredientWriteRepository.getEntity(name))
+                        .validate("name", dbIngredient.getName(), name -> this.ingredientWriteRepository.exists(name))
                         .then(this.ingredientWriteRepository.save(dbIngredient, false))
                         .flatMap(ingredient -> {
                             logger.info(this.serializeObject(ingredient, "updated"));
