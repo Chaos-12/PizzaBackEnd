@@ -10,7 +10,7 @@ import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
 
 import com.example.demo.core.exceptions.BadRequestException;
-import com.example.demo.core.functionalInterfaces.EntityByField;
+import com.example.demo.core.functionalInterfaces.ExistsByField;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
@@ -48,15 +48,15 @@ public class EntityBase implements Persistable<UUID> {
         }
     }
 
-    public Mono<EntityBase> validate(String key, String value, EntityByField entityByField) {
+    public Mono<EntityBase> validate(String key, String value, ExistsByField existsByField) {
         this.validate();
-        return entityByField.getEntity(value).flatMap(entity -> {
-            if (entity.getId() == null) {
-                return Mono.just(this);
-            } else {
+        return existsByField.exists(value).flatMap(exists -> {
+            if (exists) {
                 BadRequestException badRequestException = new BadRequestException();
                 badRequestException.addException(key, String.format("value %s is duplicated.", value));
                 return Mono.error(badRequestException);
+            } else {
+                return Mono.just(this);
             }
         });
     }

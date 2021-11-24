@@ -30,8 +30,8 @@ public class IngredientRepositoryImp implements IngredientWriteRepository, Ingre
     }
 
     @Override
-    public Mono<EntityBase> getEntity(String name) {
-        return this.ingredientRepository.getEntity(name);
+    public Mono<Boolean> exists(String name) {
+        return Mono.sequenceEqual(this.ingredientRepository.existsByField(name), Mono.just(1));
     }
 
     @Override
