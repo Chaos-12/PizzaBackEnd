@@ -11,5 +11,4 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ImageDTO {
     public UUID id;
-    public byte[] content;
 }

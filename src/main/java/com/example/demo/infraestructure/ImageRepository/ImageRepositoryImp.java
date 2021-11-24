@@ -3,7 +3,9 @@ package com.example.demo.infraestructure.ImageRepository;
 import java.time.Duration;
 import java.util.UUID;
 
-import com.example.demo.domain.Image;
+
+import com.example.demo.domain.imageDomain.Image;
+import com.example.demo.domain.imageDomain.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ReactiveRedisOperations;
 import org.springframework.stereotype.Repository;
@@ -34,7 +36,5 @@ public class ImageRepositoryImp implements ImageRepository {
                                     return Mono.just(image);
                                 });
     }
-
- 
 }
  

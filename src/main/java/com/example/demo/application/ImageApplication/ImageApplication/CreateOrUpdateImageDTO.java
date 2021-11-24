@@ -1,5 +1,7 @@
 package com.example.demo.application.ImageApplication.ImageApplication;
 
+import javax.validation.constraints.NotEmpty;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,5 +10,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class CreateOrUpdateImageDTO {
+    @NotEmpty
     public byte[] content;
 }

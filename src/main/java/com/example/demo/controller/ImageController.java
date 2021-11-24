@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import java.io.IOException;
 import java.util.UUID;
+import javax.validation.Valid;
 import com.example.demo.application.ImageApplication.ImageApplication.CreateOrUpdateImageDTO;
 import com.example.demo.application.ImageApplication.ImageApplication.ImageApplication;
 import com.example.demo.application.ImageApplication.ImageApplication.ImageDTO;
@@ -32,11 +33,11 @@ public class ImageController {
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public Mono<ImageDTO> upload(@RequestParam("image") MultipartFile file) throws IOException {
+    public Mono<ImageDTO> upload(@Valid @RequestParam("image") MultipartFile file) throws IOException {
         CreateOrUpdateImageDTO dto = new CreateOrUpdateImageDTO();
         dto.setContent(file.getBytes());
-        Mono<ImageDTO> imageDTO = imageApplication.add(dto);
-        return imageDTO;
+        return imageApplication.add(dto);
+       
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")
