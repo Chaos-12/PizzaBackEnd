@@ -1,14 +1,11 @@
 package com.example.demo.controller;
 
 import java.util.UUID;
-
 import javax.validation.Valid;
-
 import com.example.demo.application.ingredientApplication.CreateOrUpdateIngredientDTO;
 import com.example.demo.application.ingredientApplication.IngredientApplication;
 import com.example.demo.application.ingredientApplication.IngredientDTO;
 import com.example.demo.domain.ingredientDomain.IngredientProjection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -23,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

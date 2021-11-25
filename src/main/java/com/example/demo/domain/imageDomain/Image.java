@@ -14,9 +14,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @Setter
 public class Image extends EntityBase {
-
-    @Column
     @NotEmpty
     private byte[] content;
-
 }

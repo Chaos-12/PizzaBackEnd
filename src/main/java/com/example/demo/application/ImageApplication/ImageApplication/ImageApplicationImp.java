@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 
 //TODO: extends ApplicationBase<Image, UUID>
 @Service
-public class ImageApplicationImp   implements ImageApplication {
+public class ImageApplicationImp implements ImageApplication {
   private final ImageRepository imageRepository;
   private final ModelMapper modelMapper;
 
