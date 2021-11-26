@@ -2,10 +2,11 @@ schema {
     query:Query
 }
 type Query {
-    allMovies: [Movie]
+	allIngredients: [Ingredient]
+    ingredientById(id:ID): Ingredient
 }
-type Movie {
-	id:String
-	title:String
-	series:Int
+type Ingredient {
+	id:ID
+	name:String
+	price:Float
 }

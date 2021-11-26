@@ -38,7 +38,6 @@ public abstract class EntityBase implements Persistable<UUID> {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
         Set<ConstraintViolation<EntityBase>> violations = validator.validate(this);
-
         if (!violations.isEmpty()) {
             BadRequestException badRequestException = new BadRequestException();
             for (ConstraintViolation<EntityBase> violation : violations) {
@@ -53,10 +52,10 @@ public abstract class EntityBase implements Persistable<UUID> {
         return existsByField.exists(value).flatMap(exists -> {
             if (exists) {
                 BadRequestException badRequestException = new BadRequestException();
-                badRequestException.addException(key, String.format("value %s is duplicated.", value));
+                badRequestException.addException(key, String.format("value '%s' is duplicated.", value));
                 return Mono.error(badRequestException);
             } else {
-                return Mono.just(null);
+                return Mono.empty();
             }
         });
     }
