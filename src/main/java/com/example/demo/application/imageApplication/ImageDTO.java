@@ -1,4 +1,4 @@
-package com.example.demo.application.ImageApplication.ImageApplication;
+package com.example.demo.application.imageApplication;
 
 import java.util.UUID;
 

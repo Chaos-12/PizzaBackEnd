@@ -9,12 +9,8 @@ import reactor.core.publisher.Mono;
 
 public interface IngredientApplication {
     public Mono<IngredientDTO> add(CreateOrUpdateIngredientDTO dto);
-
     public Mono<IngredientDTO> get(UUID id);
-
     public Mono<Void> update(UUID id, CreateOrUpdateIngredientDTO dto);
-
     public Mono<Void> delete(UUID id);
-
     public Flux<IngredientProjection> getAll(String name);
 }

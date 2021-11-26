@@ -1,4 +1,4 @@
-package com.example.demo.infraestructure.ImageRepository;
+package com.example.demo.infraestructure.imageRepository;
 
 import java.time.Duration;
 import java.util.UUID;

@@ -39,31 +39,30 @@ public class IngredientController {
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<ResponseEntity<IngredientDTO>> create(@Valid @RequestBody final CreateOrUpdateIngredientDTO dto) {
+    public Mono<ResponseEntity<IngredientDTO>> create(@RequestBody final CreateOrUpdateIngredientDTO dto) {
         return this.ingredientApplication.add(dto)
                 .map(ingredient -> ResponseEntity.status(HttpStatus.CREATED).body(ingredient));
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")
-    public Mono<ResponseEntity<IngredientDTO>> get(@Valid @PathVariable final UUID id) {
+    public Mono<ResponseEntity<IngredientDTO>> get(@PathVariable final UUID id) {
         return this.ingredientApplication.get(id).map(ingredient -> ResponseEntity.ok(ingredient));
     }
 
-    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")
-    public Mono<ResponseEntity<Void>> update(@Valid @PathVariable final UUID id,
-            @Valid @RequestBody CreateOrUpdateIngredientDTO dto) {
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")
+    public Mono<ResponseEntity<Void>> update(@PathVariable final UUID id, @RequestBody CreateOrUpdateIngredientDTO dto) {
         return this.ingredientApplication.update(id, dto)
                 .then(Mono.just(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null)));
     }
 
     @DeleteMapping(path = "/{id}")
-    public Mono<ResponseEntity<Void>> delete(@Valid @PathVariable final UUID id) {
+    public Mono<ResponseEntity<Void>> delete(@PathVariable final UUID id) {
         return this.ingredientApplication.delete(id)
                 .then(Mono.just(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null)));
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public Flux<IngredientProjection> getAll(@Valid @RequestParam(required = false) String name) {
+    public Flux<IngredientProjection> getAll(@RequestParam(required = false) String name) {
         return this.ingredientApplication.getAll(name);
     }
 }
