@@ -1,9 +1,5 @@
 package com.example.demo.controller;
 
-import java.util.UUID;
-
-import javax.validation.Valid;
-
 import com.example.demo.application.ingredientApplication.CreateOrUpdateIngredientDTO;
 import com.example.demo.application.ingredientApplication.IngredientApplication;
 import com.example.demo.application.ingredientApplication.IngredientDTO;
@@ -30,8 +26,7 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/api/v1/ingredients")
 public class IngredientController {
 
-    @Autowired
-    private IngredientApplication ingredientApplication;
+    private final IngredientApplication ingredientApplication;
 
     @Autowired
     public IngredientController(final IngredientApplication ingredientApplication) {
@@ -45,18 +40,18 @@ public class IngredientController {
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")
-    public Mono<ResponseEntity<IngredientDTO>> get(@PathVariable final UUID id) {
+    public Mono<ResponseEntity<IngredientDTO>> get(@PathVariable final String id) {
         return this.ingredientApplication.get(id).map(ingredient -> ResponseEntity.ok(ingredient));
     }
 
     @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")
-    public Mono<ResponseEntity<Void>> update(@PathVariable final UUID id, @RequestBody CreateOrUpdateIngredientDTO dto) {
+    public Mono<ResponseEntity<Void>> update(@PathVariable final String id, @RequestBody CreateOrUpdateIngredientDTO dto) {
         return this.ingredientApplication.update(id, dto)
                 .then(Mono.just(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null)));
     }
 
     @DeleteMapping(path = "/{id}")
-    public Mono<ResponseEntity<Void>> delete(@PathVariable final UUID id) {
+    public Mono<ResponseEntity<Void>> delete(@PathVariable final String id) {
         return this.ingredientApplication.delete(id)
                 .then(Mono.just(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null)));
     }

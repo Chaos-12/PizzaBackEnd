@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import java.util.HashMap;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import graphql.ExecutionInput;
-import graphql.ExecutionResult;
 import graphql.GraphQL;
 
 @RestController
@@ -25,7 +23,6 @@ public class GraphQLController {
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public Object getFromQuery(@RequestBody String query) throws InterruptedException, ExecutionException {
         ExecutionInput input = new ExecutionInput(query, null, null, null, new HashMap<String, Object>());
-        CompletableFuture<ExecutionResult> completableFuture = graphQL.executeAsync(input);
-        return completableFuture.get().getData();
+        return graphQL.executeAsync(input).get().getData();
     }
 }

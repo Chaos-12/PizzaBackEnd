@@ -34,7 +34,4 @@ public class ImageRepositoryImp implements ImageRepository {
                                     return Mono.just(image);
                                 });
     }
-
- 
 }
- 

@@ -43,5 +43,4 @@ public class ImageController {
         // Cambiar a servicio, el GET de redis se llamará desde el de cloudinary
         return this.imageApplication.getImageRedis(id).map(image -> ResponseEntity.ok(image)).defaultIfEmpty(ResponseEntity.notFound().build());
     }
-
 }
