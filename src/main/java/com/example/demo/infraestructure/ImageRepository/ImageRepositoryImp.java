@@ -3,6 +3,7 @@ package com.example.demo.infraestructure.imageRepository;
 import java.time.Duration;
 import java.util.UUID;
 
+import com.example.demo.core.exceptions.RedisConnectionException;
 import com.example.demo.domain.Image;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ReactiveRedisOperations;
@@ -20,8 +21,9 @@ public class ImageRepositoryImp implements ImageRepository {
 
     public Mono<Image> add(Image image) {
         return redisOperations.opsForValue()
-                              .set(image.getId().toString(), image.getContent(), Duration.ofDays(1))
-                              .map(img -> image);
+                                .set(image.getId().toString(), image.getContent(), Duration.ofDays(1))                                                                                        
+                                .then(Mono.just(image))
+                                .onErrorResume(err -> Mono.error(new RedisConnectionException()));
     }
 
     public Mono<Image> getImageRedis(UUID id){
@@ -32,6 +34,7 @@ public class ImageRepositoryImp implements ImageRepository {
                                     image.setContent(imageBytes);
                                     image.setId(id);
                                     return Mono.just(image);
-                                });
+                                }).
+                                onErrorResume(err -> Mono.error(new RedisConnectionException()));
     }
 }

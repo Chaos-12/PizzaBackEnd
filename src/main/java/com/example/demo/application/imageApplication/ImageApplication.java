@@ -1,7 +1,6 @@
 package com.example.demo.application.imageApplication;
 
 import java.util.UUID;
-
 import reactor.core.publisher.Mono;
 
 public interface ImageApplication {
