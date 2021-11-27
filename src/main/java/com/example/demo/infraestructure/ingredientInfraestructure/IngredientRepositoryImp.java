@@ -2,7 +2,6 @@ package com.example.demo.infraestructure.ingredientInfraestructure;
 
 import java.util.UUID;
 
-import com.example.demo.core.EntityBase;
 import com.example.demo.domain.ingredientDomain.Ingredient;
 import com.example.demo.domain.ingredientDomain.IngredientProjection;
 import com.example.demo.domain.ingredientDomain.IngredientReadRepository;
@@ -16,7 +15,6 @@ import reactor.core.publisher.Mono;
 
 @Repository
 public class IngredientRepositoryImp implements IngredientWriteRepository, IngredientReadRepository {
-
     private final IngredientRepository ingredientRepository;
 
     @Autowired
@@ -30,8 +28,8 @@ public class IngredientRepositoryImp implements IngredientWriteRepository, Ingre
     }
 
     @Override
-    public Mono<EntityBase> getEntity(String name) {
-        return this.ingredientRepository.getEntity(name);
+    public Mono<Boolean> exists(String name) {
+        return Mono.sequenceEqual(this.ingredientRepository.existsByField(name), Mono.just(1));
     }
 
     @Override

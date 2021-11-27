@@ -1,7 +1,6 @@
-package com.example.demo.application.ImageApplication.ImageApplication;
+package com.example.demo.application.ImageApplication;
 
 import java.util.UUID;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

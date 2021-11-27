@@ -2,7 +2,6 @@ package com.example.demo.infraestructure.ingredientInfraestructure;
 
 import java.util.UUID;
 
-import com.example.demo.core.EntityBase;
 import com.example.demo.domain.ingredientDomain.Ingredient;
 import com.example.demo.domain.ingredientDomain.IngredientProjection;
 
@@ -19,6 +18,6 @@ public interface IngredientRepository extends ReactiveCrudRepository<Ingredient,
     @Query("SELECT id, name, price FROM ingredient WHERE (name LIKE CONCAT('%', :name, '%')) ORDER BY name;")
     Flux<IngredientProjection> findByCriteria(String name);
 
-    @Query("SELECT id FROM ingredient WHERE name = :name LIMIT 1;")
-    Mono<EntityBase> getEntity(String name);
+    @Query("SELECT CASE WHEN COUNT(id)>0 THEN 1 ELSE 0 END FROM ingredient WHERE name = :name;")
+    Mono<Integer> existsByField(String name);
 }

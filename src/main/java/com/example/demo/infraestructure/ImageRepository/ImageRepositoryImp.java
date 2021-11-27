@@ -1,18 +1,13 @@
-package com.example.demo.infraestructure.ImageRepository;
+package com.example.demo.infraestructure.imageRepository;
 
 import java.time.Duration;
-import java.util.UUID;
-
-import com.example.demo.core.exceptions.NotFoundException;
+import com.example.demo.core.ApplicationBase;
+import com.example.demo.core.exceptions.RedisConnectionException;
 import com.example.demo.domain.imageDomain.Image;
 import com.example.demo.domain.imageDomain.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ReactiveRedisOperations;
-import org.springframework.data.relational.core.sql.Not;
 import org.springframework.stereotype.Repository;
-
-import io.lettuce.core.Consumer;
-import reactor.core.Disposable;
 import reactor.core.publisher.Mono;
 
 @Repository
@@ -25,21 +20,21 @@ public class ImageRepositoryImp implements ImageRepository {
     }
 
     public Mono<Image> add(Image image) {
-
         return redisOperations.opsForValue()
-                                        .set(image.getId().toString(), image.getContent(), Duration.ofDays(1))                                                                                        
-                                        .then(Mono.just(image))
-                                        .onErrorResume(err -> Mono.error(new NotFoundException()));
+                                .set(image.getId().toString(), image.getContent(), Duration.ofDays(1))                                                                                        
+                                .then(Mono.just(image))
+                                .onErrorResume(err -> Mono.error(new RedisConnectionException(err.getMessage())));
     }
 
-    public Mono<Image> getImageRedis(UUID id){
+    public Mono<Image> getImageRedis(String id){
         return redisOperations.opsForValue()
-                              .get(id.toString())
+                              .get(id)
                               .flatMap(imageBytes -> {
                                     Image image = new Image();
                                     image.setContent(imageBytes);
-                                    image.setId(id);
-                                    return Mono.just(image);});
+                                    image.setId(ApplicationBase.getUUIDfrom(id));
+                                    return Mono.just(image);
+                                }).
+                                onErrorResume(err -> Mono.error(new RedisConnectionException(err.getMessage())));
     }
 }
- 

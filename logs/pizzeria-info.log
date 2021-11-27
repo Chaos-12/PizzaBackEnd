@@ -1,0 +1,1274 @@
+2021.11.23 13:45:47 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.23 13:45:47 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 21384 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.23 13:45:47 CET No active profile set, falling back to default profiles: default
+2021.11.23 13:45:49 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.23 13:45:49 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.23 13:45:49 CET Finished Spring Data repository scanning in 369 ms. Found 1 R2DBC repository interfaces.
+2021.11.23 13:45:49 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.23 13:45:49 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.23 13:45:49 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.23 13:45:49 CET Finished Spring Data repository scanning in 40 ms. Found 0 Redis repository interfaces.
+2021.11.23 13:45:51 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.23 13:45:51 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.23 13:45:51 CET Starting service [Tomcat]
+2021.11.23 13:45:51 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.23 13:45:51 CET Initializing Spring embedded WebApplicationContext
+2021.11.23 13:45:51 CET Root WebApplicationContext: initialization completed in 3919 ms
+2021.11.23 13:45:54 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.23 13:45:54 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.23 13:45:54 CET Started DemoApplication in 7.606 seconds (JVM running for 9.327)
+2021.11.23 13:46:12 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.23 13:46:12 CET Initializing Servlet 'dispatcherServlet'
+2021.11.23 13:46:13 CET Completed initialization in 2 ms
+2021.11.23 13:46:15 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:46:15 CET Ingredient {id: 42c62ccb-b645-479b-8d01-1e718cde4a8b, name: tomaco, price 0.2} added succesfully.
+2021.11.23 13:46:15 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:46:15 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:46:15 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:46:15 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:46:15 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:46:15 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:46:15 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:46:15 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:46:15 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:48:12 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.23 13:48:12 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 14312 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.23 13:48:12 CET No active profile set, falling back to default profiles: default
+2021.11.23 13:48:13 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.23 13:48:13 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.23 13:48:14 CET Finished Spring Data repository scanning in 331 ms. Found 1 R2DBC repository interfaces.
+2021.11.23 13:48:14 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.23 13:48:14 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.23 13:48:14 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.23 13:48:14 CET Finished Spring Data repository scanning in 40 ms. Found 0 Redis repository interfaces.
+2021.11.23 13:48:15 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.23 13:48:15 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.23 13:48:15 CET Starting service [Tomcat]
+2021.11.23 13:48:15 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.23 13:48:16 CET Initializing Spring embedded WebApplicationContext
+2021.11.23 13:48:16 CET Root WebApplicationContext: initialization completed in 3783 ms
+2021.11.23 13:48:18 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.23 13:48:19 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.23 13:48:19 CET Started DemoApplication in 7.561 seconds (JVM running for 9.371)
+2021.11.23 13:48:24 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.23 13:48:24 CET Initializing Servlet 'dispatcherServlet'
+2021.11.23 13:48:24 CET Completed initialization in 1 ms
+2021.11.23 13:48:25 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:48:25 CET Ingredient {id: f01e800f-2e6d-43d4-a55b-86462feb4121, name: ham, price 0.2} added succesfully.
+2021.11.23 13:48:26 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:48:26 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:48:26 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:48:26 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:48:26 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:48:26 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:48:26 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:48:26 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:48:26 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:49:52 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.23 13:49:52 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 5976 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.23 13:49:52 CET No active profile set, falling back to default profiles: default
+2021.11.23 13:49:53 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.23 13:49:53 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.23 13:49:53 CET Finished Spring Data repository scanning in 272 ms. Found 1 R2DBC repository interfaces.
+2021.11.23 13:49:54 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.23 13:49:54 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.23 13:49:54 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.23 13:49:54 CET Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2021.11.23 13:49:55 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.23 13:49:55 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.23 13:49:55 CET Starting service [Tomcat]
+2021.11.23 13:49:55 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.23 13:49:55 CET Initializing Spring embedded WebApplicationContext
+2021.11.23 13:49:55 CET Root WebApplicationContext: initialization completed in 2987 ms
+2021.11.23 13:49:57 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.23 13:49:57 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.23 13:49:57 CET Started DemoApplication in 6.17 seconds (JVM running for 7.894)
+2021.11.23 13:50:01 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.23 13:50:01 CET Initializing Servlet 'dispatcherServlet'
+2021.11.23 13:50:01 CET Completed initialization in 2 ms
+2021.11.23 13:50:02 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:50:03 CET Ingredient {id: eb63dacb-bb33-446a-9467-c430dd8218f7, name: cheese, price 0.2} added succesfully.
+2021.11.23 13:50:03 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:50:03 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:50:03 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:50:03 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:50:03 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:50:03 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:50:03 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:50:03 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:50:03 CET The server timezone is <Romance Standard Time> that's unknown, trying to use system default timezone
+2021.11.23 13:50:43 CET Ingredient {id: a67e035e-36b3-46b7-b73d-27cb73278ad3, name: cheeseee, price 0.2} added succesfully.
+2021.11.23 13:51:51 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.23 13:51:51 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 11124 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.23 13:51:51 CET No active profile set, falling back to default profiles: default
+2021.11.23 13:51:53 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.23 13:51:53 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.23 13:51:53 CET Finished Spring Data repository scanning in 356 ms. Found 1 R2DBC repository interfaces.
+2021.11.23 13:51:53 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.23 13:51:53 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.23 13:51:53 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.23 13:51:53 CET Finished Spring Data repository scanning in 30 ms. Found 0 Redis repository interfaces.
+2021.11.23 13:51:54 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.23 13:51:54 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.23 13:51:54 CET Starting service [Tomcat]
+2021.11.23 13:51:54 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.23 13:51:54 CET Initializing Spring embedded WebApplicationContext
+2021.11.23 13:51:54 CET Root WebApplicationContext: initialization completed in 3179 ms
+2021.11.23 13:51:56 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.23 13:51:56 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.23 13:51:56 CET Started DemoApplication in 6.329 seconds (JVM running for 9.022)
+2021.11.24 10:35:13 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.24 10:35:14 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 22024 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.24 10:35:14 CET No active profile set, falling back to default profiles: default
+2021.11.24 10:35:15 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 10:35:15 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.24 10:35:16 CET Finished Spring Data repository scanning in 260 ms. Found 2 R2DBC repository interfaces.
+2021.11.24 10:35:16 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 10:35:16 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.24 10:35:16 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 10:35:16 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 10:35:16 CET Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
+2021.11.24 10:35:17 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.24 10:35:17 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.24 10:35:17 CET Starting service [Tomcat]
+2021.11.24 10:35:17 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.24 10:35:17 CET Initializing Spring embedded WebApplicationContext
+2021.11.24 10:35:17 CET Root WebApplicationContext: initialization completed in 3360 ms
+2021.11.24 10:35:19 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.24 10:35:19 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.24 10:35:19 CET Started DemoApplication in 6.444 seconds (JVM running for 7.8)
+2021.11.24 10:35:32 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.24 10:35:32 CET Initializing Servlet 'dispatcherServlet'
+2021.11.24 10:35:32 CET Completed initialization in 2 ms
+2021.11.24 10:42:29 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.24 10:42:29 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 20348 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.24 10:42:29 CET No active profile set, falling back to default profiles: default
+2021.11.24 10:42:31 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 10:42:31 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.24 10:42:31 CET Finished Spring Data repository scanning in 401 ms. Found 2 R2DBC repository interfaces.
+2021.11.24 10:42:31 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 10:42:31 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.24 10:42:31 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 10:42:31 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 10:42:31 CET Finished Spring Data repository scanning in 34 ms. Found 0 Redis repository interfaces.
+2021.11.24 10:42:32 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.24 10:42:32 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.24 10:42:32 CET Starting service [Tomcat]
+2021.11.24 10:42:32 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.24 10:42:33 CET Initializing Spring embedded WebApplicationContext
+2021.11.24 10:42:33 CET Root WebApplicationContext: initialization completed in 3319 ms
+2021.11.24 10:42:36 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.24 10:42:36 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.24 10:42:36 CET Started DemoApplication in 6.926 seconds (JVM running for 8.204)
+2021.11.24 11:48:10 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.24 11:48:11 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 6224 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.24 11:48:11 CET No active profile set, falling back to default profiles: default
+2021.11.24 11:48:12 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 11:48:12 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.24 11:48:12 CET Finished Spring Data repository scanning in 237 ms. Found 2 R2DBC repository interfaces.
+2021.11.24 11:48:12 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 11:48:12 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.24 11:48:12 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 11:48:12 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 11:48:12 CET Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2021.11.24 11:48:13 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.24 11:48:13 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.24 11:48:13 CET Starting service [Tomcat]
+2021.11.24 11:48:13 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.24 11:48:13 CET Initializing Spring embedded WebApplicationContext
+2021.11.24 11:48:13 CET Root WebApplicationContext: initialization completed in 2564 ms
+2021.11.24 11:48:15 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.24 11:48:15 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.24 11:48:15 CET Started DemoApplication in 5.394 seconds (JVM running for 6.606)
+2021.11.24 11:48:35 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.24 11:48:35 CET Initializing Servlet 'dispatcherServlet'
+2021.11.24 11:48:35 CET Completed initialization in 5 ms
+2021.11.24 11:54:27 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.24 11:54:27 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 22024 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.24 11:54:27 CET No active profile set, falling back to default profiles: default
+2021.11.24 11:54:28 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 11:54:28 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.24 11:54:29 CET Finished Spring Data repository scanning in 255 ms. Found 2 R2DBC repository interfaces.
+2021.11.24 11:54:29 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 11:54:29 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.24 11:54:29 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 11:54:29 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 11:54:29 CET Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2021.11.24 11:54:30 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.24 11:54:30 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.24 11:54:30 CET Starting service [Tomcat]
+2021.11.24 11:54:30 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.24 11:54:30 CET Initializing Spring embedded WebApplicationContext
+2021.11.24 11:54:30 CET Root WebApplicationContext: initialization completed in 2740 ms
+2021.11.24 11:54:33 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.24 11:54:33 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.24 11:54:33 CET Started DemoApplication in 5.888 seconds (JVM running for 6.968)
+2021.11.24 11:55:39 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.24 11:55:39 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 7640 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.24 11:55:39 CET No active profile set, falling back to default profiles: default
+2021.11.24 11:55:40 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 11:55:40 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.24 11:55:40 CET Finished Spring Data repository scanning in 250 ms. Found 2 R2DBC repository interfaces.
+2021.11.24 11:55:40 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 11:55:40 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.24 11:55:40 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 11:55:40 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 11:55:40 CET Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2021.11.24 11:55:41 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.24 11:55:41 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.24 11:55:41 CET Starting service [Tomcat]
+2021.11.24 11:55:41 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.24 11:55:41 CET Initializing Spring embedded WebApplicationContext
+2021.11.24 11:55:41 CET Root WebApplicationContext: initialization completed in 2536 ms
+2021.11.24 11:55:44 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.24 11:55:44 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.24 11:55:44 CET Started DemoApplication in 5.293 seconds (JVM running for 6.457)
+2021.11.24 12:11:28 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.24 12:11:28 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 844 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.24 12:11:28 CET No active profile set, falling back to default profiles: default
+2021.11.24 12:11:29 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 12:11:29 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.24 12:11:29 CET Finished Spring Data repository scanning in 208 ms. Found 2 R2DBC repository interfaces.
+2021.11.24 12:11:29 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 12:11:29 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.24 12:11:29 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 12:11:29 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 12:11:29 CET Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+2021.11.24 12:11:30 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.24 12:11:30 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.24 12:11:30 CET Starting service [Tomcat]
+2021.11.24 12:11:30 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.24 12:11:31 CET Initializing Spring embedded WebApplicationContext
+2021.11.24 12:11:31 CET Root WebApplicationContext: initialization completed in 2648 ms
+2021.11.24 12:11:55 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.24 12:11:55 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.24 12:11:55 CET Started DemoApplication in 27.448 seconds (JVM running for 28.606)
+2021.11.24 12:24:01 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.24 12:24:01 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 12768 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.24 12:24:01 CET No active profile set, falling back to default profiles: default
+2021.11.24 12:24:02 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 12:24:02 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.24 12:24:03 CET Finished Spring Data repository scanning in 267 ms. Found 2 R2DBC repository interfaces.
+2021.11.24 12:24:03 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 12:24:03 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.24 12:24:03 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 12:24:03 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 12:24:03 CET Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2021.11.24 12:24:04 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.24 12:24:04 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.24 12:24:04 CET Starting service [Tomcat]
+2021.11.24 12:24:04 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.24 12:24:04 CET Initializing Spring embedded WebApplicationContext
+2021.11.24 12:24:04 CET Root WebApplicationContext: initialization completed in 2981 ms
+2021.11.24 12:24:12 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.24 12:24:12 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.24 12:24:12 CET Started DemoApplication in 12.045 seconds (JVM running for 13.215)
+2021.11.24 12:24:18 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.24 12:24:18 CET Initializing Servlet 'dispatcherServlet'
+2021.11.24 12:24:18 CET Completed initialization in 2 ms
+2021.11.24 12:37:24 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.24 12:37:24 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 19380 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.24 12:37:24 CET No active profile set, falling back to default profiles: default
+2021.11.24 12:37:25 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 12:37:25 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.24 12:37:26 CET Finished Spring Data repository scanning in 202 ms. Found 2 R2DBC repository interfaces.
+2021.11.24 12:37:26 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 12:37:26 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.24 12:37:26 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 12:37:26 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 12:37:26 CET Finished Spring Data repository scanning in 16 ms. Found 0 Redis repository interfaces.
+2021.11.24 12:37:27 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.24 12:37:27 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.24 12:37:27 CET Starting service [Tomcat]
+2021.11.24 12:37:27 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.24 12:37:27 CET Initializing Spring embedded WebApplicationContext
+2021.11.24 12:37:27 CET Root WebApplicationContext: initialization completed in 3025 ms
+2021.11.24 12:37:32 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.24 12:37:32 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.24 12:37:32 CET Started DemoApplication in 8.76 seconds (JVM running for 9.885)
+2021.11.24 12:37:37 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.24 12:37:37 CET Initializing Servlet 'dispatcherServlet'
+2021.11.24 12:37:37 CET Completed initialization in 3 ms
+2021.11.24 12:40:39 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.24 12:40:39 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 19008 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.24 12:40:39 CET No active profile set, falling back to default profiles: default
+2021.11.24 12:40:40 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 12:40:40 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.24 12:40:40 CET Finished Spring Data repository scanning in 192 ms. Found 2 R2DBC repository interfaces.
+2021.11.24 12:40:40 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 12:40:40 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.24 12:40:40 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 12:40:40 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 12:40:40 CET Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.
+2021.11.24 12:40:41 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.24 12:40:41 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.24 12:40:41 CET Starting service [Tomcat]
+2021.11.24 12:40:41 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.24 12:40:42 CET Initializing Spring embedded WebApplicationContext
+2021.11.24 12:40:42 CET Root WebApplicationContext: initialization completed in 2493 ms
+2021.11.24 12:40:44 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.24 12:40:44 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.24 12:40:44 CET Started DemoApplication in 5.743 seconds (JVM running for 7.01)
+2021.11.24 12:40:50 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.24 12:40:50 CET Initializing Servlet 'dispatcherServlet'
+2021.11.24 12:40:50 CET Completed initialization in 3 ms
+2021.11.24 12:42:03 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.24 12:42:03 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 22672 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.24 12:42:03 CET No active profile set, falling back to default profiles: default
+2021.11.24 12:42:05 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 12:42:05 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.24 12:42:05 CET Finished Spring Data repository scanning in 343 ms. Found 2 R2DBC repository interfaces.
+2021.11.24 12:42:05 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 12:42:05 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.24 12:42:05 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 12:42:05 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 12:42:05 CET Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
+2021.11.24 12:42:06 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.24 12:42:06 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.24 12:42:06 CET Starting service [Tomcat]
+2021.11.24 12:42:06 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.24 12:42:07 CET Initializing Spring embedded WebApplicationContext
+2021.11.24 12:42:07 CET Root WebApplicationContext: initialization completed in 3664 ms
+2021.11.24 12:42:09 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.24 12:42:09 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.24 12:42:09 CET Started DemoApplication in 7.2 seconds (JVM running for 8.467)
+2021.11.24 12:42:13 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.24 12:42:13 CET Initializing Servlet 'dispatcherServlet'
+2021.11.24 12:42:13 CET Completed initialization in 3 ms
+2021.11.24 12:42:15 CET Failure in @ExceptionHandler com.example.demo.core.exceptionHandlers.NotFoundExceptionHandler#handleConflict(NotFoundException, WebRequest) java.lang.IllegalStateException: Could not resolve parameter [0] in protected org.springframework.http.ResponseEntity<java.lang.Object> com.example.demo.core.exceptionHandlers.NotFoundExceptionHandler.handleConflict(com.example.demo.core.exceptions.NotFoundException,org.springframework.web.context.request.WebRequest): No suitable resolver
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:176) ~[spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146) ~[spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.doResolveHandlerMethodException(ExceptionHandlerExceptionResolver.java:428) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodExceptionResolver.doResolveException(AbstractHandlerMethodExceptionResolver.java:75) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.handler.AbstractHandlerExceptionResolver.resolveException(AbstractHandlerExceptionResolver.java:142) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.handler.HandlerExceptionResolverComposite.resolveException(HandlerExceptionResolverComposite.java:80) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.DispatcherServlet.processHandlerException(DispatcherServlet.java:1327) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1138) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1084) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) [spring-webmvc-5.3.12.jar:5.3.12]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909) [spring-webmvc-5.3.12.jar:5.3.12]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:681) [tomcat-embed-core-9.0.54.jar:4.0.FR]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) [spring-webmvc-5.3.12.jar:5.3.12]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764) [tomcat-embed-core-9.0.54.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-5.3.12.jar:5.3.12]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) [spring-web-5.3.12.jar:5.3.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.3.12.jar:5.3.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:103) [spring-web-5.3.12.jar:5.3.12]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:711) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationDispatcher.doDispatch(ApplicationDispatcher.java:632) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.ApplicationDispatcher.dispatch(ApplicationDispatcher.java:600) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.AsyncContextImpl$AsyncRunnable.run(AsyncContextImpl.java:587) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.AsyncContextImpl.doInternalDispatch(AsyncContextImpl.java:353) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:194) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.catalina.connector.CoyoteAdapter.asyncDispatch(CoyoteAdapter.java:249) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessor.dispatch(AbstractProcessor.java:241) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:59) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-9.0.54.jar:9.0.54]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+
+2021.11.24 12:42:35 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.24 12:42:35 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 8492 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.24 12:42:35 CET No active profile set, falling back to default profiles: default
+2021.11.24 12:42:37 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 12:42:37 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.24 12:42:38 CET Finished Spring Data repository scanning in 331 ms. Found 2 R2DBC repository interfaces.
+2021.11.24 12:42:38 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 12:42:38 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.24 12:42:38 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 12:42:38 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 12:42:38 CET Finished Spring Data repository scanning in 42 ms. Found 0 Redis repository interfaces.
+2021.11.24 12:42:39 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.24 12:42:39 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.24 12:42:39 CET Starting service [Tomcat]
+2021.11.24 12:42:39 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.24 12:42:39 CET Initializing Spring embedded WebApplicationContext
+2021.11.24 12:42:39 CET Root WebApplicationContext: initialization completed in 3923 ms
+2021.11.24 12:42:42 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.24 12:42:42 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.24 12:42:42 CET Started DemoApplication in 7.298 seconds (JVM running for 8.811)
+2021.11.24 12:46:02 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.24 12:46:02 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 1128 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.24 12:46:02 CET No active profile set, falling back to default profiles: default
+2021.11.24 12:46:03 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 12:46:03 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.24 12:46:03 CET Finished Spring Data repository scanning in 176 ms. Found 2 R2DBC repository interfaces.
+2021.11.24 12:46:03 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 12:46:03 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.24 12:46:03 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 12:46:03 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 12:46:03 CET Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2021.11.24 12:46:04 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.24 12:46:04 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.24 12:46:04 CET Starting service [Tomcat]
+2021.11.24 12:46:04 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.24 12:46:05 CET Initializing Spring embedded WebApplicationContext
+2021.11.24 12:46:05 CET Root WebApplicationContext: initialization completed in 2344 ms
+2021.11.24 12:46:07 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.24 12:46:07 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.24 12:46:07 CET Started DemoApplication in 5.287 seconds (JVM running for 6.365)
+2021.11.24 12:46:12 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.24 12:46:12 CET Initializing Servlet 'dispatcherServlet'
+2021.11.24 12:46:12 CET Completed initialization in 3 ms
+2021.11.24 13:01:07 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.24 13:01:07 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 24768 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.24 13:01:07 CET No active profile set, falling back to default profiles: default
+2021.11.24 13:01:09 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 13:01:09 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.24 13:01:09 CET Finished Spring Data repository scanning in 324 ms. Found 2 R2DBC repository interfaces.
+2021.11.24 13:01:09 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 13:01:09 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.24 13:01:09 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 13:01:09 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 13:01:09 CET Finished Spring Data repository scanning in 30 ms. Found 0 Redis repository interfaces.
+2021.11.24 13:01:10 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.24 13:01:10 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.24 13:01:10 CET Starting service [Tomcat]
+2021.11.24 13:01:10 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.24 13:01:11 CET Initializing Spring embedded WebApplicationContext
+2021.11.24 13:01:11 CET Root WebApplicationContext: initialization completed in 3258 ms
+2021.11.24 13:01:13 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.24 13:01:13 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.24 13:01:13 CET Started DemoApplication in 6.57 seconds (JVM running for 7.921)
+2021.11.24 13:01:49 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.24 13:01:49 CET Initializing Servlet 'dispatcherServlet'
+2021.11.24 13:01:49 CET Completed initialization in 3 ms
+2021.11.24 14:00:35 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.24 14:00:35 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 8788 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.24 14:00:35 CET No active profile set, falling back to default profiles: default
+2021.11.24 14:00:36 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 14:00:36 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.24 14:00:37 CET Finished Spring Data repository scanning in 258 ms. Found 2 R2DBC repository interfaces.
+2021.11.24 14:00:37 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.24 14:00:37 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.24 14:00:37 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 14:00:37 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.24 14:00:37 CET Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
+2021.11.24 14:00:38 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.24 14:00:38 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.24 14:00:38 CET Starting service [Tomcat]
+2021.11.24 14:00:38 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.24 14:00:38 CET Initializing Spring embedded WebApplicationContext
+2021.11.24 14:00:38 CET Root WebApplicationContext: initialization completed in 3147 ms
+2021.11.24 14:00:41 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.24 14:00:41 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.24 14:00:41 CET Started DemoApplication in 6.527 seconds (JVM running for 7.788)
+2021.11.24 14:00:49 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.24 14:00:49 CET Initializing Servlet 'dispatcherServlet'
+2021.11.24 14:00:49 CET Completed initialization in 2 ms
+2021.11.24 14:01:36 CET [channel=0x4df9b356, /127.0.0.1:55147 -> localhost/127.0.0.1:6379, epid=0x1, chid=0x1] Unexpected exception during request: java.net.SocketException: Connection reset java.net.SocketException: Connection reset
+	at sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426) ~[?:?]
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:253) ~[netty-buffer-4.1.69.Final.jar:4.1.69.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132) ~[netty-buffer-4.1.69.Final.jar:4.1.69.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:350) ~[netty-transport-4.1.69.Final.jar:4.1.69.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151) [netty-transport-4.1.69.Final.jar:4.1.69.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:719) [netty-transport-4.1.69.Final.jar:4.1.69.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:655) [netty-transport-4.1.69.Final.jar:4.1.69.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:581) [netty-transport-4.1.69.Final.jar:4.1.69.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493) [netty-transport-4.1.69.Final.jar:4.1.69.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986) [netty-common-4.1.69.Final.jar:4.1.69.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) [netty-common-4.1.69.Final.jar:4.1.69.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) [netty-common-4.1.69.Final.jar:4.1.69.Final]
+	at java.lang.Thread.run(Thread.java:833) [?:?]
+
+2021.11.24 14:01:36 CET Reconnecting, last destination was localhost/127.0.0.1:6379
+2021.11.24 14:01:45 CET Reconnecting, last destination was localhost/<unresolved>:6379
+2021.11.24 14:01:53 CET Reconnecting, last destination was localhost/<unresolved>:6379
+2021.11.24 14:02:10 CET Reconnecting, last destination was localhost/<unresolved>:6379
+2021.11.24 14:02:40 CET Reconnecting, last destination was localhost/<unresolved>:6379
+2021.11.24 14:03:10 CET Reconnecting, last destination was localhost/<unresolved>:6379
+2021.11.24 14:03:40 CET Reconnecting, last destination was localhost/<unresolved>:6379
+2021.11.24 14:04:10 CET Reconnecting, last destination was localhost/<unresolved>:6379
+2021.11.24 14:04:40 CET Reconnecting, last destination was localhost/<unresolved>:6379
+2021.11.24 14:05:10 CET Reconnecting, last destination was localhost/<unresolved>:6379
+2021.11.24 14:05:41 CET Reconnecting, last destination was localhost/<unresolved>:6379
+2021.11.25 11:08:18 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.25 11:08:19 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 20832 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.25 11:08:19 CET No active profile set, falling back to default profiles: default
+2021.11.25 11:08:20 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.25 11:08:20 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.25 11:08:20 CET Finished Spring Data repository scanning in 266 ms. Found 2 R2DBC repository interfaces.
+2021.11.25 11:08:21 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.25 11:08:21 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.25 11:08:21 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.25 11:08:21 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.25 11:08:21 CET Finished Spring Data repository scanning in 29 ms. Found 0 Redis repository interfaces.
+2021.11.25 11:08:22 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.25 11:08:22 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.25 11:08:22 CET Starting service [Tomcat]
+2021.11.25 11:08:22 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.25 11:08:22 CET Initializing Spring embedded WebApplicationContext
+2021.11.25 11:08:22 CET Root WebApplicationContext: initialization completed in 3362 ms
+2021.11.25 11:08:24 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.25 11:08:24 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.25 11:08:25 CET Started DemoApplication in 6.593 seconds (JVM running for 8.266)
+2021.11.25 11:08:43 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.25 11:08:43 CET Initializing Servlet 'dispatcherServlet'
+2021.11.25 11:08:43 CET Completed initialization in 3 ms
+2021.11.25 12:39:41 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.25 12:39:41 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 12252 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.25 12:39:41 CET No active profile set, falling back to default profiles: default
+2021.11.25 12:39:42 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.25 12:39:42 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.25 12:39:43 CET Finished Spring Data repository scanning in 270 ms. Found 2 R2DBC repository interfaces.
+2021.11.25 12:39:43 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.25 12:39:43 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.25 12:39:43 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.25 12:39:43 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.25 12:39:43 CET Finished Spring Data repository scanning in 25 ms. Found 0 Redis repository interfaces.
+2021.11.25 12:39:44 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.25 12:39:44 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.25 12:39:44 CET Starting service [Tomcat]
+2021.11.25 12:39:44 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.25 12:39:44 CET Initializing Spring embedded WebApplicationContext
+2021.11.25 12:39:44 CET Root WebApplicationContext: initialization completed in 2946 ms
+2021.11.25 12:39:47 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.25 12:39:47 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.25 12:39:47 CET Started DemoApplication in 6.694 seconds (JVM running for 7.915)
+2021.11.25 12:40:31 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.25 12:40:31 CET Initializing Servlet 'dispatcherServlet'
+2021.11.25 12:40:31 CET Completed initialization in 4 ms
+2021.11.25 13:29:26 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.25 13:29:26 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 8736 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.25 13:29:26 CET No active profile set, falling back to default profiles: default
+2021.11.25 13:29:28 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.25 13:29:28 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.25 13:29:29 CET Finished Spring Data repository scanning in 261 ms. Found 2 R2DBC repository interfaces.
+2021.11.25 13:29:29 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.25 13:29:29 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.25 13:29:29 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.25 13:29:29 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.25 13:29:29 CET Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2021.11.25 13:29:30 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.25 13:29:30 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.25 13:29:30 CET Starting service [Tomcat]
+2021.11.25 13:29:30 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.25 13:29:31 CET Initializing Spring embedded WebApplicationContext
+2021.11.25 13:29:31 CET Root WebApplicationContext: initialization completed in 4331 ms
+2021.11.25 13:29:35 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.25 13:29:35 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.25 13:29:35 CET Started DemoApplication in 9.409 seconds (JVM running for 11.586)
+2021.11.25 13:44:28 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.25 13:44:28 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 148 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.25 13:44:28 CET No active profile set, falling back to default profiles: default
+2021.11.25 13:44:29 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.25 13:44:29 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.25 13:44:30 CET Finished Spring Data repository scanning in 206 ms. Found 2 R2DBC repository interfaces.
+2021.11.25 13:44:30 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.25 13:44:30 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.25 13:44:30 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.25 13:44:30 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.25 13:44:30 CET Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2021.11.25 13:44:31 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.25 13:44:31 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.25 13:44:31 CET Starting service [Tomcat]
+2021.11.25 13:44:31 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.25 13:44:31 CET Initializing Spring embedded WebApplicationContext
+2021.11.25 13:44:31 CET Root WebApplicationContext: initialization completed in 2585 ms
+2021.11.25 13:44:33 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.25 13:44:33 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.25 13:44:33 CET Started DemoApplication in 5.285 seconds (JVM running for 6.605)
+2021.11.25 13:44:38 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.25 13:44:38 CET Initializing Servlet 'dispatcherServlet'
+2021.11.25 13:44:38 CET Completed initialization in 5 ms
+2021.11.25 13:44:53 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.25 13:44:53 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 19360 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.25 13:44:53 CET No active profile set, falling back to default profiles: default
+2021.11.25 13:44:55 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.25 13:44:55 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.25 13:44:55 CET Finished Spring Data repository scanning in 249 ms. Found 2 R2DBC repository interfaces.
+2021.11.25 13:44:55 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.25 13:44:55 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.25 13:44:55 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.25 13:44:55 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.25 13:44:55 CET Finished Spring Data repository scanning in 36 ms. Found 0 Redis repository interfaces.
+2021.11.25 13:44:56 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.25 13:44:56 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.25 13:44:56 CET Starting service [Tomcat]
+2021.11.25 13:44:56 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.25 13:44:57 CET Initializing Spring embedded WebApplicationContext
+2021.11.25 13:44:57 CET Root WebApplicationContext: initialization completed in 3213 ms
+2021.11.25 13:44:59 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.25 13:44:59 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.25 13:44:59 CET Started DemoApplication in 6.401 seconds (JVM running for 7.53)
+2021.11.25 13:45:04 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.25 13:45:04 CET Initializing Servlet 'dispatcherServlet'
+2021.11.25 13:45:04 CET Completed initialization in 2 ms
+2021.11.25 13:47:47 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.25 13:47:47 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 26244 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.25 13:47:47 CET No active profile set, falling back to default profiles: default
+2021.11.25 13:47:49 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.25 13:47:49 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.25 13:47:49 CET Finished Spring Data repository scanning in 279 ms. Found 2 R2DBC repository interfaces.
+2021.11.25 13:47:49 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.25 13:47:49 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.25 13:47:49 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.25 13:47:49 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.25 13:47:49 CET Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+2021.11.25 13:47:50 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.25 13:47:50 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.25 13:47:50 CET Starting service [Tomcat]
+2021.11.25 13:47:50 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.25 13:47:50 CET Initializing Spring embedded WebApplicationContext
+2021.11.25 13:47:50 CET Root WebApplicationContext: initialization completed in 3275 ms
+2021.11.25 13:47:53 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.25 13:47:53 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.25 13:47:53 CET Started DemoApplication in 6.61 seconds (JVM running for 7.797)
+2021.11.25 13:47:57 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.25 13:47:57 CET Initializing Servlet 'dispatcherServlet'
+2021.11.25 13:47:57 CET Completed initialization in 4 ms
+2021.11.25 18:22:43 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.25 18:22:43 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 17316 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.25 18:22:43 CET No active profile set, falling back to default profiles: default
+2021.11.25 18:22:44 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.25 18:22:44 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.25 18:22:45 CET Finished Spring Data repository scanning in 313 ms. Found 2 R2DBC repository interfaces.
+2021.11.25 18:22:45 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.25 18:22:45 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.25 18:22:45 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.25 18:22:45 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.25 18:22:45 CET Finished Spring Data repository scanning in 35 ms. Found 0 Redis repository interfaces.
+2021.11.25 18:22:46 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.25 18:22:46 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.25 18:22:46 CET Starting service [Tomcat]
+2021.11.25 18:22:46 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.25 18:22:46 CET Initializing Spring embedded WebApplicationContext
+2021.11.25 18:22:46 CET Root WebApplicationContext: initialization completed in 3302 ms
+2021.11.25 18:22:49 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.25 18:22:49 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.25 18:22:49 CET Started DemoApplication in 6.653 seconds (JVM running for 8.636)
+2021.11.25 18:23:04 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.25 18:23:04 CET Initializing Servlet 'dispatcherServlet'
+2021.11.25 18:23:04 CET Completed initialization in 3 ms
+2021.11.26 13:48:16 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 13:48:16 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 17740 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 13:48:16 CET No active profile set, falling back to default profiles: default
+2021.11.26 13:48:19 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 13:48:19 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 13:48:19 CET Finished Spring Data repository scanning in 470 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 13:48:19 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 13:48:19 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 13:48:19 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 13:48:19 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 13:48:19 CET Finished Spring Data repository scanning in 48 ms. Found 0 Redis repository interfaces.
+2021.11.26 13:48:22 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 13:48:22 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 13:48:22 CET Starting service [Tomcat]
+2021.11.26 13:48:22 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 13:48:23 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 13:48:23 CET Root WebApplicationContext: initialization completed in 6366 ms
+2021.11.26 13:48:28 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 13:48:28 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 13:48:28 CET Started DemoApplication in 14.267 seconds (JVM running for 18.619)
+2021.11.26 13:48:34 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 13:48:34 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 13:48:34 CET Completed initialization in 3 ms
+2021.11.26 13:55:07 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 13:55:07 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 25636 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 13:55:07 CET No active profile set, falling back to default profiles: default
+2021.11.26 13:55:09 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 13:55:09 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 13:55:10 CET Finished Spring Data repository scanning in 367 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 13:55:10 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 13:55:10 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 13:55:10 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 13:55:10 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 13:55:10 CET Finished Spring Data repository scanning in 47 ms. Found 0 Redis repository interfaces.
+2021.11.26 13:55:11 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 13:55:11 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 13:55:11 CET Starting service [Tomcat]
+2021.11.26 13:55:11 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 13:55:12 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 13:55:12 CET Root WebApplicationContext: initialization completed in 4610 ms
+2021.11.26 13:55:17 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 13:55:17 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 13:55:17 CET Started DemoApplication in 10.949 seconds (JVM running for 12.545)
+2021.11.26 13:55:22 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 13:55:22 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 13:55:22 CET Completed initialization in 2 ms
+2021.11.26 14:01:47 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:01:47 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 18668 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:01:47 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:01:49 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:01:49 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:01:49 CET Finished Spring Data repository scanning in 307 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:01:49 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:01:49 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:01:49 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:01:49 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:01:49 CET Finished Spring Data repository scanning in 59 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:01:50 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:01:51 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:01:51 CET Starting service [Tomcat]
+2021.11.26 14:01:51 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:01:51 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:01:51 CET Root WebApplicationContext: initialization completed in 3677 ms
+2021.11.26 14:01:55 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:01:55 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:01:55 CET Started DemoApplication in 9.092 seconds (JVM running for 11.186)
+2021.11.26 14:01:56 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 14:01:56 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 14:01:56 CET Completed initialization in 7 ms
+2021.11.26 14:03:32 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:03:32 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 16572 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:03:32 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:03:36 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:03:36 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:03:36 CET Finished Spring Data repository scanning in 509 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:03:36 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:03:36 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:03:36 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:03:36 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:03:36 CET Finished Spring Data repository scanning in 32 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:03:38 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:03:38 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:03:38 CET Starting service [Tomcat]
+2021.11.26 14:03:38 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:03:38 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:03:38 CET Root WebApplicationContext: initialization completed in 5814 ms
+2021.11.26 14:03:43 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:03:43 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:03:43 CET Started DemoApplication in 11.926 seconds (JVM running for 16.637)
+2021.11.26 14:04:27 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:04:27 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 22872 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:04:27 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:04:30 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:04:30 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:04:30 CET Finished Spring Data repository scanning in 391 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:04:30 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:04:30 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:04:30 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:04:30 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:04:30 CET Finished Spring Data repository scanning in 59 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:04:32 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:04:32 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:04:32 CET Starting service [Tomcat]
+2021.11.26 14:04:32 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:04:32 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:04:32 CET Root WebApplicationContext: initialization completed in 4910 ms
+2021.11.26 14:04:35 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:04:35 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:04:35 CET Started DemoApplication in 9.053 seconds (JVM running for 13.162)
+2021.11.26 14:04:42 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 14:04:42 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 14:04:42 CET Completed initialization in 6 ms
+2021.11.26 14:05:35 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:05:35 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 16000 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:05:35 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:05:37 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:05:37 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:05:38 CET Finished Spring Data repository scanning in 388 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:05:38 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:05:38 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:05:38 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:05:38 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:05:38 CET Finished Spring Data repository scanning in 54 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:05:39 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:05:39 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:05:39 CET Starting service [Tomcat]
+2021.11.26 14:05:39 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:05:39 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:05:40 CET Root WebApplicationContext: initialization completed in 4074 ms
+2021.11.26 14:05:43 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:05:43 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:05:43 CET Started DemoApplication in 8.542 seconds (JVM running for 10.336)
+2021.11.26 14:05:45 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 14:05:45 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 14:05:45 CET Completed initialization in 4 ms
+2021.11.26 14:06:29 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:06:29 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 20764 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:06:29 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:06:31 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:06:31 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:06:31 CET Finished Spring Data repository scanning in 304 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:06:31 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:06:31 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:06:31 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:06:31 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:06:31 CET Finished Spring Data repository scanning in 41 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:06:32 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:06:32 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:06:32 CET Starting service [Tomcat]
+2021.11.26 14:06:32 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:06:33 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:06:33 CET Root WebApplicationContext: initialization completed in 3660 ms
+2021.11.26 14:06:36 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:06:37 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:06:37 CET Started DemoApplication in 8.448 seconds (JVM running for 10.059)
+2021.11.26 14:06:37 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 14:06:37 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 14:06:37 CET Completed initialization in 5 ms
+2021.11.26 14:09:42 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:09:42 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 12448 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:09:42 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:09:44 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:09:44 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:09:45 CET Finished Spring Data repository scanning in 371 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:09:45 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:09:45 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:09:45 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:09:45 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:09:45 CET Finished Spring Data repository scanning in 52 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:09:46 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:09:46 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:09:46 CET Starting service [Tomcat]
+2021.11.26 14:09:46 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:09:47 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:09:47 CET Root WebApplicationContext: initialization completed in 4168 ms
+2021.11.26 14:09:50 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:09:50 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:09:50 CET Started DemoApplication in 8.56 seconds (JVM running for 10.116)
+2021.11.26 14:10:30 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:10:31 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 13364 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:10:31 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:10:32 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:10:32 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:10:33 CET Finished Spring Data repository scanning in 360 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:10:33 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:10:33 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:10:33 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:10:33 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:10:33 CET Finished Spring Data repository scanning in 82 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:10:36 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:10:36 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:10:36 CET Starting service [Tomcat]
+2021.11.26 14:10:36 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:10:36 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:10:36 CET Root WebApplicationContext: initialization completed in 5348 ms
+2021.11.26 14:10:39 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:10:40 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:10:40 CET Started DemoApplication in 10.344 seconds (JVM running for 11.876)
+2021.11.26 14:10:40 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 14:10:40 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 14:10:40 CET Completed initialization in 11 ms
+2021.11.26 14:13:00 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:13:00 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 22216 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:13:00 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:13:02 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:13:02 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:13:02 CET Finished Spring Data repository scanning in 290 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:13:02 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:13:02 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:13:02 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:13:02 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:13:02 CET Finished Spring Data repository scanning in 33 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:13:03 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:13:03 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:13:03 CET Starting service [Tomcat]
+2021.11.26 14:13:03 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:13:04 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:13:04 CET Root WebApplicationContext: initialization completed in 3528 ms
+2021.11.26 14:13:06 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:13:06 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:13:06 CET Started DemoApplication in 7.207 seconds (JVM running for 8.925)
+2021.11.26 14:13:12 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 14:13:12 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 14:13:12 CET Completed initialization in 6 ms
+2021.11.26 14:13:23 CET Not found exception , StackTrace: [Ljava.lang.StackTraceElement;@5de54af5
+2021.11.26 14:16:17 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:16:18 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 12600 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:16:18 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:16:19 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:16:19 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:16:20 CET Finished Spring Data repository scanning in 332 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:16:20 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:16:20 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:16:20 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:16:20 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:16:20 CET Finished Spring Data repository scanning in 72 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:16:21 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:16:21 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:16:21 CET Starting service [Tomcat]
+2021.11.26 14:16:21 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:16:21 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:16:21 CET Root WebApplicationContext: initialization completed in 3705 ms
+2021.11.26 14:16:27 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:16:27 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:16:27 CET Started DemoApplication in 10.873 seconds (JVM running for 12.828)
+2021.11.26 14:16:28 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 14:16:28 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 14:16:28 CET Completed initialization in 11 ms
+2021.11.26 14:17:19 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:17:19 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 2012 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:17:19 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:17:21 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:17:21 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:17:22 CET Finished Spring Data repository scanning in 383 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:17:22 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:17:22 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:17:22 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:17:22 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:17:22 CET Finished Spring Data repository scanning in 56 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:17:23 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:17:23 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:17:23 CET Starting service [Tomcat]
+2021.11.26 14:17:23 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:17:24 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:17:24 CET Root WebApplicationContext: initialization completed in 4348 ms
+2021.11.26 14:17:31 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:17:31 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:17:31 CET Started DemoApplication in 12.617 seconds (JVM running for 14.428)
+2021.11.26 14:17:31 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 14:17:31 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 14:17:31 CET Completed initialization in 9 ms
+2021.11.26 14:17:57 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:17:57 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 19100 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:17:57 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:17:59 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:17:59 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:17:59 CET Finished Spring Data repository scanning in 419 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:17:59 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:17:59 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:17:59 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:17:59 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:17:59 CET Finished Spring Data repository scanning in 55 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:18:01 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:18:01 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:18:01 CET Starting service [Tomcat]
+2021.11.26 14:18:01 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:18:01 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:18:01 CET Root WebApplicationContext: initialization completed in 3922 ms
+2021.11.26 14:18:05 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:18:05 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:18:05 CET Started DemoApplication in 8.894 seconds (JVM running for 10.466)
+2021.11.26 14:18:11 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 14:18:11 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 14:18:11 CET Completed initialization in 3 ms
+2021.11.26 14:18:52 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:18:52 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 25928 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:18:52 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:18:56 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:18:56 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:18:57 CET Finished Spring Data repository scanning in 969 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:18:57 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:18:57 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:18:57 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:18:57 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:18:57 CET Finished Spring Data repository scanning in 75 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:18:58 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:18:58 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:18:58 CET Starting service [Tomcat]
+2021.11.26 14:18:58 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:18:59 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:18:59 CET Root WebApplicationContext: initialization completed in 6049 ms
+2021.11.26 14:19:04 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:19:04 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:19:04 CET Started DemoApplication in 12.417 seconds (JVM running for 14.261)
+2021.11.26 14:19:04 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 14:19:04 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 14:19:04 CET Completed initialization in 17 ms
+2021.11.26 14:22:30 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:22:30 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 14940 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:22:30 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:22:33 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:22:33 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:22:34 CET Finished Spring Data repository scanning in 598 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:22:34 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:22:34 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:22:34 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:22:34 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:22:34 CET Finished Spring Data repository scanning in 52 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:22:37 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:22:37 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:22:37 CET Starting service [Tomcat]
+2021.11.26 14:22:37 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:22:38 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:22:38 CET Root WebApplicationContext: initialization completed in 7390 ms
+2021.11.26 14:22:46 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:22:46 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:22:46 CET Started DemoApplication in 17.391 seconds (JVM running for 18.77)
+2021.11.26 14:22:47 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 14:22:47 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 14:22:47 CET Completed initialization in 11 ms
+2021.11.26 14:32:41 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:32:41 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 21524 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:32:41 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:32:44 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:32:44 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:32:45 CET Finished Spring Data repository scanning in 671 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:32:45 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:32:45 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:32:45 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:32:45 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:32:45 CET Finished Spring Data repository scanning in 81 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:32:48 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:32:48 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:32:48 CET Starting service [Tomcat]
+2021.11.26 14:32:48 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:32:48 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:32:48 CET Root WebApplicationContext: initialization completed in 6563 ms
+2021.11.26 14:32:52 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:32:52 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:32:52 CET Started DemoApplication in 11.547 seconds (JVM running for 13.129)
+2021.11.26 14:32:59 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 14:32:59 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 14:32:59 CET Completed initialization in 8 ms
+2021.11.26 14:36:32 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:36:32 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 24796 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:36:32 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:36:33 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:36:33 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:36:34 CET Finished Spring Data repository scanning in 374 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:36:34 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:36:34 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:36:34 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:36:34 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:36:34 CET Finished Spring Data repository scanning in 56 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:36:35 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:36:35 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:36:35 CET Starting service [Tomcat]
+2021.11.26 14:36:35 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:36:36 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:36:36 CET Root WebApplicationContext: initialization completed in 3752 ms
+2021.11.26 14:36:38 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:36:39 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:36:39 CET Started DemoApplication in 7.822 seconds (JVM running for 9.419)
+2021.11.26 14:36:48 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 14:36:48 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 14:36:48 CET Completed initialization in 2 ms
+2021.11.26 14:37:21 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:37:21 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 4180 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:37:21 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:37:22 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:37:22 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:37:23 CET Finished Spring Data repository scanning in 325 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:37:23 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:37:23 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:37:23 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:37:23 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:37:23 CET Finished Spring Data repository scanning in 42 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:37:24 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:37:24 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:37:24 CET Starting service [Tomcat]
+2021.11.26 14:37:24 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:37:24 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:37:24 CET Root WebApplicationContext: initialization completed in 3371 ms
+2021.11.26 14:37:27 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:37:27 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:37:27 CET Started DemoApplication in 7.127 seconds (JVM running for 10.513)
+2021.11.26 14:37:32 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 14:37:32 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 14:37:32 CET Completed initialization in 6 ms
+2021.11.26 14:49:18 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:49:18 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 4116 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:49:18 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:49:20 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:49:20 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:49:20 CET Finished Spring Data repository scanning in 410 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:49:21 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:49:21 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:49:21 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:49:21 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:49:21 CET Finished Spring Data repository scanning in 115 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:49:22 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:49:22 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:49:22 CET Starting service [Tomcat]
+2021.11.26 14:49:22 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:49:24 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:49:24 CET Root WebApplicationContext: initialization completed in 5430 ms
+2021.11.26 14:49:30 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:49:30 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:49:30 CET Started DemoApplication in 12.787 seconds (JVM running for 16.108)
+2021.11.26 14:49:51 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 14:49:51 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 14:49:51 CET Completed initialization in 6 ms
+2021.11.26 14:51:28 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:51:28 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 15620 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:51:28 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:51:30 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:51:30 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:51:30 CET Finished Spring Data repository scanning in 361 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:51:31 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:51:31 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:51:31 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:51:31 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:51:31 CET Finished Spring Data repository scanning in 69 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:51:32 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:51:32 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:51:32 CET Starting service [Tomcat]
+2021.11.26 14:51:32 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:51:32 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:51:32 CET Root WebApplicationContext: initialization completed in 3822 ms
+2021.11.26 14:51:35 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:51:35 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:51:35 CET Started DemoApplication in 7.96 seconds (JVM running for 9.521)
+2021.11.26 14:51:40 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 14:51:40 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 14:51:41 CET Completed initialization in 26 ms
+2021.11.26 14:51:45 CET Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost/<unresolved>:6379 , StackTrace: [Ljava.lang.StackTraceElement;@58e8ea09
+2021.11.26 14:53:33 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.26 14:53:33 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 23588 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.26 14:53:33 CET No active profile set, falling back to default profiles: default
+2021.11.26 14:53:36 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:53:36 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.26 14:53:37 CET Finished Spring Data repository scanning in 344 ms. Found 2 R2DBC repository interfaces.
+2021.11.26 14:53:37 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.26 14:53:37 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.26 14:53:37 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:53:37 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.26 14:53:37 CET Finished Spring Data repository scanning in 31 ms. Found 0 Redis repository interfaces.
+2021.11.26 14:53:38 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.26 14:53:38 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:53:38 CET Starting service [Tomcat]
+2021.11.26 14:53:38 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.26 14:53:39 CET Initializing Spring embedded WebApplicationContext
+2021.11.26 14:53:39 CET Root WebApplicationContext: initialization completed in 5414 ms
+2021.11.26 14:53:44 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.26 14:53:44 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.26 14:53:44 CET Started DemoApplication in 13.009 seconds (JVM running for 17.4)
+2021.11.26 14:53:44 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.26 14:53:44 CET Initializing Servlet 'dispatcherServlet'
+2021.11.26 14:53:44 CET Completed initialization in 26 ms
+2021.11.26 14:54:02 CET Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost/<unresolved>:6379 , StackTrace: [Ljava.lang.StackTraceElement;@5b2f16d8
+2021.11.27 11:15:14 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.27 11:15:14 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 18540 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.27 11:15:14 CET No active profile set, falling back to default profiles: default
+2021.11.27 11:15:16 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.27 11:15:16 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.27 11:15:16 CET Finished Spring Data repository scanning in 254 ms. Found 2 R2DBC repository interfaces.
+2021.11.27 11:15:16 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.27 11:15:16 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.27 11:15:16 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.27 11:15:16 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.27 11:15:16 CET Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2021.11.27 11:15:17 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.27 11:15:17 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.27 11:15:17 CET Starting service [Tomcat]
+2021.11.27 11:15:17 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.27 11:15:17 CET Initializing Spring embedded WebApplicationContext
+2021.11.27 11:15:17 CET Root WebApplicationContext: initialization completed in 3153 ms
+2021.11.27 11:15:20 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.27 11:15:20 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.27 11:15:20 CET Started DemoApplication in 6.172 seconds (JVM running for 7.532)
+2021.11.27 11:15:52 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.27 11:15:52 CET Initializing Servlet 'dispatcherServlet'
+2021.11.27 11:15:52 CET Completed initialization in 2 ms
+2021.11.27 11:15:59 CET Not found exception , StackTrace: [Ljava.lang.StackTraceElement;@253e9c2d
+2021.11.27 12:02:20 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.27 12:02:20 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 24848 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.27 12:02:20 CET No active profile set, falling back to default profiles: default
+2021.11.27 12:02:21 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.27 12:02:21 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.27 12:02:22 CET Finished Spring Data repository scanning in 189 ms. Found 1 R2DBC repository interfaces.
+2021.11.27 12:02:22 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.27 12:02:22 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.27 12:02:22 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.27 12:02:22 CET Finished Spring Data repository scanning in 20 ms. Found 0 Redis repository interfaces.
+2021.11.27 12:02:23 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.27 12:02:23 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.27 12:02:23 CET Starting service [Tomcat]
+2021.11.27 12:02:23 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.27 12:02:23 CET Initializing Spring embedded WebApplicationContext
+2021.11.27 12:02:23 CET Root WebApplicationContext: initialization completed in 2450 ms
+2021.11.27 12:02:25 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.27 12:02:25 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.27 12:02:25 CET Started DemoApplication in 5.38 seconds (JVM running for 6.913)
+2021.11.27 12:02:32 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.27 12:02:32 CET Initializing Servlet 'dispatcherServlet'
+2021.11.27 12:02:32 CET Completed initialization in 6 ms
+2021.11.27 12:02:33 CET Under construction , StackTrace: [Ljava.lang.StackTraceElement;@3c5015da
+2021.11.27 12:06:46 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.27 12:06:46 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 14400 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.27 12:06:46 CET No active profile set, falling back to default profiles: default
+2021.11.27 12:06:47 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.27 12:06:48 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.27 12:06:48 CET Finished Spring Data repository scanning in 269 ms. Found 1 R2DBC repository interfaces.
+2021.11.27 12:06:48 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.27 12:06:48 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.27 12:06:48 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.27 12:06:48 CET Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
+2021.11.27 12:06:49 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.27 12:06:49 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.27 12:06:49 CET Starting service [Tomcat]
+2021.11.27 12:06:49 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.27 12:06:49 CET Initializing Spring embedded WebApplicationContext
+2021.11.27 12:06:49 CET Root WebApplicationContext: initialization completed in 2645 ms
+2021.11.27 12:06:51 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.27 12:06:51 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.27 12:06:51 CET Started DemoApplication in 5.553 seconds (JVM running for 6.61)
+2021.11.27 12:06:56 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.27 12:06:56 CET Initializing Servlet 'dispatcherServlet'
+2021.11.27 12:06:56 CET Completed initialization in 2 ms
+2021.11.27 12:06:57 CET Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost/<unresolved>:6379 , StackTrace: [Ljava.lang.StackTraceElement;@2cdd2972
+2021.11.27 12:07:59 CET Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost/<unresolved>:6379 , StackTrace: [Ljava.lang.StackTraceElement;@51e5b0f9
+2021.11.27 12:08:09 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.27 12:08:09 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 14780 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.27 12:08:09 CET No active profile set, falling back to default profiles: default
+2021.11.27 12:08:10 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.27 12:08:10 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.27 12:08:10 CET Finished Spring Data repository scanning in 174 ms. Found 1 R2DBC repository interfaces.
+2021.11.27 12:08:10 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.27 12:08:10 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.27 12:08:10 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.27 12:08:10 CET Finished Spring Data repository scanning in 18 ms. Found 0 Redis repository interfaces.
+2021.11.27 12:08:11 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.27 12:08:11 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.27 12:08:11 CET Starting service [Tomcat]
+2021.11.27 12:08:11 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.27 12:08:11 CET Initializing Spring embedded WebApplicationContext
+2021.11.27 12:08:11 CET Root WebApplicationContext: initialization completed in 2610 ms
+2021.11.27 12:08:14 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.27 12:08:14 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.27 12:08:14 CET Started DemoApplication in 5.65 seconds (JVM running for 6.898)
+2021.11.27 12:09:24 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.27 12:09:24 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 13960 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.27 12:09:24 CET No active profile set, falling back to default profiles: default
+2021.11.27 12:09:25 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.27 12:09:25 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.27 12:09:26 CET Finished Spring Data repository scanning in 203 ms. Found 1 R2DBC repository interfaces.
+2021.11.27 12:09:26 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.27 12:09:26 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.27 12:09:26 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.27 12:09:26 CET Finished Spring Data repository scanning in 17 ms. Found 0 Redis repository interfaces.
+2021.11.27 12:09:26 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.27 12:09:26 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.27 12:09:26 CET Starting service [Tomcat]
+2021.11.27 12:09:26 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.27 12:09:27 CET Initializing Spring embedded WebApplicationContext
+2021.11.27 12:09:27 CET Root WebApplicationContext: initialization completed in 2593 ms
+2021.11.27 12:09:29 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.27 12:09:29 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.27 12:09:29 CET Started DemoApplication in 5.173 seconds (JVM running for 6.278)
+2021.11.27 12:09:46 CET HV000001: Hibernate Validator 6.2.0.Final
+2021.11.27 12:09:46 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 1872 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2021.11.27 12:09:46 CET No active profile set, falling back to default profiles: default
+2021.11.27 12:09:47 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.27 12:09:47 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021.11.27 12:09:47 CET Finished Spring Data repository scanning in 263 ms. Found 1 R2DBC repository interfaces.
+2021.11.27 12:09:47 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2021.11.27 12:09:47 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021.11.27 12:09:47 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2021.11.27 12:09:47 CET Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+2021.11.27 12:09:48 CET Tomcat initialized with port(s): 8080 (http)
+2021.11.27 12:09:49 CET Initializing ProtocolHandler ["http-nio-8080"]
+2021.11.27 12:09:49 CET Starting service [Tomcat]
+2021.11.27 12:09:49 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2021.11.27 12:09:49 CET Initializing Spring embedded WebApplicationContext
+2021.11.27 12:09:49 CET Root WebApplicationContext: initialization completed in 2979 ms
+2021.11.27 12:09:51 CET Starting ProtocolHandler ["http-nio-8080"]
+2021.11.27 12:09:51 CET Tomcat started on port(s): 8080 (http) with context path ''
+2021.11.27 12:09:51 CET Started DemoApplication in 6.283 seconds (JVM running for 7.486)
+2021.11.27 12:10:06 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021.11.27 12:10:06 CET Initializing Servlet 'dispatcherServlet'
+2021.11.27 12:10:06 CET Completed initialization in 3 ms
+2021.11.27 12:10:07 CET Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost/<unresolved>:6379 , StackTrace: [Ljava.lang.StackTraceElement;@12da53db

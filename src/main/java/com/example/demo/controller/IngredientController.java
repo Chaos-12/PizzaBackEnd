@@ -1,7 +1,5 @@
 package com.example.demo.controller;
 
-import java.util.UUID;
-import javax.validation.Valid;
 import com.example.demo.application.ingredientApplication.CreateOrUpdateIngredientDTO;
 import com.example.demo.application.ingredientApplication.IngredientApplication;
 import com.example.demo.application.ingredientApplication.IngredientDTO;
@@ -18,7 +16,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -35,34 +32,30 @@ public class IngredientController {
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.CREATED)
-    public Mono<IngredientDTO> create(@Valid @RequestBody final CreateOrUpdateIngredientDTO dto) {
-        Mono<IngredientDTO> ingredientDTO = this.ingredientApplication.add(dto);
-        return ingredientDTO;
+    public Mono<ResponseEntity<IngredientDTO>> create(@RequestBody final CreateOrUpdateIngredientDTO dto) {
+        return this.ingredientApplication.add(dto)
+                .map(ingredient -> ResponseEntity.status(HttpStatus.CREATED).body(ingredient));
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")
-    public Mono<ResponseEntity<IngredientDTO>> get(@Valid @PathVariable final UUID id) {
-        Mono<IngredientDTO> ingredientDTO = this.ingredientApplication.get(id);
-        return ingredientDTO.map(ingredient -> ResponseEntity.ok(ingredient))
-                .defaultIfEmpty(ResponseEntity.notFound().build());
+    public Mono<ResponseEntity<IngredientDTO>> get(@PathVariable final String id) {
+        return this.ingredientApplication.get(id).map(ingredient -> ResponseEntity.ok(ingredient));
     }
 
-    @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")
-    public Mono<ResponseEntity<IngredientDTO>> update(@Valid @PathVariable final UUID id,
-            @Valid @RequestBody CreateOrUpdateIngredientDTO dto) {
-        Mono<IngredientDTO> ingredientDTO = this.ingredientApplication.update(id, dto);
-        return ingredientDTO.map(ingredient -> ResponseEntity.ok(ingredient))
-                .defaultIfEmpty(ResponseEntity.notFound().build());
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")
+    public Mono<ResponseEntity<Void>> update(@PathVariable final String id, @RequestBody CreateOrUpdateIngredientDTO dto) {
+        return this.ingredientApplication.update(id, dto)
+                .then(Mono.just(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null)));
     }
 
     @DeleteMapping(path = "/{id}")
-    public Mono<ResponseEntity<Void>> delete(@Valid @PathVariable final UUID id) {
-        return this.ingredientApplication.delete(id).map(r -> ResponseEntity.ok().<Void>build());
+    public Mono<ResponseEntity<Void>> delete(@PathVariable final String id) {
+        return this.ingredientApplication.delete(id)
+                .then(Mono.just(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null)));
     }
-    
+
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public Flux<IngredientProjection> getAll(@Valid @RequestParam(required = false) String name) {
+    public Flux<IngredientProjection> getAll(@RequestParam(required = false) String name) {
         return this.ingredientApplication.getAll(name);
     }
 }

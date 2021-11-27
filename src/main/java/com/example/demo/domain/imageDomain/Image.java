@@ -9,9 +9,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Data
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Setter
 public class Image extends EntityBase {
     @NotEmpty
     private byte[] content;

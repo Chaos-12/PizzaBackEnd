@@ -1,0 +1,12 @@
+schema {
+    query:Query
+}
+type Query {
+	allIngredients: [Ingredient]
+    ingredientById(id:ID): Ingredient
+}
+type Ingredient {
+	id:ID
+	name:String
+	price:Float
+}

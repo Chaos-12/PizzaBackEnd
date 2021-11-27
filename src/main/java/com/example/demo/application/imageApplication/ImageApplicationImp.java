@@ -1,10 +1,6 @@
-package com.example.demo.application.ImageApplication.ImageApplication;
+package com.example.demo.application.imageApplication;
 
 import java.util.UUID;
-
-import com.example.demo.core.ApplicationBase;
-import com.example.demo.domain.imageDomain.Image;
-import com.example.demo.domain.imageDomain.ImageRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,14 +22,12 @@ public class ImageApplicationImp implements ImageApplication {
   public Mono<ImageDTO> add(CreateOrUpdateImageDTO dto){
     Image image = modelMapper.map(dto, Image.class);
     image.setId(UUID.randomUUID());
-    image.validate();
-    return this.imageRepository.add(image)
-                          .flatMap(monoImage -> Mono.just(this.modelMapper.map(monoImage, ImageDTO.class)));
+    image.setThisNew(true);
+    return this.imageRepository.add(image).map(monoImage -> this.modelMapper.map(monoImage, ImageDTO.class));
   }
 
-  public Mono<ImageDTO> getImageRedis(UUID id){
-    return this.imageRepository.getImageRedis(id)
-          .flatMap(monoImage -> Mono.just(this.modelMapper.map(monoImage, ImageDTO.class)));
+  public Mono<ImageDTO> getImageRedis(String id){
+    return this.imageRepository.getImageRedis(id).map(monoImage -> this.modelMapper.map(monoImage, ImageDTO.class));
   }
 
 }
