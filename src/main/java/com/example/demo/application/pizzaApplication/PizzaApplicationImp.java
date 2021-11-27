@@ -15,7 +15,7 @@ import reactor.core.publisher.Mono;
 import org.slf4j.Logger;
 
 @Service
-public class PizzaApplicationImp extends ApplicationBase<Pizza, UUID> implements PizzaApplication {
+public class PizzaApplicationImp extends ApplicationBase<Pizza> implements PizzaApplication {
     private final PizzaWriteRepository pizzaWriteRepository;
     private final IngredientApplication ingredientApplication;
     private final ImageApplication imageApplication;
@@ -40,14 +40,14 @@ public class PizzaApplicationImp extends ApplicationBase<Pizza, UUID> implements
         Pizza newPizza = modelMapper.map(pizzaDTO, Pizza.class);
         newPizza.setId(UUID.randomUUID());
         for (UUID ingredientId : pizzaDTO.getIngredients()) {
-            newPizza.addIngredient(modelMapper.map(ingredientApplication.get(ingredientId), Ingredient.class));
+            newPizza.addIngredient(modelMapper.map(ingredientApplication.get(ingredientId.toString()), Ingredient.class));
         }
         newPizza.setPrice(newPizza.calculatePrice());
         
-        Image image = modelMapper.map(imageApplication.getImageRedis(pizzaDTO.getImage()), Image.class);
+        Image image = modelMapper.map(imageApplication.getImageRedis(pizzaDTO.getImage().toString()), Image.class);
         newPizza.setImage(image.getId());
         
-        return newPizza.validate("name", newPizza.getName(), name -> pizzaWriteRepository.getEntity(name))
+        return newPizza.validate("name", newPizza.getName(), name -> pizzaWriteRepository.exists(name))
                 .then(pizzaWriteRepository.save(newPizza, true))
                 .flatMap(pizza -> {
                         logger.info(this.serializeObject(pizza,"added"));

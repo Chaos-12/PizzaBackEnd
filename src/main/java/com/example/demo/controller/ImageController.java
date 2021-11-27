@@ -1,19 +1,9 @@
 package com.example.demo.controller;
 
 import java.io.IOException;
-import java.util.UUID;
-<<<<<<< HEAD
-import javax.validation.Valid;
+import com.example.demo.application.ImageApplication.ImageDTO;
 import com.example.demo.application.ImageApplication.ImageApplication.CreateOrUpdateImageDTO;
 import com.example.demo.application.ImageApplication.ImageApplication.ImageApplication;
-import com.example.demo.application.ImageApplication.ImageApplication.ImageDTO;
-=======
-
-import com.example.demo.application.imageApplication.CreateOrUpdateImageDTO;
-import com.example.demo.application.imageApplication.ImageApplication;
-import com.example.demo.application.imageApplication.ImageDTO;
-
->>>>>>> main
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -50,4 +40,7 @@ public class ImageController {
         // Cambiar a servicio, el GET de redis se llamará desde el de cloudinary
         return this.imageApplication.getImageRedis(id).map(image -> ResponseEntity.ok(image)).defaultIfEmpty(ResponseEntity.notFound().build());
     }
+
+
+
 }

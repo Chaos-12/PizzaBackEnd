@@ -28,9 +28,11 @@ public class PizzaRepositoryImp implements PizzaWriteRepository  {
         return pizzaRepository.findById(id);
     }
 
-    // TODO:
     @Override
-    public Mono<EntityBase> getEntity(String field) {
+    public Mono<Boolean> exists(String field) {
+        // TODO Auto-generated method stub
         return null;
     }
+
+ 
 }

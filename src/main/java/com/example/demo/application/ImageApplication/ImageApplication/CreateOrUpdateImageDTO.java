@@ -1,5 +1,6 @@
-package com.example.demo.application.imageApplication;
+package com.example.demo.application.ImageApplication.ImageApplication;
 
+import javax.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
