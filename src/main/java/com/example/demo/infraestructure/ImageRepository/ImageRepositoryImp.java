@@ -8,7 +8,11 @@ import com.example.demo.domain.imageDomain.Image;
 import com.example.demo.domain.imageDomain.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ReactiveRedisOperations;
+import org.springframework.data.relational.core.sql.Not;
 import org.springframework.stereotype.Repository;
+
+import io.lettuce.core.Consumer;
+import reactor.core.Disposable;
 import reactor.core.publisher.Mono;
 
 @Repository
@@ -21,13 +25,11 @@ public class ImageRepositoryImp implements ImageRepository {
     }
 
     public Mono<Image> add(Image image) {
-        //comprobar conexion si no 500
-        //var operation = redisOperations.opsForValue();
+
         return redisOperations.opsForValue()
-                              .set(image.getId().toString(), image.getContent(), Duration.ofDays(1))                                                                                        
-                              .map(img -> image);
-                             // .handle((a,b)->b.error(new RedisServerException()));
-                             // .doOnError(new RedisServerException());
+                                        .set(image.getId().toString(), image.getContent(), Duration.ofDays(1))                                                                                        
+                                        .then(Mono.just(image))
+                                        .onErrorResume(err -> Mono.error(new NotFoundException()));
     }
 
     public Mono<Image> getImageRedis(UUID id){
@@ -38,7 +40,6 @@ public class ImageRepositoryImp implements ImageRepository {
                                     image.setContent(imageBytes);
                                     image.setId(id);
                                     return Mono.just(image);});
-                              //  .handle((a,b)->b.error(new RedisServerException()));
     }
 }
  

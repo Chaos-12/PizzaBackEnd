@@ -34,10 +34,9 @@ public class ImageController {
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<ImageDTO> upload(@Valid @RequestParam("image") MultipartFile file) throws IOException {
-        // 2 excepciones 500 si conexion redis no esta abierta y 400 si el body esta vacio
         CreateOrUpdateImageDTO dto = new CreateOrUpdateImageDTO();
         dto.setContent(file.getBytes());
-        return imageApplication.add(dto);
+        return imageApplication.add(dto);            
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")

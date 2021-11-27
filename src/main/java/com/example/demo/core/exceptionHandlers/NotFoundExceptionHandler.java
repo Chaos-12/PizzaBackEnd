@@ -16,9 +16,9 @@ public class NotFoundExceptionHandler {
     public NotFoundExceptionHandler(final Logger logger){
         this.logger = logger;
     }
-    @ExceptionHandler(value = { NotFoundException.class })
-    protected ResponseEntity<Object> handleConflict(NotFoundException ex, WebRequest request) {
+    @ExceptionHandler(value = { Exception.class })
+    protected ResponseEntity<Object> handleConflict(Exception ex, WebRequest request) {
         logger.warn(String.format("%s , StackTrace: %s", ex.getMessage(), ex.getStackTrace().toString()));
-        return ResponseEntity.status(ex.getCode()).body(ex.getMessage());
+        return ResponseEntity.status(400).body(ex.getMessage());
     }
 }
