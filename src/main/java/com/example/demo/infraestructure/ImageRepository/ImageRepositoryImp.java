@@ -23,18 +23,18 @@ public class ImageRepositoryImp implements ImageRepository {
         return redisOperations.opsForValue()
                                 .set(image.getId().toString(), image.getContent(), Duration.ofDays(1))                                                                                        
                                 .then(Mono.just(image))
-                                .onErrorResume(err -> Mono.error(new RedisConnectionException()));
+                                .onErrorResume(err -> Mono.error(new RedisConnectionException(err.getMessage())));
     }
 
-    public Mono<Image> getImageRedis(UUID id){
+    public Mono<Image> getImageRedis(String id){
         return redisOperations.opsForValue()
-                              .get(id.toString())
+                              .get(id)
                               .flatMap(imageBytes -> {
                                     Image image = new Image();
                                     image.setContent(imageBytes);
-                                    image.setId(id);
+                                    image.setId(UUID.fromString(id));
                                     return Mono.just(image);
                                 }).
-                                onErrorResume(err -> Mono.error(new RedisConnectionException()));
+                                onErrorResume(err -> Mono.error(new RedisConnectionException(err.getMessage())));
     }
 }

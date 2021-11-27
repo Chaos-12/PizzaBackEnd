@@ -19,6 +19,6 @@ public class RedisConnectionExceptionHandler {
     @ExceptionHandler(value = {RedisConnectionException.class })
     protected ResponseEntity<Object> handleConflict(RedisConnectionException ex, WebRequest request) {
         logger.warn(String.format("%s , StackTrace: %s", ex.getMessage(), ex.getStackTrace().toString()));
-        return ResponseEntity.status(ex.getCode()).body(ex.getMessage());
+        return ResponseEntity.status(ex.getCode()).body("Under construction");
     }    
 }
