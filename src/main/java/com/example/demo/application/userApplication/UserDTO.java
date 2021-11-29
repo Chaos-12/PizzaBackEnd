@@ -9,6 +9,8 @@ import lombok.Setter;
 @Setter
 public class UserDTO {
     private UUID id;
+    private String password;
+    private String remaining_tries;
     private String first_name;
     private String last_name;
     private String email;

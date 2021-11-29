@@ -15,6 +15,7 @@ import lombok.Setter;
 @Table("user")
 @Setter
 public class User extends EntityBase {
+    public static final int max_retries = 3;
     @NotBlank
     private String first_name;
     @NotBlank
@@ -27,6 +28,7 @@ public class User extends EntityBase {
     private String provider;
     @NotNull
     private Rol rol;
+    private int remaining_tries = max_retries;
 
     public String toString(){
         return  String.format("User {id: %s, first_name: %s, last_name: %s, email: %s, rol: %s}", 
