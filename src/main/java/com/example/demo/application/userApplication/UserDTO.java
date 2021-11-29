@@ -6,9 +6,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserDTO {
-    private static final int defaultExpiration = 3600;
+    private static final int defaultExpiration = 3600000;
     private String access_token;
     private String refresh_token;
-    private String type;
+    private String type = "Bearer";
     private int expiration = defaultExpiration;
 }

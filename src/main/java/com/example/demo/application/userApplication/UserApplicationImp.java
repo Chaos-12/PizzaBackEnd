@@ -40,11 +40,10 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                 .validate("email", newUser.getEmail(), (email) -> this.userWriteRepository.exists(email))
                 .then(this.userWriteRepository.save(newUser, true))
                 .map(dbUser -> {
-                    UserDTO userDTO = this.modelMapper.map(dbUser, UserDTO.class);
-                    //userDTO.setAccess_token(getJWTToken(dbUser.getId().toString()));
-                    userDTO.setType("Bearer");
                     logger.info(this.serializeObject(dbUser, "added"));
-                    return this.modelMapper.map(dbUser, UserDTO.class);
+                    AutenticationUser autenticationUser = new AutenticationUser(dbUser.getId());
+                    //TODO Guardar autenticationUser en Redis
+                    return this.modelMapper.map(autenticationUser, UserDTO.class);
                 });
     }
 }
