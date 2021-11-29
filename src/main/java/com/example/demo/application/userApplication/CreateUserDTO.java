@@ -16,9 +16,9 @@ import lombok.Setter;
 @Validated
 public class CreateUserDTO {
     @NotBlank
-    private String firstName;
+    private String first_name;
     @NotBlank
-    private String lastName;
+    private String last_name;
     @Email
     private String email;
     @NotBlank

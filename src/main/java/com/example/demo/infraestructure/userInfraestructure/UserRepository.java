@@ -14,7 +14,7 @@ import reactor.core.publisher.Mono;
 @Repository
 public interface UserRepository extends ReactiveCrudRepository<User, UUID> {
     
-    @Query("SELECT id, firstName, lastName, email FROM user WHERE (email LIKE CONCAT('%', :email, '%')) ORDER BY email;")
+    @Query("SELECT id, first_name, last_name, email FROM user WHERE (email LIKE CONCAT('%', :email, '%')) ORDER BY email;")
     Flux<UserProjection> findByEmail(String email);
 
     @Query("SELECT CASE WHEN COUNT(id)>0 THEN 1 ELSE 0 END FROM user WHERE email = :email;")

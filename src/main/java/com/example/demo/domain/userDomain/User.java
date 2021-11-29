@@ -16,9 +16,9 @@ import lombok.Setter;
 @Setter
 public class User extends EntityBase {
     @NotBlank
-    private String firstName;
+    private String first_name;
     @NotBlank
-    private String lastName;
+    private String last_name;
     @Email
     private String email;
     @NotBlank
@@ -29,7 +29,7 @@ public class User extends EntityBase {
     private Rol rol;
 
     public String toString(){
-        return  String.format("User {id: %s, firstName: %s, lastName: %s, email: %s, rol: %s}", 
-                    this.getId(), this.getFirstName(), this.getLastName(), this.getEmail(), this.getRol());
+        return  String.format("User {id: %s, first_name: %s, last_name: %s, email: %s, rol: %s}", 
+                    this.getId(), this.getFirst_name(), this.getLast_name(), this.getEmail(), this.getRol());
     }
 }

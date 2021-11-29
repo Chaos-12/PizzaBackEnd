@@ -15,7 +15,9 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserApplicationImp extends ApplicationBase<User> implements UserApplication {
 
     private final UserWriteRepository userWriteRepository;
