@@ -45,4 +45,9 @@ public class AutenticationUser {
                         secretKey.getBytes()).compact();
         this.access_token = token;
     }
+    
+    public String toString(){
+        return  String.format("AutenticationUser {id: %s, access_token: %s, refresh_token: %s}", 
+                    this.getId(), this.getAccess_token(), this.getRefresh_token());
+    }
 }

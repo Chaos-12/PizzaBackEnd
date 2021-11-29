@@ -31,8 +31,8 @@ public abstract class ApplicationBase<T> {
         }
     }
 
-    protected String serializeObject(T entity, String message) {
-        return String.format("%s %s succesfully.", entity.toString(), message);
+    protected String serializeObject(Object obj, String message) {
+        return String.format("%s %s succesfully.", obj.toString(), message);
     }
 
     public static UUID getUUIDfrom(String id) throws IllegalArgumentException {
