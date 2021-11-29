@@ -30,5 +30,4 @@ public class UserController {
     public Mono<ResponseEntity<UserDTO>> create(@RequestBody final CreateUserDTO dto) {
         return this.userApplication.add(dto).map(user -> ResponseEntity.status(HttpStatus.CREATED).body(user));
     }
-
 }

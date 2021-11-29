@@ -16,7 +16,8 @@ public abstract class ApplicationBase<T> {
     }
 
     protected Mono<T> findById(UUID id) {
-        return this.getById.findById(id).switchIfEmpty(Mono.error(new NotFoundException()));
+        return this.getById.findById(id).switchIfEmpty(Mono.error(new NotFoundException(
+                new StringBuilder("Error: No item found for id ").append(id.toString()).toString())));
     }
 
     protected Mono<T> findById(String id) {
