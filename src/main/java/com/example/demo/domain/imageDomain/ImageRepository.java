@@ -4,5 +4,5 @@ import reactor.core.publisher.Mono;
 
 public interface ImageRepository {
     public Mono<Image> add(Image image);
-    public Mono<Image> getImageRedis(String uuid);
+    public Mono<byte[]> getImageRedis(String uuid);
 }

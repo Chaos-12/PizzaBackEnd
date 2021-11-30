@@ -37,11 +37,11 @@ public class Pizza extends EntityBase{
     //TODO: comentarios
     
     public void addIngredient(Ingredient ingredient){
-        this.ingredients.add(ingredient);
+        ingredients.add(ingredient);
     }
 
     public void removeIngredient(Ingredient ingredient){
-        this.ingredients.remove(ingredient);
+        ingredients.remove(ingredient);
     }
 
     public BigDecimal calculatePrice(){

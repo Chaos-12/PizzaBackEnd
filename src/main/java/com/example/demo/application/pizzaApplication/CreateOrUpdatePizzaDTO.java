@@ -17,5 +17,5 @@ public class CreateOrUpdatePizzaDTO {
     @NonNull
     private UUID image;
     @NotEmpty
-    private Set<UUID> Ingredients = new HashSet<UUID>();        
+    private Set<UUID> ingredients = new HashSet<UUID>();        
 }

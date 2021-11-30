@@ -1,7 +1,7 @@
 package com.example.demo.application.ImageApplication.ImageApplication;
 
 import java.util.UUID;
-import com.example.demo.application.ImageApplication.ImageDTO;
+
 import com.example.demo.domain.imageDomain.Image;
 import com.example.demo.domain.imageDomain.ImageRepository;
 import org.modelmapper.ModelMapper;
@@ -33,8 +33,8 @@ public class ImageApplicationImp implements ImageApplication {
     return this.imageRepository.add(image).map(monoImage -> this.modelMapper.map(monoImage, ImageDTO.class));
   }
 
-  public Mono<ImageDTO> getImageRedis(String id){
-    return this.imageRepository.getImageRedis(id).map(monoImage -> this.modelMapper.map(monoImage, ImageDTO.class));
+  public Mono<byte[]> getImageRedis(String id){
+    return this.imageRepository.getImageRedis(id);
   }
 
 }

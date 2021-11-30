@@ -1,4 +1,4 @@
-package com.example.demo.application.ImageApplication;
+package com.example.demo.application.ImageApplication.ImageApplication;
 
 import java.util.UUID;
 import lombok.Getter;
@@ -10,4 +10,5 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ImageDTO {
     public UUID id;
+    public byte[] content;
 }

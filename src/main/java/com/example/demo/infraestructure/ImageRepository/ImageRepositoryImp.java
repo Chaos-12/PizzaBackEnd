@@ -1,7 +1,7 @@
 package com.example.demo.infraestructure.imageRepository;
 
 import java.time.Duration;
-import com.example.demo.core.ApplicationBase;
+// import com.example.demo.core.ApplicationBase;
 import com.example.demo.core.exceptions.RedisConnectionException;
 import com.example.demo.domain.imageDomain.Image;
 import com.example.demo.domain.imageDomain.ImageRepository;
@@ -26,15 +26,9 @@ public class ImageRepositoryImp implements ImageRepository {
                                 .onErrorResume(err -> Mono.error(new RedisConnectionException(err.getMessage())));
     }
 
-    public Mono<Image> getImageRedis(String id){
+    public Mono<byte[]> getImageRedis(String id){
         return redisOperations.opsForValue()
-                              .get(id)
-                              .flatMap(imageBytes -> {
-                                    Image image = new Image();
-                                    image.setContent(imageBytes);
-                                    image.setId(ApplicationBase.getUUIDfrom(id));
-                                    return Mono.just(image);
-                                }).
-                                onErrorResume(err -> Mono.error(new RedisConnectionException(err.getMessage())));
+                              .get(id);
+                              //.onErrorResume(err -> Mono.error(new RedisConnectionException(err.getMessage())));
     }
 }
