@@ -16,7 +16,8 @@ public abstract class ApplicationBase<T> {
     }
 
     protected Mono<T> findById(UUID id) {
-        return this.getById.findById(id).switchIfEmpty(Mono.error(new NotFoundException()));
+        return this.getById.findById(id).switchIfEmpty(Mono.error(new NotFoundException(
+                new StringBuilder("Error: No item found for id ").append(id.toString()).toString())));
     }
 
     protected Mono<T> findById(String id) {
@@ -30,8 +31,8 @@ public abstract class ApplicationBase<T> {
         }
     }
 
-    protected String serializeObject(T entity, String message) {
-        return String.format("%s %s succesfully.", entity.toString(), message);
+    protected String serializeObject(Object obj, String message) {
+        return String.format("%s %s succesfully.", obj.toString(), message);
     }
 
     public static UUID getUUIDfrom(String id) throws IllegalArgumentException {
