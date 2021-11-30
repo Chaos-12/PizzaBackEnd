@@ -64,62 +64,41 @@ public class ImageCloudinaryRepositoryImp implements ImageCloudinaryRepository{
         builder.append(timestamp);
         builder.append(cloudinaryVariables.get("secretKey"));
 
-        MessageDigest digest;
         String signature = new String(builder);
+		String signatureString = "";
         try {
-            digest = MessageDigest.getInstance("SHA-256");
-           // signature = "public_id=106d32bc-e643-4047-be4b-ad949f632dc3&timestamp=16382031066wIrLobN-s8b6k7qhI26syd_Tc5A";
-            byte[] encodedhash = digest.digest(signature.getBytes(StandardCharsets.UTF_8));
-            String signatureString = bytesToHex(encodedhash);
-            return signatureString; 
+			MessageDigest digest = MessageDigest.getInstance("SHA-256");
+			byte[] encodedhash = digest.digest(signature.getBytes(StandardCharsets.UTF_8));
+			signatureString = bytesToHex(encodedhash);
         } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
+			e.printStackTrace();
         }
-        return null;
+        return signatureString;
     }
     public Mono<ImageDTO> saveImageCloudianary(ImageDTO image){
-	Long timestamp = System.currentTimeMillis() / 100L;
-        String signature = generateSignature(image.getId().toString(), timestamp);
-       // URI url = UriComponentsBuilder.fromHttpUrl(cloudinaryVariables.get("url")).build().toUri();
+		Long timestamp = System.currentTimeMillis() / 100L;
+		var publicId = image.getId().toString();
+        String signature = generateSignature(publicId, timestamp);
 
         MultipartBodyBuilder builder = new MultipartBodyBuilder();
-        
         builder.part("file", image.getContent()).filename("file");
         builder.part("api_key", cloudinaryVariables.get("apiKey"));
-        builder.part("public_id", image.getId().toString());
+        builder.part("public_id", publicId);
         builder.part("timestamp", timestamp);
         builder.part("signature", signature);
 
-        String result = webClient.post()
-                        .uri("https://api.cloudinary.com/v1_1/dci77dznz/image/upload")
-                	.contentType(MediaType.MULTIPART_FORM_DATA)
-                        .body(BodyInserters.fromMultipartData(builder.build()))
-                        .exchange()
-                        .flatMap(response -> response.bodyToMono(String.class))
-                        .flux()
-                        .blockFirst();
-         System.out.println("RESULT: " + result);
-                 
-        return Mono.just(image);
-                
-                /*
-                 .onStatus(status -> 
-                                status.value() == HttpStatus.METHOD_NOT_ALLOWED.value(), 
-                            response -> 
-                 .bodyToMono(ImageDTO.class);
-                 */
-                                               
+		// get la url del recurso y ponerlo al imagedto
+        return webClient.post()
+				.uri("https://api.cloudinary.com/v1_1/dci77dznz/image/upload")
+				.contentType(MediaType.MULTIPART_FORM_DATA)
+				.body(BodyInserters.fromMultipartData(builder.build()))
+				.exchangeToMono(response -> {
+					if (response.statusCode().equals(HttpStatus.OK)) {
+						return Mono.just(image);
+					} else {
+						return Mono.error(new RedisConnectionException());
+					}
+				});                                      
     }        
 }
 
-
-        /*
-        webClient.post()
-                    .uri(uriBuilder -> uriBuilder
-                                    .path(cloudinaryVariables.get("url"))
-                                    .queryParam("file",image.getContent())
-                                    .queryParam("upload_preset",cloudinaryVariables.get("upload_preset"))
-                                    .queryParam("public_id",image.getId().toString())
-                                    .build()
-                    ).retrieve();
-        */

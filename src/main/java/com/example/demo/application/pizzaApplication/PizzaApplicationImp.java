@@ -57,7 +57,7 @@ public class PizzaApplicationImp extends ApplicationBase<Pizza> implements Pizza
         ImageDTO image = new ImageDTO();
         image.setId(pizzaDTO.getImage());
         image.setContent(bytesImg);
-        imageCloudinaryRepository.saveImageCloudianary(image);
+        Mono<ImageDTO> cloud = imageCloudinaryRepository.saveImageCloudianary(image);
         newPizza.setImage(image.getId());
 
         return newPizza.validate("name", newPizza.getName(), name -> pizzaWriteRepository.exists(name))
