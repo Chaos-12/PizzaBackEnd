@@ -5,7 +5,7 @@ import java.util.UUID;
 import com.example.demo.core.ApplicationBase;
 import com.example.demo.domain.userDomain.User;
 import com.example.demo.domain.userDomain.UserWriteRepository;
-import com.example.demo.infraestructure.redisRepository.RedisRepositoryImp;
+import com.example.demo.infraestructure.redisInfraestructure.RedisRepository;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.modelmapper.ModelMapper;
@@ -19,18 +19,18 @@ import org.springframework.stereotype.Service;
 public class UserApplicationImp extends ApplicationBase<User> implements UserApplication {
 
     private final UserWriteRepository userWriteRepository;
-    private final RedisRepositoryImp<AutenticationUser> redisRepositoryImp;
+    private final RedisRepository<AutenticationUser, String> redisRepositoryImp;
     private final ModelMapper modelMapper;
     private final Logger logger;
 
     @Autowired
     public UserApplicationImp(final Logger logger, final UserWriteRepository userWriteRepository,
-            final ModelMapper modelMapper, final RedisRepositoryImp<AutenticationUser> redisRepositoryImp) {
+            final ModelMapper modelMapper, final RedisRepository<AutenticationUser, String> redisRepositoryImp) {
         super((id) -> userWriteRepository.findById(id));
         this.userWriteRepository = userWriteRepository;
+        this.redisRepositoryImp = redisRepositoryImp;
         this.modelMapper = modelMapper;
         this.logger = logger;
-        this.redisRepositoryImp = redisRepositoryImp;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                 .flatMap(dbUser -> {
                     logger.info(this.serializeObject(dbUser, "added"));
                     AutenticationUser autenticationUser = new AutenticationUser(dbUser.getId());
-                    return this.redisRepositoryImp.add(dbUser.getId().toString(), autenticationUser);
+                    return this.redisRepositoryImp.set(dbUser.getId().toString(), autenticationUser);
                 })
                 .map(user -> {
                     logger.info(this.serializeObject(user, "added to redis"));
