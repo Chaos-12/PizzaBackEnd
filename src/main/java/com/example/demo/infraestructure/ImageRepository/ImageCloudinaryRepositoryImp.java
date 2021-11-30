@@ -30,20 +30,10 @@ public class ImageCloudinaryRepositoryImp implements ImageCloudinaryRepository{
 
     @Autowired
     public ImageCloudinaryRepositoryImp(WebClient.Builder webClientBuilder) {
-        //this.webClientBuilder = webClientBuilder;
-       // webClient = this.webClientBuilder.build();
-       // webClient = WebClient.builder().baseUrl("https://api.cloudinary.com/v1_1/"+System.getenv("CloudName")).build();
-
-
-       
-       webClient = WebClient.builder().build();
-
-
-
-        cloudinaryVariables.put("url", "https://api.cloudinary.com/v1_1/"+System.getenv("CloudName")+"/image/upload");
+    	webClient = WebClient.builder().build();
+    	cloudinaryVariables.put("url", "https://api.cloudinary.com/v1_1/"+System.getenv("CloudName")+"/image/upload");
         cloudinaryVariables.put("apiKey", System.getenv("CloudAPIKey"));
         cloudinaryVariables.put("secretKey", System.getenv("CloudAPISecret"));
-       // cloudinaryVariables.put("upload_preset", "qe991vfo");
     }    
     private static String bytesToHex(byte[] hash) {
         StringBuilder hexString = new StringBuilder(2 * hash.length);
