@@ -2,10 +2,7 @@ package com.example.demo.infraestructure.ingredientInfraestructure;
 
 import java.util.UUID;
 
-import com.example.demo.domain.ingredientDomain.Ingredient;
-import com.example.demo.domain.ingredientDomain.IngredientProjection;
-import com.example.demo.domain.ingredientDomain.IngredientReadRepository;
-import com.example.demo.domain.ingredientDomain.IngredientWriteRepository;
+import com.example.demo.domain.ingredientDomain.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
