@@ -20,14 +20,19 @@ public class RedisRepository<T,ID> {
         this.redisOperations = redisOperations;
     }
 
-    public Mono<T> set(ID id, T t) {
-        return redisOperations.opsForValue().set(id, t, Duration.ofDays(1)).then(Mono.just(t));
+    public Mono<T> set(ID id, T t, long hours) {
+        return redisOperations
+                    .opsForValue()
+                    .set(id, t, Duration.ofHours(hours))
+                    .then(Mono.just(t));
     }
 
     public Mono<T> getFromString(ID id) {
-        return redisOperations.opsForValue().get(id)
-                .onErrorResume(err -> Mono.error(new RedisConnectionException(err.getMessage())))
-                .switchIfEmpty(Mono.error(new NotFoundException(
-                    new StringBuilder("Error: No item found for id ").append(id.toString()).toString())));
+        return redisOperations
+                    .opsForValue()
+                    .get(id)
+                    .onErrorResume(err -> Mono.error(new RedisConnectionException(err.getMessage())))
+                    .switchIfEmpty(Mono.error(new NotFoundException(
+                        new StringBuilder("Error: No item found for id ").append(id.toString()).toString())));
     }
 }
