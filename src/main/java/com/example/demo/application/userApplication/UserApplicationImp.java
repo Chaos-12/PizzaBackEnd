@@ -45,7 +45,7 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                 .flatMap(dbUser -> {
                     logger.info(this.serializeObject(dbUser, "added"));
                     AutenticationUser autenticationUser = new AutenticationUser(dbUser.getId());
-                    return this.redisRepositoryImp.set(dbUser.getId().toString(), autenticationUser);
+                    return this.redisRepositoryImp.set(dbUser.getId().toString(), autenticationUser, 1);
                 })
                 .map(user -> {
                     logger.info(this.serializeObject(user, "added to redis"));
