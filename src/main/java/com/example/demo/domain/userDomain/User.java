@@ -27,6 +27,7 @@ public class User extends EntityBase {
     @NotBlank
     private String provider;
     @Email
+    @NotNull
     private String email;
     private String password;
     private int remaining_tries = max_retries;
