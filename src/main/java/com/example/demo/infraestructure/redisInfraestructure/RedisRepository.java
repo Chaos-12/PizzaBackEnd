@@ -5,17 +5,13 @@ import java.time.Duration;
 import com.example.demo.core.exceptions.NotFoundException;
 import com.example.demo.core.exceptions.RedisConnectionException;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ReactiveRedisOperations;
-import org.springframework.stereotype.Repository;
 
 import reactor.core.publisher.Mono;
 
-@Repository
 public class RedisRepository<T,ID> {
     private final ReactiveRedisOperations<ID, T> redisOperations;
 
-    @Autowired
     public RedisRepository(final ReactiveRedisOperations<ID, T> redisOperations){
         this.redisOperations = redisOperations;
     }
