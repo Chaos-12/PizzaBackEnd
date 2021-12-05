@@ -15,30 +15,37 @@ import io.jsonwebtoken.SignatureAlgorithm;
 @Component
 public class TokenProvider {
 
-    //@Value("${RedisSecretKey}")
-    private String secretKey = "mySecretKey";
+    @Value("#{environment.JWTSecretKey}")
+    private String secretKey;
 
-    public String generateAccessToken(UUID id){
-        /*List<GrantedAuthority> grantedAuthorities = AuthorityUtils
-                .commaSeparatedStringToAuthorityList("USER");
+    @Bean
+    public TokenProvider create(){
+        return new TokenProvider();
+    }
+
+    public String generateAccessToken(UUID id) {
+        /*
+         * List<GrantedAuthority> grantedAuthorities = AuthorityUtils
+         * .commaSeparatedStringToAuthorityList("USER");
          */
         String token = Jwts
-                        .builder()
-                        .setId("softtekJWT")
-                        .setSubject(id.toString())
-                        /*.claim("authorities",
-                                grantedAuthorities.stream()
-                                        .map(GrantedAuthority::getAuthority)
-                                        .collect(Collectors.toList()))
-                        */
-                        .setIssuedAt(new Date(System.currentTimeMillis()))
-                        .setExpiration(new Date(System.currentTimeMillis() + 3600000))
-                        .signWith(SignatureAlgorithm.HS512,secretKey.getBytes())
-                        .compact();
+                .builder()
+                .setId("softtekJWT")
+                .setSubject(id.toString())
+                /*
+                 * .claim("authorities",
+                 * grantedAuthorities.stream()
+                 * .map(GrantedAuthority::getAuthority)
+                 * .collect(Collectors.toList()))
+                 */
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + 3600000))
+                .signWith(SignatureAlgorithm.HS512, secretKey.getBytes())
+                .compact();
         return token;
     }
 
-    public String generateRefreshToken(){
+    public String generateRefreshToken() {
         return NanoIdUtils.randomNanoId();
     }
 }
