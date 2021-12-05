@@ -1,6 +1,6 @@
 package com.example.demo.application.userApplication;
 
-import com.example.demo.domain.userDomain.Rol;
+import com.example.demo.domain.userDomain.Role;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,5 +13,5 @@ public class CreateUserDTO {
     private String email;
     private String password;
     private String provider;
-    private Rol rol;
+    private Role role;
 }

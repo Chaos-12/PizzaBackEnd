@@ -50,7 +50,7 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                 .then(this.userWriteRepository.save(newUser, true))
                 .flatMap(dbUser -> {
                     logger.info(this.serializeObject(dbUser, "added"));
-                    UserLogInfo logInfo = new UserLogInfo(dbUser.getRol());
+                    UserLogInfo logInfo = new UserLogInfo(dbUser.getRole());
                     return this.logInfoRepository.set(dbUser.getId().toString(), logInfo, 24);
                 })
                 .flatMap(hola->{

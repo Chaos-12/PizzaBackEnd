@@ -3,25 +3,25 @@ package com.example.demo.security;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.example.demo.domain.userDomain.Rol;
+import com.example.demo.domain.userDomain.Role;
 
 public class UserLogInfo {
-    private final Rol rol;
+    private final Role role;
     private final Set<String> usedTokens = new HashSet<String>();
 
-    public UserLogInfo(Rol rol){
-        this.rol = rol;
+    public UserLogInfo(Role role){
+        this.role = role;
     }
 
-    public Rol getRol(){
-        return this.rol;
+    public Role getRole(){
+        return this.role;
     }
 
     public Boolean hasUsed(String refreshToken){
         return usedTokens.contains(refreshToken);
     }
 
-    public void addRefresh(String refreshToken){
+    public void addRefreshToken(String refreshToken){
         this.usedTokens.add(refreshToken);
     }
 }

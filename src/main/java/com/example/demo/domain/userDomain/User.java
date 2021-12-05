@@ -19,7 +19,7 @@ import lombok.Setter;
 public class User extends EntityBase {
     public static final int max_retries = 3;
     @NotNull
-    private Rol rol;
+    private Role role;
     @NotBlank
     private String first_name;
     @NotBlank
@@ -34,7 +34,7 @@ public class User extends EntityBase {
 
     public String toString(){
         return  String.format("User {id: %s, first_name: %s, last_name: %s, email: %s, rol: %s}", 
-                    this.getId(), this.getFirst_name(), this.getLast_name(), this.getEmail(), this.getRol());
+                    this.getId(), this.getFirst_name(), this.getLast_name(), this.getEmail(), this.getRole());
     }
 
     @Override

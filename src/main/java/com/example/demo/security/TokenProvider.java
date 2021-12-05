@@ -1,6 +1,7 @@
 package com.example.demo.security;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.UUID;
 
 import com.aventrix.jnanoid.jnanoid.NanoIdUtils;
@@ -15,7 +16,9 @@ import io.jsonwebtoken.SignatureAlgorithm;
 @Component
 public class TokenProvider {
 
-    @Value("#{environment.JWTSecretKey}")
+    private static final long JwtTokenValidity = 60*60*1000;
+
+    @Value("#{environment.JwtSecretKey}")
     private String secretKey;
 
     @Bean
@@ -24,25 +27,15 @@ public class TokenProvider {
     }
 
     public String generateAccessToken(UUID id) {
-        /*
-         * List<GrantedAuthority> grantedAuthorities = AuthorityUtils
-         * .commaSeparatedStringToAuthorityList("USER");
-         */
-        String token = Jwts
+        return Jwts
                 .builder()
-                .setId("softtekJWT")
+                .setClaims(new HashMap<String, Object>())
+                .setId(UUID.randomUUID().toString())
                 .setSubject(id.toString())
-                /*
-                 * .claim("authorities",
-                 * grantedAuthorities.stream()
-                 * .map(GrantedAuthority::getAuthority)
-                 * .collect(Collectors.toList()))
-                 */
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 3600000))
+                .setExpiration(new Date(System.currentTimeMillis() + JwtTokenValidity))
                 .signWith(SignatureAlgorithm.HS512, secretKey.getBytes())
                 .compact();
-        return token;
     }
 
     public String generateRefreshToken() {

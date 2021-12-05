@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import com.example.demo.domain.userDomain.Rol;
+import com.example.demo.domain.userDomain.Role;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -51,18 +51,18 @@ public class CustomConverters {
     }
     
     @WritingConverter
-    private class RolToIntegerConverter implements Converter<Rol, Integer> {
+    private class RolToIntegerConverter implements Converter<Role, Integer> {
 		@Override
-		public Integer convert(Rol rol) {
-			return rol.ordinal();
+		public Integer convert(Role role) {
+			return role.ordinal();
 		}
 	}
 
     @ReadingConverter
-	public class IntegerToRolConverter implements Converter<Integer,Rol> {
+	public class IntegerToRolConverter implements Converter<Integer,Role> {
 		@Override
-		public Rol convert(Integer value) {
-			return Rol.values()[value];
+		public Role convert(Integer value) {
+			return Role.values()[value];
 		}
 	}
 }
