@@ -3,6 +3,8 @@ package com.example.demo.controller;
 import com.example.demo.application.userApplication.CreateUserDTO;
 import com.example.demo.application.userApplication.OutUserDTO;
 import com.example.demo.application.userApplication.UserApplication;
+import com.example.demo.security.AuthRequest;
+import com.example.demo.security.AuthResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,5 +38,11 @@ public class UserController {
     public Mono<ResponseEntity<OutUserDTO>> refreshUser(@RequestBody final String refreshToken) {
         //TODO
         return Mono.empty();
+    }
+
+    @PostMapping(path = "/login")
+    public Mono<ResponseEntity<AuthResponse>> login(@RequestBody AuthRequest request) {
+        return this.userApplication.login(request)
+                .map(authResponse -> ResponseEntity.ok(authResponse));
     }
 }

@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.UUID;
 
 import com.aventrix.jnanoid.jnanoid.NanoIdUtils;
+import com.example.demo.domain.userDomain.User;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -26,12 +27,12 @@ public class TokenProvider {
         return new TokenProvider();
     }
 
-    public String generateAccessToken(UUID id) {
+    public String generateAccessToken(User user) {
         return Jwts
                 .builder()
                 .setClaims(new HashMap<String, Object>())
-                .setId(UUID.randomUUID().toString())
-                .setSubject(id.toString())
+                .setId(NanoIdUtils.randomNanoId())
+                .setSubject(user.getId().toString())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + JwtTokenValidity))
                 .signWith(SignatureAlgorithm.HS512, secretKey.getBytes())

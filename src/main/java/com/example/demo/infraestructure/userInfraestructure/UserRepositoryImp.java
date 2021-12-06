@@ -2,6 +2,7 @@ package com.example.demo.infraestructure.userInfraestructure;
 
 import java.util.UUID;
 
+import com.example.demo.core.exceptions.NotFoundException;
 import com.example.demo.domain.userDomain.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,13 @@ public class UserRepositoryImp implements UserWriteRepository, UserReadRepositor
     @Override
     public Mono<User> findById(UUID id) {
         return this.userRepository.findById(id);
+    }
+
+    public Mono<User> findUserByEmail(String email) {
+        return this.userRepository
+                        .findUserByEmail(email)
+                        .switchIfEmpty(Mono.error(new NotFoundException(
+                            new StringBuilder("Error: No user found for email ").append(email).toString())));
     }
 
     @Override

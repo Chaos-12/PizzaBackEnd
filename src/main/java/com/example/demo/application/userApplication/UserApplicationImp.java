@@ -6,6 +6,8 @@ import com.example.demo.core.ApplicationBase;
 import com.example.demo.domain.userDomain.User;
 import com.example.demo.domain.userDomain.UserWriteRepository;
 import com.example.demo.infraestructure.redisInfraestructure.RedisRepository;
+import com.example.demo.security.AuthRequest;
+import com.example.demo.security.AuthResponse;
 import com.example.demo.security.TokenProvider;
 import com.example.demo.security.UserLogInfo;
 
@@ -62,9 +64,22 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                                 logger.info("refreshToken entry created in redis");
                                 OutUserDTO userDTO = new OutUserDTO();
                                 userDTO.setRefresh_token(refreshToken);
-                                userDTO.setAccess_token(this.tokenProvider.generateAccessToken(newUser.getId()));
+                                userDTO.setAccess_token(this.tokenProvider.generateAccessToken(newUser));
                                 return Mono.just(userDTO);
                             });
                 });
+    }
+
+    public Mono<AuthResponse> login(AuthRequest userRequest){
+        return userWriteRepository
+                .findUserByEmail(userRequest.getEmail())
+                .filter(dbUser -> BCrypt.checkpw(userRequest.getPassword(), dbUser.getPassword()))
+                .map(dbUser -> {
+                    AuthResponse response = new AuthResponse();
+                    response.setAccess_token(tokenProvider.generateAccessToken(dbUser));
+                    response.setRefresh_token(tokenProvider.generateRefreshToken());
+                    return response;
+                });
+                
     }
 }

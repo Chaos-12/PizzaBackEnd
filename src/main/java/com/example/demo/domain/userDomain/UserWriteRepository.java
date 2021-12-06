@@ -9,4 +9,5 @@ import reactor.core.publisher.Mono;
 
 public interface UserWriteRepository extends FindById<User, UUID>, ExistsByField {
     public Mono<User> save(User ingredient, Boolean isNew);
+    public Mono<User> findUserByEmail(String email);
 }
