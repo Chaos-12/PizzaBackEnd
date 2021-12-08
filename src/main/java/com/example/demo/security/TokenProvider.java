@@ -2,7 +2,6 @@ package com.example.demo.security;
 
 import java.util.Date;
 import java.util.HashMap;
-import java.util.UUID;
 
 import com.aventrix.jnanoid.jnanoid.NanoIdUtils;
 import com.example.demo.domain.userDomain.User;
@@ -23,7 +22,7 @@ public class TokenProvider {
     private String secretKey;
 
     @Bean
-    public TokenProvider create(){
+    public TokenProvider createTokenProvider(){
         return new TokenProvider();
     }
 

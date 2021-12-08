@@ -8,8 +8,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UpdateUserDTO {
-    private String first_name;
-    private String last_name;
+    private String name;
+    private String surname;
     private String password;
     private String newPassword;
     private String provider;

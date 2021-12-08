@@ -1,5 +1,9 @@
 package com.example.demo.domain.userDomain;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -16,25 +20,25 @@ import lombok.Setter;
 @Data
 @Table("user")
 @Setter
-public class User extends EntityBase {
-    public static final int max_retries = 3;
+public class User extends EntityBase {//implements UserDetails{
+    public static final int maxRetries = 3;
     @NotNull
     private Role role;
     @NotBlank
-    private String first_name;
+    private String name;
     @NotBlank
-    private String last_name;
+    private String surname;
     @NotBlank
     private String provider;
     @Email
     @NotNull
     private String email;
     private String password;
-    private int remaining_tries = max_retries;
+    private int tries = maxRetries;
 
     public String toString(){
         return  String.format("User {id: %s, first_name: %s, last_name: %s, email: %s, rol: %s}", 
-                    this.getId(), this.getFirst_name(), this.getLast_name(), this.getEmail(), this.getRole());
+                    this.getId(), this.getName(), this.getSurname(), this.getEmail(), this.getRole());
     }
 
     @Override
@@ -45,7 +49,7 @@ public class User extends EntityBase {
             badRequestException.addException("password", "field is required");
             throw badRequestException;
         }
-        if(remaining_tries <= 0){
+        if(tries <= 0){
             BadRequestException badRequestException = new BadRequestException();
             badRequestException.addException("login failed", "no remaining tries left");
             throw badRequestException;
@@ -55,10 +59,43 @@ public class User extends EntityBase {
     public void validate(String newPassword){
         this.validate();
         if(!BCrypt.checkpw(newPassword, this.getPassword())) {
-            remaining_tries --;
+            tries --;
             BadRequestException badRequestException = new BadRequestException();
             badRequestException.addException("login failed", "wrong password");
+            badRequestException.addException("remaining tries", ""+tries);
             throw badRequestException;
         }
     }
+/*
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+        authorities.add(new SimpleGrantedAuthority(this.role.toString()));
+        return authorities;
+    }
+
+    @Override
+    public String getUsername() {
+        return this.email;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return false;
+    }*/
 }

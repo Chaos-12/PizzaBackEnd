@@ -9,8 +9,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class OutUserDTO {
     private static final int defaultExpiration = 3600000;
-    private String access_token;
-    private String refresh_token;
+    private String accessToken;
+    private String refreshToken;
     private String type = "Bearer";
     private int expiration = defaultExpiration;
 }

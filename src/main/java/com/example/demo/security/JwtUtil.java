@@ -17,7 +17,7 @@ public class JwtUtil {
     private String secretKey;
 
     @Bean
-    public JwtUtil create(){
+    public JwtUtil createJwtUtil(){
         return new JwtUtil();
     }
 

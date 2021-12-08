@@ -19,8 +19,8 @@ public class WebSecurityConfig {
     private final SecurityContextRepository securityContextRepository;
 
     @Autowired
-    public WebSecurityConfig(final AuthenticationManager authenticationManager, 
-                final SecurityContextRepository securityContextRepository){
+    public WebSecurityConfig(final AuthenticationManager authenticationManager,
+            final SecurityContextRepository securityContextRepository) {
         this.authenticationManager = authenticationManager;
         this.securityContextRepository = securityContextRepository;
     }
@@ -29,11 +29,11 @@ public class WebSecurityConfig {
     public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http) {
         return http
                 .exceptionHandling()
-                .authenticationEntryPoint((serverWebExchange, authenticationException) -> 
-                    Mono.fromRunnable(() -> serverWebExchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED))
-                ).accessDeniedHandler((serverWebExchange, authenticationException) -> 
-                    Mono.fromRunnable(() -> serverWebExchange.getResponse().setStatusCode(HttpStatus.FORBIDDEN))
-                ).and()
+                .authenticationEntryPoint((serverWebExchange, authenticationException) -> Mono
+                        .fromRunnable(() -> serverWebExchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED)))
+                .accessDeniedHandler((serverWebExchange, authenticationException) -> Mono
+                        .fromRunnable(() -> serverWebExchange.getResponse().setStatusCode(HttpStatus.FORBIDDEN)))
+                .and()
                 .csrf().disable()
                 .formLogin().disable()
                 .httpBasic().disable()
@@ -41,7 +41,7 @@ public class WebSecurityConfig {
                 .securityContextRepository(securityContextRepository)
                 .authorizeExchange()
                 .pathMatchers(HttpMethod.OPTIONS).permitAll()
-                .pathMatchers("/register").permitAll()
+                .pathMatchers("/api/v1/users/register").permitAll()
                 .anyExchange().authenticated()
                 .and().build();
     }

@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.application.userApplication.CreateUserDTO;
 import com.example.demo.application.userApplication.OutUserDTO;
 import com.example.demo.application.userApplication.UserApplication;
+import com.example.demo.domain.userDomain.Role;
 import com.example.demo.security.AuthRequest;
 import com.example.demo.security.AuthResponse;
 
@@ -31,7 +32,9 @@ public class UserController {
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE, path = "/register")
     public Mono<ResponseEntity<OutUserDTO>> createUser(@RequestBody final CreateUserDTO dto) {
-        return this.userApplication.registerUser(dto).map(user -> ResponseEntity.status(HttpStatus.CREATED).body(user));
+        return this.userApplication
+                    .registerUser(dto, Role.ROLE_CUSTOMER)
+                    .map(user -> ResponseEntity.status(HttpStatus.CREATED).body(user));
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE, path = "/refresh")

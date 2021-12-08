@@ -9,8 +9,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class AuthResponse {
     private static final int defaultExpiration = 60*60*1000;
-    private String access_token;
-    private String refresh_token;
+    private String accessToken;
+    private String refreshToken;
     private String type = "Bearer";
     private int expiration = defaultExpiration;
 }

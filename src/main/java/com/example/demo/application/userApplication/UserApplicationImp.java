@@ -3,6 +3,7 @@ package com.example.demo.application.userApplication;
 import java.util.UUID;
 
 import com.example.demo.core.ApplicationBase;
+import com.example.demo.domain.userDomain.Role;
 import com.example.demo.domain.userDomain.User;
 import com.example.demo.domain.userDomain.UserWriteRepository;
 import com.example.demo.infraestructure.redisInfraestructure.RedisRepository;
@@ -43,9 +44,10 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
     }
 
     @Override
-    public Mono<OutUserDTO> registerUser(CreateUserDTO dto) {
+    public Mono<OutUserDTO> registerUser(CreateUserDTO dto, Role role) {
         User newUser = modelMapper.map(dto, User.class);
         newUser.setId(UUID.randomUUID());
+        newUser.setRole(role);
         newUser.setPassword(BCrypt.hashpw(dto.getPassword(), BCrypt.gensalt()));
         return newUser
                 .validate("email", newUser.getEmail(), (email) -> this.userWriteRepository.exists(email))
@@ -63,8 +65,8 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                             .flatMap(adios -> {
                                 logger.info("refreshToken entry created in redis");
                                 OutUserDTO userDTO = new OutUserDTO();
-                                userDTO.setRefresh_token(refreshToken);
-                                userDTO.setAccess_token(this.tokenProvider.generateAccessToken(newUser));
+                                userDTO.setRefreshToken(refreshToken);
+                                userDTO.setAccessToken(this.tokenProvider.generateAccessToken(newUser));
                                 return Mono.just(userDTO);
                             });
                 });
@@ -76,8 +78,8 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                 .filter(dbUser -> BCrypt.checkpw(userRequest.getPassword(), dbUser.getPassword()))
                 .map(dbUser -> {
                     AuthResponse response = new AuthResponse();
-                    response.setAccess_token(tokenProvider.generateAccessToken(dbUser));
-                    response.setRefresh_token(tokenProvider.generateRefreshToken());
+                    response.setAccessToken(tokenProvider.generateAccessToken(dbUser));
+                    response.setRefreshToken(tokenProvider.generateRefreshToken());
                     return response;
                 });
                 
