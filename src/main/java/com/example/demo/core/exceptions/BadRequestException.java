@@ -3,6 +3,8 @@ package com.example.demo.core.exceptions;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.http.HttpStatus;
+
 public class BadRequestException extends HttpException {
 
     private final Map<String, String> exceptionMap = new HashMap<String, String>();
@@ -12,7 +14,7 @@ public class BadRequestException extends HttpException {
     }
 
     public BadRequestException(String message) {
-        super(400, message);
+        super(HttpStatus.BAD_REQUEST.value(), message);
     }
 
     public void addException(String key, String message) {
