@@ -23,8 +23,6 @@ public class CustomConverters {
         List<Converter<?, ?>> converters = new ArrayList<>();
         converters.add(new UUIDToByteArrayConverter());
         converters.add(new ByteArrayToUUIDConverter());
-        converters.add(new RolToIntegerConverter());
-        converters.add(new IntegerToRolConverter());
         return R2dbcCustomConversions.of(MySqlDialect.INSTANCE, converters);
     }
 
@@ -49,20 +47,4 @@ public class CustomConverters {
             return new UUID(high, low);
         }
     }
-    
-    @WritingConverter
-    private class RolToIntegerConverter implements Converter<Role, Integer> {
-		@Override
-		public Integer convert(Role role) {
-			return role.ordinal();
-		}
-	}
-
-    @ReadingConverter
-	public class IntegerToRolConverter implements Converter<Integer,Role> {
-		@Override
-		public Role convert(Integer value) {
-			return Role.values()[value];
-		}
-	}
 }

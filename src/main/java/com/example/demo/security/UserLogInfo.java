@@ -5,8 +5,12 @@ import java.util.Set;
 
 import com.example.demo.domain.userDomain.Role;
 
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
 @NoArgsConstructor
 public class UserLogInfo {
     private Set<String> usedTokens = new HashSet<String>();
@@ -14,10 +18,6 @@ public class UserLogInfo {
 
     public UserLogInfo(Role role){
         this.role = role;
-    }
-
-    public Role getRole(){
-        return this.role;
     }
 
     public Boolean hasUsed(String refreshToken){

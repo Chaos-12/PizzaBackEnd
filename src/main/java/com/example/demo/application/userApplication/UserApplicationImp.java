@@ -75,14 +75,14 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                 });
     }
 
-    private Mono<AuthResponse> generateResponse(User user){
+    private Mono<AuthResponse> generateResponse(User user) {
         AuthResponse response = new AuthResponse();
         response.setAccessToken(tokenProvider.generateAccessToken(user));
         response.setRefreshToken(tokenProvider.generateRefreshToken());
         return this.logInfoRepository
-                    .getFromString(user.getId().toString())
-                    .switchIfEmpty(this.logInfoRepository.set(user.getId().toString(), new UserLogInfo(user.getRole()), 24))
-                    .then(this.refreshTokenRepository.set(response.getRefreshToken(), user.getId(), 2))
-                    .thenReturn(response);
+                .getFromString(user.getId().toString())
+                .switchIfEmpty(this.logInfoRepository.set(user.getId().toString(), new UserLogInfo(user.getRole()), 24))
+                .then(this.refreshTokenRepository.set(response.getRefreshToken(), user.getId(), 2))
+                .thenReturn(response);
     }
 }

@@ -20,7 +20,7 @@ import lombok.Setter;
 @Data
 @Table("user")
 @Setter
-public class User extends EntityBase {//implements UserDetails{
+public class User extends EntityBase {
     public static final int maxRetries = 3;
     //@NotNull
     private Role role;
@@ -67,36 +67,4 @@ public class User extends EntityBase {//implements UserDetails{
         }
         return true;
     }
-/*
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-        authorities.add(new SimpleGrantedAuthority(this.role.toString()));
-        return authorities;
-    }
-
-    @Override
-    public String getUsername() {
-        return this.email;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return false;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return false;
-    }*/
 }
