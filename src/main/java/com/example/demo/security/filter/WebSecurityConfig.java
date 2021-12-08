@@ -1,4 +1,4 @@
-package com.example.demo.security;
+package com.example.demo.security.filter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -29,10 +29,10 @@ public class WebSecurityConfig {
     public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http) {
         return http
                 .exceptionHandling()
-                .authenticationEntryPoint((serverWebExchange, authenticationException) -> Mono
-                        .fromRunnable(() -> serverWebExchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED)))
-                .accessDeniedHandler((serverWebExchange, authenticationException) -> Mono
-                        .fromRunnable(() -> serverWebExchange.getResponse().setStatusCode(HttpStatus.FORBIDDEN)))
+                .authenticationEntryPoint((serverWebExchange, authenticationException) 
+                    -> Mono.fromRunnable(() -> serverWebExchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED)))
+                .accessDeniedHandler((serverWebExchange, authenticationException) 
+					-> Mono.fromRunnable(() -> serverWebExchange.getResponse().setStatusCode(HttpStatus.FORBIDDEN)))
                 .and()
                 .csrf().disable()
                 .formLogin().disable()
@@ -42,6 +42,7 @@ public class WebSecurityConfig {
                 .authorizeExchange()
                 .pathMatchers(HttpMethod.OPTIONS).permitAll()
                 .pathMatchers("/api/v1/users/register").permitAll()
+                .pathMatchers("/api/v1/users/login").permitAll()
                 .anyExchange().authenticated()
                 .and().build();
     }

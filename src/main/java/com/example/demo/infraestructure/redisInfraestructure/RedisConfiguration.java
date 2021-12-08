@@ -1,5 +1,7 @@
 package com.example.demo.infraestructure.redisInfraestructure;
 
+import java.util.UUID;
+
 import com.example.demo.core.configurationBeans.ByteSerializer;
 import com.example.demo.security.UserLogInfo;
 
@@ -33,11 +35,11 @@ public class RedisConfiguration {
 	}
 
 	@Bean
-	RedisRepository<String, String> createRefreshRedisRepository(ReactiveRedisConnectionFactory factory) {
-    	Jackson2JsonRedisSerializer<String> serializer = new Jackson2JsonRedisSerializer<>(String.class);
-    	RedisSerializationContext.RedisSerializationContextBuilder<String, String> builder =
+	RedisRepository<UUID, String> createRefreshRedisRepository(ReactiveRedisConnectionFactory factory) {
+    	Jackson2JsonRedisSerializer<UUID> serializer = new Jackson2JsonRedisSerializer<>(UUID.class);
+    	RedisSerializationContext.RedisSerializationContextBuilder<String, UUID> builder =
         		RedisSerializationContext.newSerializationContext(new StringRedisSerializer());
-    	RedisSerializationContext<String, String> context = builder.value(serializer).build();
-    	return new RedisRepository<String, String>(new ReactiveRedisTemplate<>(factory, context));
+    	RedisSerializationContext<String, UUID> context = builder.value(serializer).build();
+    	return new RedisRepository<UUID, String>(new ReactiveRedisTemplate<>(factory, context));
 	}
 }

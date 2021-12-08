@@ -31,21 +31,22 @@ public class UserController {
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE, path = "/register")
-    public Mono<ResponseEntity<OutUserDTO>> createUser(@RequestBody final CreateUserDTO dto) {
+    public Mono<ResponseEntity<AuthResponse>> registerCustomer(@RequestBody final CreateUserDTO dto) {
         return this.userApplication
                     .registerUser(dto, Role.ROLE_CUSTOMER)
                     .map(user -> ResponseEntity.status(HttpStatus.CREATED).body(user));
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE, path = "/login")
+    public Mono<ResponseEntity<AuthResponse>> login(@RequestBody AuthRequest request) {
+        return this.userApplication
+                    .login(request)
+                    .map(authResponse -> ResponseEntity.ok(authResponse));
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE, path = "/refresh")
     public Mono<ResponseEntity<OutUserDTO>> refreshUser(@RequestBody final String refreshToken) {
         //TODO
         return Mono.empty();
-    }
-
-    @PostMapping(path = "/login")
-    public Mono<ResponseEntity<AuthResponse>> login(@RequestBody AuthRequest request) {
-        return this.userApplication.login(request)
-                .map(authResponse -> ResponseEntity.ok(authResponse));
     }
 }

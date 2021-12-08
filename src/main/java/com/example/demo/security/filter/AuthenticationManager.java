@@ -1,9 +1,11 @@
-package com.example.demo.security;
+package com.example.demo.security.filter;
 
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.stream.Collectors;
+
+import com.example.demo.security.tokens.JwtUtil;
 
 import io.jsonwebtoken.Claims;
 

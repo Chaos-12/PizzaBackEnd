@@ -22,7 +22,7 @@ import lombok.Setter;
 @Setter
 public class User extends EntityBase {//implements UserDetails{
     public static final int maxRetries = 3;
-    @NotNull
+    //@NotNull
     private Role role;
     @NotBlank
     private String name;
@@ -37,7 +37,7 @@ public class User extends EntityBase {//implements UserDetails{
     private int tries = maxRetries;
 
     public String toString(){
-        return  String.format("User {id: %s, first_name: %s, last_name: %s, email: %s, rol: %s}", 
+        return  String.format("User {id: %s, first_name: %s, last_name: %s, email: %s, role: %s}", 
                     this.getId(), this.getName(), this.getSurname(), this.getEmail(), this.getRole());
     }
 
@@ -56,15 +56,16 @@ public class User extends EntityBase {//implements UserDetails{
         }
     }
 
-    public void validate(String newPassword){
+    public Boolean validate(String possiblePassword){
         this.validate();
-        if(!BCrypt.checkpw(newPassword, this.getPassword())) {
+        if(!BCrypt.checkpw(possiblePassword, this.getPassword())) {
             tries --;
             BadRequestException badRequestException = new BadRequestException();
             badRequestException.addException("login failed", "wrong password");
             badRequestException.addException("remaining tries", ""+tries);
             throw badRequestException;
         }
+        return true;
     }
 /*
     @Override

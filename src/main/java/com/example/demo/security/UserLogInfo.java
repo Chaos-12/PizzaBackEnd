@@ -5,9 +5,12 @@ import java.util.Set;
 
 import com.example.demo.domain.userDomain.Role;
 
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
 public class UserLogInfo {
-    private final Role role;
-    private final Set<String> usedTokens = new HashSet<String>();
+    private Set<String> usedTokens = new HashSet<String>();
+    private Role role;
 
     public UserLogInfo(Role role){
         this.role = role;
