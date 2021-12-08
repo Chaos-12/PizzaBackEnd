@@ -2,12 +2,12 @@ package com.example.demo.security.filter;
 
 import org.springframework.stereotype.Component;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.example.demo.security.tokens.JwtUtil;
-
-import io.jsonwebtoken.Claims;
+import com.example.demo.core.exceptions.UnauthorizedException;
+import com.example.demo.security.tokens.JwtReader;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
@@ -20,10 +20,10 @@ import reactor.core.publisher.Mono;
 @Component
 public class AuthenticationManager implements ReactiveAuthenticationManager {
 
-    private final JwtUtil jwtUtil;
+    private final JwtReader jwtUtil;
 
     @Autowired
-    public AuthenticationManager(final JwtUtil jwtUtil){
+    public AuthenticationManager(final JwtReader jwtUtil){
         this.jwtUtil = jwtUtil;
     }
     
@@ -32,19 +32,11 @@ public class AuthenticationManager implements ReactiveAuthenticationManager {
     public Mono<Authentication> authenticate(Authentication authentication) {
         String authToken = authentication.getCredentials().toString();
         String id = jwtUtil.getSubjectFromToken(authToken);
-        /*return Mono.just(jwtUtil.validateToken(authToken))
-                    .then(Mono.just(new UsernamePasswordAuthenticationToken(id, null, null)));*/
+        List<String> rolesMap = Arrays.asList(jwtUtil.getRoleFromToken(authToken));
         return Mono.just(jwtUtil.validateToken(authToken))
                     .filter(valid -> valid)
-                    .switchIfEmpty(Mono.empty())
-                    .map(valid -> {
-                        Claims claims = jwtUtil.getAllClaimsFromToken(authToken);
-                        List<String> rolesMap = claims.get("role", List.class);
-                        return new UsernamePasswordAuthenticationToken(
-                            id,
-                            null,
-                            rolesMap.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList())
-                        );
-                    });
+                    .switchIfEmpty(Mono.error(new UnauthorizedException("Token is not valid")))
+                    .thenReturn(new UsernamePasswordAuthenticationToken(id, null,
+                            rolesMap.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList())));
     }
 }

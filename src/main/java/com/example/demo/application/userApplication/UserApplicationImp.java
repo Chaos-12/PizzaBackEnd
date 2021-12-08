@@ -3,7 +3,6 @@ package com.example.demo.application.userApplication;
 import java.util.UUID;
 
 import com.example.demo.core.ApplicationBase;
-import com.example.demo.core.exceptions.BadRequestException;
 import com.example.demo.domain.userDomain.Role;
 import com.example.demo.domain.userDomain.User;
 import com.example.demo.domain.userDomain.UserWriteRepository;
@@ -50,19 +49,13 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
         newUser.setId(UUID.randomUUID());
         newUser.setRole(role);
         newUser.setPassword(BCrypt.hashpw(dto.getPassword(), BCrypt.gensalt()));
-        AuthResponse response = new AuthResponse();
-        response.setAccessToken(this.tokenProvider.generateAccessToken(newUser));
-        response.setRefreshToken(this.tokenProvider.generateRefreshToken());
         return newUser
                 .validate("email", newUser.getEmail(), (email) -> this.userWriteRepository.exists(email))
                 .then(this.userWriteRepository.save(newUser, true))
                 .flatMap(dbUser -> {
                     logger.info(this.serializeObject(dbUser, "added"));
-                    UserLogInfo logInfo = new UserLogInfo(dbUser.getRole());
-                    return this.logInfoRepository.set(dbUser.getId().toString(), logInfo, 24);
-                })
-                .then(this.refreshTokenRepository.set(response.getRefreshToken(), newUser.getId(), 2))
-                .thenReturn(response);
+                    return this.generateResponse(dbUser);
+                });
     }
 
     public Mono<AuthResponse> login(AuthRequest userRequest) {

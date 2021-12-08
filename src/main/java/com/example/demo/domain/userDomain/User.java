@@ -1,9 +1,5 @@
 package com.example.demo.domain.userDomain;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -22,7 +18,7 @@ import lombok.Setter;
 @Setter
 public class User extends EntityBase {
     public static final int maxRetries = 3;
-    //@NotNull
+    @NotNull
     private Role role;
     @NotBlank
     private String name;

@@ -1,6 +1,6 @@
 package com.example.demo.core.exceptionHandlers;
 
-import com.example.demo.core.exceptions.ForbiddenException;
+import com.example.demo.core.exceptions.UnauthorizedException;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,17 +11,17 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
-public class ForbiddenExceptionHandler {
+public class UnauthorizedExceptionHandler {
     private final Logger logger;
 
     @Autowired
-    public ForbiddenExceptionHandler(final Logger logger) {
+    public UnauthorizedExceptionHandler(final Logger logger) {
         this.logger = logger;
     }
 
-    @ResponseStatus(HttpStatus.FORBIDDEN)
-    @ExceptionHandler(ForbiddenException.class)
-    protected ResponseEntity<Object> handleConflict(ForbiddenException ex) {
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    @ExceptionHandler(UnauthorizedException.class)
+    protected ResponseEntity<Object> handleConflict(UnauthorizedException ex) {
         logger.warn(String.format("%s , StackTrace: %s", ex.getMessage(), ex.getStackTrace().toString()));
         return ResponseEntity.status(ex.getCode()).body(ex.getMessage());
     }

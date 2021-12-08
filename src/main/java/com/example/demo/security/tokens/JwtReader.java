@@ -4,25 +4,19 @@ import java.util.Date;
 import java.util.function.Function;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 
 @Component
-public class JwtUtil {
+public class JwtReader {
     
     @Value("#{environment.JwtSecretKey}")
     private String secretKey;
 
-    @Bean
-    public JwtUtil createJwtUtil(){
-        return new JwtUtil();
-    }
-
     public Claims getAllClaimsFromToken(String token) {
-        return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody();
+        return Jwts.parser().setSigningKey(secretKey.getBytes()).parseClaimsJws(token).getBody();
     }
 
     public <T> T getClaimFromToken(String token, Function<Claims, T> claimsResolver) {
@@ -31,7 +25,11 @@ public class JwtUtil {
     }
 
     public String getSubjectFromToken(String token){
-        return getClaimFromToken(token, Claims::getSubject);
+        return this.getAllClaimsFromToken(token).getSubject();
+    }
+
+    public String getRoleFromToken(String token){
+        return this.getAllClaimsFromToken(token).get("role", String.class);
     }
 
     public Date getExpirationDateFromToken(String token){

@@ -2,12 +2,12 @@ package com.example.demo.security.tokens;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 
 import com.aventrix.jnanoid.jnanoid.NanoIdUtils;
 import com.example.demo.domain.userDomain.User;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.Jwts;
@@ -21,15 +21,12 @@ public class TokenProvider {
     @Value("#{environment.JwtSecretKey}")
     private String secretKey;
 
-    @Bean
-    public TokenProvider createTokenProvider(){
-        return new TokenProvider();
-    }
-
     public String generateAccessToken(User user) {
+        Map<String, Object> claims = new HashMap<String, Object>();
+        claims.put("role", user.getRole());
         return Jwts
                 .builder()
-                .setClaims(new HashMap<String, Object>())
+                .setClaims(claims)
                 .setId(NanoIdUtils.randomNanoId())
                 .setSubject(user.getId().toString())
                 .setIssuedAt(new Date(System.currentTimeMillis()))
