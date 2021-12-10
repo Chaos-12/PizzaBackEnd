@@ -3,6 +3,8 @@ package com.example.demo.security.tokens;
 import java.util.Date;
 import java.util.function.Function;
 
+import com.example.demo.core.exceptions.UnauthorizedException;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -42,6 +44,10 @@ public class JwtReader {
     }
 
     public Boolean validateToken(String token) {
-        return !isTokenExpired(token);
+        try{
+            return !isTokenExpired(token);
+        } catch(Exception ex){
+            throw new UnauthorizedException(ex.getMessage());
+        }
     }
 }

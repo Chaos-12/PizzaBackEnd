@@ -1,11 +1,8 @@
 package com.example.demo.security.tokens;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 import com.aventrix.jnanoid.jnanoid.NanoIdUtils;
-import com.example.demo.domain.userDomain.User;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -21,14 +18,11 @@ public class TokenProvider {
     @Value("#{environment.JwtSecretKey}")
     private String secretKey;
 
-    public String generateAccessToken(User user) {
-        Map<String, Object> claims = new HashMap<String, Object>();
-        claims.put("role", user.getRole());
+    public String generateAccessToken(String id) {
         return Jwts
                 .builder()
-                .setClaims(claims)
                 .setId(NanoIdUtils.randomNanoId())
-                .setSubject(user.getId().toString())
+                .setSubject(id)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
                 .setExpiration(new Date(System.currentTimeMillis() + JwtTokenValidity))
                 .signWith(SignatureAlgorithm.HS512, secretKey.getBytes())

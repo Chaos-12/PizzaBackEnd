@@ -2,18 +2,18 @@ package com.example.demo.security.filter;
 
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.UUID;
 
 import com.example.demo.core.exceptions.UnauthorizedException;
+import com.example.demo.infraestructure.redisInfraestructure.RedisRepository;
+import com.example.demo.security.UserLogInfo;
 import com.example.demo.security.tokens.JwtReader;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 
 import reactor.core.publisher.Mono;
 
@@ -21,22 +21,31 @@ import reactor.core.publisher.Mono;
 public class AuthenticationManager implements ReactiveAuthenticationManager {
 
     private final JwtReader jwtUtil;
+    private final RedisRepository<UserLogInfo, UUID> logInfoRepository;
 
     @Autowired
-    public AuthenticationManager(final JwtReader jwtUtil){
+    public AuthenticationManager(final RedisRepository<UserLogInfo, UUID> logInfoRepository,
+                    final JwtReader jwtUtil) {
+        this.logInfoRepository = logInfoRepository;
         this.jwtUtil = jwtUtil;
     }
-    
+
     @Override
     @SuppressWarnings("unchecked")
     public Mono<Authentication> authenticate(Authentication authentication) {
         String authToken = authentication.getCredentials().toString();
-        String id = jwtUtil.getSubjectFromToken(authToken);
-        List<String> rolesMap = Arrays.asList(jwtUtil.getRoleFromToken(authToken));
-        return Mono.just(jwtUtil.validateToken(authToken))
-                    .filter(valid -> valid)
-                    .switchIfEmpty(Mono.error(new UnauthorizedException("Token is not valid")))
-                    .thenReturn(new UsernamePasswordAuthenticationToken(id, null,
-                            rolesMap.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList())));
+        if (jwtUtil.validateToken(authToken)) {
+            String id = jwtUtil.getSubjectFromToken(authToken);
+            return this.logInfoRepository
+                        .getFromID(UUID.fromString(id))
+                        .switchIfEmpty(Mono.error(new UnauthorizedException("User must log in")))
+                        .map(logInfo -> 
+                                new UsernamePasswordAuthenticationToken(
+                                    id, null, AuthorityUtils.createAuthorityList(logInfo.getRole().toString())
+                                )
+                        );
+        } else {
+            return Mono.error(new UnauthorizedException("Expired token"));
+        }
     }
 }

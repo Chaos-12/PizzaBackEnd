@@ -26,12 +26,13 @@ public class RedisConfiguration {
 	}
 
 	@Bean
-	RedisRepository<UserLogInfo, String> createLogInfoRedisRepository(ReactiveRedisConnectionFactory factory){
-    	Jackson2JsonRedisSerializer<UserLogInfo> serializer = new Jackson2JsonRedisSerializer<>(UserLogInfo.class);
-    	RedisSerializationContext.RedisSerializationContextBuilder<String, UserLogInfo> builder =
+	RedisRepository<UserLogInfo, UUID> createLogInfoRedisRepository(ReactiveRedisConnectionFactory factory){
+    	Jackson2JsonRedisSerializer<UserLogInfo> logInfoSerializer = new Jackson2JsonRedisSerializer<>(UserLogInfo.class);
+		Jackson2JsonRedisSerializer<UUID> uuidSerializer = new Jackson2JsonRedisSerializer<>(UUID.class);
+    	RedisSerializationContext.RedisSerializationContextBuilder<UUID, UserLogInfo> builder =
         		RedisSerializationContext.newSerializationContext(new StringRedisSerializer());
-    	RedisSerializationContext<String, UserLogInfo> context = builder.value(serializer).build();
-		return new RedisRepository<UserLogInfo, String>(new ReactiveRedisTemplate<>(factory, context));
+    	RedisSerializationContext<UUID, UserLogInfo> context = builder.key(uuidSerializer).value(logInfoSerializer).build();
+		return new RedisRepository<UserLogInfo, UUID>(new ReactiveRedisTemplate<>(factory, context));
 	}
 
 	@Bean

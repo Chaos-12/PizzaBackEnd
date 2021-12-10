@@ -31,7 +31,7 @@ public class ImageApplicationImp implements ImageApplication {
 
   	public Mono<ImageDTO> getImageRedis(UUID id){
     	return this.redisRepository
-						.getFromString(id.toString())
+						.getFromID(id.toString())
 						.map(bytes -> {
 							ImageDTO imageDTO = new ImageDTO();
 							imageDTO.setContent(bytes);

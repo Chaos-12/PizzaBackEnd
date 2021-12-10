@@ -15,6 +15,9 @@ import reactor.core.publisher.Mono;
 @EnableReactiveMethodSecurity
 public class WebSecurityConfig {
 
+    private static final String[] AUTH_WHITELIST = {
+            "/api/v1/users/register", "/api/v1/users/login", "/api/v1/users/refresh/access" };
+
     private final AuthenticationManager authenticationManager;
     private final SecurityContextRepository securityContextRepository;
 
@@ -29,10 +32,10 @@ public class WebSecurityConfig {
     public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http) {
         return http
                 .exceptionHandling()
-                .authenticationEntryPoint((serverWebExchange, authenticationException) 
-                    -> Mono.fromRunnable(() -> serverWebExchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED)))
-                .accessDeniedHandler((serverWebExchange, authenticationException) 
-					-> Mono.fromRunnable(() -> serverWebExchange.getResponse().setStatusCode(HttpStatus.FORBIDDEN)))
+                .authenticationEntryPoint((serverWebExchange, authenticationException) -> Mono
+                    .fromRunnable(() -> serverWebExchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED)))
+                .accessDeniedHandler((serverWebExchange, authenticationException) -> Mono
+                    .fromRunnable(() -> serverWebExchange.getResponse().setStatusCode(HttpStatus.FORBIDDEN)))
                 .and()
                 .csrf().disable()
                 .formLogin().disable()
@@ -41,8 +44,7 @@ public class WebSecurityConfig {
                 .securityContextRepository(securityContextRepository)
                 .authorizeExchange()
                 .pathMatchers(HttpMethod.OPTIONS).permitAll()
-                .pathMatchers("/api/v1/users/register").permitAll()
-                .pathMatchers("/api/v1/users/login").permitAll()
+                .pathMatchers(AUTH_WHITELIST).permitAll()
                 .anyExchange().authenticated()
                 .and().build();
     }

@@ -30,10 +30,15 @@ public class User extends EntityBase {
     @NotNull
     private String email;
     private String password;
-    private int tries = maxRetries;
+    @NotNull
+    private int tries;
+
+    public void resetTries() {
+        this.tries = User.maxRetries;
+    }
 
     public String toString(){
-        return  String.format("User {id: %s, first_name: %s, last_name: %s, email: %s, role: %s}", 
+        return  String.format("User {id: %s, name: %s, surname: %s, email: %s, role: %s}", 
                     this.getId(), this.getName(), this.getSurname(), this.getEmail(), this.getRole());
     }
 
@@ -41,25 +46,18 @@ public class User extends EntityBase {
     public void validate(){
         super.validate();
         if((null == password || password.isBlank() ) && provider.matches("self")){
-            BadRequestException badRequestException = new BadRequestException();
-            badRequestException.addException("password", "field is required");
-            throw badRequestException;
+            throw new BadRequestException("password required");
         }
         if(tries <= 0){
-            BadRequestException badRequestException = new BadRequestException();
-            badRequestException.addException("login failed", "no remaining tries left");
-            throw badRequestException;
+            throw new BadRequestException("login failed: no remaining tries left");
         }
     }
 
     public Boolean validate(String possiblePassword){
         this.validate();
         if(!BCrypt.checkpw(possiblePassword, this.getPassword())) {
-            tries --;
-            BadRequestException badRequestException = new BadRequestException();
-            badRequestException.addException("login failed", "wrong password");
-            badRequestException.addException("remaining tries", ""+tries);
-            throw badRequestException;
+            this.tries --;
+            return false;
         }
         return true;
     }

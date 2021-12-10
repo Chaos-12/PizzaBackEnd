@@ -2,8 +2,10 @@ package com.example.demo.security;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 import com.example.demo.domain.userDomain.Role;
+import com.example.demo.domain.userDomain.User;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,14 +15,22 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class UserLogInfo {
+
     private Set<String> usedTokens = new HashSet<String>();
+
+    private UUID id;
     private Role role;
 
-    public UserLogInfo(Role role){
+    public UserLogInfo(User user){
+        this(user.getId(), user.getRole());
+    }
+
+    public UserLogInfo(UUID id, Role role) {
+        this.id = id;
         this.role = role;
     }
 
-    public Boolean hasUsed(String refreshToken){
+    public Boolean userHasUsed(String refreshToken){
         return usedTokens.contains(refreshToken);
     }
 
