@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
 public class WebSecurityConfig {
 
     private static final String[] AUTH_WHITELIST = {
-            "/api/v1/users/register", "/api/v1/users/login", "/api/v1/users/refresh/access" };
+            "/api/v1/users/register", "/api/v1/users/login", "/api/v1/users/refresh" };
 
     private final AuthenticationManager authenticationManager;
     private final SecurityContextRepository securityContextRepository;
@@ -32,10 +32,12 @@ public class WebSecurityConfig {
     public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http) {
         return http
                 .exceptionHandling()
-                .authenticationEntryPoint((serverWebExchange, authenticationException) -> Mono
-                    .fromRunnable(() -> serverWebExchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED)))
-                .accessDeniedHandler((serverWebExchange, authenticationException) -> Mono
-                    .fromRunnable(() -> serverWebExchange.getResponse().setStatusCode(HttpStatus.FORBIDDEN)))
+                .authenticationEntryPoint((serverWebExchange, authEx) -> Mono.fromRunnable(
+                    () -> serverWebExchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED)
+                ))
+                .accessDeniedHandler((serverWebExchange, authEx) -> Mono.fromRunnable(
+                    () -> serverWebExchange.getResponse().setStatusCode(HttpStatus.FORBIDDEN)
+                ))
                 .and()
                 .csrf().disable()
                 .formLogin().disable()

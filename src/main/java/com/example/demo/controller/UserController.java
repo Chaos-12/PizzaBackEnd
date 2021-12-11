@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -38,16 +39,17 @@ public class UserController {
     }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE, path = "/register")
-    public Mono<ResponseEntity<AuthResponse>> registerCustomer(@RequestBody final CreateUserDTO dto) {
+    public Mono<ResponseEntity<AuthResponse>> registerNewCustomer(@RequestBody final CreateUserDTO dto) {
         return this.userApplication
-                    .registerUser(dto, Role.ROLE_CUSTOMER)
+                    .registerNewUser(dto, Role.ROLE_CUSTOMER)
                     .map(user -> ResponseEntity.status(HttpStatus.CREATED).body(user));
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE, path = "/register/employee")
-    public Mono<ResponseEntity<AuthResponse>> registerEmployee(@RequestBody final CreateUserDTO dto) {
+    public Mono<ResponseEntity<AuthResponse>> registerNewEmployee(@RequestBody final CreateUserDTO dto) {
         return this.userApplication
-                    .registerUser(dto, Role.ROLE_EMPLOYEE)
+                    .registerNewUser(dto, Role.ROLE_EMPLOYEE)
                     .map(user -> ResponseEntity.status(HttpStatus.CREATED).body(user));
     }
 
@@ -58,7 +60,7 @@ public class UserController {
                     .map(response -> ResponseEntity.ok(response));
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, path = "/refresh/access")
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, path = "/refresh")
     public Mono<ResponseEntity<AuthResponse>> refreshUser(@RequestParam String refreshToken) {
         return this.userApplication
                     .refresh(refreshToken)
@@ -73,7 +75,8 @@ public class UserController {
                     .then(Mono.just(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null)));
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, path="/resetlogintries")
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, path="/reset")
     public Mono<ResponseEntity<Void>> resetLoginTries(@RequestBody final String userId){
         return this.userApplication.resetTries(userId)
                     .then(Mono.just(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null)));

@@ -1,5 +1,35 @@
 package com.example.demo.domain.userDomain;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public enum Role {
-    ROLE_ADMIN, ROLE_EMPLOYEE, ROLE_CUSTOMER;
+    ROLE_ADMIN      (0),
+    ROLE_EMPLOYEE   (1),
+    ROLE_CUSTOMER   (2);
+
+    private static final Map<Integer, Role> roleMap;
+    public static final int size;
+
+    static {
+        size = values().length;
+        roleMap  = new HashMap<Integer, Role>();
+        for(Role role: Role.values()){
+            roleMap.put(role.levelCode, role);
+        }
+    }
+    
+    private int levelCode;
+
+    private Role(int levelCode){
+        this.levelCode = levelCode;
+    }
+
+    public int getLevel(){
+        return this.levelCode;
+    }
+
+    public static Role fromLevel(int level){
+        return roleMap.get(level);
+    }
 }

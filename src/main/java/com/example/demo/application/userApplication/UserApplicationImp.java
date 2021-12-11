@@ -48,7 +48,7 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
     }
 
     @Override
-    public Mono<AuthResponse> registerUser(CreateUserDTO dto, Role role) {
+    public Mono<AuthResponse> registerNewUser(CreateUserDTO dto, Role role) {
         User newUser = this.modelMapper.map(dto, User.class);
         newUser.setId(UUID.randomUUID());
         newUser.resetTries();
