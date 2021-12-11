@@ -6,6 +6,7 @@ import com.example.demo.application.userApplication.CreateUserDTO;
 import com.example.demo.application.userApplication.UserApplication;
 import com.example.demo.core.ApplicationBase;
 import com.example.demo.domain.userDomain.Role;
+import com.example.demo.domain.userDomain.UserDTO;
 import com.example.demo.security.AuthRequest;
 import com.example.demo.security.AuthResponse;
 import com.example.demo.security.tokens.JwtReader;
@@ -38,7 +39,7 @@ public class UserController {
         this.jwtReader = jwtReader;
     }
 
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE, path = "/register")
+    @PostMapping(path = "/register", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<AuthResponse>> registerNewCustomer(@RequestBody final CreateUserDTO dto) {
         return this.userApplication
                     .registerNewUser(dto, Role.ROLE_CUSTOMER)
@@ -46,39 +47,46 @@ public class UserController {
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE, path = "/register/employee")
+    @PostMapping(path = "/employee", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<AuthResponse>> registerNewEmployee(@RequestBody final CreateUserDTO dto) {
         return this.userApplication
                     .registerNewUser(dto, Role.ROLE_EMPLOYEE)
                     .map(user -> ResponseEntity.status(HttpStatus.CREATED).body(user));
     }
 
-    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE, path = "/login")
+    @PostMapping(path = "/login", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<AuthResponse>> login(@RequestBody AuthRequest request) {
         return this.userApplication
                     .login(request)
                     .map(response -> ResponseEntity.ok(response));
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, path = "/refresh")
+    @GetMapping(path = "/refresh", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<AuthResponse>> refreshUser(@RequestParam String refreshToken) {
         return this.userApplication
                     .refresh(refreshToken)
                     .map(response -> ResponseEntity.ok(response));
     }
 
-    @PostMapping(path="/logout")
+    @PostMapping(path = "/logout")
     public Mono<ResponseEntity<Void>> logout(@RequestHeader("Authorization") String header){
-        UUID id = ApplicationBase.getUUIDfrom(jwtReader.getSubjectFromToken(header.substring(7)));
+        UUID userId = ApplicationBase.getUUIDfrom(jwtReader.getSubjectFromToken(header.substring(7)));
         return this.userApplication
-                    .logout(id)
+                    .logout(userId)
                     .then(Mono.just(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null)));
     }
 
     @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, path="/reset")
-    public Mono<ResponseEntity<Void>> resetLoginTries(@RequestBody final String userId){
+    @PostMapping(path = "/reset", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<ResponseEntity<Void>> resetLoginTries(@RequestParam final String userId){
         return this.userApplication.resetTries(userId)
                     .then(Mono.just(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null)));
+    }
+
+    @GetMapping(path = "/profile", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<ResponseEntity<UserDTO>> getProfile(@RequestHeader("Authorization") String header){
+        UUID userId = ApplicationBase.getUUIDfrom(jwtReader.getSubjectFromToken(header.substring(7)));
+        return this.userApplication.getProfile(userId)
+                    .map(userProj -> ResponseEntity.ok(userProj));
     }
 }

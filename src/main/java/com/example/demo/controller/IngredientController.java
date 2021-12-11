@@ -41,12 +41,12 @@ public class IngredientController {
                 .map(ingredient -> ResponseEntity.status(HttpStatus.CREATED).body(ingredient));
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")
+    @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<IngredientDTO>> get(@PathVariable final String id) {
         return this.ingredientApplication.get(id).map(ingredient -> ResponseEntity.ok(ingredient));
     }
 
-    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")
+    @PutMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<Void>> update(@PathVariable final String id, @RequestBody CreateOrUpdateIngredientDTO dto) {
         return this.ingredientApplication.update(id, dto)
                 .then(Mono.just(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null)));

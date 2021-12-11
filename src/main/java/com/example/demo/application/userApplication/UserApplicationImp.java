@@ -8,7 +8,7 @@ import com.example.demo.core.exceptions.NotFoundException;
 import com.example.demo.core.exceptions.UnauthorizedException;
 import com.example.demo.domain.userDomain.Role;
 import com.example.demo.domain.userDomain.User;
-import com.example.demo.domain.userDomain.UserProjection;
+import com.example.demo.domain.userDomain.UserDTO;
 import com.example.demo.domain.userDomain.UserWriteRepository;
 import com.example.demo.infraestructure.redisInfraestructure.RedisRepository;
 import com.example.demo.security.AuthRequest;
@@ -111,10 +111,10 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                         .then();
     }
 
-    public Mono<UserProjection> profile(UUID id) {
+    public Mono<UserDTO> getProfile(UUID id) {
         return this.userWriteRepository
                         .findById(id)
-                        .map(dbUser -> this.modelMapper.map(dbUser, UserProjection.class));
+                        .map(dbUser -> this.modelMapper.map(dbUser, UserDTO.class));
     }
 
     private Mono<AuthResponse> generateResponse(UUID id, Role role) {
