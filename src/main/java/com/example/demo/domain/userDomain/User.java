@@ -24,12 +24,12 @@ public class User extends EntityBase {
     private String name;
     @NotBlank
     private String surname;
-    @NotBlank
-    private String provider;
     @Email
     @NotNull
     private String email;
     private String password;
+    @NotBlank
+    private String provider;
     @NotNull
     private int tries;
 

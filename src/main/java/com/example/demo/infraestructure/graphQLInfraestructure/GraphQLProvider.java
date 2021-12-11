@@ -9,7 +9,9 @@ import java.util.concurrent.CompletableFuture;
 import javax.annotation.PostConstruct;
 
 import com.example.demo.domain.ingredientDomain.Ingredient;
+import com.example.demo.domain.userDomain.User;
 import com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository;
+import com.example.demo.infraestructure.userInfraestructure.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,10 +34,13 @@ public class GraphQLProvider {
     private Resource resource;
     private GraphQL graphQL;
     private final IngredientRepository ingredientRepository;
+    private final UserRepository userRepository;
 
     @Autowired
-    public GraphQLProvider(final IngredientRepository ingredientRepository) {
+    public GraphQLProvider(final IngredientRepository ingredientRepository,
+                    final UserRepository userRepository) {
         this.ingredientRepository = ingredientRepository;
+        this.userRepository = userRepository;
     }
     
     @Bean
@@ -53,12 +58,19 @@ public class GraphQLProvider {
     }
 
     private RuntimeWiring buildRuntimeWiring() {
-        DataFetcher<CompletableFuture<Ingredient>> idIngredientFetcher = new IdDataFetcher<Ingredient, UUID>(
-                ingredientRepository);
-        DataFetcher<CompletableFuture<List<Ingredient>>> allIngredientsFetcher = new AllDataFetcher<Ingredient, UUID>(
-                ingredientRepository);
+        DataFetcher<CompletableFuture<Ingredient>> idIngredientFetcher = 
+                new IdDataFetcher<Ingredient, UUID>(ingredientRepository);
+        DataFetcher<CompletableFuture<List<Ingredient>>> allIngredientsFetcher = 
+                new AllDataFetcher<Ingredient, UUID>(ingredientRepository);
+        DataFetcher<CompletableFuture<User>> idUserFetcher = 
+                new IdDataFetcher<User, UUID>(userRepository);
+        DataFetcher<CompletableFuture<List<User>>> allUsersFetcher = 
+                new AllDataFetcher<User, UUID>(userRepository);
         return RuntimeWiring.newRuntimeWiring()
                 .type("Query", typeWiring -> typeWiring.dataFetcher("ingredientById", idIngredientFetcher))
-                .type("Query", typeWiring -> typeWiring.dataFetcher("allIngredients", allIngredientsFetcher)).build();
+                .type("Query", typeWiring -> typeWiring.dataFetcher("allIngredients", allIngredientsFetcher))
+                .type("Query", typeWiring -> typeWiring.dataFetcher("userById", idUserFetcher))
+                .type("Query", typeWiring -> typeWiring.dataFetcher("allUsers", allUsersFetcher))
+                .build();
     }
 }

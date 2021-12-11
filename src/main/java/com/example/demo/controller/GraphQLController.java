@@ -22,7 +22,7 @@ public class GraphQLController {
     @Autowired
     private GraphQL graphQL;
 
-    @PreAuthorize("hasRole('EMPLOYEE')")
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<Object> getFromQuery(@RequestBody String query) throws InterruptedException, ExecutionException {
         ExecutionInput input = new ExecutionInput(query, null, null, null, new HashMap<String, Object>());
