@@ -3,9 +3,9 @@ schema {
 }
 type Query {
     ingredientById(id:String!): Ingredient
-	allIngredients: [Ingredient]
+	allIngredients(start:Int, limit:Int): [Ingredient]
 	userById(id:String!): User
-	allUsers: [User]
+	allUsers(start:Int, limit:Int): [User]
 }
 type Ingredient {
 	id:ID

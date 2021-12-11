@@ -2,9 +2,7 @@ package com.example.demo.infraestructure.graphQLInfraestructure;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 import java.util.UUID;
-import java.util.concurrent.CompletableFuture;
 
 import javax.annotation.PostConstruct;
 
@@ -20,7 +18,6 @@ import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 
 import graphql.GraphQL;
-import graphql.schema.DataFetcher;
 import graphql.schema.GraphQLSchema;
 import graphql.schema.idl.RuntimeWiring;
 import graphql.schema.idl.SchemaGenerator;
@@ -58,19 +55,15 @@ public class GraphQLProvider {
     }
 
     private RuntimeWiring buildRuntimeWiring() {
-        DataFetcher<CompletableFuture<Ingredient>> idIngredientFetcher = 
-                new IdDataFetcher<Ingredient, UUID>(ingredientRepository);
-        DataFetcher<CompletableFuture<List<Ingredient>>> allIngredientsFetcher = 
-                new AllDataFetcher<Ingredient, UUID>(ingredientRepository);
-        DataFetcher<CompletableFuture<User>> idUserFetcher = 
-                new IdDataFetcher<User, UUID>(userRepository);
-        DataFetcher<CompletableFuture<List<User>>> allUsersFetcher = 
-                new AllDataFetcher<User, UUID>(userRepository);
         return RuntimeWiring.newRuntimeWiring()
-                .type("Query", typeWiring -> typeWiring.dataFetcher("ingredientById", idIngredientFetcher))
-                .type("Query", typeWiring -> typeWiring.dataFetcher("allIngredients", allIngredientsFetcher))
-                .type("Query", typeWiring -> typeWiring.dataFetcher("userById", idUserFetcher))
-                .type("Query", typeWiring -> typeWiring.dataFetcher("allUsers", allUsersFetcher))
+                .type("Query", typeWiring -> 
+					typeWiring.dataFetcher("ingredientById", new IdDataFetcher<Ingredient, UUID>(ingredientRepository)))
+                .type("Query", typeWiring -> 
+					typeWiring.dataFetcher("allIngredients", new AllDataFetcher<Ingredient, UUID>(ingredientRepository)))
+                .type("Query", typeWiring -> 
+					typeWiring.dataFetcher("userById", new IdDataFetcher<User, UUID>(userRepository)))
+                .type("Query", typeWiring -> 
+					typeWiring.dataFetcher("allUsers", new AllDataFetcher<User, UUID>(userRepository)))
                 .build();
     }
 }
