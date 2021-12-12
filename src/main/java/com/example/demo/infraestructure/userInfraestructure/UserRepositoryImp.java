@@ -8,16 +8,13 @@ import com.example.demo.domain.userDomain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
 
 @Repository
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class UserRepositoryImp implements UserWriteRepository {
     private final UserRepository userRepository;
-
-    @Autowired
-    public UserRepositoryImp(final UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
 
     @Override
     public Mono<User> findById(UUID id) {

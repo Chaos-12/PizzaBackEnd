@@ -1,6 +1,8 @@
-package com.example.demo.security.filter;
+package com.example.demo.security.authFilter;
 
 import org.springframework.stereotype.Component;
+
+import lombok.RequiredArgsConstructor;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -13,7 +15,7 @@ import com.example.demo.core.exceptions.UnauthorizedException;
 import com.example.demo.domain.userDomain.Role;
 import com.example.demo.infraestructure.redisInfraestructure.RedisRepository;
 import com.example.demo.security.UserLogInfo;
-import com.example.demo.security.tokens.JwtReader;
+import com.example.demo.security.authTokens.JwtReader;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.ReactiveAuthenticationManager;
@@ -26,6 +28,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import reactor.core.publisher.Mono;
 
 @Component
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class AuthenticationManager implements ReactiveAuthenticationManager {
 
     private static final Map<Role,Collection<? extends GrantedAuthority>> authMap;
@@ -39,13 +42,6 @@ public class AuthenticationManager implements ReactiveAuthenticationManager {
 
     private final RedisRepository<UserLogInfo, UUID> logInfoRepository;
     private final JwtReader jwtUtil;
-
-    @Autowired
-    public AuthenticationManager(final RedisRepository<UserLogInfo, UUID> logInfoRepository,
-            final JwtReader jwtUtil) {
-        this.logInfoRepository = logInfoRepository;
-        this.jwtUtil = jwtUtil;
-    }
 
     @Override
     public Mono<Authentication> authenticate(Authentication authentication) {

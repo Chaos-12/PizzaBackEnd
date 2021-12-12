@@ -16,19 +16,16 @@ import reactor.core.publisher.Mono;
 @Component
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class FilterExceptionHandler implements ErrorWebExceptionHandler {
-
   	private final DataBufferWriter bufferWriter;
-
   	@Override
   	public Mono<Void> handle(ServerWebExchange exchange, Throwable ex) {
   		int status = HttpStatus.INTERNAL_SERVER_ERROR.value();
     	String appError = ex.getMessage();
     	if (ex instanceof HttpException) {
-    	    HttpException httpEx = (HttpException) ex;
-    	    status = httpEx.getCode();
+    	    status = ((HttpException) ex).getCode();
 			log.warn(String.format("%s , StackTrace: %s", appError, ex.getStackTrace().toString()));
     	} else {
-    	    log.error(ex.getMessage(), ex);
+    	    log.error(appError, ex);
     	}
     	if (exchange.getResponse().isCommitted()) {
     	    return Mono.error(ex);

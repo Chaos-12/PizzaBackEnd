@@ -10,7 +10,7 @@ public class BadRequestException extends HttpException {
     private final Map<String, String> exceptionMap = new HashMap<String, String>();
 
     public BadRequestException() {
-        this("Bad Request Exception");
+        this("Bad Request");
     }
 
     public BadRequestException(String message) {

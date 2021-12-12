@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 public class RedisConnectionException extends HttpException{
 
     public RedisConnectionException(){
-        this("Under construction");
+        this("Under Construction");
     }
     
     public RedisConnectionException(String message){

@@ -13,14 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import graphql.ExecutionInput;
 import graphql.GraphQL;
+import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/api/v1/graphQL")
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class GraphQLController {
 
-    @Autowired
-    private GraphQL graphQL;
+    private final GraphQL graphQL;
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)

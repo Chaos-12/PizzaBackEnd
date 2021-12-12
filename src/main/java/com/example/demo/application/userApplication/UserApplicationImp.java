@@ -14,16 +14,18 @@ import com.example.demo.infraestructure.redisInfraestructure.RedisRepository;
 import com.example.demo.security.AuthRequest;
 import com.example.demo.security.AuthResponse;
 import com.example.demo.security.UserLogInfo;
-import com.example.demo.security.tokens.TokenProvider;
+import com.example.demo.security.authTokens.TokenProvider;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.modelmapper.ModelMapper;
 
 import reactor.core.publisher.Mono;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class UserApplicationImp extends ApplicationBase<User> implements UserApplication {
 
@@ -31,11 +33,10 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
     private final RedisRepository<UserLogInfo, UUID> logInfoRepository;
     private final RedisRepository<UUID, String> refreshTokenRepository;
     private final ModelMapper modelMapper;
-    private final Logger logger;
     private final TokenProvider tokenProvider;
 
     @Autowired
-    public UserApplicationImp(final Logger logger, final UserWriteRepository userWriteRepository,
+    public UserApplicationImp(final UserWriteRepository userWriteRepository,
             final ModelMapper modelMapper, final RedisRepository<UserLogInfo, UUID> logInfoRepository,
             final RedisRepository<UUID, String> refreshTokenRepository, final TokenProvider tokenProvider) {
         super((id) -> userWriteRepository.findById(id));
@@ -44,7 +45,6 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
         this.refreshTokenRepository = refreshTokenRepository;
         this.tokenProvider = tokenProvider;
         this.modelMapper = modelMapper;
-        this.logger = logger;
     }
 
     @Override
@@ -58,7 +58,7 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                 .validate("email", newUser.getEmail(), (email) -> this.userWriteRepository.exists(email))
                 .then(this.userWriteRepository.save(newUser, true))
                 .flatMap(dbUser -> {
-                    logger.info(this.serializeObject(dbUser, "added"));
+                    log.info(this.serializeObject(dbUser, "added"));
                     return this.generateResponse(dbUser);
                 });
     }
@@ -68,10 +68,10 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                 .findUserByEmail(userRequest.getEmail())
                 .flatMap(dbUser -> {
                     if(dbUser.validate(userRequest.getPassword())){
-                        logger.info(this.serializeObject(dbUser, "login"));
+                        log.info(this.serializeObject(dbUser, "login"));
                         return generateResponse(dbUser);
                     } else {
-                        logger.info(dbUser.toString().concat(" login failed: wrong password"));
+                        log.info(dbUser.toString().concat(" login failed: wrong password"));
                         return this.userWriteRepository.save(dbUser, false)
                                 .then(Mono.error(new BadRequestException("Wrong password")));
                     }

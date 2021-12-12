@@ -1,4 +1,4 @@
-package com.example.demo.security.filter;
+package com.example.demo.security.authFilter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -10,17 +10,14 @@ import org.springframework.security.web.server.context.ServerSecurityContextRepo
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 
+import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
 
 @Component
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class SecurityContextRepository implements ServerSecurityContextRepository {
 
     private final AuthenticationManager authenticationManager;
-
-    @Autowired
-    public SecurityContextRepository(final AuthenticationManager authenticationManager){
-        this.authenticationManager = authenticationManager;
-    }
 
     @Override
     public Mono<Void> save(ServerWebExchange serverWebExchange, SecurityContext securityContext) {

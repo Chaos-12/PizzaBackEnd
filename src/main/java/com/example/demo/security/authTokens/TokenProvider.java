@@ -1,4 +1,4 @@
-package com.example.demo.security.tokens;
+package com.example.demo.security.authTokens;
 
 import java.util.Date;
 
@@ -13,7 +13,7 @@ import io.jsonwebtoken.SignatureAlgorithm;
 @Component
 public class TokenProvider {
 
-    private static final long JwtTokenValidity = 60*60*1000;
+    private static final long JwtTokenValidity = 60 * 60 * 1000;
 
     @Value("#{environment.JwtSecretKey}")
     private String secretKey;

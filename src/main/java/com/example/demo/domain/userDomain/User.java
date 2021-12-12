@@ -11,11 +11,13 @@ import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.data.relational.core.mapping.Table;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Setter;
 
 @Data
 @Table("user")
 @Setter
+@EqualsAndHashCode(callSuper=true)
 public class User extends EntityBase {
     public static final int maxRetries = 3;
     @NotNull

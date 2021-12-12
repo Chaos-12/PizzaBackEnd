@@ -1,4 +1,4 @@
-package com.example.demo.security.tokens;
+package com.example.demo.security.authTokens;
 
 import java.util.Date;
 import java.util.function.Function;
@@ -13,7 +13,7 @@ import io.jsonwebtoken.Jwts;
 
 @Component
 public class JwtReader {
-    
+
     @Value("#{environment.JwtSecretKey}")
     private String secretKey;
 
@@ -26,15 +26,15 @@ public class JwtReader {
         return claimsResolver.apply(claims);
     }
 
-    public String getSubjectFromToken(String token){
+    public String getSubjectFromToken(String token) {
         return this.getAllClaimsFromToken(token).getSubject();
     }
 
-    public String getRoleFromToken(String token){
+    public String getRoleFromToken(String token) {
         return this.getAllClaimsFromToken(token).get("role", String.class);
     }
 
-    public Date getExpirationDateFromToken(String token){
+    public Date getExpirationDateFromToken(String token) {
         return getClaimFromToken(token, Claims::getExpiration);
     }
 
@@ -44,9 +44,9 @@ public class JwtReader {
     }
 
     public Boolean validateToken(String token) {
-        try{
+        try {
             return !isTokenExpired(token);
-        } catch(Exception ex){
+        } catch (Exception ex) {
             throw new UnauthorizedException(ex.getMessage());
         }
     }

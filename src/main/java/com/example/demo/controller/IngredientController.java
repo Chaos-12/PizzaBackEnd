@@ -20,20 +20,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
 @PreAuthorize("hasRole('EMPLOYEE')")
 @RequestMapping("/api/v1/ingredients")
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class IngredientController {
 
     private final IngredientApplication ingredientApplication;
-
-    @Autowired
-    public IngredientController(final IngredientApplication ingredientApplication) {
-        this.ingredientApplication = ingredientApplication;
-    }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<IngredientDTO>> create(@RequestBody final CreateOrUpdateIngredientDTO dto) {

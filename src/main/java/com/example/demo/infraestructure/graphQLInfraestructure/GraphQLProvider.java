@@ -23,8 +23,10 @@ import graphql.schema.idl.RuntimeWiring;
 import graphql.schema.idl.SchemaGenerator;
 import graphql.schema.idl.SchemaParser;
 import graphql.schema.idl.TypeDefinitionRegistry;
+import lombok.RequiredArgsConstructor;
 
 @Component
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class GraphQLProvider {
 
     @Value("classpath:schema.graphql")
@@ -32,13 +34,6 @@ public class GraphQLProvider {
     private GraphQL graphQL;
     private final IngredientRepository ingredientRepository;
     private final UserRepository userRepository;
-
-    @Autowired
-    public GraphQLProvider(final IngredientRepository ingredientRepository,
-                    final UserRepository userRepository) {
-        this.ingredientRepository = ingredientRepository;
-        this.userRepository = userRepository;
-    }
     
     @Bean
     public GraphQL graphQL() {

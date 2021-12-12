@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 public class NotFoundException extends HttpException {
 
     public NotFoundException() {
-        this("Not found exception");
+        this("Not Found");
     }
     
     public NotFoundException(String message) {

@@ -15,18 +15,18 @@ import reactor.core.publisher.Mono;
 @Component
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class DataBufferWriter {
+    
     private final ObjectMapper objectMapper;
 
     public <T> Mono<Void> write(ServerHttpResponse httpResponse, T object) {
-        return httpResponse
-                        .writeWith(Mono.fromSupplier(() -> {
-                            DataBufferFactory bufferFactory = httpResponse.bufferFactory();
-                            try {
-                                return bufferFactory.wrap(objectMapper.writeValueAsBytes(object));
-                            } catch (Exception ex) {
-                                log.warn("Error writing response", ex);
-                                return bufferFactory.wrap(new byte[0]);
-                            }
-                        }));
+        return httpResponse.writeWith(Mono.fromSupplier(() -> {
+                    DataBufferFactory bufferFactory = httpResponse.bufferFactory();
+                    try {
+                        return bufferFactory.wrap(objectMapper.writeValueAsBytes(object));
+                    } catch (Exception ex) {
+                        log.warn("Error writing response", ex);
+                        return bufferFactory.wrap(new byte[0]);
+                    }
+                }));
     }
 }
