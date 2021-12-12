@@ -21,7 +21,11 @@ public class BadRequestException extends HttpException {
         this.exceptionMap.put(key, message);
     }
 
-    public Map<String, String> getExceptions() {
-        return this.exceptionMap;
+    @Override
+    public String getMessage(){
+        if(this.exceptionMap.isEmpty()){
+            return super.getMessage();
+        }
+        return exceptionMap.toString();
     }
 }
