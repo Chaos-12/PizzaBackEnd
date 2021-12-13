@@ -12,11 +12,13 @@ import com.example.demo.core.EntityBase;
 import org.springframework.data.relational.core.mapping.Table;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Setter;
 
 @Data
 @Table("ingredient")
 @Setter
+@EqualsAndHashCode(callSuper=true)
 public class Ingredient extends EntityBase {
     @NotBlank
     private String name;

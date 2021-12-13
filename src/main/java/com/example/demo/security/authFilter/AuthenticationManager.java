@@ -22,7 +22,6 @@ import org.springframework.security.authentication.ReactiveAuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import reactor.core.publisher.Mono;
@@ -41,21 +40,24 @@ public class AuthenticationManager implements ReactiveAuthenticationManager {
     }
 
     private final RedisRepository<UserLogInfo, UUID> logInfoRepository;
-    private final JwtReader jwtUtil;
+    private final JwtReader jwtReader;
 
     @Override
     public Mono<Authentication> authenticate(Authentication authentication) {
-        String authToken = authentication.getCredentials().toString();
-        if (jwtUtil.validateToken(authToken)) {
-            String id = jwtUtil.getSubjectFromToken(authToken);
+        try {
+            String authToken = authentication.getCredentials().toString();
+            if(jwtReader.isTokenExpired(authToken)){
+                return Mono.error(new UnauthorizedException("Authorization token is expired"));
+            }
+            String id = jwtReader.getSubjectFromToken(authToken);
             return this.logInfoRepository
                             .getFromID(UUID.fromString(id))
-                            .switchIfEmpty(Mono.error(new UnauthorizedException("User must log in")))
+                            .switchIfEmpty(Mono.error(new UnauthorizedException("User is logged out")))
                             .map(logInfo -> new UsernamePasswordAuthenticationToken(
                                     logInfo.getId(), null, authMap.get(logInfo.getRole())
                             ));
-        } else {
-            return Mono.error(new UnauthorizedException("Expired token"));
+        } catch (Exception ex){
+            return Mono.error(new UnauthorizedException(ex.getMessage()));
         }
     }
 
@@ -66,7 +68,9 @@ public class AuthenticationManager implements ReactiveAuthenticationManager {
                         .collect(Collectors.toList());
     }
 
+    /* Method to replace generateLowAuthorities in the case that we desire to specify each role 
+        to have a diferent access to each end-point.
     private static Collection<? extends GrantedAuthority> generateSingleAuthority(Role role){
         return AuthorityUtils.createAuthorityList(role.toString());
-    }
+    }*/
 }

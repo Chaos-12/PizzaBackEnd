@@ -1,5 +1,7 @@
 package com.example.demo.security.authFilter;
 
+import com.example.demo.core.exceptions.HttpException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
@@ -27,12 +29,9 @@ public class WebSecurityConfig {
     public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http) {
         return http
                 .exceptionHandling()
-                .authenticationEntryPoint((serverWebExchange, authEx) -> Mono.fromRunnable(
-                    () -> serverWebExchange.getResponse().setStatusCode(HttpStatus.UNAUTHORIZED)
-                ))
-                .accessDeniedHandler((serverWebExchange, authEx) -> Mono.fromRunnable(
-                    () -> serverWebExchange.getResponse().setStatusCode(HttpStatus.FORBIDDEN)
-                ))
+                .accessDeniedHandler((serverWebExchange, authEx) ->
+                    Mono.error(new HttpException(HttpStatus.FORBIDDEN.value(), "Access Denied"))
+                )
                 .and()
                 .csrf().disable()
                 .formLogin().disable()

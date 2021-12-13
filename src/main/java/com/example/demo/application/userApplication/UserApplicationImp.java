@@ -83,7 +83,7 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                         .getFromID(refreshToken)
                         .switchIfEmpty(Mono.error(new NotFoundException("Refresh token not found")))
                         .flatMap(id -> this.logInfoRepository.getFromID(id))
-                        .switchIfEmpty(Mono.error(new UnauthorizedException("User needs to log in")))
+                        .switchIfEmpty(Mono.error(new UnauthorizedException("User is logged out")))
                         .flatMap(logInfo -> {
                             if (logInfo.userHasUsed(refreshToken)) {
                                 return this.logout(logInfo.getId())

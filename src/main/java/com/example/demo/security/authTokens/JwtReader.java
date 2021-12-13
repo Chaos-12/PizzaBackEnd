@@ -3,8 +3,6 @@ package com.example.demo.security.authTokens;
 import java.util.Date;
 import java.util.function.Function;
 
-import com.example.demo.core.exceptions.UnauthorizedException;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -30,24 +28,11 @@ public class JwtReader {
         return this.getAllClaimsFromToken(token).getSubject();
     }
 
-    public String getRoleFromToken(String token) {
-        return this.getAllClaimsFromToken(token).get("role", String.class);
-    }
-
     public Date getExpirationDateFromToken(String token) {
-        return getClaimFromToken(token, Claims::getExpiration);
+        return this.getClaimFromToken(token, Claims::getExpiration);
     }
 
-    private Boolean isTokenExpired(String token) {
-        final Date expiration = getExpirationDateFromToken(token);
-        return expiration.before(new Date());
-    }
-
-    public Boolean validateToken(String token) {
-        try {
-            return !isTokenExpired(token);
-        } catch (Exception ex) {
-            throw new UnauthorizedException(ex.getMessage());
-        }
+    public Boolean isTokenExpired(String token) {
+        return this.getExpirationDateFromToken(token).before(new Date());
     }
 }
