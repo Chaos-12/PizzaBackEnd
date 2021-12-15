@@ -25,7 +25,7 @@ public class UserRepositoryImp implements UserWriteRepository {
         return this.userRepository
                         .findUserByEmail(email)
                         .switchIfEmpty(Mono.error(new NotFoundException(
-                            new StringBuilder("No user found for email ").append(email).toString()
+                            String.format("No user found with email %s", email)
                         )));
     }
 

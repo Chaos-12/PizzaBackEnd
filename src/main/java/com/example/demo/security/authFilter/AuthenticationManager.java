@@ -34,7 +34,7 @@ public class AuthenticationManager implements ReactiveAuthenticationManager {
 
     static {
         authMap  = new HashMap<Role,Collection<? extends GrantedAuthority>>();
-        for(Role role: Role.values()){
+        for (Role role: Role.values()) {
             authMap.put(role, generateLowAuthorities(role));
         }
     }

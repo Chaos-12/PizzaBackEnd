@@ -1,5 +1,6 @@
 package com.example.demo.core;
 
+import java.lang.reflect.Field;
 import java.util.Set;
 import java.util.UUID;
 
@@ -47,7 +48,7 @@ public abstract class EntityBase implements Persistable<UUID> {
         }
     }
 
-    public Mono<Void> validate(String key, String value, ExistsByField existsByField) {
+    public Mono<Boolean> validate(String key, String value, ExistsByField existsByField) {
         this.validate();
         return existsByField.exists(value).flatMap(exists -> {
             if (exists) {
@@ -55,9 +56,24 @@ public abstract class EntityBase implements Persistable<UUID> {
                 badRequestException.addException(key, String.format("value '%s' is duplicated", value));
                 return Mono.error(badRequestException);
             } else {
-                return Mono.empty();
+                return Mono.just(false);
             }
         });
+    }
+
+    public void getDeclaredFieldsFrom(Object source){
+        Field sourceField;
+        for (Field myField: this.getClass().getDeclaredFields()) {
+            try {
+                sourceField = source.getClass().getDeclaredField(myField.getName());
+                sourceField.setAccessible(true);
+                if (null != sourceField.get(source)) {
+                    myField.setAccessible(true);
+                    myField.set(this, sourceField.get(source));
+                }
+            } catch (Exception ex){
+            }
+        }
     }
 
     @Override

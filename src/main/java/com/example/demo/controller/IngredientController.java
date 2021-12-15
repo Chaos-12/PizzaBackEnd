@@ -46,13 +46,13 @@ public class IngredientController {
     @PutMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<Void>> update(@PathVariable final String id, @RequestBody CreateOrUpdateIngredientDTO dto) {
         return this.ingredientApplication.update(id, dto)
-                .then(Mono.just(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null)));
+                .thenReturn(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null));
     }
 
     @DeleteMapping(path = "/{id}")
     public Mono<ResponseEntity<Void>> delete(@PathVariable final String id) {
         return this.ingredientApplication.delete(id)
-                .then(Mono.just(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null)));
+                .thenReturn(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null));
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)

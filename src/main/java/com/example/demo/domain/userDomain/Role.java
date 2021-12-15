@@ -8,13 +8,13 @@ public enum Role {
     ROLE_EMPLOYEE   (1),
     ROLE_CUSTOMER   (2);
 
-    private static final Map<Integer, Role> roleMap;
     public static final int size;
+    private static final Map<Integer, Role> roleMap;
 
     static {
         size = values().length;
         roleMap  = new HashMap<Integer, Role>();
-        for(Role role: Role.values()){
+        for (Role role: Role.values()) {
             roleMap.put(role.levelCode, role);
         }
     }

@@ -19,7 +19,7 @@ public abstract class ApplicationBase<T> {
         return this.getById
                         .findById(id)
                         .switchIfEmpty(Mono.error(new NotFoundException(
-                            new StringBuilder("No item found for id ").append(id.toString()).toString()
+                            String.format("No item found for id %s", id.toString())
                         )));
     }
 

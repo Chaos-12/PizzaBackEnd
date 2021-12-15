@@ -63,19 +63,62 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                 });
     }
 
+    public Mono<Void> updateUser(String userId, UpdateUserDTO userDto){
+        return this.findById(userId)
+                    .filter(dbUser -> dbUser.validate(userDto.getPassword()))
+                    .switchIfEmpty(Mono.error(new UnauthorizedException("Wrong password")))
+                    .flatMap(dbUser -> {
+                        Mono<Void> checkEmail = Mono.empty();
+                        if(!(null==userDto.getEmail()) && !dbUser.getEmail().matches(userDto.getEmail())) {
+                            checkEmail = this.checkEmail(userDto.getEmail());
+                        }
+                        userDto.setPassword(null);
+                        dbUser.getDeclaredFieldsFrom(userDto);
+                        if(null != userDto.getNewPassword()){
+                            dbUser.setPassword(BCrypt.hashpw(userDto.getNewPassword(), BCrypt.gensalt()));
+                        }
+                        dbUser.validate();
+                        return checkEmail.then(this.userWriteRepository.save(dbUser, false));
+                    })
+                    .flatMap(dbUser -> {
+                        log.info(this.serializeObject(dbUser, "updated"));
+                        return Mono.empty();
+                    });
+    }
+
+    private Mono<Void> checkEmail(String email){
+        return this.userWriteRepository
+                    .exists(email)
+                    .filter(exists -> !exists)
+                    .switchIfEmpty(Mono.error(new BadRequestException(
+                        String.format("email '%s' already exists", email)
+                    )))
+                    .then();
+    }
+
     public Mono<AuthResponse> login(AuthRequest userRequest) {
         return this.userWriteRepository
-                .findUserByEmail(userRequest.getEmail())
-                .flatMap(dbUser -> {
-                    if(dbUser.validate(userRequest.getPassword())){
-                        log.info(this.serializeObject(dbUser, "login"));
-                        return generateResponse(dbUser);
-                    } else {
-                        log.info(dbUser.toString().concat(" login failed: wrong password"));
-                        return this.userWriteRepository.save(dbUser, false)
-                                .then(Mono.error(new BadRequestException("Wrong password")));
-                    }
-                });
+                        .findUserByEmail(userRequest.getEmail())
+                        .flatMap(dbUser -> {
+                            if(dbUser.validate(userRequest.getPassword())){
+                                log.info(this.serializeObject(dbUser, "login"));
+                                return generateResponse(dbUser);
+                            } else {
+                                log.info(dbUser.toString().concat(" login failed: wrong password"));
+                                return this.userWriteRepository.save(dbUser, false)
+                                        .then(Mono.error(new BadRequestException("Wrong password")));
+                            }
+                        });
+    }
+    
+    public Mono<Boolean> logout(UUID id) {
+        return this.logInfoRepository.removeFromID(id)
+                        .flatMap(removed -> {
+                            if (removed) {
+                                log.info(String.format("User with id %s has logged out succesfully", id.toString()));
+                            }
+                            return Mono.empty();
+                        });
     }
 
     public Mono<AuthResponse> refresh(String refreshToken) {
@@ -87,19 +130,15 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                         .flatMap(logInfo -> {
                             if (logInfo.userHasUsed(refreshToken)) {
                                 return this.logout(logInfo.getId())
-                                            .then(Mono.error(new UnauthorizedException("Token used multiple times: forced logout")));
-                            } else {
-                                logInfo.addRefreshToken(refreshToken);
-                                return this.logInfoRepository.set(logInfo.getId(), logInfo, 2);
+                                            .then(Mono.error(new UnauthorizedException(
+                                                "Token used multiple times: forced logout of user"
+                                            )));
                             }
+                            logInfo.addRefreshToken(refreshToken);
+                            return this.logInfoRepository.set(logInfo.getId(), logInfo, 2);
                         })
                         .flatMap(logInfo -> this.generateResponse(logInfo));
     }
-
-    public Mono<Boolean> logout(UUID id) {
-        return this.logInfoRepository.removeFromID(id);
-    }
-
     
     public Mono<Void> resetTries(String userId){
         return this.userWriteRepository
@@ -111,10 +150,8 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                         .then();
     }
 
-    public Mono<UserDTO> getProfile(UUID id) {
-        return this.userWriteRepository
-                        .findById(id)
-                        .map(dbUser -> this.modelMapper.map(dbUser, UserDTO.class));
+    public Mono<UserDTO> getProfile(String id) {
+        return this.findById(id).map(dbUser -> this.modelMapper.map(dbUser, UserDTO.class));
     }
 
     private Mono<AuthResponse> generateResponse(UUID id, Role role) {
