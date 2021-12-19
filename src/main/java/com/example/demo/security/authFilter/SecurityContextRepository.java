@@ -4,8 +4,6 @@ import com.example.demo.core.exceptions.UnauthorizedException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextImpl;
 import org.springframework.security.web.server.context.ServerSecurityContextRepository;
@@ -35,8 +33,7 @@ public class SecurityContextRepository implements ServerSecurityContextRepositor
                     .switchIfEmpty(Mono.error(new UnauthorizedException("Wrong format in authorization token")))
                     .flatMap(authHeader -> {
                         String authToken = authHeader.substring(TOKEN_HEADER.length());
-                        Authentication auth = new UsernamePasswordAuthenticationToken(authToken, authToken);
-                        return this.authenticationManager.authenticate(auth).map(SecurityContextImpl::new);
+                        return this.authenticationManager.authenticate(authToken).map(SecurityContextImpl::new);
                     });
     }
 }
