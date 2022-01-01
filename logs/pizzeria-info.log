@@ -2935,3 +2935,108 @@
 2022.01.01 12:49:34 CET [cid: 0x1] Error: SEVERITY_LOCALIZED=FATAL, SEVERITY_NON_LOCALIZED=FATAL, CODE=3D000, MESSAGE=no existe la base de datos ?mydb?, FILE=postinit.c, LINE=887, ROUTINE=InitPostgres
 2022.01.01 12:53:32 CET [cid: 0x2] Error: SEVERITY_LOCALIZED=FATAL, SEVERITY_NON_LOCALIZED=FATAL, CODE=3D000, MESSAGE=no existe la base de datos ?mydb?, FILE=postinit.c, LINE=887, ROUTINE=InitPostgres
 2022.01.01 12:55:34 CET [cid: 0x3] Error: SEVERITY_LOCALIZED=FATAL, SEVERITY_NON_LOCALIZED=FATAL, CODE=3D000, MESSAGE=no existe la base de datos ?mydb?, FILE=postinit.c, LINE=887, ROUTINE=InitPostgres
+2022.01.01 17:51:08 CET Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.demo.DemoApplicationTests], using SpringBootContextLoader
+2022.01.01 17:51:08 CET Could not detect default resource locations for test class [com.example.demo.DemoApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022.01.01 17:51:08 CET Could not detect default configuration classes for test class [com.example.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2022.01.01 17:51:08 CET Found @SpringBootConfiguration com.example.demo.DemoApplication for test class com.example.demo.DemoApplicationTests
+2022.01.01 17:51:08 CET Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022.01.01 17:51:09 CET Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@99a65d3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3088660d, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@42cc13a0, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@32fdec40, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@6813a331, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1bd81830, org.springframework.test.context.transaction.TransactionalTestExecutionListener@39ab59f8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@64e92d61, org.springframework.test.context.event.EventPublishingTestExecutionListener@111610e6, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4ad4936c, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@29d37757, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@4fcc529, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@25cc7470, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4beddc56, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@79b663b3]
+2022.01.01 17:51:09 CET HV000001: Hibernate Validator 6.2.0.Final
+2022.01.01 17:51:09 CET Starting DemoApplicationTests using Java 17.0.1 on LES008703 with PID 10964 (started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2022.01.01 17:51:09 CET No active profile set, falling back to default profiles: default
+2022.01.01 17:51:10 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2022.01.01 17:51:10 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2022.01.01 17:51:10 CET Finished Spring Data repository scanning in 40 ms. Found 0 R2DBC repository interfaces.
+2022.01.01 17:51:10 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2022.01.01 17:51:10 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2022.01.01 17:51:11 CET Finished Spring Data repository scanning in 296 ms. Found 2 R2DBC repository interfaces.
+2022.01.01 17:51:11 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2022.01.01 17:51:11 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022.01.01 17:51:11 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2022.01.01 17:51:11 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2022.01.01 17:51:11 CET Finished Spring Data repository scanning in 42 ms. Found 0 Redis repository interfaces.
+2022.01.01 17:51:15 CET Started DemoApplicationTests in 6.424 seconds (JVM running for 8.596)
+2022.01.01 17:55:18 CET HV000001: Hibernate Validator 6.2.0.Final
+2022.01.01 17:55:18 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 15440 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2022.01.01 17:55:18 CET No active profile set, falling back to default profiles: default
+2022.01.01 17:55:19 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2022.01.01 17:55:19 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2022.01.01 17:55:19 CET Finished Spring Data repository scanning in 20 ms. Found 0 R2DBC repository interfaces.
+2022.01.01 17:55:20 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2022.01.01 17:55:20 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2022.01.01 17:55:20 CET Finished Spring Data repository scanning in 178 ms. Found 2 R2DBC repository interfaces.
+2022.01.01 17:55:20 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2022.01.01 17:55:20 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022.01.01 17:55:20 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2022.01.01 17:55:20 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2022.01.01 17:55:20 CET Finished Spring Data repository scanning in 21 ms. Found 0 Redis repository interfaces.
+2022.01.01 17:55:21 CET Tomcat initialized with port(s): 8080 (http)
+2022.01.01 17:55:21 CET Initializing ProtocolHandler ["http-nio-8080"]
+2022.01.01 17:55:21 CET Starting service [Tomcat]
+2022.01.01 17:55:21 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2022.01.01 17:55:21 CET Initializing Spring embedded WebApplicationContext
+2022.01.01 17:55:21 CET Root WebApplicationContext: initialization completed in 2813 ms
+2022.01.01 17:55:23 CET Starting ProtocolHandler ["http-nio-8080"]
+2022.01.01 17:55:23 CET Tomcat started on port(s): 8080 (http) with context path ''
+2022.01.01 17:55:23 CET Started DemoApplication in 5.615 seconds (JVM running for 7.059)
+2022.01.01 18:06:17 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022.01.01 18:06:17 CET Initializing Servlet 'dispatcherServlet'
+2022.01.01 18:06:17 CET Completed initialization in 3 ms
+2022.01.01 18:06:24 CET [cid: 0x1] Error: SEVERITY_LOCALIZED=FATAL, SEVERITY_NON_LOCALIZED=FATAL, CODE=3D000, MESSAGE=no existe la base de datos ?mydb?, FILE=postinit.c, LINE=887, ROUTINE=InitPostgres
+2022.01.01 18:07:39 CET HV000001: Hibernate Validator 6.2.0.Final
+2022.01.01 18:07:40 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 12832 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2022.01.01 18:07:40 CET No active profile set, falling back to default profiles: default
+2022.01.01 18:07:43 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2022.01.01 18:07:43 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2022.01.01 18:07:43 CET Finished Spring Data repository scanning in 36 ms. Found 0 R2DBC repository interfaces.
+2022.01.01 18:07:44 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2022.01.01 18:07:44 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2022.01.01 18:07:44 CET Finished Spring Data repository scanning in 478 ms. Found 2 R2DBC repository interfaces.
+2022.01.01 18:07:44 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2022.01.01 18:07:44 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022.01.01 18:07:44 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2022.01.01 18:07:44 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2022.01.01 18:07:44 CET Finished Spring Data repository scanning in 66 ms. Found 0 Redis repository interfaces.
+2022.01.01 18:07:47 CET Tomcat initialized with port(s): 8080 (http)
+2022.01.01 18:07:47 CET Initializing ProtocolHandler ["http-nio-8080"]
+2022.01.01 18:07:47 CET Starting service [Tomcat]
+2022.01.01 18:07:47 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2022.01.01 18:07:48 CET Initializing Spring embedded WebApplicationContext
+2022.01.01 18:07:48 CET Root WebApplicationContext: initialization completed in 7988 ms
+2022.01.01 18:07:53 CET Starting ProtocolHandler ["http-nio-8080"]
+2022.01.01 18:07:53 CET Tomcat started on port(s): 8080 (http) with context path ''
+2022.01.01 18:07:53 CET Started DemoApplication in 14.639 seconds (JVM running for 16.866)
+2022.01.01 18:07:59 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022.01.01 18:07:59 CET Initializing Servlet 'dispatcherServlet'
+2022.01.01 18:07:59 CET Completed initialization in 12 ms
+2022.01.01 18:08:08 CET [cid: 0x1][pid: 8832] Error: SEVERITY_LOCALIZED=ERROR, SEVERITY_NON_LOCALIZED=ERROR, CODE=42P01, MESSAGE=no existe la relación «ingredient», POSITION=53, FILE=parse_relation.c, LINE=1384, ROUTINE=parserOpenTable
+2022.01.01 18:23:34 CET [cid: 0x2][pid: 13676] Error: SEVERITY_LOCALIZED=ERROR, SEVERITY_NON_LOCALIZED=ERROR, CODE=42883, MESSAGE=el operador no existe: "char"[] = character varying, HINT=Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos., POSITION=75, FILE=parse_oper.c, LINE=656, ROUTINE=op_error
+2022.01.01 18:23:46 CET HV000001: Hibernate Validator 6.2.0.Final
+2022.01.01 18:23:46 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 10592 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2022.01.01 18:23:46 CET No active profile set, falling back to default profiles: default
+2022.01.01 18:23:47 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2022.01.01 18:23:47 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2022.01.01 18:23:47 CET Finished Spring Data repository scanning in 22 ms. Found 0 R2DBC repository interfaces.
+2022.01.01 18:23:48 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2022.01.01 18:23:48 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2022.01.01 18:23:48 CET Finished Spring Data repository scanning in 171 ms. Found 2 R2DBC repository interfaces.
+2022.01.01 18:23:48 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2022.01.01 18:23:48 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022.01.01 18:23:48 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2022.01.01 18:23:48 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2022.01.01 18:23:48 CET Finished Spring Data repository scanning in 28 ms. Found 0 Redis repository interfaces.
+2022.01.01 18:23:49 CET Tomcat initialized with port(s): 8080 (http)
+2022.01.01 18:23:49 CET Initializing ProtocolHandler ["http-nio-8080"]
+2022.01.01 18:23:49 CET Starting service [Tomcat]
+2022.01.01 18:23:49 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2022.01.01 18:23:49 CET Initializing Spring embedded WebApplicationContext
+2022.01.01 18:23:49 CET Root WebApplicationContext: initialization completed in 2847 ms
+2022.01.01 18:23:51 CET Starting ProtocolHandler ["http-nio-8080"]
+2022.01.01 18:23:51 CET Tomcat started on port(s): 8080 (http) with context path ''
+2022.01.01 18:23:51 CET Started DemoApplication in 5.971 seconds (JVM running for 7.018)
+2022.01.01 18:24:49 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022.01.01 18:24:49 CET Initializing Servlet 'dispatcherServlet'
+2022.01.01 18:24:49 CET Completed initialization in 2 ms
+2022.01.01 18:24:50 CET [cid: 0x1][pid: 2528] Error: SEVERITY_LOCALIZED=ERROR, SEVERITY_NON_LOCALIZED=ERROR, CODE=42883, MESSAGE=el operador no existe: "char"[] = character varying, HINT=Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos., POSITION=75, FILE=parse_oper.c, LINE=656, ROUTINE=op_error
+2022.01.01 18:25:53 CET [cid: 0x2][pid: 932] Error: SEVERITY_LOCALIZED=ERROR, SEVERITY_NON_LOCALIZED=ERROR, CODE=42883, MESSAGE=el operador no existe: "char"[] = character varying, HINT=Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos., POSITION=75, FILE=parse_oper.c, LINE=656, ROUTINE=op_error
+2022.01.01 18:35:29 CET [cid: 0x4][pid: 9936] Error: SEVERITY_LOCALIZED=ERROR, SEVERITY_NON_LOCALIZED=ERROR, CODE=42804, MESSAGE=la columna «id» es de tipo uuid pero la expresión es de tipo bytea, HINT=Necesitará reescribir la expresión o aplicarle una conversión de tipo., POSITION=58, FILE=parse_target.c, LINE=595, ROUTINE=transformAssignedExpr

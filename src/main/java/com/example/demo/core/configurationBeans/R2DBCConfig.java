@@ -14,7 +14,7 @@ public class R2DBCConfig {
        return new PostgresqlConnectionFactory(
                PostgresqlConnectionConfiguration.builder()
                        .host("localhost")
-                       .database("mydb")
+                       .database("pizza")
                        .username("postgres")
                        .password("admin").build());
    }    
