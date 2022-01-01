@@ -1,4 +1,4 @@
-package com.example.demo.infraestructure.imageRepository;
+package com.example.demo.infraestructure.ImageRepository;
 
 import java.time.Duration;
 // import com.example.demo.core.ApplicationBase;

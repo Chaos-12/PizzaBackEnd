@@ -1,4 +1,4 @@
-package com.example.demo.infraestructure.imageRepository;
+package com.example.demo.infraestructure.ImageRepository;
 
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
