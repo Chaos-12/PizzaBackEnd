@@ -11,7 +11,6 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
 public class PizzaDTO {
     private UUID id;
     private String name;

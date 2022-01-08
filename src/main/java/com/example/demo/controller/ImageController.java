@@ -31,7 +31,7 @@ public class ImageController {
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public Mono<ImageDTO> upload(@RequestParam("image") MultipartFile file) throws IOException {
+    public Mono<ImageDTO> upload(@RequestParam("image") MultipartFile file) throws IOException {      
         return this.imageApplication.add(new CreateOrUpdateImageDTO(file.getBytes()));
     }
 

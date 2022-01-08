@@ -11,8 +11,10 @@ import com.example.demo.domain.imageDomain.Image;
 import com.example.demo.domain.ingredientDomain.Ingredient;
 import com.example.demo.domain.pizzaDomain.Pizza;
 import com.example.demo.domain.pizzaDomain.PizzaWriteRepository;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 import org.slf4j.Logger;
@@ -28,17 +30,18 @@ public class PizzaApplicationImp extends ApplicationBase<Pizza> implements Pizza
     
     @Autowired
     public PizzaApplicationImp(final PizzaWriteRepository pizzaWriteRepository, 
-                            final ModelMapper modelMapper,final Logger logger,
-                            final IngredientApplication ingredientApplication,
+                            final ModelMapper modelMapper,final Logger logger ,
+                           final IngredientApplication ingredientApplication,
                             final ImageApplication imageApplication,
                             final ImageCloudinaryRepository imageCloudinaryRepository){
         super((id) -> pizzaWriteRepository.findById(id));
         this.pizzaWriteRepository = pizzaWriteRepository;
-        this.ingredientApplication = ingredientApplication;
-        this.imageApplication = imageApplication;
         this.modelMapper = modelMapper;
         this.logger = logger; 
-        this.imageCloudinaryRepository = imageCloudinaryRepository;                   
+        this.ingredientApplication = ingredientApplication;
+        this.imageApplication = imageApplication;
+        
+        this.imageCloudinaryRepository = imageCloudinaryRepository;                 
     }
 
     @Override
@@ -59,13 +62,14 @@ public class PizzaApplicationImp extends ApplicationBase<Pizza> implements Pizza
         image.setContent(bytesImg);
         Mono<ImageDTO> cloud = imageCloudinaryRepository.saveImageCloudianary(image);
         newPizza.setImage(image.getId());
-
-        return newPizza.validate("name", newPizza.getName(), name -> pizzaWriteRepository.exists(name))
+ 
+       return newPizza.validate("name", newPizza.getName(), name -> pizzaWriteRepository.exists(name))
                 .then(pizzaWriteRepository.save(newPizza, true))
                 .flatMap(pizza -> {
                         logger.info(this.serializeObject(pizza,"added"));
                         return Mono.just(modelMapper.map(pizza, PizzaDTO.class));
                 });
+                return null;
     }
     
 }
