@@ -19,6 +19,7 @@ public interface UserRepository extends RepositoryBase<User, UUID> {
     @Query("SELECT id, name, surname, email, password, provider, role, tries FROM user ORDER BY role, email LIMIT :firstIndex, :limit;")
     public Flux<User> findAllFrom(int firstIndex, int limit);
 
-    @Query("SELECT CASE WHEN COUNT(id)>0 THEN 1 ELSE 0 END FROM user WHERE email = :email;")
+    //@Query("SELECT CASE WHEN COUNT(id)>0 THEN 1 ELSE 0 END FROM user WHERE email = :email;")
+    @Query("{ ?0: { $exists: true } }")
     public Mono<Integer> existsByField(String email);
 }

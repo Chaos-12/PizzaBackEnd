@@ -21,6 +21,6 @@ public interface IngredientRepository extends RepositoryBase<Ingredient, UUID> {
     @Query("SELECT id, name, price FROM ingredient ORDER BY name LIMIT :firstIndex, :limit;")
     public Flux<Ingredient> findAllFrom(int firstIndex, int limit);
 
-    @Query("SELECT CASE WHEN COUNT(id)>0 THEN 1 ELSE 0 END FROM ingredient WHERE name = :name;")
+    @Query("{ ?0: { $exists: true } }")
     public Mono<Integer> existsByField(String name);
 }
