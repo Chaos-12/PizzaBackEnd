@@ -36,7 +36,7 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient> implem
     public Mono<IngredientDTO> add(CreateOrUpdateIngredientDTO dto) {
         Ingredient newIngredient = modelMapper.map(dto, Ingredient.class);
         newIngredient.setId(UUID.randomUUID());
-        return newIngredient
+         return newIngredient
                 .validate("name", newIngredient.getName(), name -> this.ingredientWriteRepository.exists(name))
                 .then(this.ingredientWriteRepository.save(newIngredient, true))
                 .map(ingredient -> {

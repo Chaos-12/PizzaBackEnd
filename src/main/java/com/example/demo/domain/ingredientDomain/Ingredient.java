@@ -9,13 +9,13 @@ import javax.validation.constraints.NotNull;
 
 import com.example.demo.core.EntityBase;
 
-import org.springframework.data.relational.core.mapping.Table;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
 import lombok.Setter;
 
 @Data
-@Table("ingredient")
+@Document(collection = "ingredient")
 @Setter
 public class Ingredient extends EntityBase {
     @NotBlank
