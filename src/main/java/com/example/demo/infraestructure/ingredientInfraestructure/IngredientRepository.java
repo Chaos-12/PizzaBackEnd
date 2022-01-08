@@ -6,7 +6,7 @@ import com.example.demo.core.RepositoryBase;
 import com.example.demo.domain.ingredientDomain.Ingredient;
 import com.example.demo.domain.ingredientDomain.IngredientProjection;
 
-import org.springframework.data.r2dbc.repository.Query;
+import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import reactor.core.publisher.Flux;

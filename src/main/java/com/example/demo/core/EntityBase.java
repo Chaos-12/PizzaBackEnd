@@ -4,7 +4,7 @@ import java.lang.reflect.Field;
 import java.util.Set;
 import java.util.UUID;
 
-import javax.persistence.MappedSuperclass;
+// import javax.persistence.MappedSuperclass;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
@@ -21,7 +21,7 @@ import lombok.Getter;
 import lombok.Setter;
 import reactor.core.publisher.Mono;
 
-@MappedSuperclass
+// @MappedSuperclass
 @Getter
 @Setter
 public abstract class EntityBase implements Persistable<UUID> {
