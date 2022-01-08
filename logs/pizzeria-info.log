@@ -3040,3 +3040,30 @@
 2022.01.01 18:24:50 CET [cid: 0x1][pid: 2528] Error: SEVERITY_LOCALIZED=ERROR, SEVERITY_NON_LOCALIZED=ERROR, CODE=42883, MESSAGE=el operador no existe: "char"[] = character varying, HINT=Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos., POSITION=75, FILE=parse_oper.c, LINE=656, ROUTINE=op_error
 2022.01.01 18:25:53 CET [cid: 0x2][pid: 932] Error: SEVERITY_LOCALIZED=ERROR, SEVERITY_NON_LOCALIZED=ERROR, CODE=42883, MESSAGE=el operador no existe: "char"[] = character varying, HINT=Ningún operador coincide en el nombre y tipos de argumentos. Puede ser necesario agregar conversión explícita de tipos., POSITION=75, FILE=parse_oper.c, LINE=656, ROUTINE=op_error
 2022.01.01 18:35:29 CET [cid: 0x4][pid: 9936] Error: SEVERITY_LOCALIZED=ERROR, SEVERITY_NON_LOCALIZED=ERROR, CODE=42804, MESSAGE=la columna «id» es de tipo uuid pero la expresión es de tipo bytea, HINT=Necesitará reescribir la expresión o aplicarle una conversión de tipo., POSITION=58, FILE=parse_target.c, LINE=595, ROUTINE=transformAssignedExpr
+2022.01.01 18:42:38 CET HV000001: Hibernate Validator 6.2.0.Final
+2022.01.01 18:42:38 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 1836 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2022.01.01 18:42:38 CET No active profile set, falling back to default profiles: default
+2022.01.01 18:42:39 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2022.01.01 18:42:39 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2022.01.01 18:42:39 CET Finished Spring Data repository scanning in 15 ms. Found 0 R2DBC repository interfaces.
+2022.01.01 18:42:39 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2022.01.01 18:42:39 CET Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2022.01.01 18:42:39 CET Finished Spring Data repository scanning in 178 ms. Found 2 R2DBC repository interfaces.
+2022.01.01 18:42:39 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2022.01.01 18:42:39 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022.01.01 18:42:39 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.PizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2022.01.01 18:42:39 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2022.01.01 18:42:39 CET Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+2022.01.01 18:42:40 CET Tomcat initialized with port(s): 8080 (http)
+2022.01.01 18:42:40 CET Initializing ProtocolHandler ["http-nio-8080"]
+2022.01.01 18:42:40 CET Starting service [Tomcat]
+2022.01.01 18:42:40 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2022.01.01 18:42:40 CET Initializing Spring embedded WebApplicationContext
+2022.01.01 18:42:40 CET Root WebApplicationContext: initialization completed in 2714 ms
+2022.01.01 18:42:43 CET Starting ProtocolHandler ["http-nio-8080"]
+2022.01.01 18:42:43 CET Tomcat started on port(s): 8080 (http) with context path ''
+2022.01.01 18:42:43 CET Started DemoApplication in 5.532 seconds (JVM running for 6.564)
+2022.01.01 18:43:09 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022.01.01 18:43:09 CET Initializing Servlet 'dispatcherServlet'
+2022.01.01 18:43:09 CET Completed initialization in 1 ms
+2022.01.01 18:43:10 CET Ingredient {id: cdd7fb4d-9e6c-4997-9e2a-14fa70ad438a, name: pepperoni, price 0.30} added succesfully.
