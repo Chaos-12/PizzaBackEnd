@@ -26,7 +26,7 @@ import reactor.core.publisher.Mono;
 public class SecurityContextRepository implements ServerSecurityContextRepository {
 
     private static final String TOKEN_HEADER = "Bearer ";
-    private static final String OAUTH_DEFAULT_COOKIE_NAME = "JSESSIONID";
+    private static final String OAUTH_DEFAULT_COOKIE_NAME = "SESSION";
     private final RedisRepository<UserLogInfo, String> infoRepository;
     private final TokenProvider tokenProvider;
     private final JwtReader jwtReader;
@@ -57,11 +57,12 @@ public class SecurityContextRepository implements ServerSecurityContextRepositor
                             return this.authenticateFromRedis(userId);
                         });
         }
-        if (serverWebExchange.getRequest().getCookies().containsKey(OAUTH_DEFAULT_COOKIE_NAME)){
+        try{
             String sessionId = serverWebExchange.getRequest().getCookies()
-                                            .get(OAUTH_DEFAULT_COOKIE_NAME)
-                                            .get(0).getValue();
+                                                .get(OAUTH_DEFAULT_COOKIE_NAME)
+                                                .get(0).getValue();
             return this.authenticateFromRedis(sessionId);
+        }catch(Exception ex){
         }
         return Mono.error(new UnauthorizedException("Authorization is required"));
     }

@@ -34,7 +34,7 @@ public class WebSecurityConfig {
                 )
                 .and()
                 .csrf().disable()
-                .formLogin().disable()//.loginPage("/api/v1/users/login").and()//.disable()
+                .formLogin().disable()
                 .httpBasic().disable()
                 .authenticationManager(authenticationManager)
                 .securityContextRepository(securityContextRepository)
