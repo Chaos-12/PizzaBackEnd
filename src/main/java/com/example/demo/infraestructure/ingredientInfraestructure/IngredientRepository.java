@@ -20,7 +20,6 @@ public interface IngredientRepository extends ReactiveMongoRepository<Ingredient
    //@Query(value="{ 'id' : ?0 }", fields="{ 'firstname' : 1, 'lastname' : 1}") 
    Flux<IngredientProjection> findByCriteria(String name);
 
-    //@Query("SELECT CASE WHEN COUNT(id)>0 THEN 1 ELSE 0 END FROM ingredient WHERE name = :name;")
     @Query("{ ?0: { $exists: true } }")
     Mono<Integer> existsByField(String name);
 }

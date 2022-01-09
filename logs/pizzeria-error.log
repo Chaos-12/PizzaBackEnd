@@ -15172,3 +15172,130 @@ Caused by: java.lang.IllegalStateException: Invalid mongo configuration, either 
 	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.12.jar:5.3.12]
 	... 19 more
 
+2022.01.08 19:34:23 CET 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   pizzaApplicationImp defined in file [C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes\com\example\demo\application\pizzaApplication\PizzaApplicationImp.class]
+???????
+|  pizzaRepositoryImpl defined in file [C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes\com\example\demo\infraestructure\PizzaRepository\PizzaRepositoryImpl.class]
+???????
+
+
+2022.01.08 19:41:14 CET 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   pizzaApplicationImp defined in file [C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes\com\example\demo\application\pizzaApplication\PizzaApplicationImp.class]
+???????
+|  pizzaRepositoryImpl defined in file [C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes\com\example\demo\infraestructure\PizzaRepository\PizzaRepositoryImpl.class]
+???????
+
+
+2022.01.08 19:44:41 CET 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   pizzaApplicationImp defined in file [C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes\com\example\demo\application\pizzaApplication\PizzaApplicationImp.class]
+???????
+|  pizzaRepositoryImpl defined in file [C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes\com\example\demo\infraestructure\PizzaRepository\PizzaRepositoryImpl.class]
+???????
+
+
+2022.01.08 19:51:09 CET 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   pizzaApplicationImp defined in file [C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes\com\example\demo\application\pizzaApplication\PizzaApplicationImp.class]
+???????
+|  pizzaRepositoryImpl defined in file [C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes\com\example\demo\infraestructure\PizzaRepository\PizzaRepositoryImpl.class]
+???????
+
+
+2022.01.08 19:52:03 CET 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+???->???
+|  pizzaRepositoryImpl defined in file [C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes\com\example\demo\infraestructure\PizzaRepository\PizzaRepositoryImpl.class]
+???<-???
+
+
+2022.01.08 19:54:00 CET 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   pizzaApplicationImp defined in file [C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes\com\example\demo\application\pizzaApplication\PizzaApplicationImp.class]
+???????
+|  pizzaRepositoryImpl defined in file [C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes\com\example\demo\infraestructure\PizzaRepository\PizzaRepositoryImpl.class]
+???????
+
+
+2022.01.09 11:20:05 CET 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   pizzaApplicationImp defined in file [C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes\com\example\demo\application\pizzaApplication\PizzaApplicationImp.class]
+???????
+|  pizzaRepositoryImpl defined in file [C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes\com\example\demo\infraestructure\PizzaRepository\PizzaRepositoryImpl.class]
+???????
+
+
+2022.01.09 11:25:34 CET 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The dependencies of some of the beans in the application context form a cycle:
+
+   pizzaApplicationImp defined in file [C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes\com\example\demo\application\pizzaApplication\PizzaApplicationImp.class]
+???????
+|  pizzaRepositoryImpl defined in file [C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes\com\example\demo\infraestructure\pizzaRepository\PizzaRepositoryImpl.class]
+???????
+
+
