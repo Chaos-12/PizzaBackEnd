@@ -30,18 +30,18 @@ public class Pizza extends EntityBase{
     @NotNull
     private UUID image;
 
-    private final Set<IngredientDTO> ingredients = new HashSet<IngredientDTO>();
+    private final Set<Ingredient> ingredients = new HashSet<Ingredient>();
     
-    @NotNull @Digits(integer = 3, fraction = 2) @DecimalMin(value = "0.0", inclusive = false)
+    @NotNull
     private BigDecimal price;
 
     //TODO: comentarios
     
-    public void addIngredient(IngredientDTO ingredient){
+    public void addIngredient(Ingredient ingredient){
         ingredients.add(ingredient);
     }
 
-    public void removeIngredient(IngredientDTO ingredient){
+    public void removeIngredient(Ingredient ingredient){
         ingredients.remove(ingredient);
     }
 
@@ -49,13 +49,14 @@ public class Pizza extends EntityBase{
         BigDecimal price = new BigDecimal(0.00);
         BigDecimal profit = new BigDecimal(1.20);
 
-        for(IngredientDTO monoIng : ingredients){
+        for(Ingredient monoIng : ingredients){
             price = price.add(monoIng.getPrice());
         }
         price = price.multiply(profit);
         price = price.setScale(2, RoundingMode.HALF_EVEN);
 
-        return price;
+       // return price;
+       return new BigDecimal(1.20);
     }
 
     @Override

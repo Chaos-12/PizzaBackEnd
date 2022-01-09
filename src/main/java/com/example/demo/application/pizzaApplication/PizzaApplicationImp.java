@@ -15,6 +15,8 @@ import com.example.demo.domain.pizzaDomain.PizzaWriteRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import org.slf4j.Logger;
 @Service
@@ -43,21 +45,27 @@ public class PizzaApplicationImp extends ApplicationBase<Pizza> implements Pizza
 
     @Override
     public Mono<PizzaDTO> add(CreateOrUpdatePizzaDTO dto) {
-        Pizza newPizza = modelMapper.map(dto, Pizza.class);
-        for (UUID ingredient : dto.getIngredients()) {
-            Mono<IngredientDTO> ingredMono = ingredientApplication.get(ingredient.toString());
-            newPizza.addIngredient(modelMapper.map(ingredMono, IngredientDTO.class));
-        }  
-        newPizza.setPrice(new BigDecimal(0.50));
-        newPizza.setId(UUID.randomUUID());
+        Pizza pizza = this.modelMapper.map(dto, Pizza.class);
+        pizza.setId(UUID.randomUUID());
+        for (UUID ingredientId : dto.getIngredients()) {
+            
+            Mono<Ingredient> ing =
+            ingredientApplication.get(ingredientId.toString()).flatMap(dbIngredient ->{
+                Ingredient ingredient = this.modelMapper.map(dbIngredient, Ingredient.class);
+                pizza.addIngredient(ingredient);
+                return Mono.just(ingredient);
+            });            
 
-         return newPizza
-                .validate("name", newPizza.getName(), name -> this.pizzaWriteRepository.exists(name))
-                .then(this.pizzaWriteRepository.save(newPizza, true))
-                .map(pizza -> {
-                    logger.info(this.serializeObject(pizza, "added"));
-                    return this.modelMapper.map(pizza, PizzaDTO.class);
-                });
+            pizza.addIngredient(ing.block());
+        }
+        pizza.setPrice(pizza.calculatePrice());
+        pizza.setThisNew(true);
+        pizza.validate("name", pizza.getName(), (name) -> this.pizzaWriteRepository.exists(name));
+
+        return this.pizzaWriteRepository.save(pizza,true).flatMap(monoPizza -> {
+            logger.info(this.serializeObject(pizza, "added"));
+            return Mono.just(this.modelMapper.map(pizza, PizzaDTO.class));
+        });
     }
     
 }
