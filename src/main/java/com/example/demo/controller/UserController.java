@@ -11,12 +11,15 @@ import com.example.demo.domain.userDomain.UserDTO;
 import com.example.demo.security.AuthRequest;
 import com.example.demo.security.AuthResponse;
 import com.example.demo.security.authTokens.JwtReader;
+import com.example.demo.security.authTokens.OAuthReader;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -36,6 +39,7 @@ public class UserController {
 
     private final UserApplication userApplication;
     private final JwtReader jwtReader;
+    private final OAuthReader oAuthReader;
 
     @PostMapping(path = "/register", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<AuthResponse>> registerNewCustomer(@RequestBody final CreateUserDTO dto) {
@@ -90,5 +94,10 @@ public class UserController {
         String userId = jwtReader.getSubjectFromToken(authHeader.substring(7));
         return this.userApplication.getProfile(userId)
                     .map(userProj -> ResponseEntity.ok(userProj));
+    }
+
+    @GetMapping(path = "/profile/oauth", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<ResponseEntity<String>> getOauthProfile(@AuthenticationPrincipal OAuth2User principal){
+        return Mono.just(ResponseEntity.ok(oAuthReader.getUserInfo(principal)));
     }
 }

@@ -30,14 +30,14 @@ import lombok.extern.slf4j.Slf4j;
 public class UserApplicationImp extends ApplicationBase<User> implements UserApplication {
 
     private final UserWriteRepository userWriteRepository;
-    private final RedisRepository<UserLogInfo, UUID> logInfoRepository;
+    private final RedisRepository<UserLogInfo, String> logInfoRepository;
     private final RedisRepository<UUID, String> refreshTokenRepository;
     private final ModelMapper modelMapper;
     private final TokenProvider tokenProvider;
 
     @Autowired
     public UserApplicationImp(final UserWriteRepository userWriteRepository,
-            final ModelMapper modelMapper, final RedisRepository<UserLogInfo, UUID> logInfoRepository,
+            final ModelMapper modelMapper, final RedisRepository<UserLogInfo, String> logInfoRepository,
             final RedisRepository<UUID, String> refreshTokenRepository, final TokenProvider tokenProvider) {
         super((id) -> userWriteRepository.findById(id));
         this.userWriteRepository = userWriteRepository;
@@ -112,7 +112,7 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
     }
     
     public Mono<Boolean> logout(UUID id) {
-        return this.logInfoRepository.removeFromID(id)
+        return this.logInfoRepository.removeFromID(id.toString())
                         .flatMap(removed -> {
                             if (removed) {
                                 log.info(String.format("User with id %s has logged out succesfully", id.toString()));
@@ -125,7 +125,7 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
         return this.refreshTokenRepository
                         .getFromID(refreshToken)
                         .switchIfEmpty(Mono.error(new NotFoundException("Refresh token not found")))
-                        .flatMap(id -> this.logInfoRepository.getFromID(id))
+                        .flatMap(id -> this.logInfoRepository.getFromID(id.toString()))
                         .switchIfEmpty(Mono.error(new UnauthorizedException("User is logged out")))
                         .flatMap(logInfo -> {
                             if (logInfo.userHasUsed(refreshToken)) {
@@ -135,7 +135,7 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                                             )));
                             }
                             logInfo.addRefreshToken(refreshToken);
-                            return this.logInfoRepository.set(logInfo.getId(), logInfo, 2);
+                            return this.logInfoRepository.set(logInfo.getId().toString(), logInfo, 2);
                         })
                         .flatMap(logInfo -> this.generateResponse(logInfo));
     }
@@ -159,8 +159,8 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
         response.setAccessToken(tokenProvider.generateAccessToken(id.toString()));
         response.setRefreshToken(tokenProvider.generateRefreshToken());
         return this.logInfoRepository
-                        .getFromID(id)
-                        .switchIfEmpty(this.logInfoRepository.set(id, new UserLogInfo(id, role), 24))
+                        .getFromID(id.toString())
+                        .switchIfEmpty(this.logInfoRepository.set(id.toString(), new UserLogInfo(id, role), 24))
                         .then(this.refreshTokenRepository.set(response.getRefreshToken(), id, 2))
                         .thenReturn(response);
     }

@@ -22,7 +22,7 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class AuthenticationManager implements ReactiveAuthenticationManager {
 
-    private final RedisRepository<UserLogInfo, UUID> logInfoRepository;
+    private final RedisRepository<UserLogInfo, String> logInfoRepository;
     private final TokenProvider tokenProvider;
     private final JwtReader jwtReader;
 
@@ -35,7 +35,7 @@ public class AuthenticationManager implements ReactiveAuthenticationManager {
         try {
             UUID userId = UUID.fromString(jwtReader.getSubjectFromToken(authToken));
             return this.logInfoRepository
-                        .getFromID(userId)
+                        .getFromID(userId.toString())
                         .switchIfEmpty(Mono.error(new UnauthorizedException("User is logged out")))
                         .map(logInfo -> tokenProvider.generateAuthenticationToken(logInfo));
         } catch (Exception ex) {

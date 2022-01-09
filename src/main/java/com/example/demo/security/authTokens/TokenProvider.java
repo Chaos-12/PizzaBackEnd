@@ -52,8 +52,12 @@ public class TokenProvider {
     }
 
     public Authentication generateAuthenticationToken(UserLogInfo logInfo) {
+        return generateAuthenticationToken(logInfo.getId().toString(), logInfo.getRole());
+    }
+
+    public Authentication generateAuthenticationToken(String id, Role role) {
         return new UsernamePasswordAuthenticationToken(
-            logInfo.getId().toString(), null, authMap.get(logInfo.getRole())
+            id.toString(), null, authMap.get(role)
         );
     }
 

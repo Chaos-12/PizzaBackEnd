@@ -20,13 +20,13 @@ import reactor.core.publisher.Mono;
 public class WebSecurityConfig {
 
     private static final String[] AUTH_WHITELIST = {
-            "/api/v1/users/register", "/api/v1/users/login", "/api/v1/users/refresh" };
+            "/login", "/api/v1/users/register", "/api/v1/users/login", "/api/v1/users/refresh" };
 
     private final AuthenticationManager authenticationManager;
     private final SecurityContextRepository securityContextRepository;
 
     @Bean
-    public SecurityWebFilterChain securitygWebFilterChain(ServerHttpSecurity http) {
+    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         return http
                 .exceptionHandling()
                 .accessDeniedHandler((serverWebExchange, authEx) ->
@@ -34,7 +34,7 @@ public class WebSecurityConfig {
                 )
                 .and()
                 .csrf().disable()
-                .formLogin().disable()
+                .formLogin().disable()//.loginPage("/api/v1/users/login").and()//.disable()
                 .httpBasic().disable()
                 .authenticationManager(authenticationManager)
                 .securityContextRepository(securityContextRepository)
