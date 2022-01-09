@@ -4476,3 +4476,32 @@
 2022.01.09 12:42:05 CET Initializing Servlet 'dispatcherServlet'
 2022.01.09 12:42:05 CET Completed initialization in 5 ms
 2022.01.09 12:42:11 CET Opened connection [connectionId{localValue:3, serverValue:107}] to localhost:27017
+2022.01.09 12:45:24 CET HV000001: Hibernate Validator 6.2.0.Final
+2022.01.09 12:45:24 CET Starting DemoApplication using Java 17.0.1 on LES008703 with PID 11060 (C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes started by mbarcelo in C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd)
+2022.01.09 12:45:24 CET No active profile set, falling back to default profiles: default
+2022.01.09 12:45:26 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2022.01.09 12:45:26 CET Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2022.01.09 12:45:26 CET Finished Spring Data repository scanning in 353 ms. Found 2 Reactive MongoDB repository interfaces.
+2022.01.09 12:45:26 CET Multiple Spring Data modules found, entering strict repository configuration mode!
+2022.01.09 12:45:26 CET Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022.01.09 12:45:26 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2022.01.09 12:45:26 CET Spring Data Redis - Could not safely identify store assignment for repository candidate interface com.example.demo.infraestructure.pizzaRepository.PizzaRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2022.01.09 12:45:26 CET Finished Spring Data repository scanning in 45 ms. Found 0 Redis repository interfaces.
+2022.01.09 12:45:27 CET Tomcat initialized with port(s): 8080 (http)
+2022.01.09 12:45:27 CET Initializing ProtocolHandler ["http-nio-8080"]
+2022.01.09 12:45:27 CET Starting service [Tomcat]
+2022.01.09 12:45:27 CET Starting Servlet engine: [Apache Tomcat/9.0.54]
+2022.01.09 12:45:28 CET Initializing Spring embedded WebApplicationContext
+2022.01.09 12:45:28 CET Root WebApplicationContext: initialization completed in 3330 ms
+2022.01.09 12:45:29 CET Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2022.01.09 12:45:29 CET Opened connection [connectionId{localValue:2, serverValue:108}] to localhost:27017
+2022.01.09 12:45:29 CET Opened connection [connectionId{localValue:1, serverValue:109}] to localhost:27017
+2022.01.09 12:45:29 CET Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=13, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=138801800}
+2022.01.09 12:45:31 CET Starting ProtocolHandler ["http-nio-8080"]
+2022.01.09 12:45:31 CET Tomcat started on port(s): 8080 (http) with context path ''
+2022.01.09 12:45:32 CET Started DemoApplication in 8.13 seconds (JVM running for 10.463)
+2022.01.09 12:45:45 CET Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022.01.09 12:45:45 CET Initializing Servlet 'dispatcherServlet'
+2022.01.09 12:45:45 CET Completed initialization in 4 ms
+2022.01.09 12:45:47 CET Opened connection [connectionId{localValue:3, serverValue:110}] to localhost:27017
+2022.01.09 12:45:47 CET Pizza {id: 25db521f-a717-4419-8ec9-5adcae5cd79b, name: Pizza margarita, price: 0.5, with ingredients:[[com.example.demo.application.ingredientApplication.IngredientDTO@706fe8df, com.example.demo.application.ingredientApplication.IngredientDTO@1d784239, com.example.demo.application.ingredientApplication.IngredientDTO@347d4a96]]} added succesfully.
