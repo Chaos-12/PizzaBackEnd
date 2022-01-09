@@ -6,12 +6,10 @@ import com.example.demo.core.exceptions.UnauthorizedException;
 import com.example.demo.domain.userDomain.Role;
 import com.example.demo.infraestructure.redisInfraestructure.RedisRepository;
 import com.example.demo.security.UserLogInfo;
-import com.example.demo.security.authTokens.JwtReader;
 import com.example.demo.security.authTokens.TokenProvider;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextImpl;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
@@ -30,7 +28,6 @@ public class SecurityContextRepository implements ServerSecurityContextRepositor
     private static final String OAUTH_DEFAULT_COOKIE_NAME = "JSESSIONID";
     private final RedisRepository<UserLogInfo, String> infoRepository;
     private final TokenProvider tokenProvider;
-    private final JwtReader jwtReader;
 
     @Override
     public Mono<Void> save(ServerWebExchange serverWebExchange, SecurityContext securityContext) {
