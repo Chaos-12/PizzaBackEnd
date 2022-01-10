@@ -96,7 +96,7 @@ public class UserController {
                     .map(userProj -> ResponseEntity.ok(userProj));
     }
 
-    @GetMapping(path = "/profile/oauth", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/oauthId", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<String>> getOauthId(ServerWebExchange serverWebExchange){
         if (this.oAuthReader.containsOAuthSession(serverWebExchange)){
             return Mono.just(ResponseEntity.ok(this.oAuthReader.getOAuthSession(serverWebExchange)));
