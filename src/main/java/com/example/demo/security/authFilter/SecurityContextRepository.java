@@ -7,13 +7,13 @@ import com.example.demo.domain.userDomain.Role;
 import com.example.demo.infraestructure.redisInfraestructure.RedisRepository;
 import com.example.demo.security.UserLogInfo;
 import com.example.demo.security.authTokens.JwtReader;
+import com.example.demo.security.authTokens.OAuthReader;
 import com.example.demo.security.authTokens.TokenProvider;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextImpl;
-import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.web.server.context.ServerSecurityContextRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
@@ -26,17 +26,15 @@ import reactor.core.publisher.Mono;
 public class SecurityContextRepository implements ServerSecurityContextRepository {
 
     private static final String TOKEN_HEADER = "Bearer ";
-    private static final String OAUTH_DEFAULT_COOKIE_NAME = "SESSION";
     private final RedisRepository<UserLogInfo, String> infoRepository;
     private final TokenProvider tokenProvider;
+    private final OAuthReader oauthReader;
     private final JwtReader jwtReader;
 
     @Override
     public Mono<Void> save(ServerWebExchange serverWebExchange, SecurityContext securityContext) {
-        if (securityContext.getAuthentication() instanceof OAuth2AuthenticationToken) {
-            String sessionId = serverWebExchange.getRequest().getCookies()
-                                                .get(OAUTH_DEFAULT_COOKIE_NAME)
-                                                .get(0).getValue();
+        if (this.oauthReader.containsOAuthSession(serverWebExchange)) {
+            String sessionId = this.oauthReader.getOAuthSession(serverWebExchange);
             return this.infoRepository
                         .set(sessionId, new UserLogInfo(UUID.randomUUID(), Role.ROLE_CUSTOMER), 2)
                         .then();
@@ -57,12 +55,9 @@ public class SecurityContextRepository implements ServerSecurityContextRepositor
                             return this.authenticateFromRedis(userId);
                         });
         }
-        try{
-            String sessionId = serverWebExchange.getRequest().getCookies()
-                                                .get(OAUTH_DEFAULT_COOKIE_NAME)
-                                                .get(0).getValue();
+        if (this.oauthReader.containsOAuthSession(serverWebExchange)){
+            String sessionId = this.oauthReader.getOAuthSession(serverWebExchange);
             return this.authenticateFromRedis(sessionId);
-        }catch(Exception ex){
         }
         return Mono.error(new UnauthorizedException("Authorization is required"));
     }

@@ -20,9 +20,9 @@ import reactor.core.publisher.Mono;
 public class WebSecurityConfig {
 
     private static final String[] AUTH_WHITELIST = {
-            "/login", "/api/v1/users/register", "/api/v1/users/login", "/api/v1/users/refresh" };
+            "/login", "/api/v1/users/register", 
+            "/api/v1/users/login", "/api/v1/users/refresh"};
 
-    private final AuthenticationManager authenticationManager;
     private final SecurityContextRepository securityContextRepository;
 
     @Bean
@@ -36,7 +36,6 @@ public class WebSecurityConfig {
                 .csrf().disable()
                 .formLogin().disable()
                 .httpBasic().disable()
-                .authenticationManager(authenticationManager)
                 .securityContextRepository(securityContextRepository)
                 .authorizeExchange()
                 .pathMatchers(HttpMethod.OPTIONS).permitAll()

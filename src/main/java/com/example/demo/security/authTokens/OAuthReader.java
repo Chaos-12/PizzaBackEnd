@@ -1,17 +1,21 @@
 package com.example.demo.security.authTokens;
 
-import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Component;
+import org.springframework.web.server.ServerWebExchange;
 
 @Component
 public class OAuthReader {
+    
+    private static final String OAUTH_DEFAULT_COOKIE_NAME = "SESSION";
 
-    // public User getUser(OAuth2User principal, String provider) {
-    // }
+    public Boolean containsOAuthSession(ServerWebExchange serverWebExchange){
+        return serverWebExchange.getRequest().getCookies()
+                                .containsKey(OAUTH_DEFAULT_COOKIE_NAME);
+    }
 
-    public String getUserInfo(OAuth2User principal){
-        StringBuilder output = new StringBuilder("User OAuth2 profile:\n");
-        output.append(principal.getName());
-        return output.toString();
+    public String getOAuthSession(ServerWebExchange serverWebExchange){
+        return serverWebExchange.getRequest().getCookies()
+                                .get(OAUTH_DEFAULT_COOKIE_NAME)
+                                .get(0).getValue();
     }
 }

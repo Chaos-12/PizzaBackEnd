@@ -6,6 +6,7 @@ import com.example.demo.application.userApplication.CreateUserDTO;
 import com.example.demo.application.userApplication.UpdateUserDTO;
 import com.example.demo.application.userApplication.UserApplication;
 import com.example.demo.core.ApplicationBase;
+import com.example.demo.core.exceptions.NotFoundException;
 import com.example.demo.domain.userDomain.Role;
 import com.example.demo.domain.userDomain.UserDTO;
 import com.example.demo.security.AuthRequest;
@@ -18,8 +19,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -28,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ServerWebExchange;
 
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
@@ -97,7 +97,10 @@ public class UserController {
     }
 
     @GetMapping(path = "/profile/oauth", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<ResponseEntity<String>> getOauthProfile(@AuthenticationPrincipal OAuth2User principal){
-        return Mono.just(ResponseEntity.ok(oAuthReader.getUserInfo(principal)));
+    public Mono<ResponseEntity<String>> getOauthId(ServerWebExchange serverWebExchange){
+        if (this.oAuthReader.containsOAuthSession(serverWebExchange)){
+            return Mono.just(ResponseEntity.ok(this.oAuthReader.getOAuthSession(serverWebExchange)));
+        }
+        return Mono.error(new NotFoundException("User not coming from OAuth service"));
     }
 }
