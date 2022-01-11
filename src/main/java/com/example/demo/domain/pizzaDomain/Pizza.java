@@ -30,15 +30,16 @@ public class Pizza extends EntityBase{
     @NotNull
     private UUID image;
 
-    private final Set<Ingredient> ingredients = new HashSet<Ingredient>();
+    private Set<Ingredient> ingredients = new HashSet<Ingredient>();
     
     @NotNull
     private BigDecimal price;
 
     //TODO: comentarios
     
-    public void addIngredient(Ingredient ingredient){
+    public Ingredient addIngredient(Ingredient ingredient){
         ingredients.add(ingredient);
+        return ingredient;
     }
 
     public void removeIngredient(Ingredient ingredient){
@@ -46,7 +47,7 @@ public class Pizza extends EntityBase{
     }
 
     public BigDecimal calculatePrice(){
-        BigDecimal price = new BigDecimal(0.00);
+      /*  BigDecimal price = new BigDecimal(0.00);
         BigDecimal profit = new BigDecimal(1.20);
 
         for(Ingredient monoIng : ingredients){
@@ -55,7 +56,7 @@ public class Pizza extends EntityBase{
         price = price.multiply(profit);
         price = price.setScale(2, RoundingMode.HALF_EVEN);
 
-       // return price;
+       // return price;*/
        return new BigDecimal(1.20);
     }
 
