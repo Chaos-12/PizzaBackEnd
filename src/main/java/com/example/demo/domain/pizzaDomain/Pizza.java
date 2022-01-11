@@ -46,8 +46,8 @@ public class Pizza extends EntityBase{
         ingredients.remove(ingredient);
     }
 
-    public BigDecimal calculatePrice(){
-      /*  BigDecimal price = new BigDecimal(0.00);
+    public Mono<Boolean> setPrice(){
+        BigDecimal price = new BigDecimal(0.00);
         BigDecimal profit = new BigDecimal(1.20);
 
         for(Ingredient monoIng : ingredients){
@@ -56,8 +56,9 @@ public class Pizza extends EntityBase{
         price = price.multiply(profit);
         price = price.setScale(2, RoundingMode.HALF_EVEN);
 
-       // return price;*/
-       return new BigDecimal(1.20);
+        this.price= price;
+
+        return Mono.just(true);
     }
 
     @Override

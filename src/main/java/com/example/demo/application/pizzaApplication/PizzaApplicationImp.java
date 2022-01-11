@@ -50,7 +50,7 @@ public class PizzaApplicationImp extends ApplicationBase<Pizza> implements Pizza
     public Mono<PizzaDTO> add(CreateOrUpdatePizzaDTO dto) {
         Pizza pizza = this.modelMapper.map(dto, Pizza.class);
         pizza.setId(UUID.randomUUID());
-        pizza.setPrice(pizza.calculatePrice());
+        
         pizza.setThisNew(true);
         pizza.validate("name", pizza.getName(), (name) -> this.pizzaWriteRepository.exists(name));
 
@@ -59,8 +59,14 @@ public class PizzaApplicationImp extends ApplicationBase<Pizza> implements Pizza
                     .map(dbIngredient -> {
                         Ingredient ingredient = this.modelMapper.map(dbIngredient, Ingredient.class);
                         return pizza.addIngredient(ingredient);
-                    }).then(
-                        this.pizzaWriteRepository.save(pizza,true)
+                    })
+                    .map(a -> {
+                        pizza.setPrice();
+                        ImageDTO image = imageApplication.getImageRedis(pizza.getImage());
+                        imageCloudinaryRepository.saveImageCloudianary(image));
+                    })
+                    .then(
+                        pizzaWriteRepository.save(pizza,true)
                                                  .flatMap(monoPizza -> {
                                                             logger.info(this.serializeObject(pizza, "added"));
                                                             return Mono.just(this.modelMapper.map(pizza, PizzaDTO.class));
@@ -69,3 +75,17 @@ public class PizzaApplicationImp extends ApplicationBase<Pizza> implements Pizza
     }
     
 }
+
+
+// return Flux.fromIterable(dto.getIngredients())
+// .flatMap(id -> ingredientApplication.get(id.toString()))
+// .map(dbIngredient -> {
+//     Ingredient ingredient = this.modelMapper.map(dbIngredient, Ingredient.class);
+//     return pizza.addIngredient(ingredient);
+// }).then(
+//     this.pizzaWriteRepository.save(pizza,true)
+//                              .flatMap(monoPizza -> {
+//                                         logger.info(this.serializeObject(pizza, "added"));
+//                                         return Mono.just(this.modelMapper.map(pizza, PizzaDTO.class));
+//                                 })
+// );   
