@@ -13,6 +13,5 @@ public class UpdateUserDTO {
     private String email;
     private String password;
     private String newPassword;
-    private String provider;
     private Role role;
 }

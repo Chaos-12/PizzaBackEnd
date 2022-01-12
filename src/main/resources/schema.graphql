@@ -18,6 +18,5 @@ type User {
 	surname:String
 	email:String
 	role:String
-	provider:String
 	tries:Int
 }

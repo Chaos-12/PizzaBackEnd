@@ -29,9 +29,8 @@ public class User extends EntityBase {
     @Email
     @NotNull
     private String email;
-    private String password;
     @NotBlank
-    private String provider;
+    private String password;
     @NotNull
     private int tries;
 
@@ -47,9 +46,6 @@ public class User extends EntityBase {
     @Override
     public void validate(){
         super.validate();
-        if((null == password || password.isBlank() ) && provider.matches("self")){
-            throw new BadRequestException("password required");
-        }
         if(tries <= 0){
             throw new BadRequestException("login failed: no remaining tries left");
         }
