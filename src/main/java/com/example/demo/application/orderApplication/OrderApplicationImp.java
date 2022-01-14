@@ -19,18 +19,19 @@ public class OrderApplicationImp extends ApplicationBase<Order> implements Order
     private final OrderWriteRepository orderWriteRepository;
     private final ModelMapper modelMapper;
     
-    public OrderApplicationImp(OrderWriteRepository orderWriteRepository, ModelMapper modelMapper) {
+    public OrderApplicationImp(final OrderWriteRepository orderWriteRepository, final ModelMapper modelMapper) {
         super((id) -> orderWriteRepository.findById(id));
         this.orderWriteRepository = orderWriteRepository;
         this.modelMapper = modelMapper;
     }
 
     @Override
-    public Mono<OrderDTO> add(CreateOrUpdateOrderDTO dto) {
+    public Mono<OrderDTO> add(UUID userId, CreateOrUpdateOrderDTO dto) {
         Order newOrder = modelMapper.map(dto, Order.class);
         newOrder.setId(UUID.randomUUID());
-        return orderWriteRepository
-                    .save(newOrder, true)
+        newOrder.setUserId(userId);
+        newOrder.validate();
+        return orderWriteRepository.save(newOrder, true)
                     .map(order -> {
                         log.info(this.serializeObject(order, "added"));
                         return this.modelMapper.map(order, OrderDTO.class);

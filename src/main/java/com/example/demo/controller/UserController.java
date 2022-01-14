@@ -58,7 +58,7 @@ public class UserController {
     public Mono<ResponseEntity<Void>> updateUser(@RequestHeader("Authorization") String authHeader, 
                 @RequestBody UpdateUserDTO userDto){
         userDto.setRole(null);
-        String userId = jwtReader.getSubjectFromToken(authHeader.substring(7));
+        String userId = jwtReader.getUserId(authHeader);
         return this.userApplication.updateUser(userId, userDto)
                     .thenReturn(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null));
     }
@@ -71,7 +71,7 @@ public class UserController {
     
     @PostMapping(path = "/logout")
     public Mono<ResponseEntity<Void>> logout(@RequestHeader("Authorization") String authHeader){
-        UUID userId = ApplicationBase.getUUIDfrom(jwtReader.getSubjectFromToken(authHeader.substring(7)));
+        UUID userId = ApplicationBase.getUUIDfrom(jwtReader.getUserId(authHeader));
         return this.userApplication.logout(userId)
                     .thenReturn(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null));
     }
@@ -91,7 +91,7 @@ public class UserController {
 
     @GetMapping(path = "/profile", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<UserDTO>> getProfile(@RequestHeader("Authorization") String authHeader){
-        String userId = jwtReader.getSubjectFromToken(authHeader.substring(7));
+        String userId = jwtReader.getUserId(authHeader);
         return this.userApplication.getProfile(userId)
                     .map(userProj -> ResponseEntity.ok(userProj));
     }

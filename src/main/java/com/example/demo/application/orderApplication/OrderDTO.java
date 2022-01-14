@@ -1,7 +1,8 @@
 package com.example.demo.application.orderApplication;
 
+import java.util.UUID;
+
 import com.example.demo.domain.orderDomain.OrderState;
-import com.example.demo.domain.userDomain.User;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class OrderDTO {
-    private User buyer;
+    private UUID userId;
     private OrderState state;
-    private String[] command;
+    private UUID[] command;
 }

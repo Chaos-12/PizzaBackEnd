@@ -12,6 +12,8 @@ import io.jsonwebtoken.Jwts;
 @Component
 public class JwtReader {
 
+    private static final String AUTH_HEADER = "Bearer ";
+
     @Value("#{environment.JwtSecretKey}")
     private String secretKey;
 
@@ -34,5 +36,9 @@ public class JwtReader {
 
     public Boolean isTokenExpired(String token) {
         return this.getExpirationDateFromToken(token).before(new Date());
+    }
+
+    public String getUserId(String token){
+        return this.getSubjectFromToken(token.substring(AUTH_HEADER.length()));
     }
 }
