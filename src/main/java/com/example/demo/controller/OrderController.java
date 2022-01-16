@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
@@ -47,7 +48,7 @@ public class OrderController {
     @PreAuthorize("hasRole('EMPLOYEE')")
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public Mono<ResponseEntity<OrderDTO>> get(@PathVariable final String id) {
-        return this.orderApplication.get(id).map(ingredient -> ResponseEntity.ok(ingredient));
+        return this.orderApplication.get(id).map(order -> ResponseEntity.ok(order));
     }
 
     @PreAuthorize("hasRole('EMPLOYEE')")
@@ -68,5 +69,10 @@ public class OrderController {
     public Mono<ResponseEntity<Void>> delete(@PathVariable final String id) {
         return this.orderApplication.delete(id)
                 .thenReturn(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null));
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public Flux<OrderDTO> getAll(@RequestParam int firstIndex,@RequestParam int limit){
+        return this.orderApplication.getAll(firstIndex, limit);
     }
 }

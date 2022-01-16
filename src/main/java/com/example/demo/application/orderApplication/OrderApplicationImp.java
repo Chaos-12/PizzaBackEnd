@@ -4,12 +4,14 @@ import java.util.UUID;
 
 import com.example.demo.core.ApplicationBase;
 import com.example.demo.domain.orderDomain.Order;
+import com.example.demo.domain.orderDomain.OrderReadRepository;
 import com.example.demo.domain.orderDomain.OrderWriteRepository;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import lombok.extern.slf4j.Slf4j;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Slf4j
@@ -17,11 +19,14 @@ import reactor.core.publisher.Mono;
 public class OrderApplicationImp extends ApplicationBase<Order> implements OrderApplication {
 
     private final OrderWriteRepository orderWriteRepository;
+    private final OrderReadRepository orderReadRepository;
     private final ModelMapper modelMapper;
     
-    public OrderApplicationImp(final OrderWriteRepository orderWriteRepository, final ModelMapper modelMapper) {
+    public OrderApplicationImp(final OrderWriteRepository orderWriteRepository, 
+            final OrderReadRepository orderReadRepository, final ModelMapper modelMapper) {
         super((id) -> orderWriteRepository.findById(id));
         this.orderWriteRepository = orderWriteRepository;
+        this.orderReadRepository = orderReadRepository;
         this.modelMapper = modelMapper;
     }
 
@@ -57,5 +62,10 @@ public class OrderApplicationImp extends ApplicationBase<Order> implements Order
         return this.findById(id).flatMap(dbOrder -> this.orderWriteRepository.delete(dbOrder));
     }
 
-    
+    @Override
+    public Flux<OrderDTO> getAll(int firstIndex, int limit) {
+        return this.orderReadRepository.getAll(firstIndex, limit)
+                        .map(dbOrder -> this.modelMapper.map(dbOrder, OrderDTO.class));
+    }
+
 }

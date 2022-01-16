@@ -2,6 +2,7 @@ package com.example.demo.application.orderApplication;
 
 import java.util.UUID;
 
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface OrderApplication {
@@ -12,4 +13,6 @@ public interface OrderApplication {
     public Mono<Void> update(String id, CreateOrUpdateOrderDTO dto);
 
     public Mono<Void> delete(String id);
+
+    public Flux<OrderDTO> getAll(int firstIndex, int limit);
 }
