@@ -10,6 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CreateOrUpdateOrderDTO {
+    private UUID pizzaId;
     private OrderState state;
-    private UUID[] command;
+    private String address;
 }

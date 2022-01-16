@@ -5,5 +5,5 @@ public enum OrderState {
     processed,
     sent,
     delivered,
-    canceled;
+    cancelled;
 }

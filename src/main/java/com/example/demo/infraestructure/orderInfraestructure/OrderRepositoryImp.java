@@ -26,4 +26,9 @@ public class OrderRepositoryImp implements OrderWriteRepository{
         order.setThisNew(isNew);
         return this.orderRepository.save(order);
     }
+
+    @Override
+    public Mono<Void> delete(Order order) {
+        return this.orderRepository.delete(order);
+    }
 }

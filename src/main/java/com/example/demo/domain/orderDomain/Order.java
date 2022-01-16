@@ -2,6 +2,7 @@ package com.example.demo.domain.orderDomain;
 
 import java.util.UUID;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import com.example.demo.core.EntityBase;
@@ -13,41 +14,36 @@ import org.springframework.data.relational.core.mapping.Table;
 
 import lombok.Data;
 import lombok.Setter;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Data
-@Table("order")
+@Table("orders")
 @Setter
 public class Order extends EntityBase {
     @NotNull
     private UUID userId;
     @NotNull
+    private UUID pizzaId;
+    @NotNull
     private OrderState state;
     @NotNull
-    private UUID[] command;
+    @NotBlank
+    private String address;
 
     public void cancel(){
         if(state.equals(OrderState.submitted)){
-            this.state = OrderState.canceled;
+            this.state = OrderState.cancelled;
         } else {
             throw new BadRequestException("The order is not cancelable");
         }
     }
 
-    public void newCommand(UUID[] newCommand){
+    public void newCommand(UUID newCommand){
         if(state.equals(OrderState.submitted)){
-            this.command = newCommand;
+            this.pizzaId = newCommand;
             this.validate();
         } else {
             throw new BadRequestException("Unable to modify the command");
-        }
-    }
-
-    public void validate(){
-        super.validate();
-        if (command.length < 1){
-            throw new BadRequestException("The order must include at least one item");
         }
     }
 

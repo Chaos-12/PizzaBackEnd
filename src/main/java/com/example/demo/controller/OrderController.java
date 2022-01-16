@@ -6,6 +6,7 @@ import com.example.demo.application.orderApplication.CreateOrUpdateOrderDTO;
 import com.example.demo.application.orderApplication.OrderApplication;
 import com.example.demo.application.orderApplication.OrderDTO;
 import com.example.demo.core.ApplicationBase;
+import com.example.demo.domain.orderDomain.OrderState;
 import com.example.demo.security.authTokens.JwtReader;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +42,31 @@ public class OrderController {
         UUID userId = ApplicationBase.getUUIDfrom(jwtReader.getUserId(authHeader));
         return this.orderApplication.add(userId, dto)
                 .map(order -> ResponseEntity.status(HttpStatus.CREATED).body(order));
+    }
+
+    @PreAuthorize("hasRole('EMPLOYEE')")
+    @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<ResponseEntity<OrderDTO>> get(@PathVariable final String id) {
+        return this.orderApplication.get(id).map(ingredient -> ResponseEntity.ok(ingredient));
+    }
+
+    @PreAuthorize("hasRole('EMPLOYEE')")
+    @PutMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<ResponseEntity<Void>> update(@PathVariable final String id, @RequestBody CreateOrUpdateOrderDTO dto) {
+        return this.orderApplication.update(id, dto)
+                .thenReturn(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null));
+    }
+
+    @PutMapping(path = "/cancel/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<ResponseEntity<Void>> cancel(@PathVariable final String id) {
+        CreateOrUpdateOrderDTO dto = new CreateOrUpdateOrderDTO();
+        dto.setState(OrderState.cancelled);
+        return this.update(id, dto);
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public Mono<ResponseEntity<Void>> delete(@PathVariable final String id) {
+        return this.orderApplication.delete(id)
+                .thenReturn(ResponseEntity.status(HttpStatus.NO_CONTENT).body(null));
     }
 }

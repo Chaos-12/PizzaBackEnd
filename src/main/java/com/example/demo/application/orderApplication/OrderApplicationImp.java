@@ -37,4 +37,25 @@ public class OrderApplicationImp extends ApplicationBase<Order> implements Order
                         return this.modelMapper.map(order, OrderDTO.class);
                     });
     }
+
+    @Override
+    public Mono<OrderDTO> get(String id) {
+        return this.findById(id).map(dbOrder -> this.modelMapper.map(dbOrder, OrderDTO.class));
+    }
+
+    @Override
+    public Mono<Void> update(String id, CreateOrUpdateOrderDTO dto) {
+        return this.findById(id).flatMap(dbOrder -> {
+                        Order newOrder = dbOrder;
+                        newOrder.getDeclaredFieldsFrom(dto);
+                        return this.orderWriteRepository.save(newOrder, false);
+                    }).then();
+    }
+
+    @Override
+    public Mono<Void> delete(String id) {
+        return this.findById(id).flatMap(dbOrder -> this.orderWriteRepository.delete(dbOrder));
+    }
+
+    
 }
