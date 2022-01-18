@@ -50,28 +50,22 @@ public class PizzaApplicationImp extends ApplicationBase<Pizza> implements Pizza
     public Mono<PizzaDTO> add(CreateOrUpdatePizzaDTO dto) {
         Pizza pizza = this.modelMapper.map(dto, Pizza.class);
         pizza.setId(UUID.randomUUID());
-        
         pizza.setThisNew(true);
         pizza.validate("name", pizza.getName(), (name) -> this.pizzaWriteRepository.exists(name));
-
+        //fromIterable
         return Flux.fromIterable(dto.getIngredients())
-                    .flatMap(id -> ingredientApplication.get(id.toString()))
+                    .flatMap(id ->ingredientApplication.get(id.toString()))
                     .map(dbIngredient -> {
                         Ingredient ingredient = this.modelMapper.map(dbIngredient, Ingredient.class);
-                        return pizza.addIngredient(ingredient);
+                        pizza.addIngredient(ingredient);
+                        return pizza;
                     })
-                    .map(a -> {
-                        pizza.setPrice();
-                        ImageDTO image = imageApplication.getImageRedis(pizza.getImage());
-                        imageCloudinaryRepository.saveImageCloudianary(image));
-                    })
-                    .then(
-                        pizzaWriteRepository.save(pizza,true)
-                                                 .flatMap(monoPizza -> {
-                                                            logger.info(this.serializeObject(pizza, "added"));
-                                                            return Mono.just(this.modelMapper.map(pizza, PizzaDTO.class));
-                                                    })
-                    );   
+                    // .collectList()
+                    .then(pizzaWriteRepository.save(pizza,true))
+                    .flatMap(monoPizza -> {
+                        logger.info(this.serializeObject(pizza, "added"));
+                        return Mono.just(this.modelMapper.map(pizza, PizzaDTO.class));
+                    });
     }
     
 }

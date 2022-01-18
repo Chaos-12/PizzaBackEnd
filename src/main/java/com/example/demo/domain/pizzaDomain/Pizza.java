@@ -15,9 +15,12 @@ import com.example.demo.application.ingredientApplication.IngredientDTO;
 import com.example.demo.core.EntityBase;
 import com.example.demo.domain.ingredientDomain.Ingredient;
 
+import org.modelmapper.internal.bytebuddy.asm.Advice.Return;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
 import lombok.Setter;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Data
@@ -27,18 +30,24 @@ public class Pizza extends EntityBase{
     @NotBlank
     private String name;
 
-    @NotNull
+   // @NotNull
     private UUID image;
-
+    // @DBRef
     private Set<Ingredient> ingredients = new HashSet<Ingredient>();
     
-    @NotNull
-    private BigDecimal price;
+    //@NotNull
+    private BigDecimal price = new BigDecimal(0.00);
+    
+
+    private final static BigDecimal IngredientProfit =  new BigDecimal(1.20);
 
     //TODO: comentarios
     
     public Ingredient addIngredient(Ingredient ingredient){
+        if(ingredient.getId() != null){
         ingredients.add(ingredient);
+        price = price.add(ingredient.getPrice().multiply(IngredientProfit));
+        price = price.setScale(2, RoundingMode.HALF_EVEN);}
         return ingredient;
     }
 
@@ -46,20 +55,32 @@ public class Pizza extends EntityBase{
         ingredients.remove(ingredient);
     }
 
-    public Mono<Boolean> setPrice(){
+    public Pizza setPrice(){
         BigDecimal price = new BigDecimal(0.00);
         BigDecimal profit = new BigDecimal(1.20);
 
-        for(Ingredient monoIng : ingredients){
-            price = price.add(monoIng.getPrice());
+        for(Ingredient ing : ingredients){
+            price = price.add(ing.getPrice());
         }
         price = price.multiply(profit);
         price = price.setScale(2, RoundingMode.HALF_EVEN);
 
         this.price= price;
-
-        return Mono.just(true);
+            // this.price = new BigDecimal(1.29);
+        return this;
     }
+    
+    // public void setPrice(Flux<Ingredient> ingredients){
+    //     BigDecimal price = new BigDecimal(0.00);
+    //     BigDecimal profit = new BigDecimal(1.20);
+    //     ingredients.map(ing -> price.add(ing.getPrice()))
+    //                 .thenMany(a ->{
+    //                     price.multiply(profit);
+    //                     price.setScale(2, RoundingMode.HALF_EVEN);
+    //                     this.price = price;
+    //                 });
+  
+    // }
 
     @Override
     public String toString() {
