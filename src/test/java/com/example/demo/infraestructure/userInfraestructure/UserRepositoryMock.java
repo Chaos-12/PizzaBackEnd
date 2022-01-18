@@ -1,4 +1,4 @@
-package com.example.demo.infraestructure;
+package com.example.demo.infraestructure.userInfraestructure;
 
 import java.util.HashMap;
 import java.util.Map;
