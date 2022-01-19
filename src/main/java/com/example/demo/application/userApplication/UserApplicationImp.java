@@ -10,7 +10,7 @@ import com.example.demo.domain.userDomain.Role;
 import com.example.demo.domain.userDomain.User;
 import com.example.demo.domain.userDomain.UserDTO;
 import com.example.demo.domain.userDomain.UserWriteRepository;
-import com.example.demo.infraestructure.redisInfraestructure.RedisRepository;
+import com.example.demo.infraestructure.redisInfraestructure.RedisRepositoryInterface;
 import com.example.demo.security.AuthRequest;
 import com.example.demo.security.AuthResponse;
 import com.example.demo.security.UserLogInfo;
@@ -30,15 +30,15 @@ import lombok.extern.slf4j.Slf4j;
 public class UserApplicationImp extends ApplicationBase<User> implements UserApplication {
 
     private final UserWriteRepository userWriteRepository;
-    private final RedisRepository<UserLogInfo, String> logInfoRepository;
-    private final RedisRepository<UUID, String> refreshTokenRepository;
+    private final RedisRepositoryInterface<UserLogInfo, String> logInfoRepository;
+    private final RedisRepositoryInterface<UUID, String> refreshTokenRepository;
     private final ModelMapper modelMapper;
     private final TokenProvider tokenProvider;
 
     @Autowired
     public UserApplicationImp(final UserWriteRepository userWriteRepository,
-            final ModelMapper modelMapper, final RedisRepository<UserLogInfo, String> logInfoRepository,
-            final RedisRepository<UUID, String> refreshTokenRepository, final TokenProvider tokenProvider) {
+            final ModelMapper modelMapper, final RedisRepositoryInterface<UserLogInfo, String> logInfoRepository,
+            final RedisRepositoryInterface<UUID, String> refreshTokenRepository, final TokenProvider tokenProvider) {
         super((id) -> userWriteRepository.findById(id));
         this.userWriteRepository = userWriteRepository;
         this.logInfoRepository = logInfoRepository;

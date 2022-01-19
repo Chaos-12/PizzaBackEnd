@@ -8,7 +8,7 @@ import org.springframework.data.redis.core.ReactiveRedisOperations;
 
 import reactor.core.publisher.Mono;
 
-public class RedisRepository<T,ID> {
+public class RedisRepository<T,ID> implements RedisRepositoryInterface<T,ID>{
     private final ReactiveRedisOperations<ID, T> redisOperations;
 
     public RedisRepository(final ReactiveRedisOperations<ID, T> redisOperations){
