@@ -37,8 +37,9 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
 
     @Autowired
     public UserApplicationImp(final UserWriteRepository userWriteRepository,
-            final ModelMapper modelMapper, final RedisRepositoryInterface<UserLogInfo, String> logInfoRepository,
-            final RedisRepositoryInterface<UUID, String> refreshTokenRepository, final TokenProvider tokenProvider) {
+            final RedisRepositoryInterface<UserLogInfo, String> logInfoRepository,
+            final RedisRepositoryInterface<UUID, String> refreshTokenRepository,
+            final TokenProvider tokenProvider, final ModelMapper modelMapper) {
         super((id) -> userWriteRepository.findById(id));
         this.userWriteRepository = userWriteRepository;
         this.logInfoRepository = logInfoRepository;
