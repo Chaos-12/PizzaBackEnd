@@ -2,7 +2,9 @@ package com.example.demo.application.userApplication;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyString;
 
 import java.util.UUID;
@@ -12,9 +14,13 @@ import com.example.demo.domain.userDomain.Role;
 import com.example.demo.domain.userDomain.User;
 import com.example.demo.infraestructure.redisInfraestructure.RedisRepositoryMock;
 import com.example.demo.infraestructure.userInfraestructure.UserRepositoryMock;
+import com.example.demo.security.AuthRequest;
+import com.example.demo.security.AuthResponse;
 import com.example.demo.security.UserLogInfo;
 import com.example.demo.security.authTokens.TokenProvider;
 
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.modelmapper.ModelMapper;
@@ -38,8 +44,11 @@ public class UserApplicationTest {
         @Bean
         public UserApplication getUserApplication() {
             TokenProvider tokenProviderMock = Mockito.mock(TokenProvider.class);
-            Mockito.when(tokenProviderMock.generateRefreshToken()).thenReturn("RefreshToken");
-            Mockito.when(tokenProviderMock.generateAccessToken(anyString())).thenReturn("AccessToken");
+            Mockito.when(tokenProviderMock.generateAccessToken(anyString()))
+                    .thenAnswer(invocation -> String.format("AccessToken,UUID:%s", invocation.getArgument(0),
+                            String.class));
+            Mockito.when(tokenProviderMock.generateRefreshToken())
+                    .thenReturn("RefreshToken");
             return new UserApplicationImp(
                     userRepoMock, logInfoRepoMock, refreshTokenRepoMock,
                     tokenProviderMock, new ModelMapper());
@@ -49,19 +58,37 @@ public class UserApplicationTest {
     @Autowired
     public UserApplication userApp;
 
-    @Test
-    public void autowiredWorks() {
-        assertNotNull(userApp);
-    }
-
-
-    @Test
-    public void newUserSavedWithRightFieldsTest() {
+    public CreateUserDTO getValidUserDTO() {
         CreateUserDTO userDTO = new CreateUserDTO();
         userDTO.setName("MyName");
         userDTO.setSurname("MySurname");
         userDTO.setEmail("email@app.com");
         userDTO.setPassword("MySecret");
+        return userDTO;
+    }
+
+    public AuthRequest getValidAuthRequest() {
+        AuthRequest request = new AuthRequest();
+        request.setEmail("cust0@app.com");
+        request.setPassword("custPass0");
+        return request;
+    }
+
+    @BeforeEach
+    public void resetRepositories() {
+        ContextConfiguration.userRepoMock.reset();
+        ContextConfiguration.logInfoRepoMock.reset();
+        ContextConfiguration.refreshTokenRepoMock.reset();
+    }
+
+    @Test
+    public void injectionTest() {
+        assertNotNull(userApp);
+    }
+
+    @Test
+    public void newUserFieldsTest() {
+        CreateUserDTO userDTO = getValidUserDTO();
         userApp.registerNewUser(userDTO, Role.ROLE_CUSTOMER).block();
         User dbUser = ContextConfiguration.userRepoMock.emailMap.get(userDTO.getEmail());
         assertEquals(userDTO.getName(), dbUser.getName());
@@ -70,42 +97,78 @@ public class UserApplicationTest {
     }
 
     @Test
-    public void invalidEmail() {
-        CreateUserDTO userDTO = new CreateUserDTO();
-        userDTO.setName("MyName");
-        userDTO.setSurname("MySurname");
+    public void invalidEmailTest() {
+        CreateUserDTO userDTO = getValidUserDTO();
         userDTO.setEmail("email.app.com");
-        userDTO.setPassword("MySecret");
         assertThrows(BadRequestException.class, () -> userApp.registerNewUser(userDTO, Role.ROLE_CUSTOMER).block());
     }
 
     @Test
-    public void blankName() {
-        CreateUserDTO userDTO = new CreateUserDTO();
+    public void blankNameTest() {
+        CreateUserDTO userDTO = getValidUserDTO();
         userDTO.setName("");
-        userDTO.setSurname("MySurname");
-        userDTO.setEmail("email@app.com");
-        userDTO.setPassword("MySecret");
         assertThrows(BadRequestException.class, () -> userApp.registerNewUser(userDTO, Role.ROLE_CUSTOMER).block());
     }
 
     @Test
-    public void blankSurname() {
-        CreateUserDTO userDTO = new CreateUserDTO();
-        userDTO.setName("MyName");
+    public void blankSurnameTest() {
+        CreateUserDTO userDTO = getValidUserDTO();
         userDTO.setSurname("");
-        userDTO.setEmail("email@app.com");
-        userDTO.setPassword("MySecret");
         assertThrows(BadRequestException.class, () -> userApp.registerNewUser(userDTO, Role.ROLE_CUSTOMER).block());
     }
 
     @Test
-    public void blankEmail() {
-        CreateUserDTO userDTO = new CreateUserDTO();
-        userDTO.setName("MyName");
-        userDTO.setSurname("MySurname");
+    public void blankEmailTest() {
+        CreateUserDTO userDTO = getValidUserDTO();
         userDTO.setEmail(null);
-        userDTO.setPassword("MySecret");
         assertThrows(BadRequestException.class, () -> userApp.registerNewUser(userDTO, Role.ROLE_CUSTOMER).block());
+    }
+
+    @Test
+    public void newUserResponseTest() {
+        CreateUserDTO userDTO = getValidUserDTO();
+        AuthResponse response = userApp.registerNewUser(userDTO, Role.ROLE_CUSTOMER).block();
+        assertEquals(response.getType(), "Bearer");
+        assertEquals(response.getExpiration(), 60 * 60 * 1000);
+        assertTrue(response.getAccessToken().contains("AccessToken"));
+        assertTrue(response.getRefreshToken().contains("RefreshToken"));
+    }
+
+    @Test
+    public void sameUUIDTest() {
+        CreateUserDTO userDTO = getValidUserDTO();
+        String accessToken = userApp.registerNewUser(userDTO, Role.ROLE_CUSTOMER).block().getAccessToken();
+        UUID dbUUID = ContextConfiguration.userRepoMock.emailMap.get(userDTO.getEmail()).getId();
+        assertTrue(accessToken.contains(dbUUID.toString()));
+        assertEquals(dbUUID, ContextConfiguration.logInfoRepoMock.entityMap.get(dbUUID.toString()).getId());
+    }
+
+    @Test
+    public void timeLogInfo1HourTest() {
+        CreateUserDTO userDTO = getValidUserDTO();
+        userApp.registerNewUser(userDTO, Role.ROLE_CUSTOMER).block();
+        UUID dbUUID = ContextConfiguration.userRepoMock.emailMap.get(userDTO.getEmail()).getId();
+        ContextConfiguration.logInfoRepoMock.presentTime = 0.99;
+        assertNotNull(ContextConfiguration.logInfoRepoMock.getFromID(dbUUID.toString()).block());
+        ContextConfiguration.logInfoRepoMock.presentTime = 1.01;
+        assertNull(ContextConfiguration.logInfoRepoMock.getFromID(dbUUID.toString()).block());
+    }
+
+    @Test
+    public void timeRefresh2HoursTest() {
+        CreateUserDTO userDTO = getValidUserDTO();
+        String refreshToken = userApp.registerNewUser(userDTO, Role.ROLE_CUSTOMER).block().getRefreshToken();
+        ContextConfiguration.refreshTokenRepoMock.presentTime = 1.99;
+        assertNotNull(ContextConfiguration.refreshTokenRepoMock.getFromID(refreshToken).block());
+        ContextConfiguration.refreshTokenRepoMock.presentTime = 2.01;
+        assertNull(ContextConfiguration.refreshTokenRepoMock.getFromID(refreshToken).block());
+    }
+
+    @Nested
+    public class LoginTest {
+        @Test
+        public void test() {
+            assertNotNull(userApp);
+        }
     }
 }

@@ -8,6 +8,9 @@ import com.example.demo.core.exceptions.NotFoundException;
 import com.example.demo.domain.userDomain.Role;
 import com.example.demo.domain.userDomain.User;
 import com.example.demo.domain.userDomain.UserWriteRepository;
+
+import org.mindrot.jbcrypt.BCrypt;
+
 import reactor.core.publisher.Mono;
 
 public class UserRepositoryMock implements UserWriteRepository{
@@ -16,7 +19,7 @@ public class UserRepositoryMock implements UserWriteRepository{
     public Map<String, User> emailMap = new HashMap<String, User>();
 
     public UserRepositoryMock(){
-        this.populate();
+        this.reset();
     }
 
     @Override
@@ -66,12 +69,18 @@ public class UserRepositoryMock implements UserWriteRepository{
         this.emailMap.put(newEmail, user);
     }
 
+    public void reset(){
+        this.idMap.clear();
+        this.emailMap.clear();
+        this.populate();
+    }
+
     private void populate(){
         UUID userId = UUID.fromString("00000000-0000-0000-0000-000000000000");
-        this.add(userId, Role.ROLE_ADMIN, "admin", "istrador", "admin@email.com", "adminSecret");
+        this.add(userId, Role.ROLE_ADMIN, "admin", "istrador", "admin@app.com", "adminSecret");
         for (int i=0; i<10; i++){
             userId = UUID.fromString("10000000-0000-0000-0000-00000000000"+i);
-            this.add(userId, Role.ROLE_EMPLOYEE, "empl"+i, "", "empl"+i+"@email.com", "emplPass"+i);
+            this.add(userId, Role.ROLE_EMPLOYEE, "empl"+i, "", "empl"+i+"@app.com", "emplPass"+i);
         }
         for (int i=0; i<100; i++){
             if (0 <= i && i < 10){
@@ -80,7 +89,7 @@ public class UserRepositoryMock implements UserWriteRepository{
             if (10 <= i && i < 100){
                 userId = UUID.fromString("20000000-0000-0000-0000-0000000000"+i);
             }
-            this.add(userId, Role.ROLE_CUSTOMER, "cust"+i, "surn"+i, "cust"+i+"@email.com", "custPass"+i);
+            this.add(userId, Role.ROLE_CUSTOMER, "cust"+i, "surn"+i, "cust"+i+"@app.com", "custPass"+i);
         }
     }
 
@@ -91,7 +100,7 @@ public class UserRepositoryMock implements UserWriteRepository{
         newUser.setName(name);
         newUser.setSurname(surname);
         newUser.setEmail(email);
-        newUser.setPassword(password);
+        newUser.setPassword(BCrypt.hashpw(password, BCrypt.gensalt()));
         this.add(newUser);
     }
 }

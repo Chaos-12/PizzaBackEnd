@@ -8,9 +8,9 @@ import reactor.core.publisher.Mono;
 public class RedisRepositoryMock<T,ID> implements RedisRepositoryInterface<T,ID>{
 
     public Map<ID, T> entityMap = new HashMap<ID, T>();
-    public Map<ID, Long> timeMap = new HashMap<ID, Long>();
+    public Map<ID, Double> timeMap = new HashMap<ID, Double>();
     
-    public long presentTime = 0;
+    public double presentTime = 0;
 
     public Mono<T> set(ID id, T t, long hours){
         this.add(id, t, presentTime + hours);
@@ -21,7 +21,7 @@ public class RedisRepositoryMock<T,ID> implements RedisRepositoryInterface<T,ID>
         if (!entityMap.containsKey(id)){
             return Mono.empty();
         }
-        long expirationTime = timeMap.get(id);
+        double expirationTime = timeMap.get(id);
         if (expirationTime < presentTime){
             return Mono.empty();
         }
@@ -32,7 +32,7 @@ public class RedisRepositoryMock<T,ID> implements RedisRepositoryInterface<T,ID>
         if (!entityMap.containsKey(id)){
             return Mono.just(false);
         }
-        long expirationTime = timeMap.get(id);
+        double expirationTime = timeMap.get(id);
         if (expirationTime < presentTime){
             return Mono.just(false);
         }
@@ -40,7 +40,12 @@ public class RedisRepositoryMock<T,ID> implements RedisRepositoryInterface<T,ID>
         return Mono.just(true);
     }
 
-    private void add(ID id, T t, Long time){
+    public void reset(){
+        this.entityMap.clear();
+        this.timeMap.clear();
+    }
+
+    private void add(ID id, T t, Double time){
         this.entityMap.put(id, t);
         this.timeMap.put(id, time);
     }
