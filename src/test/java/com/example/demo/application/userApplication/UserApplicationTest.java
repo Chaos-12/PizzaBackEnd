@@ -163,106 +163,6 @@ public class UserApplicationTest {
     }
 
     @Nested
-    public class LoginTest {
-
-        public AuthRequest getValidAuthRequest() {
-            AuthRequest request = new AuthRequest();
-            request.setEmail("cust0@app.com");
-            request.setPassword("custPass0");
-            return request;
-        }
-
-        @Test
-        public void loginSuccess() {
-            AuthRequest request = getValidAuthRequest();
-            assertNotNull(userApp.login(request).block());
-            UUID userId = ContextConfiguration.userRepoMock.emailMap.get(request.getEmail()).getId();
-            assertNotNull(ContextConfiguration.logInfoRepoMock.getFromID(userId.toString()).block());
-        }
-
-        @Test
-        public void logoutSuccess() {
-            AuthRequest request = getValidAuthRequest();
-            assertNotNull(userApp.login(request).block());
-            UUID userId = ContextConfiguration.userRepoMock.emailMap.get(request.getEmail()).getId();
-            assertNotNull(ContextConfiguration.logInfoRepoMock.getFromID(userId.toString()).block());
-            userApp.logout(userId).block();
-            assertNull(ContextConfiguration.logInfoRepoMock.getFromID(userId.toString()).block());
-        }
-
-        @Test
-        public void emailNotInRepository() {
-            AuthRequest request = getValidAuthRequest();
-            request.setEmail("wrong@app.com");
-            assertThrows(NotFoundException.class, () -> userApp.login(request).block());
-        }
-
-        @Test
-        public void noEmail() {
-            AuthRequest request = getValidAuthRequest();
-            request.setEmail(null);
-            assertThrows(NotFoundException.class, () -> userApp.login(request).block());
-        }
-
-        @Test
-        public void wrongPassword() {
-            AuthRequest request = getValidAuthRequest();
-            request.setPassword("NotMyPassword");
-            assertThrows(BadRequestException.class, () -> userApp.login(request).block());
-            User dbUser = ContextConfiguration.userRepoMock.emailMap.get(request.getEmail());
-            assertEquals(dbUser.getTries(), User.maxRetries - 1);
-        }
-
-        @Test
-        public void noPassword() {
-            AuthRequest request = getValidAuthRequest();
-            request.setPassword(null);
-            assertThrows(BadRequestException.class, () -> userApp.login(request).block());
-            User dbUser = ContextConfiguration.userRepoMock.emailMap.get(request.getEmail());
-            assertEquals(dbUser.getTries(), User.maxRetries - 1);
-        }
-
-        @Test
-        public void responseFormat() {
-            AuthRequest request = getValidAuthRequest();
-            AuthResponse response = userApp.login(request).block();
-            assertEquals(response.getType(), "Bearer");
-            assertEquals(response.getExpiration(), 60 * 60 * 1000);
-            assertTrue(response.getAccessToken().contains("AccessToken"));
-            assertTrue(response.getRefreshToken().contains("RefreshToken"));
-        }
-
-        @Test
-        public void accessTokenHasRightUUID() {
-            AuthRequest request = getValidAuthRequest();
-            UUID userID = ContextConfiguration.userRepoMock.emailMap.get(request.getEmail()).getId();
-            String accessToken = userApp.login(request).block().getAccessToken();
-            assertTrue(accessToken.contains(userID.toString()));
-        }
-
-        @Test
-        public void timeLogInfo1Hour() {
-            AuthRequest request = getValidAuthRequest();
-            userApp.login(request).block();
-            UUID dbUUID = ContextConfiguration.userRepoMock.emailMap.get(request.getEmail()).getId();
-            ContextConfiguration.logInfoRepoMock.presentTime = 0.99;
-            assertNotNull(ContextConfiguration.logInfoRepoMock.getFromID(dbUUID.toString()).block());
-            ContextConfiguration.logInfoRepoMock.presentTime = 1.01;
-            assertNull(ContextConfiguration.logInfoRepoMock.getFromID(dbUUID.toString()).block());
-        }
-
-        @Test
-        public void timeRefresh2Hours() {
-            AuthRequest request = getValidAuthRequest();
-            String refreshToken = userApp.login(request).block().getRefreshToken();
-            ContextConfiguration.refreshTokenRepoMock.presentTime = 1.99;
-            assertNotNull(ContextConfiguration.refreshTokenRepoMock.getFromID(refreshToken).block());
-            ContextConfiguration.refreshTokenRepoMock.presentTime = 2.01;
-            assertNull(ContextConfiguration.refreshTokenRepoMock.getFromID(refreshToken).block());
-        }
-    }
-
-    @Nested
     public class UpdateUserTest {
 
         public User getValidCustomer() {
@@ -295,7 +195,7 @@ public class UserApplicationTest {
             userDto.setPassword(getValidPassword());
             userDto.setEmail("admin@app.com");
             assertThrows(BadRequestException.class,
-            () -> userApp.updateUser(oldUser.getId().toString(), userDto).block());
+                    () -> userApp.updateUser(oldUser.getId().toString(), userDto).block());
         }
 
         @Test
@@ -403,4 +303,105 @@ public class UserApplicationTest {
             assertEquals(oldUser.getRole(), newUser.getRole());
         }
     }
+
+    @Nested
+    public class LoginTest {
+
+        public AuthRequest getValidAuthRequest() {
+            AuthRequest request = new AuthRequest();
+            request.setEmail("cust0@app.com");
+            request.setPassword("custPass0");
+            return request;
+        }
+
+        @Test
+        public void loginSuccess() {
+            AuthRequest request = getValidAuthRequest();
+            assertNotNull(userApp.login(request).block());
+            UUID userId = ContextConfiguration.userRepoMock.emailMap.get(request.getEmail()).getId();
+            assertNotNull(ContextConfiguration.logInfoRepoMock.getFromID(userId.toString()).block());
+        }
+
+        @Test
+        public void logoutSuccess() {
+            AuthRequest request = getValidAuthRequest();
+            assertNotNull(userApp.login(request).block());
+            UUID userId = ContextConfiguration.userRepoMock.emailMap.get(request.getEmail()).getId();
+            assertNotNull(ContextConfiguration.logInfoRepoMock.getFromID(userId.toString()).block());
+            userApp.logout(userId).block();
+            assertNull(ContextConfiguration.logInfoRepoMock.getFromID(userId.toString()).block());
+        }
+
+        @Test
+        public void emailNotInRepository() {
+            AuthRequest request = getValidAuthRequest();
+            request.setEmail("wrong@app.com");
+            assertThrows(NotFoundException.class, () -> userApp.login(request).block());
+        }
+
+        @Test
+        public void noEmail() {
+            AuthRequest request = getValidAuthRequest();
+            request.setEmail(null);
+            assertThrows(NotFoundException.class, () -> userApp.login(request).block());
+        }
+
+        @Test
+        public void wrongPassword() {
+            AuthRequest request = getValidAuthRequest();
+            request.setPassword("NotMyPassword");
+            assertThrows(BadRequestException.class, () -> userApp.login(request).block());
+            User dbUser = ContextConfiguration.userRepoMock.emailMap.get(request.getEmail());
+            assertEquals(dbUser.getTries(), User.maxRetries - 1);
+        }
+
+        @Test
+        public void noPassword() {
+            AuthRequest request = getValidAuthRequest();
+            request.setPassword(null);
+            assertThrows(BadRequestException.class, () -> userApp.login(request).block());
+            User dbUser = ContextConfiguration.userRepoMock.emailMap.get(request.getEmail());
+            assertEquals(dbUser.getTries(), User.maxRetries - 1);
+        }
+
+        @Test
+        public void responseFormat() {
+            AuthRequest request = getValidAuthRequest();
+            AuthResponse response = userApp.login(request).block();
+            assertEquals(response.getType(), "Bearer");
+            assertEquals(response.getExpiration(), 60 * 60 * 1000);
+            assertTrue(response.getAccessToken().contains("AccessToken"));
+            assertTrue(response.getRefreshToken().contains("RefreshToken"));
+        }
+
+        @Test
+        public void accessTokenHasRightUUID() {
+            AuthRequest request = getValidAuthRequest();
+            UUID userID = ContextConfiguration.userRepoMock.emailMap.get(request.getEmail()).getId();
+            String accessToken = userApp.login(request).block().getAccessToken();
+            assertTrue(accessToken.contains(userID.toString()));
+        }
+
+        @Test
+        public void timeLogInfo1Hour() {
+            AuthRequest request = getValidAuthRequest();
+            userApp.login(request).block();
+            UUID dbUUID = ContextConfiguration.userRepoMock.emailMap.get(request.getEmail()).getId();
+            ContextConfiguration.logInfoRepoMock.presentTime = 0.99;
+            assertNotNull(ContextConfiguration.logInfoRepoMock.getFromID(dbUUID.toString()).block());
+            ContextConfiguration.logInfoRepoMock.presentTime = 1.01;
+            assertNull(ContextConfiguration.logInfoRepoMock.getFromID(dbUUID.toString()).block());
+        }
+
+        @Test
+        public void timeRefresh2Hours() {
+            AuthRequest request = getValidAuthRequest();
+            String refreshToken = userApp.login(request).block().getRefreshToken();
+            ContextConfiguration.refreshTokenRepoMock.presentTime = 1.99;
+            assertNotNull(ContextConfiguration.refreshTokenRepoMock.getFromID(refreshToken).block());
+            ContextConfiguration.refreshTokenRepoMock.presentTime = 2.01;
+            assertNull(ContextConfiguration.refreshTokenRepoMock.getFromID(refreshToken).block());
+        }
+    }
+
 }
