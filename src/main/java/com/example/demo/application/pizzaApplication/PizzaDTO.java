@@ -15,7 +15,8 @@ import lombok.Setter;
 public class PizzaDTO {
     private UUID id;
     private String name;
-    private UUID image;
+    //private UUID image;
+    private String image;
     private BigDecimal price;
     private Set<Ingredient> Ingredients = new HashSet<Ingredient>();    
 }

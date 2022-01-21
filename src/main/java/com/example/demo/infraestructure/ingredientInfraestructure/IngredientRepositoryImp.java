@@ -44,7 +44,9 @@ public class IngredientRepositoryImp implements IngredientWriteRepository, Ingre
     }
 
     @Override
-    public Flux<IngredientProjection> getAll(String name) {
-        return this.ingredientRepository.findByCriteria(name);
+    public Flux<Ingredient> getAll(String name) {
+       // return this.ingredientRepository.findByCriteria(name);
+       return this.ingredientRepository.findAll();
+
     }
 }

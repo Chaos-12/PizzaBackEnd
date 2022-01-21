@@ -20,4 +20,5 @@ public class CreateOrUpdateIngredientDTO {
     @Digits(integer = 5, fraction = 2)
     @DecimalMin(value = "0", inclusive = false)
     private BigDecimal price;
+    private String type;
 }

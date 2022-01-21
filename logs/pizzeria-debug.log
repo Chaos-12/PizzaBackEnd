@@ -1,120 +1,859 @@
-2022.01.18 09:17:28 CET  Adding converter from class java.time.LocalDate to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.time.LocalDate as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.LocalTime to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.time.LocalTime as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.ZonedDateTime to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.time.ZonedDateTime as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.Instant to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.time.Instant as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.ZoneId to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.time.ZoneId as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.Period to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.time.Period as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.Duration to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.time.Duration as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.util.Date to class java.time.Instant as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.Instant to class java.util.Date as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.LocalDateTime to class java.time.Instant as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.Instant to class java.time.LocalDateTime as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.Duration to class java.lang.String as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.lang.String to class java.time.Duration as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.Period to class java.lang.String as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.lang.String to class java.time.Period as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.lang.String to class java.time.Instant as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.lang.String to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.lang.String as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.lang.Number to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.lang.Number as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.lang.Enum to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.lang.Enum as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.lang.Boolean to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.lang.Boolean as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.util.Date to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.util.Date as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.util.UUID to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.util.UUID as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.LocalDateTime to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.time.LocalDateTime as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.LocalDate to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.time.LocalDate as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.LocalTime to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.time.LocalTime as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.ZonedDateTime to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.time.ZonedDateTime as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.Instant to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.time.Instant as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.ZoneId to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.time.ZoneId as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.Period to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.time.Period as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.Duration to class [B as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class [B to class java.time.Duration as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.util.Date to class java.time.Instant as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.Instant to class java.util.Date as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.LocalDateTime to class java.time.Instant as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.Instant to class java.time.LocalDateTime as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.Duration to class java.lang.String as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.lang.String to class java.time.Duration as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.time.Period to class java.lang.String as writing converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.lang.String to class java.time.Period as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
-2022.01.18 09:17:28 CET  Adding converter from class java.lang.String to class java.time.Instant as reading converter.
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'redisKeyValueAdapter'
-2022.01.18 09:17:28 CET  Postpone listening for Redis messages until actual listeners are added
-2022.01.18 09:17:28 CET  Started RedisMessageListenerContainer
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'redisKeyValueTemplate'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'org.springframework.data.web.config.ProjectingArgumentResolverRegistrar'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
-2022.01.18 09:17:28 CET  Autowiring by type from bean name 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration' via constructor to bean named 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.netty.NettyAutoConfiguration'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'spring.netty-org.springframework.boot.autoconfigure.netty.NettyProperties'
-2022.01.18 09:17:28 CET  Autowiring by type from bean name 'org.springframework.boot.autoconfigure.netty.NettyAutoConfiguration' via constructor to bean named 'spring.netty-org.springframework.boot.autoconfigure.netty.NettyProperties'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'spring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'scheduledBeanLazyInitializationExcludeFilter'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'taskSchedulerBuilder'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
-2022.01.18 09:17:28 CET  Autowiring by type from bean name 'taskSchedulerBuilder' via factory method to bean named 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'platformTransactionManagerCustomizers'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.reactive.function.client.ClientHttpConnectorConfiguration$ReactorNetty'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'reactorClientResourceFactory'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.reactive.function.client.ClientHttpConnectorAutoConfiguration'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientAutoConfiguration$WebClientCodecsConfiguration'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'exchangeStrategiesCustomizer'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientAutoConfiguration'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'multipartResolver'
-2022.01.18 09:17:28 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketMessagingAutoConfiguration'
-2022.01.18 09:17:28 CET  Starting beans in phase 2147483646
-2022.01.18 09:17:28 CET  Successfully started bean 'webServerStartStop'
-2022.01.18 09:17:28 CET  Starting beans in phase 2147483647
-2022.01.18 09:17:28 CET  Successfully started bean 'webServerGracefulShutdown'
-2022.01.18 09:17:28 CET  
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDateTime to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDate to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalTime to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.ZonedDateTime to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.ZonedDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Instant to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.ZoneId to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Period to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.Period as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Duration to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.Duration as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Instant to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDateTime to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Instant to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Duration to class java.lang.String as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.Duration as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Period to class java.lang.String as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.Period as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.lang.String as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.Number to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.lang.Number as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.Enum to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.lang.Enum as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.Boolean to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.lang.Boolean as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.util.Date as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.UUID to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.util.UUID as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDateTime to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDate to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalTime to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.ZonedDateTime to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.ZonedDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Instant to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.ZoneId to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Period to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.Period as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Duration to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.Duration as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Instant to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDateTime to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Instant to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Duration to class java.lang.String as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.Duration as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Period to class java.lang.String as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.Period as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.lang.String as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.Number to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.lang.Number as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.Enum to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.lang.Enum as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.Boolean to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.lang.Boolean as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.util.Date as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.UUID to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.util.UUID as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDateTime to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDate to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalTime to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.ZonedDateTime to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.ZonedDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Instant to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.ZoneId to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Period to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.Period as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Duration to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.Duration as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Instant to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDateTime to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Instant to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Duration to class java.lang.String as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.Duration as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Period to class java.lang.String as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.Period as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.lang.String as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.Number to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.lang.Number as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.Enum to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.lang.Enum as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.Boolean to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.lang.Boolean as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.util.Date as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.UUID to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.util.UUID as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDateTime to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDate to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalTime to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.ZonedDateTime to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.ZonedDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Instant to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.ZoneId to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Period to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.Period as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Duration to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.Duration as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Instant to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDateTime to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Instant to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Duration to class java.lang.String as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.Duration as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Period to class java.lang.String as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.Period as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.lang.String as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.Number to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.lang.Number as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.Enum to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.lang.Enum as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.Boolean to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.lang.Boolean as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.util.Date as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.UUID to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.util.UUID as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDateTime to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDate to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalTime to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.ZonedDateTime to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.ZonedDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Instant to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.ZoneId to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Period to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.Period as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Duration to class [B as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class [B to class java.time.Duration as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.util.Date to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Instant to class java.util.Date as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.LocalDateTime to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Instant to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Duration to class java.lang.String as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.Duration as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.time.Period to class java.lang.String as writing converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.Period as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:11 CET  Adding converter from class java.lang.String to class java.time.Instant as reading converter.
+2022.01.21 14:38:11 CET  Autowiring by type from bean name 'imageRepositoryImp' via constructor to bean named 'redisOperations'
+2022.01.21 14:38:11 CET  Creating shared instance of singleton bean 'modelMapper'
+2022.01.21 14:38:11 CET  Creating shared instance of singleton bean 'mapperConfiguration'
+2022.01.21 14:38:11 CET  Autowiring by type from bean name 'imageApplicationImp' via constructor to bean named 'imageRepositoryImp'
+2022.01.21 14:38:11 CET  Autowiring by type from bean name 'imageApplicationImp' via constructor to bean named 'modelMapper'
+2022.01.21 14:38:11 CET  Creating shared instance of singleton bean 'ingredientApplicationImp'
+2022.01.21 14:38:11 CET  Creating shared instance of singleton bean 'ingredientRepositoryImp'
+2022.01.21 14:38:11 CET  Creating shared instance of singleton bean 'ingredientRepository'
+2022.01.21 14:38:11 CET  Creating shared instance of singleton bean 'reactiveMongoTemplate'
+2022.01.21 14:38:11 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.data.mongo.MongoReactiveDataAutoConfiguration'
+2022.01.21 14:38:11 CET  Creating shared instance of singleton bean 'reactiveMongoDatabaseFactory'
+2022.01.21 14:38:11 CET  Creating shared instance of singleton bean 'spring.data.mongodb-org.springframework.boot.autoconfigure.mongo.MongoProperties'
+2022.01.21 14:38:11 CET  Creating shared instance of singleton bean 'reactiveStreamsMongoClient'
+2022.01.21 14:38:11 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration'
+2022.01.21 14:38:11 CET  Creating shared instance of singleton bean 'mongoClientSettings'
+2022.01.21 14:38:11 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration$MongoClientSettingsConfiguration'
+2022.01.21 14:38:12 CET  Autowiring by type from bean name 'reactiveStreamsMongoClient' via factory method to bean named 'mongoClientSettings'
+2022.01.21 14:38:12 CET  Creating shared instance of singleton bean 'nettyDriverCustomizer'
+2022.01.21 14:38:12 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration$NettyDriverConfiguration'
+2022.01.21 14:38:12 CET  Creating shared instance of singleton bean 'mongoPropertiesCustomizer'
+2022.01.21 14:38:12 CET  Autowiring by type from bean name 'mongoPropertiesCustomizer' via factory method to bean named 'spring.data.mongodb-org.springframework.boot.autoconfigure.mongo.MongoProperties'
+2022.01.21 14:38:12 CET  Autowiring by type from bean name 'mongoPropertiesCustomizer' via factory method to bean named 'environment'
+2022.01.21 14:38:12 CET  -Dio.netty.eventLoopThreads: 16
+2022.01.21 14:38:12 CET  -Dio.netty.noKeySetOptimization: false
+2022.01.21 14:38:12 CET  -Dio.netty.selectorAutoRebuildThreshold: 512
+2022.01.21 14:38:12 CET  -Dio.netty.allocator.numHeapArenas: 16
+2022.01.21 14:38:12 CET  -Dio.netty.allocator.numDirectArenas: 16
+2022.01.21 14:38:12 CET  -Dio.netty.allocator.pageSize: 8192
+2022.01.21 14:38:12 CET  -Dio.netty.allocator.maxOrder: 11
+2022.01.21 14:38:12 CET  -Dio.netty.allocator.chunkSize: 16777216
+2022.01.21 14:38:12 CET  -Dio.netty.allocator.smallCacheSize: 256
+2022.01.21 14:38:12 CET  -Dio.netty.allocator.normalCacheSize: 64
+2022.01.21 14:38:12 CET  -Dio.netty.allocator.maxCachedBufferCapacity: 32768
+2022.01.21 14:38:12 CET  -Dio.netty.allocator.cacheTrimInterval: 8192
+2022.01.21 14:38:12 CET  -Dio.netty.allocator.cacheTrimIntervalMillis: 0
+2022.01.21 14:38:12 CET  -Dio.netty.allocator.useCacheForAllThreads: true
+2022.01.21 14:38:12 CET  -Dio.netty.allocator.maxCachedByteBuffersPerChunk: 1023
+2022.01.21 14:38:12 CET  -Dio.netty.allocator.type: pooled
+2022.01.21 14:38:12 CET  -Dio.netty.threadLocalDirectBufferSize: 0
+2022.01.21 14:38:12 CET  -Dio.netty.maxThreadLocalCharBufferSize: 16384
+2022.01.21 14:38:12 CET  Updating cluster description to  {type=UNKNOWN, servers=[{address=localhost:27017, type=UNKNOWN, state=CONNECTING}]
+2022.01.21 14:38:12 CET  Autowiring by type from bean name 'reactiveMongoDatabaseFactory' via factory method to bean named 'spring.data.mongodb-org.springframework.boot.autoconfigure.mongo.MongoProperties'
+2022.01.21 14:38:12 CET  Autowiring by type from bean name 'reactiveMongoDatabaseFactory' via factory method to bean named 'reactiveStreamsMongoClient'
+2022.01.21 14:38:12 CET  -Dio.netty.processId: 10460 (auto-detected)
+2022.01.21 14:38:12 CET  Creating shared instance of singleton bean 'mappingMongoConverter'
+2022.01.21 14:38:12 CET  Creating shared instance of singleton bean 'mongoMappingContext'
+2022.01.21 14:38:12 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.data.mongo.MongoDataConfiguration'
+2022.01.21 14:38:12 CET  Creating shared instance of singleton bean 'mongoCustomConversions'
+2022.01.21 14:38:12 CET  -Dio.netty.machineId: 4c:1d:96:ff:fe:eb:d3:8b (auto-detected)
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.Character to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.util.Locale to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.math.BigDecimal to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.math.BigDecimal to class org.bson.types.Decimal128 as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.math.BigDecimal as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.types.Decimal128 to class java.math.BigDecimal as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.math.BigInteger to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.math.BigInteger as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.net.URL to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.net.URL as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class java.lang.String as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.mongodb.core.query.Term to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.mongodb.core.script.NamedMongoScript to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.script.NamedMongoScript as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.util.Currency to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.util.Currency as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.util.concurrent.atomic.AtomicInteger to class java.lang.Integer as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.util.concurrent.atomic.AtomicLong to class java.lang.Long as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.Long to class java.util.concurrent.atomic.AtomicLong as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.Integer to class java.util.concurrent.atomic.AtomicInteger as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.types.Binary to class [B as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.BsonTimestamp to class java.time.Instant as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.net.URI to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.net.URI as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.geo.Box to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.geo.Polygon to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.geo.Circle to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.mongodb.core.geo.Sphere to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.geo.Box as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.geo.Polygon as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.geo.Circle as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.Sphere as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.geo.Point as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.geo.Point to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.mongodb.core.query.GeoCommand to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from interface org.springframework.data.mongodb.core.geo.GeoJson to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.mongodb.core.geo.GeoJsonPoint to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.mongodb.core.geo.GeoJsonPolygon to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonPoint as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonPolygon as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonLineString as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiLineString as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiPoint as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiPolygon as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonGeometryCollection as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to interface org.springframework.data.mongodb.core.geo.GeoJson as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.util.Date to class java.time.Instant as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.time.Instant to class java.util.Date as writing converter.
+2022.01.21 14:38:12 CET  Skipping converter from class java.time.LocalDateTime to class java.time.Instant as reading converter. class java.time.LocalDateTime is not a store supported simple type!
+2022.01.21 14:38:12 CET  Skipping converter from class java.time.Instant to class java.time.LocalDateTime as reading converter. class java.time.Instant is not a store supported simple type!
+2022.01.21 14:38:12 CET  Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.time.Duration to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.time.Duration as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.time.Period to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.time.Period as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.time.Instant as reading converter.
+2022.01.21 14:38:12 CET  Autowiring by type from bean name 'mongoMappingContext' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@240139e1'
+2022.01.21 14:38:12 CET  Autowiring by type from bean name 'mongoMappingContext' via factory method to bean named 'spring.data.mongodb-org.springframework.boot.autoconfigure.mongo.MongoProperties'
+2022.01.21 14:38:12 CET  Autowiring by type from bean name 'mongoMappingContext' via factory method to bean named 'mongoCustomConversions'
+2022.01.21 14:38:12 CET  Identified candidate component class: file [C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes\com\example\demo\domain\ingredientDomain\Ingredient.class]
+2022.01.21 14:38:12 CET  Identified candidate component class: file [C:\Users\mbarcelo\Documents\Pizzeria\PizzaBackEnd\target\classes\com\example\demo\domain\pizzaDomain\Pizza.class]
+2022.01.21 14:38:12 CET  -Dio.netty.recycler.maxCapacityPerThread: 4096
+2022.01.21 14:38:12 CET  -Dio.netty.recycler.maxSharedCapacityFactor: 2
+2022.01.21 14:38:12 CET  -Dio.netty.recycler.linkCapacity: 16
+2022.01.21 14:38:12 CET  -Dio.netty.recycler.ratio: 8
+2022.01.21 14:38:12 CET  -Dio.netty.recycler.delayedQueue.ratio: 8
+2022.01.21 14:38:12 CET  -Dio.netty.buffer.checkAccessible: true
+2022.01.21 14:38:12 CET  -Dio.netty.buffer.checkBounds: true
+2022.01.21 14:38:12 CET  Loaded default ResourceLeakDetector: io.netty.util.ResourceLeakDetector@48d10028
+2022.01.21 14:38:12 CET  Autowiring by type from bean name 'mappingMongoConverter' via factory method to bean named 'mongoMappingContext'
+2022.01.21 14:38:12 CET  Autowiring by type from bean name 'mappingMongoConverter' via factory method to bean named 'mongoCustomConversions'
+2022.01.21 14:38:12 CET  Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=137.3 ms, state=CONNECTED}]
+2022.01.21 14:38:12 CET  Checking status of localhost:27017
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.Character to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.util.Locale to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.math.BigDecimal to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.math.BigDecimal to class org.bson.types.Decimal128 as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.math.BigDecimal as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.types.Decimal128 to class java.math.BigDecimal as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.math.BigInteger to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.math.BigInteger as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.net.URL to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.net.URL as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class java.lang.String as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.mongodb.core.query.Term to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.mongodb.core.script.NamedMongoScript to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.script.NamedMongoScript as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.util.Currency to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.util.Currency as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.util.concurrent.atomic.AtomicInteger to class java.lang.Integer as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.util.concurrent.atomic.AtomicLong to class java.lang.Long as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.Long to class java.util.concurrent.atomic.AtomicLong as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.Integer to class java.util.concurrent.atomic.AtomicInteger as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.types.Binary to class [B as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.BsonTimestamp to class java.time.Instant as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.net.URI to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.net.URI as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.geo.Box to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.geo.Polygon to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.geo.Circle to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.mongodb.core.geo.Sphere to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.geo.Box as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.geo.Polygon as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.geo.Circle as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.Sphere as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.geo.Point as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.geo.Point to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.mongodb.core.query.GeoCommand to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from interface org.springframework.data.mongodb.core.geo.GeoJson to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.mongodb.core.geo.GeoJsonPoint to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.springframework.data.mongodb.core.geo.GeoJsonPolygon to class org.bson.Document as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonPoint as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonPolygon as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonLineString as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiLineString as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiPoint as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonMultiPolygon as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to class org.springframework.data.mongodb.core.geo.GeoJsonGeometryCollection as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class org.bson.Document to interface org.springframework.data.mongodb.core.geo.GeoJson as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.util.Date to class java.time.Instant as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.time.Instant to class java.util.Date as writing converter.
+2022.01.21 14:38:12 CET  Skipping converter from class java.time.LocalDateTime to class java.time.Instant as reading converter. class java.time.LocalDateTime is not a store supported simple type!
+2022.01.21 14:38:12 CET  Skipping converter from class java.time.Instant to class java.time.LocalDateTime as reading converter. class java.time.Instant is not a store supported simple type!
+2022.01.21 14:38:12 CET  Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.time.Duration to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.time.Duration as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.time.Period to class java.lang.String as writing converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.time.Period as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:12 CET  Adding converter from class java.lang.String to class java.time.Instant as reading converter.
+2022.01.21 14:38:12 CET  Autowiring by type from bean name 'reactiveMongoTemplate' via factory method to bean named 'reactiveMongoDatabaseFactory'
+2022.01.21 14:38:12 CET  Autowiring by type from bean name 'reactiveMongoTemplate' via factory method to bean named 'mappingMongoConverter'
+2022.01.21 14:38:12 CET  Initializing repository instance for com.example.demo.infraestructure.ingredientInfraestructure.IngredientRepository…
+2022.01.21 14:38:13 CET  Finished creation of repository instance for {}.
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'ingredientRepositoryImp' via constructor to bean named 'ingredientRepository'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'logger'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'loggerConfiguration'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'ingredientApplicationImp' via constructor to bean named 'ingredientRepositoryImp'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'ingredientApplicationImp' via constructor to bean named 'modelMapper'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'ingredientApplicationImp' via constructor to bean named 'logger'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'pizzaApplicationImp'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'pizzaRepositoryImp'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'pizzaRepository'
+2022.01.21 14:38:13 CET  Initializing repository instance for com.example.demo.infraestructure.pizzaRepository.PizzaRepository…
+2022.01.21 14:38:13 CET  Finished creation of repository instance for {}.
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'pizzaRepositoryImp' via constructor to bean named 'pizzaRepository'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'imageCloudinaryRepositoryImp'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'getWebClientBuilder'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'imageCloudinaryRepositoryImp' via constructor to bean named 'getWebClientBuilder'
+2022.01.21 14:38:13 CET  [http] resources will use the default LoopResources: DefaultLoopResources {prefix=reactor-http, daemon=true, selectCount=8, workerCount=8}
+2022.01.21 14:38:13 CET  [http] resources will use the default ConnectionProvider: reactor.netty.resources.DefaultPooledConnectionProvider@186f7434
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'pizzaApplicationImp' via constructor to bean named 'pizzaRepositoryImp'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'pizzaApplicationImp' via constructor to bean named 'modelMapper'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'pizzaApplicationImp' via constructor to bean named 'logger'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'pizzaApplicationImp' via constructor to bean named 'ingredientApplicationImp'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'pizzaApplicationImp' via constructor to bean named 'imageApplicationImp'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'pizzaApplicationImp' via constructor to bean named 'imageCloudinaryRepositoryImp'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'graphQLController'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'graphQL'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'graphQLProvider'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'graphQLProvider' via constructor to bean named 'ingredientRepository'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'imageController'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'imageController' via constructor to bean named 'imageApplicationImp'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'ingredientController'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'ingredientController' via constructor to bean named 'ingredientApplicationImp'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'pizzaController'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'pizzaController' via constructor to bean named 'pizzaApplicationImp'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'customConverters'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'badRequestExceptionHandler'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'badRequestExceptionHandler' via constructor to bean named 'logger'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'notFoundExceptionHandler'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'notFoundExceptionHandler' via constructor to bean named 'logger'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'redisConnectionExceptionHandler'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'redisConnectionExceptionHandler' via constructor to bean named 'logger'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'corsConfigurer'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'standardJacksonObjectMapperBuilderCustomizer'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'standardJacksonObjectMapperBuilderCustomizer' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@240139e1'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'standardJacksonObjectMapperBuilderCustomizer' via factory method to bean named 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'parameterNamesModule'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'jacksonObjectMapper'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'jacksonObjectMapperBuilder' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@240139e1'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'jacksonObjectMapperBuilder' via factory method to bean named 'standardJacksonObjectMapperBuilderCustomizer'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'jsonComponentModule'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'geoJsonModule'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.data.mongodb.config.GeoJsonConfiguration'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'jacksonGeoModule'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.data.web.config.SpringDataJacksonConfiguration'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'jacksonObjectMapper' via factory method to bean named 'jacksonObjectMapperBuilder'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.codec.CodecsAutoConfiguration$DefaultCodecsConfiguration'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'defaultCodecCustomizer'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'spring.codec-org.springframework.boot.autoconfigure.codec.CodecProperties'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'defaultCodecCustomizer' via factory method to bean named 'spring.codec-org.springframework.boot.autoconfigure.codec.CodecProperties'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.codec.CodecsAutoConfiguration$JacksonCodecConfiguration'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'jacksonCodecCustomizer'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'jacksonCodecCustomizer' via factory method to bean named 'jacksonObjectMapper'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.codec.CodecsAutoConfiguration'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'defaultValidator'
+2022.01.21 14:38:13 CET  Loaded expression factory via original TCCL
+2022.01.21 14:38:13 CET  Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+2022.01.21 14:38:13 CET  Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+2022.01.21 14:38:13 CET  Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+2022.01.21 14:38:13 CET  Trying to load META-INF/validation.xml for XML based Validator configuration.
+2022.01.21 14:38:13 CET  Trying to load META-INF/validation.xml via user class loader
+2022.01.21 14:38:13 CET  Trying to load META-INF/validation.xml via TCCL
+2022.01.21 14:38:13 CET  Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2022.01.21 14:38:13 CET  No META-INF/validation.xml found. Using annotation based configuration only.
+2022.01.21 14:38:13 CET  Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2022.01.21 14:38:13 CET  HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2022.01.21 14:38:13 CET  HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2022.01.21 14:38:13 CET  HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+2022.01.21 14:38:13 CET  HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2022.01.21 14:38:13 CET  HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2022.01.21 14:38:13 CET  HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'taskExecutorBuilder'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'taskExecutorBuilder' via factory method to bean named 'spring.task.execution-org.springframework.boot.autoconfigure.task.TaskExecutionProperties'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'error'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'beanNameViewResolver'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'spring.web-org.springframework.boot.autoconfigure.web.WebProperties'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@240139e1'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration' via constructor to bean named 'spring.web-org.springframework.boot.autoconfigure.web.WebProperties'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'conventionErrorViewResolver'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'errorAttributes'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'basicErrorController'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'basicErrorController' via factory method to bean named 'errorAttributes'
+2022.01.21 14:38:13 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'spring.web-org.springframework.boot.autoconfigure.web.WebProperties'
+2022.01.21 14:38:13 CET  Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@57b9e423'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.web-org.springframework.boot.autoconfigure.web.WebProperties'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter' via constructor to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@57b9e423'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.data.web.config.SpringDataWebConfiguration'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'org.springframework.data.web.config.SpringDataWebConfiguration' via constructor to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@240139e1'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'requestMappingHandlerAdapter'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'mvcContentNegotiationManager'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'mvcConversionService'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'mvcValidator'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcContentNegotiationManager'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcConversionService'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcValidator'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcContentNegotiationManager'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcConversionService'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'requestMappingHandlerAdapter' via factory method to bean named 'mvcValidator'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'messageConverters'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'stringHttpMessageConverter'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'stringHttpMessageConverter' via factory method to bean named 'environment'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'mappingJackson2HttpMessageConverter'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'mappingJackson2HttpMessageConverter' via factory method to bean named 'jacksonObjectMapper'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'sortResolver'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'sortCustomizer'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'spring.data.web-org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration' via constructor to bean named 'spring.data.web-org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'pageableResolver'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'pageableCustomizer'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'applicationTaskExecutor'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'applicationTaskExecutor' via factory method to bean named 'taskExecutorBuilder'
+2022.01.21 14:38:14 CET  Initializing ExecutorService 'applicationTaskExecutor'
+2022.01.21 14:38:14 CET  ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'requestMappingHandlerMapping'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'mvcResourceUrlProvider'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcConversionService'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcConversionService'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'requestMappingHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2022.01.21 14:38:14 CET  
+	c.e.d.c.GraphQLController:
+	{GET [/api/v1/graphQL], produces [application/json]}: getFromQuery(String)
+2022.01.21 14:38:14 CET  
+	c.e.d.c.ImageController:
+	{POST [/api/v1/images], produces [application/json]}: upload(MultipartFile)
+	{GET [/api/v1/images/{id}], produces [application/json]}: getImage(String)
+2022.01.21 14:38:14 CET  
+	c.e.d.c.IngredientController:
+	{GET [/api/v1/ingredients/{id}], produces [application/json]}: get(String)
+	{PUT [/api/v1/ingredients/{id}], consumes [application/json]}: update(String,CreateOrUpdateIngredientDTO)
+	{DELETE [/api/v1/ingredients/{id}]}: delete(String)
+	{POST [/api/v1/ingredients], consumes [application/json], produces [application/json]}: create(CreateOrUpdateIngredientDTO)
+	{GET [/api/v1/ingredients], produces [application/json]}: getAll(String)
+2022.01.21 14:38:14 CET  
+	c.e.d.c.PizzaController:
+	{GET [/api/v1/pizzas/{id}], produces [application/json]}: get(String)
+	{POST [/api/v1/pizzas], consumes [application/json], produces [application/json]}: create(CreateOrUpdatePizzaDTO)
+	{GET [/api/v1/pizzas], produces [application/json]}: getAll(String)
+2022.01.21 14:38:14 CET  
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
+2022.01.21 14:38:14 CET  13 mappings in 'requestMappingHandlerMapping'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'welcomePageHandlerMapping'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@240139e1'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'mvcConversionService'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'welcomePageHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'localeResolver'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'themeResolver'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'flashMapManager'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'mvcPatternParser'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'mvcUrlPathHelper'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'mvcPathMatcher'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'viewControllerHandlerMapping'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcConversionService'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'viewControllerHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'beanNameHandlerMapping'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'beanNameHandlerMapping' via factory method to bean named 'mvcConversionService'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'beanNameHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2022.01.21 14:38:14 CET  'beanNameHandlerMapping' {}
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'routerFunctionMapping'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'routerFunctionMapping' via factory method to bean named 'mvcConversionService'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'routerFunctionMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'resourceHandlerMapping'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcContentNegotiationManager'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcConversionService'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'resourceHandlerMapping' via factory method to bean named 'mvcResourceUrlProvider'
+2022.01.21 14:38:14 CET  'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [], /**=ResourceHttpRequestHandler [ServletContext [/]]}
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'defaultServletHandlerMapping'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'handlerFunctionAdapter'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'mvcUriComponentsContributor'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'mvcUriComponentsContributor' via factory method to bean named 'mvcConversionService'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'mvcUriComponentsContributor' via factory method to bean named 'requestMappingHandlerAdapter'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'httpRequestHandlerAdapter'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'simpleControllerHandlerAdapter'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'handlerExceptionResolver'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'handlerExceptionResolver' via factory method to bean named 'mvcContentNegotiationManager'
+2022.01.21 14:38:14 CET  ControllerAdvice beans: 3 @ExceptionHandler, 1 ResponseBodyAdvice
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'mvcViewResolver'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'mvcViewResolver' via factory method to bean named 'mvcContentNegotiationManager'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'viewNameTranslator'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'defaultViewResolver'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'viewResolver'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'viewResolver' via factory method to bean named 'org.springframework.beans.factory.support.DefaultListableBeanFactory@57b9e423'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'com.oembedler.moon.graphql.boot.GraphQLJavaToolsAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'schemaStringProvider'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$ClassProxyingConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.availability.ApplicationAvailabilityAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'applicationAvailability'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'redisTemplate'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'redisTemplate' via factory method to bean named 'redisConnectionFactory'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'stringRedisTemplate'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'stringRedisTemplate' via factory method to bean named 'redisConnectionFactory'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'lifecycleProcessor'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'spring.lifecycle-org.springframework.boot.autoconfigure.context.LifecycleProperties'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'lifecycleProcessor' via factory method to bean named 'spring.lifecycle-org.springframework.boot.autoconfigure.context.LifecycleProperties'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'dataBufferFactory'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'reactiveGridFsTemplate'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'reactiveGridFsTemplate' via factory method to bean named 'reactiveMongoDatabaseFactory'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'reactiveGridFsTemplate' via factory method to bean named 'mappingMongoConverter'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'reactiveGridFsTemplate' via factory method to bean named 'dataBufferFactory'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'reactiveGridFsTemplate' via factory method to bean named 'spring.data.mongodb-org.springframework.boot.autoconfigure.mongo.MongoProperties'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.data.mongo.MongoReactiveRepositoriesAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.data.redis.RedisReactiveAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'reactiveRedisTemplate'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'reactiveRedisTemplate' via factory method to bean named 'redisConnectionFactory'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'reactiveRedisTemplate' via factory method to bean named 'org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@240139e1'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'reactiveStringRedisTemplate'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'reactiveStringRedisTemplate' via factory method to bean named 'redisConnectionFactory'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'keyValueMappingContext'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'redisCustomConversions'
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.lang.String as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.Number to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.lang.Number as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.Enum to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.lang.Enum as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.Boolean to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.lang.Boolean as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.Date to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.util.Date as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.UUID to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.util.UUID as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalDateTime to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalDate to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalTime to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.ZonedDateTime to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.ZonedDateTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Instant to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.Instant as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.ZoneId to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Period to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.Period as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Duration to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.Duration as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.Date to class java.time.Instant as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Instant to class java.util.Date as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalDateTime to class java.time.Instant as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Instant to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Duration to class java.lang.String as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.Duration as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Period to class java.lang.String as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.Period as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.Instant as reading converter.
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'redisReferenceResolver'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'redisConverter'
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.lang.String as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.Number to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.lang.Number as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.Enum to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.lang.Enum as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.Boolean to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.lang.Boolean as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.Date to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.util.Date as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.UUID to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.util.UUID as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalDateTime to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalDate to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalTime to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.ZonedDateTime to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.ZonedDateTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Instant to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.Instant as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.ZoneId to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Period to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.Period as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Duration to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.Duration as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.Date to class java.time.Instant as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Instant to class java.util.Date as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalDateTime to class java.time.Instant as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Instant to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Duration to class java.lang.String as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.Duration as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Period to class java.lang.String as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.Period as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.Instant as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.lang.String as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.Number to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.lang.Number as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.Enum to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.lang.Enum as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.Boolean to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.lang.Boolean as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.Date to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.util.Date as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.UUID to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.util.UUID as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalDateTime to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalDate to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalTime to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.ZonedDateTime to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.ZonedDateTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Instant to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.Instant as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.ZoneId to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Period to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.Period as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Duration to class [B as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class [B to class java.time.Duration as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.Date to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalDateTime to class java.util.Date as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.Date to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalDate to class java.util.Date as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.Date to class java.time.LocalTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalTime to class java.util.Date as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.util.Date to class java.time.Instant as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Instant to class java.util.Date as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.LocalDateTime to class java.time.Instant as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Instant to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.ZoneId to class java.lang.String as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.ZoneId as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Duration to class java.lang.String as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.Duration as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.time.Period to class java.lang.String as writing converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.Period as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.LocalDate as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.LocalDateTime as reading converter.
+2022.01.21 14:38:14 CET  Adding converter from class java.lang.String to class java.time.Instant as reading converter.
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'redisKeyValueAdapter'
+2022.01.21 14:38:14 CET  Postpone listening for Redis messages until actual listeners are added
+2022.01.21 14:38:14 CET  Started RedisMessageListenerContainer
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'redisKeyValueTemplate'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.data.web.config.ProjectingArgumentResolverRegistrar'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration' via constructor to bean named 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.netty.NettyAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'spring.netty-org.springframework.boot.autoconfigure.netty.NettyProperties'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'org.springframework.boot.autoconfigure.netty.NettyAutoConfiguration' via constructor to bean named 'spring.netty-org.springframework.boot.autoconfigure.netty.NettyProperties'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.sql.init.SqlInitializationAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'spring.sql.init-org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.task.TaskSchedulingAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'scheduledBeanLazyInitializationExcludeFilter'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'taskSchedulerBuilder'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
+2022.01.21 14:38:14 CET  Autowiring by type from bean name 'taskSchedulerBuilder' via factory method to bean named 'spring.task.scheduling-org.springframework.boot.autoconfigure.task.TaskSchedulingProperties'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'platformTransactionManagerCustomizers'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.reactive.function.client.ClientHttpConnectorConfiguration$ReactorNetty'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'reactorClientResourceFactory'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.reactive.function.client.ClientHttpConnectorAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientAutoConfiguration$WebClientCodecsConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'exchangeStrategiesCustomizer'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientAutoConfiguration'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'multipartResolver'
+2022.01.21 14:38:14 CET  Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketMessagingAutoConfiguration'
+2022.01.21 14:38:14 CET  Starting beans in phase 2147483646
+2022.01.21 14:38:14 CET  Successfully started bean 'webServerStartStop'
+2022.01.21 14:38:14 CET  Starting beans in phase 2147483647
+2022.01.21 14:38:14 CET  Successfully started bean 'webServerGracefulShutdown'
+2022.01.21 14:38:14 CET  
 
 
 ============================
@@ -1091,78 +1830,5 @@ Unconditional classes:
 
 
 
-2022.01.18 09:17:28 CET  Application availability state LivenessState changed to CORRECT
-2022.01.18 09:17:28 CET  Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2022.01.18 09:17:36 CET  Sending command '{"ismaster": 1, "$db": "admin"}' with request id 4 to database admin on connection [connectionId{localValue:1, serverValue:178}] to server localhost:27017
-2022.01.18 09:17:36 CET  Execution of command with request id 4 completed successfully in 36.17 ms on connection [connectionId{localValue:1, serverValue:178}] to server localhost:27017
-2022.01.18 09:17:36 CET  Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=122.6 ms, state=CONNECTED}]
-2022.01.18 09:17:36 CET  Checking status of localhost:27017
-2022.01.18 09:17:46 CET  Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=122.6 ms, state=CONNECTED}]
-2022.01.18 09:17:46 CET  Checking status of localhost:27017
-2022.01.18 09:17:46 CET  Sending command '{"ismaster": 1, "$db": "admin"}' with request id 5 to database admin on connection [connectionId{localValue:1, serverValue:178}] to server localhost:27017
-2022.01.18 09:17:46 CET  Execution of command with request id 5 completed successfully in 1.91 ms on connection [connectionId{localValue:1, serverValue:178}] to server localhost:27017
-2022.01.18 09:17:56 CET  Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=98.7 ms, state=CONNECTED}]
-2022.01.18 09:17:56 CET  Checking status of localhost:27017
-2022.01.18 09:17:56 CET  Sending command '{"ismaster": 1, "$db": "admin"}' with request id 6 to database admin on connection [connectionId{localValue:1, serverValue:178}] to server localhost:27017
-2022.01.18 09:17:56 CET  Execution of command with request id 6 completed successfully in 2.25 ms on connection [connectionId{localValue:1, serverValue:178}] to server localhost:27017
-2022.01.18 09:18:06 CET  Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=79.6 ms, state=CONNECTED}]
-2022.01.18 09:18:06 CET  Checking status of localhost:27017
-2022.01.18 09:18:06 CET  Sending command '{"ismaster": 1, "$db": "admin"}' with request id 7 to database admin on connection [connectionId{localValue:1, serverValue:178}] to server localhost:27017
-2022.01.18 09:18:06 CET  Execution of command with request id 7 completed successfully in 2.68 ms on connection [connectionId{localValue:1, serverValue:178}] to server localhost:27017
-2022.01.18 09:18:16 CET  Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=64.6 ms, state=CONNECTED}]
-2022.01.18 09:18:16 CET  Checking status of localhost:27017
-2022.01.18 09:18:16 CET  Sending command '{"ismaster": 1, "$db": "admin"}' with request id 8 to database admin on connection [connectionId{localValue:1, serverValue:178}] to server localhost:27017
-2022.01.18 09:18:16 CET  Execution of command with request id 8 completed successfully in 2.02 ms on connection [connectionId{localValue:1, serverValue:178}] to server localhost:27017
-2022.01.18 09:18:26 CET  Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=52.5 ms, state=CONNECTED}]
-2022.01.18 09:18:26 CET  Checking status of localhost:27017
-2022.01.18 09:18:26 CET  Sending command '{"ismaster": 1, "$db": "admin"}' with request id 9 to database admin on connection [connectionId{localValue:1, serverValue:178}] to server localhost:27017
-2022.01.18 09:18:26 CET  Execution of command with request id 9 completed successfully in 5.65 ms on connection [connectionId{localValue:1, serverValue:178}] to server localhost:27017
-2022.01.18 09:18:33 CET  Detected StandardServletMultipartResolver
-2022.01.18 09:18:33 CET  Detected AcceptHeaderLocaleResolver
-2022.01.18 09:18:33 CET  Detected FixedThemeResolver
-2022.01.18 09:18:33 CET  Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@26ef88aa
-2022.01.18 09:18:33 CET  Detected org.springframework.web.servlet.support.SessionFlashMapManager@63026cd6
-2022.01.18 09:18:33 CET  enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2022.01.18 09:18:33 CET  POST "/api/v1/pizzas", parameters={}
-2022.01.18 09:18:33 CET  Mapped to com.example.demo.controller.PizzaController#create(CreateOrUpdatePizzaDTO)
-2022.01.18 09:18:33 CET  Read "application/json;charset=UTF-8" to [com.example.demo.application.pizzaApplication.CreateOrUpdatePizzaDTO@6603824a]
-2022.01.18 09:18:33 CET  Trying to load META-INF/validation.xml for XML based Validator configuration.
-2022.01.18 09:18:33 CET  Trying to load META-INF/validation.xml via TCCL
-2022.01.18 09:18:33 CET  Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-2022.01.18 09:18:33 CET  No META-INF/validation.xml found. Using annotation based configuration only.
-2022.01.18 09:18:33 CET  Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-2022.01.18 09:18:33 CET  Loaded expression factory via original TCCL
-2022.01.18 09:18:33 CET  HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
-2022.01.18 09:18:33 CET  HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
-2022.01.18 09:18:33 CET  HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
-2022.01.18 09:18:33 CET  HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-2022.01.18 09:18:33 CET  HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-2022.01.18 09:18:33 CET  HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-2022.01.18 09:18:33 CET  findOne using query: { "id" : { "$java" : 83cfe1c9-b8f5-447c-9aff-7125af35d3d1 } } fields: Document{{}} for class: class com.example.demo.domain.ingredientDomain.Ingredient in collection: ingredient
-2022.01.18 09:18:34 CET  findOne using query: { "_id" : { "$java" : 83cfe1c9-b8f5-447c-9aff-7125af35d3d1 } } fields: {} in db.collection: pizzeria.ingredient
-2022.01.18 09:18:34 CET  findOne using query: { "id" : { "$java" : d184e516-6fe5-479d-b0ef-f47bf44abec0 } } fields: Document{{}} for class: class com.example.demo.domain.ingredientDomain.Ingredient in collection: ingredient
-2022.01.18 09:18:34 CET  findOne using query: { "_id" : { "$java" : d184e516-6fe5-479d-b0ef-f47bf44abec0 } } fields: {} in db.collection: pizzeria.ingredient
-2022.01.18 09:18:34 CET  findOne using query: { "id" : { "$java" : 01586707-abf7-4a08-b1d4-2232e0f34c19 } } fields: Document{{}} for class: class com.example.demo.domain.ingredientDomain.Ingredient in collection: ingredient
-2022.01.18 09:18:34 CET  findOne using query: { "_id" : { "$java" : 01586707-abf7-4a08-b1d4-2232e0f34c19 } } fields: {} in db.collection: pizzeria.ingredient
-2022.01.18 09:18:34 CET  Started async request
-2022.01.18 09:18:34 CET  Exiting but response remains open for further handling
-2022.01.18 09:18:34 CET  Sending command '{"find": "ingredient", "filter": {"_id": {"$binary": {"base64": "nUflbxblhNHAvkr0e/TvsA==", "subType": "03"}}}, "limit": 1, "singleBatch": true, "$db": "pizzeria", "lsid": {"id": {"$binary": {"base64": "x1tNFJstTVelNxl9QJP3Tw==", "subType": "04"}}}}' with request id 14 to database pizzeria on connection [connectionId{localValue:4, serverValue:180}] to server localhost:27017
-2022.01.18 09:18:34 CET  Sending command '{"find": "ingredient", "filter": {"_id": {"$binary": {"base64": "fET1uMnhz4PR0zWvJXH/mg==", "subType": "03"}}}, "limit": 1, "singleBatch": true, "$db": "pizzeria", "lsid": {"id": {"$binary": {"base64": "OydQH0ZXTA6omyTcG04N3w==", "subType": "04"}}}}' with request id 13 to database pizzeria on connection [connectionId{localValue:3, serverValue:179}] to server localhost:27017
-2022.01.18 09:18:34 CET  Execution of command with request id 14 completed successfully in 8.06 ms on connection [connectionId{localValue:4, serverValue:180}] to server localhost:27017
-2022.01.18 09:18:34 CET  Execution of command with request id 13 completed successfully in 8.20 ms on connection [connectionId{localValue:3, serverValue:179}] to server localhost:27017
-2022.01.18 09:18:34 CET  Sending command '{"find": "ingredient", "filter": {"_id": {"$binary": {"base64": "CEr3qwdnWAEZTPPgMiLUsQ==", "subType": "03"}}}, "limit": 1, "singleBatch": true, "$db": "pizzeria", "lsid": {"id": {"$binary": {"base64": "LCp8uBjdQOKToJYBRkd2LA==", "subType": "04"}}}}' with request id 15 to database pizzeria on connection [connectionId{localValue:5, serverValue:181}] to server localhost:27017
-2022.01.18 09:18:34 CET  Execution of command with request id 15 completed successfully in 32.50 ms on connection [connectionId{localValue:5, serverValue:181}] to server localhost:27017
-2022.01.18 09:18:34 CET  Async result set, dispatch to /api/v1/pizzas
-2022.01.18 09:18:34 CET  "ASYNC" dispatch for POST "/api/v1/pizzas", parameters={}
-2022.01.18 09:18:34 CET  Resume with async result [com.example.demo.application.pizzaApplication.PizzaDTO@6c2b8758]
-2022.01.18 09:18:34 CET  Using 'application/json', given [*/*] and supported [application/json]
-2022.01.18 09:18:34 CET  Writing [com.example.demo.application.pizzaApplication.PizzaDTO@6c2b8758]
-2022.01.18 09:18:34 CET  Exiting from "ASYNC" dispatch, status 201
-2022.01.18 09:18:36 CET  Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=44.3 ms, state=CONNECTED}]
-2022.01.18 09:18:36 CET  Checking status of localhost:27017
-2022.01.18 09:18:36 CET  Sending command '{"ismaster": 1, "$db": "admin"}' with request id 16 to database admin on connection [connectionId{localValue:1, serverValue:178}] to server localhost:27017
-2022.01.18 09:18:36 CET  Execution of command with request id 16 completed successfully in 7.89 ms on connection [connectionId{localValue:1, serverValue:178}] to server localhost:27017
-2022.01.18 09:18:46 CET  Updating cluster description to  {type=STANDALONE, servers=[{address=localhost:27017, type=STANDALONE, roundTripTime=37.5 ms, state=CONNECTED}]
-2022.01.18 09:18:46 CET  Checking status of localhost:27017
-2022.01.18 09:18:46 CET  Sending command '{"ismaster": 1, "$db": "admin"}' with request id 17 to database admin on connection [connectionId{localValue:1, serverValue:178}] to server localhost:27017
-2022.01.18 09:18:46 CET  Execution of command with request id 17 completed successfully in 4.56 ms on connection [connectionId{localValue:1, serverValue:178}] to server localhost:27017
+2022.01.21 14:38:14 CET  Application availability state LivenessState changed to CORRECT
+2022.01.21 14:38:14 CET  Application availability state ReadinessState changed to ACCEPTING_TRAFFIC

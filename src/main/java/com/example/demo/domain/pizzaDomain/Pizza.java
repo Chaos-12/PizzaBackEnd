@@ -31,7 +31,7 @@ public class Pizza extends EntityBase{
     private String name;
 
    // @NotNull
-    private UUID image;
+    private String image;
     // @DBRef
     private Set<Ingredient> ingredients = new HashSet<Ingredient>();
     

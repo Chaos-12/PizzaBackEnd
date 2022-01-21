@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.application.ingredientApplication.CreateOrUpdateIngredientDTO;
 import com.example.demo.application.ingredientApplication.IngredientApplication;
 import com.example.demo.application.ingredientApplication.IngredientDTO;
+import com.example.demo.domain.ingredientDomain.Ingredient;
 import com.example.demo.domain.ingredientDomain.IngredientProjection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -55,7 +56,7 @@ public class IngredientController {
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public Flux<IngredientProjection> getAll(@RequestParam(required = false) String name) {
+    public Flux<Ingredient> getAll(@RequestParam(required = false) String name) {
         return this.ingredientApplication.getAll(name);
     }
 }

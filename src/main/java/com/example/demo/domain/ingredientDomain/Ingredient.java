@@ -14,6 +14,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
 import lombok.Setter;
 
+// enum INGREDIENT_TYPE
+// {
+//     INGREDIENT, BASE;
+// }
+
 @Data
 @Document(collection = "ingredient")
 @Setter
@@ -25,6 +30,7 @@ public class Ingredient extends EntityBase {
     @Digits(integer = 5, fraction = 2)
     @DecimalMin(value = "0", inclusive = false)
     private BigDecimal price;
+    // private INGREDIENT_TYPE type;
 
     @Override
     public String toString() {
