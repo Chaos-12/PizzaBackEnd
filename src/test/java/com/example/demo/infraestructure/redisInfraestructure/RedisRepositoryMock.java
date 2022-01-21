@@ -41,6 +41,7 @@ public class RedisRepositoryMock<T,ID> implements RedisRepositoryInterface<T,ID>
     }
 
     public void reset(){
+        this.presentTime = 0;
         this.entityMap.clear();
         this.timeMap.clear();
     }

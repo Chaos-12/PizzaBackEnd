@@ -24,13 +24,13 @@ public class UserRepositoryMock implements UserWriteRepository{
 
     @Override
     public Mono<User> findById(UUID userId) {
-        return Mono.just(this.idMap.get(userId))
+        return Mono.justOrEmpty(this.idMap.get(userId))
                     .switchIfEmpty(Mono.error(new NotFoundException()));
     }
 
     @Override
     public Mono<User> findUserByEmail(String email) {
-        return Mono.just(this.emailMap.get(email))
+        return Mono.justOrEmpty(this.emailMap.get(email))
                     .switchIfEmpty(Mono.error(new NotFoundException()));
     }
 
@@ -78,15 +78,15 @@ public class UserRepositoryMock implements UserWriteRepository{
     private void populate(){
         UUID userId = UUID.fromString("00000000-0000-0000-0000-000000000000");
         this.add(userId, Role.ROLE_ADMIN, "admin", "istrador", "admin@app.com", "adminSecret");
-        for (int i=0; i<10; i++){
+        for (int i=0; i<5; i++){
             userId = UUID.fromString("10000000-0000-0000-0000-00000000000"+i);
             this.add(userId, Role.ROLE_EMPLOYEE, "empl"+i, "", "empl"+i+"@app.com", "emplPass"+i);
         }
-        for (int i=0; i<100; i++){
+        for (int i=0; i<50; i++){
             if (0 <= i && i < 10){
                 userId = UUID.fromString("20000000-0000-0000-0000-00000000000"+i);
             }
-            if (10 <= i && i < 100){
+            if (10 <= i && i < 50){
                 userId = UUID.fromString("20000000-0000-0000-0000-0000000000"+i);
             }
             this.add(userId, Role.ROLE_CUSTOMER, "cust"+i, "surn"+i, "cust"+i+"@app.com", "custPass"+i);
@@ -101,6 +101,7 @@ public class UserRepositoryMock implements UserWriteRepository{
         newUser.setSurname(surname);
         newUser.setEmail(email);
         newUser.setPassword(BCrypt.hashpw(password, BCrypt.gensalt()));
+        newUser.setTries(User.maxRetries);
         this.add(newUser);
     }
 }
