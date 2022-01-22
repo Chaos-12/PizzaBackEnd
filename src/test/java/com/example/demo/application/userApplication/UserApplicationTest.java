@@ -141,6 +141,14 @@ public class UserApplicationTest {
         }
 
         @Test
+        public void refreshRepositoryHasRightUUID() {
+            CreateUserDTO userDTO = getValidUserDTO();
+            String refreshToken = userApp.registerNewUser(userDTO, Role.ROLE_CUSTOMER).block().getRefreshToken();
+            UUID dbUUID = ContextConfiguration.userRepoMock.emailMap.get(userDTO.getEmail()).getId();
+            assertEquals(dbUUID, ContextConfiguration.refreshTokenRepoMock.entityMap.get(refreshToken));
+        }
+
+        @Test
         public void timeLogInfo1Hour() {
             CreateUserDTO userDTO = getValidUserDTO();
             userApp.registerNewUser(userDTO, Role.ROLE_CUSTOMER).block();
@@ -383,6 +391,14 @@ public class UserApplicationTest {
         }
 
         @Test
+        public void refreshRepositoryHasRightUUID() {
+            AuthRequest request = getValidAuthRequest();
+            String refreshToken = userApp.login(request).block().getRefreshToken();
+            UUID userID = ContextConfiguration.userRepoMock.emailMap.get(request.getEmail()).getId();
+            assertEquals(userID, ContextConfiguration.refreshTokenRepoMock.entityMap.get(refreshToken));
+        }
+
+        @Test
         public void timeLogInfo1Hour() {
             AuthRequest request = getValidAuthRequest();
             userApp.login(request).block();
@@ -404,4 +420,44 @@ public class UserApplicationTest {
         }
     }
 
+    @Nested
+    public class RefreshTest {
+        public AuthRequest getValidAuthRequest() {
+            AuthRequest request = new AuthRequest();
+            request.setEmail("cust0@app.com");
+            request.setPassword("custPass0");
+            return request;
+        }
+
+        public UUID getValidUUID() {
+            return UUID.fromString("20000000-0000-0000-0000-000000000000");
+        }
+
+        @Test
+        public void refreshSuccess() {
+            AuthRequest request = getValidAuthRequest();
+            String refreshToken = userApp.login(request).block().getRefreshToken();
+            assertNotNull(userApp.refresh(refreshToken).block());
+        }
+
+        @Test
+        public void logInfoUpdates() {
+            AuthRequest request = getValidAuthRequest();
+            UUID userId = getValidUUID();
+            String refreshToken = userApp.login(request).block().getRefreshToken();
+            assertEquals(0,
+                    ContextConfiguration.logInfoRepoMock.entityMap.get(userId.toString()).getUsedTokens().size());
+            userApp.refresh(refreshToken).block();
+            assertEquals(1,
+                    ContextConfiguration.logInfoRepoMock.entityMap.get(userId.toString()).getUsedTokens().size());
+        }
+
+        @Test
+        public void duplicatedRefreshImpliesLogout() {
+            AuthRequest request = getValidAuthRequest();
+            String refreshToken = userApp.login(request).block().getRefreshToken();
+            userApp.refresh(refreshToken).block();
+            assertThrows(UnauthorizedException.class, () -> userApp.refresh(refreshToken).block());
+        }
+    }
 }
