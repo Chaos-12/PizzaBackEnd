@@ -49,12 +49,12 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
     }
 
     @Override
-    public Mono<AuthResponse> registerNewUser(CreateUserDTO dto, Role role) {
-        User newUser = this.modelMapper.map(dto, User.class);
+    public Mono<AuthResponse> registerNewUser(CreateUserDTO userDto, Role role) {
+        User newUser = this.modelMapper.map(userDto, User.class);
         newUser.setId(UUID.randomUUID());
         newUser.resetTries();
         newUser.setRole(role);
-        newUser.setPassword(BCrypt.hashpw(dto.getPassword(), BCrypt.gensalt()));
+        newUser.setPassword(BCrypt.hashpw(userDto.getPassword(), BCrypt.gensalt()));
         return newUser
                 .validate("email", newUser.getEmail(), (email) -> this.userWriteRepository.exists(email))
                 .then(this.userWriteRepository.save(newUser, true))
@@ -111,11 +111,11 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                 });
     }
 
-    public Mono<Boolean> logout(UUID id) {
-        return this.logInfoRepository.removeFromID(id.toString())
+    public Mono<Boolean> logout(UUID userId) {
+        return this.logInfoRepository.removeFromID(userId.toString())
                 .flatMap(removed -> {
                     if (removed) {
-                        log.info(String.format("User with id %s has logged out successfully", id.toString()));
+                        log.info(String.format("User with id %s has logged out successfully", userId.toString()));
                     }
                     return Mono.empty();
                 });
@@ -149,20 +149,19 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
                 .then();
     }
 
-    public Mono<UserDTO> getProfile(String id) {
-        return this.findById(id).map(dbUser -> this.modelMapper.map(dbUser, UserDTO.class));
+    public Mono<UserDTO> getProfile(String userId) {
+        return this.findById(userId).map(dbUser -> this.modelMapper.map(dbUser, UserDTO.class));
     }
 
-    private Mono<AuthResponse> generateResponse(UUID id, Role role) {
+    private Mono<AuthResponse> generateResponse(UUID userId, Role role) {
         AuthResponse response = new AuthResponse();
-        response.setAccessToken(tokenProvider.generateAccessToken(id.toString()));
+        response.setAccessToken(tokenProvider.generateAccessToken(userId.toString()));
         response.setRefreshToken(tokenProvider.generateRefreshToken());
         return this.logInfoRepository
-                .getFromID(id.toString())
-                .defaultIfEmpty(new UserLogInfo(id,role))
-                .flatMap(logInfo -> this.logInfoRepository.set(id.toString(),logInfo, 1))
-                // .switchIfEmpty(this.logInfoRepository.set(id.toString(), new UserLogInfo(id, role), 1))
-                .then(this.refreshTokenRepository.set(response.getRefreshToken(), id, 2))
+                .getFromID(userId.toString())
+                .defaultIfEmpty(new UserLogInfo(userId,role))
+                .flatMap(logInfo -> this.logInfoRepository.set(userId.toString(),logInfo, 1))
+                .then(this.refreshTokenRepository.set(response.getRefreshToken(), userId, 2))
                 .thenReturn(response);
     }
 

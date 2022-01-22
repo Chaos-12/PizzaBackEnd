@@ -10,11 +10,11 @@ import com.example.demo.security.AuthResponse;
 import reactor.core.publisher.Mono;
 
 public interface UserApplication {
-    public Mono<AuthResponse> registerNewUser(CreateUserDTO dto, Role role);
+    public Mono<AuthResponse> registerNewUser(CreateUserDTO userDto, Role role);
     public Mono<Void> updateUser(String userId, UpdateUserDTO userDto);
     public Mono<AuthResponse> login(AuthRequest userRequest);
     public Mono<AuthResponse> refresh(String refreshToken);
-    public Mono<Boolean> logout(UUID id);
+    public Mono<Boolean> logout(UUID userId);
     public Mono<Void> resetTries(String userId);
-    public Mono<UserDTO> getProfile(String id);
+    public Mono<UserDTO> getProfile(String userId);
 }

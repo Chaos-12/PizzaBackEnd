@@ -14,6 +14,7 @@ import com.example.demo.core.exceptions.NotFoundException;
 import com.example.demo.core.exceptions.UnauthorizedException;
 import com.example.demo.domain.userDomain.Role;
 import com.example.demo.domain.userDomain.User;
+import com.example.demo.domain.userDomain.UserDTO;
 import com.example.demo.infraestructure.redisInfraestructure.RedisRepositoryMock;
 import com.example.demo.infraestructure.userInfraestructure.UserRepositoryMock;
 import com.example.demo.security.AuthRequest;
@@ -29,6 +30,7 @@ import org.mockito.Mockito;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.TestComponent;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ContextConfiguration;
@@ -325,19 +327,18 @@ public class UserApplicationTest {
         @Test
         public void loginSuccess() {
             AuthRequest request = getValidAuthRequest();
-            assertNotNull(userApp.login(request).block());
+            assertEquals(userApp.login(request).block().getClass(), AuthResponse.class);
             UUID userId = ContextConfiguration.userRepoMock.emailMap.get(request.getEmail()).getId();
-            assertNotNull(ContextConfiguration.logInfoRepoMock.getFromID(userId.toString()).block());
+            assertNotNull(ContextConfiguration.logInfoRepoMock.entityMap.get(userId.toString()));
         }
 
         @Test
         public void logoutSuccess() {
             AuthRequest request = getValidAuthRequest();
-            assertNotNull(userApp.login(request).block());
+            userApp.login(request).block();
             UUID userId = ContextConfiguration.userRepoMock.emailMap.get(request.getEmail()).getId();
-            assertNotNull(ContextConfiguration.logInfoRepoMock.getFromID(userId.toString()).block());
             userApp.logout(userId).block();
-            assertNull(ContextConfiguration.logInfoRepoMock.getFromID(userId.toString()).block());
+            assertNull(ContextConfiguration.logInfoRepoMock.entityMap.get(userId.toString()));
         }
 
         @Test
@@ -462,6 +463,49 @@ public class UserApplicationTest {
             String refreshToken = userApp.login(request).block().getRefreshToken();
             userApp.refresh(refreshToken).block();
             assertThrows(UnauthorizedException.class, () -> userApp.refresh(refreshToken).block());
+        }
+    }
+
+    @Nested
+    public class ProfileTest {
+
+        @Test
+        public void profileSuccess() {
+            String validUuid = "20000000-0000-0000-0000-000000000000";
+            UserDTO dto = userApp.getProfile(validUuid).block();
+            assertEquals(dto.getId().toString(), validUuid);
+        }
+
+        @Test
+        public void invalidId() {
+            String invalidUuid = "90000000-0000-0000-0000-000000000000";
+            assertThrows(NotFoundException.class,
+                    () -> userApp.getProfile(invalidUuid).block());
+        }
+    }
+
+    @Nested
+    public class ResetTriesTest {
+
+        @Test
+        public void resetTriesSuccess() {
+            AuthRequest request = new AuthRequest();
+            request.setEmail("cust0@app.com");
+            request.setPassword("NotMyPassword");
+            assertThrows(BadRequestException.class,
+                    () -> userApp.login(request).block());
+            User dbUser = ContextConfiguration.userRepoMock.emailMap.get(request.getEmail());
+            assertEquals(dbUser.getTries(), User.maxRetries - 1);
+            userApp.resetTries(dbUser.getId().toString()).block();
+            dbUser = ContextConfiguration.userRepoMock.emailMap.get(request.getEmail());
+            assertEquals(dbUser.getTries(), User.maxRetries);
+        }
+
+        @Test
+        public void invalidId() {
+            String invalidUuid = "90000000-0000-0000-0000-000000000000";
+            assertThrows(NotFoundException.class,
+                    () -> userApp.getProfile(invalidUuid).block());
         }
     }
 }

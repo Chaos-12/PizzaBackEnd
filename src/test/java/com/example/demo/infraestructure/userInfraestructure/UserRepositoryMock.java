@@ -82,13 +82,8 @@ public class UserRepositoryMock implements UserWriteRepository{
             userId = UUID.fromString("10000000-0000-0000-0000-00000000000"+i);
             this.add(userId, Role.ROLE_EMPLOYEE, "empl"+i, "", "empl"+i+"@app.com", "emplPass"+i);
         }
-        for (int i=0; i<50; i++){
-            if (0 <= i && i < 10){
-                userId = UUID.fromString("20000000-0000-0000-0000-00000000000"+i);
-            }
-            if (10 <= i && i < 50){
-                userId = UUID.fromString("20000000-0000-0000-0000-0000000000"+i);
-            }
+        for (int i=0; i<10; i++){
+            userId = UUID.fromString("20000000-0000-0000-0000-00000000000"+i);
             this.add(userId, Role.ROLE_CUSTOMER, "cust"+i, "surn"+i, "cust"+i+"@app.com", "custPass"+i);
         }
     }
