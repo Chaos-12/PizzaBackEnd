@@ -446,10 +446,14 @@ public class UserApplicationTest {
             UUID userId = getValidUUID();
             String refreshToken = userApp.login(request).block().getRefreshToken();
             assertEquals(0,
-                    ContextConfiguration.logInfoRepoMock.entityMap.get(userId.toString()).getUsedTokens().size());
+                    ContextConfiguration.logInfoRepoMock.entityMap
+                            .get(userId.toString())
+                            .getUsedTokens().size());
             userApp.refresh(refreshToken).block();
             assertEquals(1,
-                    ContextConfiguration.logInfoRepoMock.entityMap.get(userId.toString()).getUsedTokens().size());
+                    ContextConfiguration.logInfoRepoMock.entityMap
+                            .get(userId.toString())
+                            .getUsedTokens().size());
         }
 
         @Test

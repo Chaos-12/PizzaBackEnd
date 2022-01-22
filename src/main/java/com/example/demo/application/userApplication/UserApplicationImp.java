@@ -159,7 +159,9 @@ public class UserApplicationImp extends ApplicationBase<User> implements UserApp
         response.setRefreshToken(tokenProvider.generateRefreshToken());
         return this.logInfoRepository
                 .getFromID(id.toString())
-                .switchIfEmpty(this.logInfoRepository.set(id.toString(), new UserLogInfo(id, role), 1))
+                .defaultIfEmpty(new UserLogInfo(id,role))
+                .flatMap(logInfo -> this.logInfoRepository.set(id.toString(),logInfo, 1))
+                // .switchIfEmpty(this.logInfoRepository.set(id.toString(), new UserLogInfo(id, role), 1))
                 .then(this.refreshTokenRepository.set(response.getRefreshToken(), id, 2))
                 .thenReturn(response);
     }
