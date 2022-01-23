@@ -29,14 +29,15 @@ public class ImageApplicationImp implements ImageApplication {
                         .then(Mono.just(this.modelMapper.map(image,ImageDTO.class)));
   	}
 
-  	public Mono<ImageDTO> getImageRedis(UUID id){
+  	public Mono<ImageDTO> getImageRedis(String id){
     	return this.redisRepository
-						.getFromID(id.toString())
+						.getFromID(id)
 						.map(bytes -> {
 							ImageDTO imageDTO = new ImageDTO();
 							imageDTO.setContent(bytes);
-							imageDTO.setId(id);
+							imageDTO.setId(UUID.fromString(id));
 							return imageDTO;
 						});
   	}
+
 }
