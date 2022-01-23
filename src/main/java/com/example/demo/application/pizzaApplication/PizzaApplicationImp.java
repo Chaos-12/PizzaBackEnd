@@ -20,34 +20,32 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 import org.slf4j.Logger;
+@Slf4j
 @Service
 public class PizzaApplicationImp extends ApplicationBase<Pizza> implements PizzaApplication {
-    private final ImageCloudinaryRepository imageCloudinaryRepository;
     private final PizzaWriteRepository pizzaWriteRepository;
     private final PizzaReadRepository pizzaReadRepository;
     private final IngredientApplication ingredientApplication;
     private final ImageApplication imageApplication;
     private final ModelMapper modelMapper;
-    private final Logger logger;
     
     @Autowired
     public PizzaApplicationImp(final PizzaWriteRepository pizzaWriteRepository, 
                             final PizzaReadRepository pizzaReadRepository,
-                            final ModelMapper modelMapper,final Logger logger,
+                            final ModelMapper modelMapper,
                             final IngredientApplication ingredientApplication,
-                            final ImageApplication imageApplication,
-                            final ImageCloudinaryRepository imageCloudinaryRepository){
+                            final ImageApplication imageApplication){
         super((id) -> pizzaWriteRepository.findById(id));
         this.pizzaWriteRepository = pizzaWriteRepository;
         this.pizzaReadRepository = pizzaReadRepository;
         this.ingredientApplication = ingredientApplication;
         this.imageApplication = imageApplication;
         this.modelMapper = modelMapper;
-        this.logger = logger; 
-        this.imageCloudinaryRepository = imageCloudinaryRepository;                   
     }
 
     @Override
@@ -66,7 +64,7 @@ public class PizzaApplicationImp extends ApplicationBase<Pizza> implements Pizza
                     })
                     .then(pizzaWriteRepository.save(pizza,true))
                     .flatMap(monoPizza -> {
-                        logger.info(this.serializeObject(pizza, "added"));
+                        log.info(this.serializeObject(pizza, "added"));
                         return Mono.just(this.modelMapper.map(pizza, PizzaDTO.class));
                     });
     }

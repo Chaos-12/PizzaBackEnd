@@ -34,7 +34,7 @@ public class ImageController {
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")
-    public Mono<ResponseEntity<byte[]>> getImage(@PathVariable String id) {
+    public Mono<ResponseEntity<ImageDTO>> getImage(@PathVariable String id) {
         // Cambiar a servicio, el GET de redis se llamará desde el de cloudinary
         return this.imageApplication.getImageRedis(id).map(image -> ResponseEntity.ok(image)).defaultIfEmpty(ResponseEntity.notFound().build());
     }

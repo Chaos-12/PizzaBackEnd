@@ -15,7 +15,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Repository
-public interface IngredientRepository extends ReactiveMongoRepository<Ingredient, UUID>, RepositoryBase<Ingredient,UUID> {
+public interface IngredientRepository extends ReactiveMongoRepository<Ingredient, UUID> {
 
     @Query("SELECT id, name, price FROM ingredient WHERE (name LIKE CONCAT('%', :name, '%')) ORDER BY name;")
    //@Query(value="{ 'id' : ?0 }", fields="{ 'firstname' : 1, 'lastname' : 1}") 

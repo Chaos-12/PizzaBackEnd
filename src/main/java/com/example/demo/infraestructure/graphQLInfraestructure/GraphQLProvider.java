@@ -51,10 +51,10 @@ public class GraphQLProvider {
 
     private RuntimeWiring buildRuntimeWiring() {
         return RuntimeWiring.newRuntimeWiring()
-                .type("Query", typeWiring -> 
-					typeWiring.dataFetcher("ingredientById", new IdDataFetcher<Ingredient, UUID>(ingredientRepository)))
-                .type("Query", typeWiring -> 
-					typeWiring.dataFetcher("allIngredients", new AllDataFetcher<Ingredient, UUID>(ingredientRepository)))
+                // .type("Query", typeWiring -> 
+				// 	typeWiring.dataFetcher("ingredientById", new IdDataFetcher<Ingredient, UUID>(ingredientRepository)))
+                // .type("Query", typeWiring -> 
+				// 	typeWiring.dataFetcher("allIngredients", new AllDataFetcher<Ingredient, UUID>(ingredientRepository)))
                 .type("Query", typeWiring -> 
 					typeWiring.dataFetcher("userById", new IdDataFetcher<User, UUID>(userRepository)))
                 .type("Query", typeWiring -> 
