@@ -36,6 +36,6 @@ public class OrderRepositoryImp implements OrderWriteRepository, OrderReadReposi
 
     @Override
     public Flux<Order> getAll(int firstIndex, int limit) {
-        return this.orderRepository.findAllFrom(firstIndex, limit);
+        return this.orderRepository.findAll();//From(firstIndex, limit);
     }
 }

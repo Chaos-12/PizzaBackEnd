@@ -1,30 +1,23 @@
 package com.example.demo.application.pizzaApplication;
 
-import java.math.BigDecimal;
-import java.util.HashSet;
 import java.util.UUID;
 
 import com.example.demo.application.imageApplication.ImageApplication;
-import com.example.demo.application.imageApplication.ImageCloudinaryRepository;
 import com.example.demo.application.ingredientApplication.IngredientApplication;
-import com.example.demo.application.ingredientApplication.IngredientDTO;
 import com.example.demo.core.ApplicationBase;
-import com.example.demo.domain.imageDomain.Image;
 import com.example.demo.domain.ingredientDomain.Ingredient;
 import com.example.demo.domain.pizzaDomain.Pizza;
 import com.example.demo.domain.pizzaDomain.PizzaReadRepository;
 import com.example.demo.domain.pizzaDomain.PizzaWriteRepository;
 
-import org.dataloader.Try;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import org.slf4j.Logger;
+
 @Slf4j
 @Service
 public class PizzaApplicationImp extends ApplicationBase<Pizza> implements PizzaApplication {
@@ -57,7 +50,7 @@ public class PizzaApplicationImp extends ApplicationBase<Pizza> implements Pizza
         //fromIterable
 
         return Flux.fromIterable(dto.getIngredients())
-                    .flatMap(id ->ingredientApplication.get(id.toString()))
+                    .flatMap(id -> ingredientApplication.get(id.toString()))
                     .doOnNext(dbIngredient -> {
                         Ingredient ingredient = this.modelMapper.map(dbIngredient, Ingredient.class);
                         pizza.addIngredient(ingredient);

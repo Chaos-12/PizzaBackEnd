@@ -23,6 +23,6 @@ public class AllDataFetcher<T, ID> implements DataFetcher<CompletableFuture<List
         if(null == start){
             start = 0;
         }
-        return repository.findAllFrom(start, limit).collectList().toFuture();
+        return repository.findAll().collectList().toFuture();//(start, limit).collectList().toFuture();
     }
 }

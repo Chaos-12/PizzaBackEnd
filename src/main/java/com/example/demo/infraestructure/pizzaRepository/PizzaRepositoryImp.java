@@ -39,7 +39,6 @@ public class PizzaRepositoryImp implements PizzaWriteRepository, PizzaReadReposi
 
     @Override
     public Flux<Pizza> getAll(String name) {
-        // TODO Auto-generated method stub
         return this.pizzaRepository.findAll();
     }
 

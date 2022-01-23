@@ -39,7 +39,7 @@
 			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>		
 		<!-- r2dbc -->
-        	 <dependency>
+        <!-- <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-r2dbc</artifactId>
         </dependency>
@@ -50,7 +50,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-        </dependency>		
+        </dependency>		 -->
 	<dependency>
 			<groupId>dev.miku</groupId>
 			<artifactId>r2dbc-mysql</artifactId>

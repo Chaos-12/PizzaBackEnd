@@ -40,7 +40,7 @@ public class WebSecurityConfig {
                 .authorizeExchange()
                 .pathMatchers(HttpMethod.OPTIONS).permitAll()
                 .pathMatchers(AUTH_WHITELIST).permitAll()
-                .anyExchange().authenticated()
+                .anyExchange().permitAll()//.authenticated()
                 .and()
                 .oauth2Login()
                 .and().build();

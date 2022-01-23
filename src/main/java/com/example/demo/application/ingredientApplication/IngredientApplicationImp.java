@@ -3,7 +3,6 @@ package com.example.demo.application.ingredientApplication;
 import java.util.UUID;
 import com.example.demo.core.ApplicationBase;
 import com.example.demo.domain.ingredientDomain.Ingredient;
-import com.example.demo.domain.ingredientDomain.IngredientProjection;
 import com.example.demo.domain.ingredientDomain.IngredientReadRepository;
 import com.example.demo.domain.ingredientDomain.IngredientWriteRepository;
 import org.modelmapper.ModelMapper;

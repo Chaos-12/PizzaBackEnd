@@ -8,14 +8,14 @@ import com.example.demo.core.EntityBase;
 import com.example.demo.core.exceptions.BadRequestException;
 
 import org.mindrot.jbcrypt.BCrypt;
-import org.springframework.data.relational.core.mapping.Table;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Setter;
 
 @Data
-@Table("user")
+@Document(collection = "user")
 @Setter
 @EqualsAndHashCode(callSuper=true)
 public class User extends EntityBase {

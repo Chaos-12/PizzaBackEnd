@@ -10,15 +10,17 @@ import com.example.demo.core.exceptions.BadRequestException;
 import com.example.demo.core.exceptions.NotFoundException;
 import com.example.demo.domain.userDomain.UserWriteRepository;
 
-import org.springframework.data.relational.core.mapping.Table;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
 import lombok.Setter;
+import lombok.EqualsAndHashCode;
 import reactor.core.publisher.Mono;
 
 @Data
-@Table("orders")
+@Document(collection = "order")
 @Setter
+@EqualsAndHashCode(callSuper=true)
 public class Order extends EntityBase {
     @NotNull
     private UUID userId;
