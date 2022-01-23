@@ -4,7 +4,6 @@ import com.example.demo.application.ingredientApplication.CreateOrUpdateIngredie
 import com.example.demo.application.ingredientApplication.IngredientApplication;
 import com.example.demo.application.ingredientApplication.IngredientDTO;
 import com.example.demo.domain.ingredientDomain.Ingredient;
-import com.example.demo.domain.ingredientDomain.IngredientProjection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

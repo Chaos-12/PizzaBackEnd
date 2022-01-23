@@ -1,7 +1,6 @@
 package com.example.demo.application.ingredientApplication;
 
 import com.example.demo.domain.ingredientDomain.Ingredient;
-import com.example.demo.domain.ingredientDomain.IngredientProjection;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
