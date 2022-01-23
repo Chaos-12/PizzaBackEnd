@@ -1,17 +1,17 @@
 package com.example.demo.infraestructure.userInfraestructure;
 import java.util.UUID;
 
-import com.example.demo.core.RepositoryBase;
 import com.example.demo.domain.userDomain.User;
 
 import org.springframework.data.mongodb.repository.Query;
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
 import org.springframework.stereotype.Repository;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Repository
-public interface UserRepository extends RepositoryBase<User, UUID> {
+public interface UserRepository extends ReactiveMongoRepository<User, UUID> {
 
     //@Query("SELECT id, name, surname, email, password, provider, role, tries FROM user WHERE email = :email;")
     @Query("{ 'email' : ?0 }")
