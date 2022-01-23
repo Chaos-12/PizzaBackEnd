@@ -9,27 +9,26 @@ import com.example.demo.domain.ingredientDomain.IngredientWriteRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import org.slf4j.Logger;
 
+@Slf4j
 @Service
 public class IngredientApplicationImp extends ApplicationBase<Ingredient> implements IngredientApplication {
 
     private final IngredientWriteRepository ingredientWriteRepository;
     private final IngredientReadRepository ingredientReadRepository;
     private final ModelMapper modelMapper;
-    private final Logger logger;
 
     @Autowired
     public IngredientApplicationImp(final IngredientWriteRepository ingredientWriteRepository,
-            final IngredientReadRepository ingredientReadRepository, final ModelMapper modelMapper,
-            final Logger logger) {
+            final IngredientReadRepository ingredientReadRepository, final ModelMapper modelMapper) {
         super((id) -> ingredientWriteRepository.findById(id));
         this.ingredientWriteRepository = ingredientWriteRepository;
         this.ingredientReadRepository = ingredientReadRepository;
         this.modelMapper = modelMapper;
-        this.logger = logger;
     }
 
     @Override
@@ -40,7 +39,7 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient> implem
                 .validate("name", newIngredient.getName(), name -> this.ingredientWriteRepository.exists(name))
                 .then(this.ingredientWriteRepository.save(newIngredient, true))
                 .map(ingredient -> {
-                    logger.info(this.serializeObject(ingredient, "added"));
+                    log.info(this.serializeObject(ingredient, "added"));
                     return this.modelMapper.map(ingredient, IngredientDTO.class);
                 });
     }
@@ -58,7 +57,7 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient> implem
                 dbIngredient.validate();
                 return this.ingredientWriteRepository.save(dbIngredient, false)
                         .flatMap(ingredient -> {
-                            logger.info(this.serializeObject(ingredient, "updated"));
+                            log.info(this.serializeObject(ingredient, "updated"));
                             return Mono.empty();
                         });
             } else {
@@ -67,7 +66,7 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient> implem
                         .validate("name", dbIngredient.getName(), name -> this.ingredientWriteRepository.exists(name))
                         .then(this.ingredientWriteRepository.save(dbIngredient, false))
                         .flatMap(ingredient -> {
-                            logger.info(this.serializeObject(ingredient, "updated"));
+                            log.info(this.serializeObject(ingredient, "updated"));
                             return Mono.empty();
                         });
             }

@@ -19,18 +19,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+
+import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/api/v1/images")
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class ImageController {
 
     public final ImageApplication imageApplication;
-
-    @Autowired
-    public ImageController(final ImageApplication imageApplication) {
-        this.imageApplication = imageApplication;
-    }
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)

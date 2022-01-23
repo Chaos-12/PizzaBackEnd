@@ -4,6 +4,7 @@ import com.example.demo.core.EntityBase;
 import org.springframework.data.relational.core.mapping.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -11,6 +12,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(callSuper=true)
 public class Image extends EntityBase {
     @Column
     private byte[] content;

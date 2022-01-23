@@ -2,11 +2,21 @@ schema {
     query:Query
 }
 type Query {
-	allIngredients: [Ingredient]
-    ingredientById(id:ID): Ingredient
+    ingredientById(id:String!): Ingredient
+	allIngredients(start:Int, limit:Int): [Ingredient]
+	userById(id:String!): User
+	allUsers(start:Int, limit:Int): [User]
 }
 type Ingredient {
 	id:ID
 	name:String
 	price:Float
+}
+type User {
+	id:ID
+	name:String
+	surname:String
+	email:String
+	role:String
+	tries:Int
 }

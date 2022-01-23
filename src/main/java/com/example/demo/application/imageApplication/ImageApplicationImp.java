@@ -24,17 +24,19 @@ public class ImageApplicationImp implements ImageApplication {
     	Image image = modelMapper.map(dto, Image.class);
     	image.setId(UUID.randomUUID());
     	image.setThisNew(true);
-    	return this.redisRepository.set(image.getId().toString(), image.getContent())
-                               .then(Mono.just(this.modelMapper.map(image,ImageDTO.class)));
+    	return this.redisRepository
+						.set(image.getId().toString(), image.getContent(), 24)
+                        .then(Mono.just(this.modelMapper.map(image,ImageDTO.class)));
   	}
 
-  	public Mono<ImageDTO> getImageRedis(String id){
-    	return this.redisRepository.getFromString(id)
-        		.map(bytes -> {
-          			ImageDTO imageDTO = new ImageDTO();
-          			imageDTO.setContent(bytes);
-          			imageDTO.setId(UUID.fromString(id));
-          			return imageDTO;
-        		});
+  	public Mono<ImageDTO> getImageRedis(UUID id){
+    	return this.redisRepository
+						.getFromID(id.toString())
+						.map(bytes -> {
+							ImageDTO imageDTO = new ImageDTO();
+							imageDTO.setContent(bytes);
+							imageDTO.setId(id);
+							return imageDTO;
+						});
   	}
 }

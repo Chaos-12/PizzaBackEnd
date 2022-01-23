@@ -1,11 +1,14 @@
 package com.example.demo.core.exceptions;
 
+import org.springframework.http.HttpStatus;
+
 public class RedisConnectionException extends HttpException{
-    public RedisConnectionException(String message){
-        super(500,message);
-    }
 
     public RedisConnectionException(){
-        this("Under construction");
+        this("Under Construction");
+    }
+    
+    public RedisConnectionException(String message){
+        super(HttpStatus.INTERNAL_SERVER_ERROR.value(),message);
     }
 }

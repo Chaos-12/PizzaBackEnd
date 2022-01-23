@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import com.example.demo.domain.userDomain.Rol;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
@@ -23,8 +21,6 @@ public class CustomConverters {
         List<Converter<?, ?>> converters = new ArrayList<>();
         converters.add(new UUIDToByteArrayConverter());
         converters.add(new ByteArrayToUUIDConverter());
-        converters.add(new RolToIntegerConverter());
-        converters.add(new IntegerToRolConverter());
         return R2dbcCustomConversions.of(MySqlDialect.INSTANCE, converters);
     }
 
@@ -49,20 +45,4 @@ public class CustomConverters {
             return new UUID(high, low);
         }
     }
-    
-    @WritingConverter
-    private class RolToIntegerConverter implements Converter<Rol, Integer> {
-		@Override
-		public Integer convert(Rol rol) {
-			return rol.ordinal();
-		}
-	}
-
-    @ReadingConverter
-	public class IntegerToRolConverter implements Converter<Integer,Rol> {
-		@Override
-		public Rol convert(Integer value) {
-			return Rol.values()[value];
-		}
-	}
 }
