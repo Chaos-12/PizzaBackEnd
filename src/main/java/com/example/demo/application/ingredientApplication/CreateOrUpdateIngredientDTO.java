@@ -9,4 +9,5 @@ import lombok.Setter;
 public class CreateOrUpdateIngredientDTO {
     private String name;
     private BigDecimal price;
+    private String type;
 }

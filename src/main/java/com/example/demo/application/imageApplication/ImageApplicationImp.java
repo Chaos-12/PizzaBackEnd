@@ -1,14 +1,17 @@
 package com.example.demo.application.imageApplication;
 
 import java.util.UUID;
-import com.example.demo.domain.Image;
+
+import com.example.demo.domain.imageDomain.Image;
 import com.example.demo.infraestructure.redisInfraestructure.RedisRepository;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import reactor.core.publisher.Mono;
 
+//TODO: extends ApplicationBase<Image, UUID>
 @Service
 public class ImageApplicationImp implements ImageApplication {
 	private final RedisRepository<byte[], String> redisRepository;

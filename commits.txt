@@ -1,0 +1,299 @@
+commit 8b3aecce7e64a07ba1138db7820d1f13fcc28192
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Tue Nov 30 10:13:05 2021 +0100
+
+    Cloudinary Timestamp
+
+commit dd6c19447e006fb0487438568d0a7b8cce94f549
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Sat Nov 27 17:47:55 2021 +0100
+
+    Estructura de webclient para peticiones a cloudinary
+
+commit c59b76b5f0cf1bd53205c76e2bd8dace5a82b60b
+Merge: 126fb1c 7284e30
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Sat Nov 27 12:37:41 2021 +0100
+
+    Merge de main
+
+commit 7284e30417e6abed71e5f93a79b73978942aacf2
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Sat Nov 27 12:23:03 2021 +0100
+
+    Image UUID to String
+
+commit 11a699f697d23b3bbf1469884d38b3ef35014cd3
+Merge: ed88a1b 9db6e2c
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Sat Nov 27 12:00:23 2021 +0100
+
+    Merge image exception handlers
+
+commit 9db6e2c5e8d8bc05c909747b003e90168287538b
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Sat Nov 27 11:43:39 2021 +0100
+
+    Redis connection Exception Handler
+
+commit 126fb1c1f6f101713a995001b4a7d0ba976ec837
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Sat Nov 27 11:30:05 2021 +0100
+
+    Probando a lanzar excepciones custom desde un  mono
+
+commit ed88a1b98f7b869be9c9c3f10fa652974ec7cbfb
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Sat Nov 27 00:46:34 2021 +0100
+
+    end of validation
+
+commit 057cc58d7572d7a643abc317d0a507b7ee4d381e
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Fri Nov 26 18:16:19 2021 +0100
+
+    minnor formatting
+
+commit 5eea95a7ff129d2a8a88341acb5f7314ef6b8952
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Fri Nov 26 16:59:05 2021 +0100
+
+    end of graphQL
+
+commit 8ba898a0167e97f86ac1b6b17770758993723ac0
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Thu Nov 25 13:30:37 2021 +0100
+
+    Logger warm on exceptions
+
+commit 6944e1247ca2aca5691f37e0954cbf988e48fe2a
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Wed Nov 24 13:51:06 2021 +0100
+
+    Query failed to parse
+
+commit 35fd48bb3b1b97401bf9a5e0510c13c415843955
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Wed Nov 24 13:41:22 2021 +0100
+
+    Movie test
+
+commit 9067d238a699274c5d75d3bb983c3ef7147c15b1
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Wed Nov 24 12:03:12 2021 +0100
+
+    Estructura pizza terminada sin cloudinary
+
+commit e2fe88e74376a5caee8cd4dd45be7d31a857909b
+Merge: 812f0bf 51f78ef
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Wed Nov 24 10:16:11 2021 +0100
+
+    Merge branch 'feature/ingredients'
+
+commit 51f78ef77b9f9377ceaeb19cd1c96cf6a335fc6d
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Wed Nov 24 10:07:40 2021 +0100
+
+    Validation with boolean
+
+commit 812f0bf939b630bd4106e53347a47739834876c3
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Tue Nov 23 13:58:11 2021 +0100
+
+    Logger implementado
+
+commit 3da6f0d56049f1c2c40d59198160aa1f85ff4e2e
+Merge: 7056be8 9810b0c
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Tue Nov 23 11:10:09 2021 +0100
+
+    Merge branch 'feature/ingredients'
+
+commit 9810b0c3cb5fec9ac05124800a4b48ebc79cd241
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Tue Nov 23 10:52:06 2021 +0100
+
+    getAll without page
+
+commit bee32a641934c4f1a758ce37b90f54f993ecc556
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Tue Nov 23 10:42:03 2021 +0100
+
+    Ingredients complete (no GraphQL, no pages)
+
+commit 7056be8ffc72cb8b9c7680c4f7f584c024022ac8
+Merge: b3921f4 52be120
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Tue Nov 23 10:39:00 2021 +0100
+
+    Merge branch 'feature/image'
+
+commit b27c52008fd055b791c138b05f083a80762a9fec
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Mon Nov 22 18:56:09 2021 +0100
+
+    ingredient names more clear at app layer
+
+commit 4b9955fd71e977c8a319dcda98db422285bcf4a8
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Mon Nov 22 18:50:22 2021 +0100
+
+    variables for pagination removed from methods
+
+commit 1e467fb7e83d4ea53ee8cdd2bfeb8c12193002b8
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Mon Nov 22 18:38:07 2021 +0100
+
+    ExistsByField -> EntityByField
+
+commit 52be1203bf2203e81100cdb52601deacdf81c3d9
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Mon Nov 22 16:53:15 2021 +0100
+
+    Get images desde Redis terminado, controlador de prueba done
+
+commit 193253153671b08121c00a10c1a8d4b61ed5e353
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Sun Nov 21 22:41:32 2021 +0100
+
+    Comments removed
+
+commit c797a10688caf471e2639b9aadb29066414b10b1
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Sun Nov 21 21:33:53 2021 +0100
+
+    Reactive validation for ingredients
+
+commit e95f64f951cf250a59eb829f4332024fceb1bc9d
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Sun Nov 21 13:36:36 2021 +0100
+
+    Validation (except update)
+
+commit df3366927c254e0a08f709faae562a63371ecf3f
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Sun Nov 21 12:29:04 2021 +0100
+
+    Image add with Redis done
+
+commit 4b9cb33cecd1c1491ff492a67ad0547456180b1c
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Sat Nov 20 18:57:40 2021 +0100
+
+    Falla al subir a Redis
+
+commit 12d452148d7a968aaa37b458608d1b8f398f2670
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Sat Nov 20 17:53:48 2021 +0100
+
+    Validation upon creating ingredient
+
+commit dce30f6a98a0505bb01a12f345928949b806513e
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Fri Nov 19 18:45:26 2021 +0100
+
+    getAll Ingredients (no Page)
+
+commit d2bcd6efc25a2191ce49782de9d699344cac2005
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Fri Nov 19 01:30:20 2021 +0100
+
+    getAll Ingredients
+
+commit 3e957e7f474902bea41fc08e93ce8c63ec3513b7
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Thu Nov 18 16:55:17 2021 +0100
+
+    Update Ingredient
+
+commit b3921f479d2cc7e0ccc42607cd2ec9707d4f14de
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Thu Nov 18 15:49:41 2021 +0100
+
+    Error 404 & UUID Conversor
+
+commit dd14f18a54916183f84ba5bce88499c2eb6dee48
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Thu Nov 18 14:02:43 2021 +0100
+
+    Image creado hasta controller, errores de configuracion
+
+commit 4ba93a7efd7cead65300b2506588ca9ff021782f
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Thu Nov 18 12:04:33 2021 +0100
+
+    Right Syntaxis on Conversors
+
+commit 2e5d20146cf59a70ace511fb594d869c67dce484
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Thu Nov 18 11:14:22 2021 +0100
+
+    Image repository con ReactiveCRUDRepository
+
+commit f7e85c0b9ab7ae2b002840fe85d772193e37d8d7
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Thu Nov 18 10:50:11 2021 +0100
+
+    TestUser deleted
+
+commit e27a76bd7c909f21e30939fa74dc3744e646bdc6
+Merge: 2d583c1 5c266d8
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Thu Nov 18 10:49:38 2021 +0100
+
+    Merge branch 'main' into feature/image
+
+commit 2d583c11413ec3d53991030e80c290f16cc19cba
+Author: Pia Barcelo <mpiabarcelo@gmail.com>
+Date:   Thu Nov 18 10:25:08 2021 +0100
+
+    Imagen en proceso: dominio done, config done y repository done
+
+commit 5c266d870bf397fc2e9cc3a4e7e734effef95529
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Thu Nov 18 10:24:54 2021 +0100
+
+    Post Ingredient Complete
+
+commit 659ac19364560188ea721e5f47ddd497cb8ccddf
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Wed Nov 17 20:59:09 2021 +0100
+
+    test are now with ingredients
+
+commit cf5b12daebbdc005e5f365d8171addc83529aef8
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Wed Nov 17 20:16:08 2021 +0100
+
+    UUID Done
+
+commit ca1d37e8cb96acce05ac0ea5d8859d95af9c0e91
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Wed Nov 17 18:36:08 2021 +0100
+
+    now with beans for modelmapper
+
+commit f5b28d9bf4b3053f517f7ecd482ce291e22b71c4
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Wed Nov 17 16:21:30 2021 +0100
+
+    Ingredient add (untested)
+
+commit 590c3e6cbdadccd6f470f6368b8bad55f258a3de
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Wed Nov 17 14:02:36 2021 +0100
+
+    entityBase and ingredients domain
+
+commit 8e9d916e4eb8b2c6fdfe4d661b500b3dd275ed58
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Wed Nov 17 13:03:23 2021 +0100
+
+    First Commit
+
+commit 4ab0ecc4e9a6051bb611dde2436a1afc2fc6409f
+Author: David Iglesias <dvd.iglesias@outlook.com>
+Date:   Wed Nov 17 09:05:02 2021 +0100
+
+    ready to see the world

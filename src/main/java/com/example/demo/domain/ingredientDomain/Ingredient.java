@@ -9,14 +9,19 @@ import javax.validation.constraints.NotNull;
 
 import com.example.demo.core.EntityBase;
 
-import org.springframework.data.relational.core.mapping.Table;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Setter;
 
+// enum INGREDIENT_TYPE
+// {
+//     INGREDIENT, BASE;
+// }
+
 @Data
-@Table("ingredient")
+@Document(collection = "ingredient")
 @Setter
 @EqualsAndHashCode(callSuper=true)
 public class Ingredient extends EntityBase {
@@ -27,6 +32,7 @@ public class Ingredient extends EntityBase {
     @Digits(integer = 5, fraction = 2)
     @DecimalMin(value = "0", inclusive = false)
     private BigDecimal price;
+    // private INGREDIENT_TYPE type;
 
     @Override
     public String toString() {

@@ -35,7 +35,10 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient> implem
     public Mono<IngredientDTO> add(CreateOrUpdateIngredientDTO dto) {
         Ingredient newIngredient = modelMapper.map(dto, Ingredient.class);
         newIngredient.setId(UUID.randomUUID());
-        return newIngredient
+        // if(dto.getType().equals("B")){
+        //     newIngredient.setType(INGREDIENT_TYPE.BASE);
+        // }
+         return newIngredient
                 .validate("name", newIngredient.getName(), name -> this.ingredientWriteRepository.exists(name))
                 .then(this.ingredientWriteRepository.save(newIngredient, true))
                 .map(ingredient -> {
@@ -79,7 +82,7 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient> implem
     }
 
     @Override
-    public Flux<IngredientProjection> getAll(String name) {
+    public Flux<Ingredient> getAll(String name) {
         return this.ingredientReadRepository.getAll(name);
     }
 }

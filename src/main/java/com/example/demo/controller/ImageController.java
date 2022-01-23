@@ -1,12 +1,9 @@
 package com.example.demo.controller;
 
 import java.io.IOException;
-import java.util.UUID;
-
 import com.example.demo.application.imageApplication.CreateOrUpdateImageDTO;
 import com.example.demo.application.imageApplication.ImageApplication;
 import com.example.demo.application.imageApplication.ImageDTO;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -32,13 +29,16 @@ public class ImageController {
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public Mono<ImageDTO> upload(@RequestParam("image") MultipartFile file) throws IOException {
+    public Mono<ImageDTO> upload(@RequestParam("image") MultipartFile file) throws IOException {      
         return this.imageApplication.add(new CreateOrUpdateImageDTO(file.getBytes()));
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, path = "/{id}")
-    public Mono<ResponseEntity<ImageDTO>> getImage(@PathVariable String id) {
+    public Mono<ResponseEntity<byte[]>> getImage(@PathVariable String id) {
         // Cambiar a servicio, el GET de redis se llamará desde el de cloudinary
         return this.imageApplication.getImageRedis(id).map(image -> ResponseEntity.ok(image)).defaultIfEmpty(ResponseEntity.notFound().build());
     }
+
+
+
 }

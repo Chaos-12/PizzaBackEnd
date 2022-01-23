@@ -39,7 +39,19 @@
 			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>		
 		<!-- r2dbc -->
-		<dependency>
+        	 <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-r2dbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.r2dbc</groupId>
+            <artifactId>r2dbc-postgresql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>		
+	<dependency>
 			<groupId>dev.miku</groupId>
 			<artifactId>r2dbc-mysql</artifactId>
 			<version>0.8.2.RELEASE</version>
@@ -48,11 +60,16 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-r2dbc</artifactId>
 		</dependency>
-		<!-- projections (@MappedSuperclass) -->
+		<!-- Mongodb -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
+		  </dependency>
+		<!-- Projections (@MappedSuperclass) -->
+		 <dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
+		</dependency> 
 		<!-- redis -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
