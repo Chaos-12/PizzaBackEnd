@@ -51,15 +51,16 @@ public abstract class EntityBase implements Persistable<UUID>, Serializable {
 
     public Mono<Boolean> validate(String key, String value, ExistsByField existsByField) {
         this.validate();
-        return existsByField.exists(value).flatMap(exists -> {
-            if (exists) {
-                BadRequestException badRequestException = new BadRequestException();
-                badRequestException.addException(key, String.format("value '%s' is duplicated", value));
-                return Mono.error(badRequestException);
-            } else {
-                return Mono.just(false);
-            }
-        });
+        return existsByField.exists(value)
+                            .flatMap(exists -> {
+                                if (exists) {
+                                    BadRequestException badRequestException = new BadRequestException();
+                                    badRequestException.addException(key, String.format("value '%s' is duplicated", value));
+                                    return Mono.error(badRequestException);
+                                } else {
+                                    return Mono.just(false);
+                                }
+                            });
     }
 
     public void getDeclaredFieldsFrom(Object source){

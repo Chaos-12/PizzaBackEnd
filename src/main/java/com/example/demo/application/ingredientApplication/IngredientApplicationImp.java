@@ -4,6 +4,7 @@ import java.util.UUID;
 import com.example.demo.core.ApplicationBase;
 import com.example.demo.domain.ingredientDomain.Ingredient;
 import com.example.demo.domain.ingredientDomain.IngredientReadRepository;
+import com.example.demo.domain.ingredientDomain.IngredientType;
 import com.example.demo.domain.ingredientDomain.IngredientWriteRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,12 +35,11 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient> implem
     public Mono<IngredientDTO> add(CreateOrUpdateIngredientDTO dto) {
         Ingredient newIngredient = modelMapper.map(dto, Ingredient.class);
         newIngredient.setId(UUID.randomUUID());
-        // if(dto.getType().equals("B")){
-        //     newIngredient.setType(INGREDIENT_TYPE.BASE);
-        // }
-         return newIngredient
-                .validate("name", newIngredient.getName(), name -> this.ingredientWriteRepository.exists(name))
-                .then(this.ingredientWriteRepository.save(newIngredient, true))
+        newIngredient.validate();
+        return // newIngredient
+        //         .validate("name", newIngredient.getName(), name -> this.ingredientWriteRepository.exists(name))
+        //         .then(
+                    this.ingredientWriteRepository.save(newIngredient, true)//)
                 .map(ingredient -> {
                     log.info(this.serializeObject(ingredient, "added"));
                     return this.modelMapper.map(ingredient, IngredientDTO.class);
@@ -82,6 +82,7 @@ public class IngredientApplicationImp extends ApplicationBase<Ingredient> implem
 
     @Override
     public Flux<Ingredient> getAll(String name) {
+        //return this.ingredientReadRepository.getAll(name);
         return this.ingredientReadRepository.getAll(name);
     }
 }
