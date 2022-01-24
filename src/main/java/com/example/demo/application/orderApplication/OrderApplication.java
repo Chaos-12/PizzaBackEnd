@@ -14,5 +14,5 @@ public interface OrderApplication {
 
     public Mono<Void> delete(String id);
 
-    public Flux<OrderDTO> getAll(int firstIndex, int limit);
+    public Flux<OrderDTO> getAll();
 }

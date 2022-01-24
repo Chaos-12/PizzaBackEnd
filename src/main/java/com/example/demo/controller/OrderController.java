@@ -72,7 +72,7 @@ public class OrderController {
     }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public Flux<OrderDTO> getAll(@RequestParam int firstIndex,@RequestParam int limit){
-        return this.orderApplication.getAll(firstIndex, limit);
+    public Flux<OrderDTO> getAll(){
+        return this.orderApplication.getAll();
     }
 }

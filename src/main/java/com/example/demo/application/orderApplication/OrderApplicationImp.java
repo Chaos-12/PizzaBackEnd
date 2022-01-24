@@ -63,8 +63,8 @@ public class OrderApplicationImp extends ApplicationBase<Order> implements Order
     }
 
     @Override
-    public Flux<OrderDTO> getAll(int firstIndex, int limit) {
-        return this.orderReadRepository.getAll(firstIndex, limit)
+    public Flux<OrderDTO> getAll() {
+        return this.orderReadRepository.getAll()
                         .map(dbOrder -> this.modelMapper.map(dbOrder, OrderDTO.class));
     }
 
